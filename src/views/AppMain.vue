@@ -1,8 +1,7 @@
 <template lang="pug">
   section.main
     Banner(
-      image="/img/views/app-main/first-namaz-qari.png"
-      bgImage="/img/views/app-main/first-namaz-bg.jpg"
+      type="first-namaz"
       reverse
       title="МОЙ ПЕРВЫЙ НАМАЗ"
       shortDesc="Экспресс обзор намаза для новичков"

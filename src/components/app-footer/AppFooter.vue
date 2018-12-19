@@ -10,8 +10,18 @@
         Socials
         router-link.tutoring(to="xxx") Обучение намазу
       .links
-
+        router-link(to="/") Главная
+        router-link(to="/") Тахарат
+        router-link(to="/") Коран
+        router-link(to="/") Намаз
+        router-link(to="/") Обучение
+      .up
     .bottom
+      span Copyright © 2018 Azan.ru
+      span.bar |
+      a(href="#") Соглашение об использовании
+      span.bar |
+      a(href="#") Написать администратору
 </template>
 
 <script>
@@ -30,17 +40,25 @@ export default {
   font-weight: 300;
   line-height: 18px;
   color: #aebbd2;
+  text-align: center;
 }
 .top {
-  text-align: center;
   background: url(./top-bg.png) no-repeat top;
   background-color: #1a3053;
+  padding-top: 125px;
 }
 .title {
   font-family: $open-sans;
   font-weight: bold;
   font-size: 20px;
   color: #f0faff;
+}
+.moon {
+  margin-top: 18px;
+  margin-bottom: 10px;
+}
+.desc {
+  margin-bottom: 25px;
 }
 .tutoring {
   display: inline-block;
@@ -50,5 +68,49 @@ export default {
   vertical-align: top;
   font-size: 13px;
   color: #5ca5e2;
+}
+.links {
+  margin-top: 110px;
+  margin-bottom: 55px;
+  > a {
+    display: inline-block;
+    border: 1px solid #67758b;
+    padding: 6px 10px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #7a8aa3;
+    min-width: 79px;
+    margin-right: 10px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+.up {
+  display: inline-block;
+  position: relative;
+  bottom: -1px;
+  width: 37px;
+  height: 27px;
+  background: url(./up.png) no-repeat center;
+  background-color: #13223b;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  vertical-align: bottom;
+}
+.bottom {
+  padding-top: 40px;
+  padding-bottom: 90px;
+  background: url(./bottom-bg.png) no-repeat bottom;
+  background-color: #07162d;
+  border-top: 1px solid #313f53;
+  > * {
+    color: #bbc8dd;
+    font-size: 13px;
+  }
+  .bar {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
 }
 </style>

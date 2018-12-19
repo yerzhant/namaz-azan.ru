@@ -28,5 +28,6 @@ export default {
 }
 .content {
   margin-top: 50px;
+  width: 100%;
 }
 </style>

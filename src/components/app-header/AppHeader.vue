@@ -67,6 +67,7 @@ export default {
 <style lang="scss" scoped>
 .header {
   position: fixed;
+  top: 0;
   width: calc(100% - 200px);
   height: 50px;
   background: url(./bg.png) no-repeat center / cover;

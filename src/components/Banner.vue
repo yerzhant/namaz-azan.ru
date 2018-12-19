@@ -38,6 +38,7 @@ export default {
 .banner {
   display: flex;
   background-repeat: no-repeat;
+  background-position: center;
 
   &.reverse {
     flex-direction: row-reverse;
@@ -57,15 +58,14 @@ export default {
 }
 .image {
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: center;
 }
 .first-namaz {
   background-image: url(../views/app-main/first-namaz-bg.jpg);
-  background-position: -200px -49px;
+  height: 477px;
   .image {
     background-image: url(../views/app-main/first-namaz-qari.png);
-    background-position-x: right;
-    height: 478px;
+    background-position: bottom right;
   }
 }
 </style>

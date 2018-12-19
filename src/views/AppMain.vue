@@ -1,24 +1,27 @@
 <template lang="pug">
-  section.banner
-    ActionDesc(
+  section.main
+    Banner(
+      image="/img/views/app-main/first-namaz-qari.png"
+      bgImage="/img/views/app-main/first-namaz-bg.jpg"
+      reverse
       title="МОЙ ПЕРВЫЙ НАМАЗ"
       shortDesc="Экспресс обзор намаза для новичков"
       desc="Насколько сложно или просто читать намаз?  Что бы выяснить это мы \
         подготовили для Вас тур по намазу состоящий всего из 20 шагов. Начните \
         прямо сейчас и через 20 минут Вы будете знать о втором столпе Ислама!"
-      descUpBorder="true"
+      descUpBorder
       primaryTitle="ДА, НАЧАТЬ!"
-      primaryRed="true"
+      primaryRed
       secondaryTitle="ПОДРОБНЫЕ УРОКИ"
     )
 </template>
 
 <script>
-import ActionDesc from '@/components/action-desc/ActionDesc.vue';
+import Banner from '@/components/Banner.vue';
 
 export default {
   components: {
-    ActionDesc,
+    Banner,
   },
 };
 </script>

@@ -10,19 +10,22 @@
 
 <script>
 export default {
-  props: [
-    'title',
-    'shortDesc',
-    'desc',
-    'descUpBorder',
-    'primaryTitle',
-    'primaryRed',
-    'secondaryTitle',
-  ],
+  props: {
+    title: String,
+    shortDesc: String,
+    desc: String,
+    descUpBorder: Boolean,
+    primaryTitle: String,
+    primaryRed: Boolean,
+    secondaryTitle: String,
+  },
 };
 </script>
 
 <style lang="scss" scoped>
+.action-desc {
+  width: 490px;
+}
 .title {
   font-family: $pt-sans;
   font-weight: bold;
@@ -40,6 +43,7 @@ export default {
   font-weight: 300;
   line-height: 26px;
   padding-top: 20px;
+  padding-bottom: 25px;
 
   &.up-border {
     border-top: 1px solid rgba(#8197aa, 0.4);
@@ -66,6 +70,7 @@ export default {
   text-align: center;
   padding: 10px 0;
   font-size: 12px;
+  color: #2d2d2d;
   border: 1px solid #afb2bb;
 }
 </style>

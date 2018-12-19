@@ -69,6 +69,7 @@ export default {
   position: fixed;
   top: 0;
   width: calc(100% - 200px);
+  max-width: 1920px - 200px;
   height: 50px;
   background: url(./bg.png) no-repeat center / cover;
   border-bottom: 1px solid #a9b8cf;

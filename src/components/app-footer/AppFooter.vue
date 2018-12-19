@@ -5,7 +5,7 @@
       img.moon(src="./moon.png")
       .desc Самоучитель и справочник
         br
-        | Cпецпроект Azan.kz
+        | Cпецпроект Azan.ru
       .socials
         Socials
         router-link.tutoring(to="xxx") Обучение намазу
@@ -19,9 +19,9 @@
     .bottom
       span Copyright © 2018 Azan.ru
       span.bar |
-      a(href="#") Соглашение об использовании
+      a(href="/agreement") Соглашение об использовании
       span.bar |
-      a(href="#") Написать администратору
+      a(href="/write-to-admin") Написать администратору
 </template>
 
 <script>

@@ -25,6 +25,9 @@ export default {
 <style lang="scss" scoped>
 .site {
   display: flex;
+  max-width: 1920px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .content {
   margin-top: 50px;

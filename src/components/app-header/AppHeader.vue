@@ -5,16 +5,17 @@
       .gender.drop-down Намаз:
         span.drop-down__selected-item {{ gender }}
         .drop-down__items
-          .drop-down__item Для мужчин
-          .drop-down__item Для женщин
+          .drop-down__item(@click="setGender('m')") Для мужчин
+          .drop-down__item(@click="setGender('w')") Для женщин
       .madhhab.drop-down Мазхаб:
         span.drop-down__selected-item Ханафи
       .basmalah
-        img.img(src='./basmalah.png')
+        router-link(to="/")
+          img.img(src="./basmalah.png")
       .language.drop-down Язык:
         span.drop-down__selected-item Русский
-          img.flag(src='./ru.png')
-      .tutoring Обучение намазу
+          img.flag(src="./ru.png")
+      router-link.tutoring(to="/xxx") Обучение намазу
 </template>
 
 <script>
@@ -31,6 +32,12 @@ export default {
         default:
           return '???';
       }
+    },
+  },
+
+  methods: {
+    setGender(gender) {
+      this.$store.commit('setGender', gender);
     },
   },
 };
@@ -66,7 +73,7 @@ export default {
   font-family: $pt-sans;
   font-size: 13px;
   color: #465d73;
-  > div {
+  > * {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,6 +98,10 @@ export default {
 
 .basmalah {
   flex-grow: 1;
+
+  .img {
+    display: block;
+  }
 }
 
 .tutoring {
@@ -103,6 +114,11 @@ export default {
 .drop-down {
   position: relative;
   width: 162px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #e5eff8;
+  }
 
   &__selected-item {
     color: #0a6e9c;
@@ -138,6 +154,14 @@ export default {
     &:hover {
       background-color: #f6fbff;
     }
+  }
+}
+
+.madhhab,
+.language {
+  cursor: initial;
+  &:hover {
+    background-color: initial;
   }
 }
 </style>

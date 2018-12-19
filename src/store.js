@@ -8,8 +8,8 @@ export default new Vuex.Store({
     gender: 'm',
   },
   mutations: {
-    setGenderMan: (state) => {
-      state.gender = 'm';
+    setGender: (state, gender) => {
+      state.gender = gender;
     },
   },
   actions: {

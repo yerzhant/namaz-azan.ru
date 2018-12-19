@@ -10,21 +10,20 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-param-reassign': 'off',
-    // 'no-param-reassign': [process.env.NODE_ENV === 'production' ? 'error' : 'off', {
-    //   props: true,
-    //   ignorePropertyModificationsFor: [
-    //     'state', // for vuex state
-    //     // 'acc', // for reduce accumulators
-    //     // 'e', // for e.returnvalue
-    //     // 'ctx', // for Koa routing
-    //     // 'req', // for Express requests
-    //     // 'request', // for Express requests
-    //     // 'res', // for Express responses
-    //     // 'response', // for Express responses
-    //     // '$scope', // for Angular 1 scopes
-    //   ]
-    // }],
+    'no-param-reassign': ['error', {
+      props: true,
+      ignorePropertyModificationsFor: [
+        'state', // for vuex state
+        // 'acc', // for reduce accumulators
+        // 'e', // for e.returnvalue
+        // 'ctx', // for Koa routing
+        // 'req', // for Express requests
+        // 'request', // for Express requests
+        // 'res', // for Express responses
+        // 'response', // for Express responses
+        // '$scope', // for Angular 1 scopes
+      ]
+    }],
   },
   parserOptions: {
     parser: 'babel-eslint',

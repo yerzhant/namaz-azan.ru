@@ -2,42 +2,63 @@
   header.header
     .menu
     .container
-      .gender.drop-down Намаз:
-        span.drop-down__selected-item {{ gender }}
-        .drop-down__items
-          .drop-down__item(@click="setGender('m')") Для мужчин
-          .drop-down__item(@click="setGender('w')") Для женщин
+      .gender.drop-down(
+        :class="{active: genderOpen}"
+        @click="toggleGender"
+      ) Намаз:
+        span.selected-item {{ genderText }}
+        .items
+          .item(
+            :class="{active: gender == 'm'}"
+            @click="setGender('m')"
+          ) Для мужчин
+          .item(
+            :class="{active: gender == 'w'}"
+            @click="setGender('w')"
+          ) Для женщин
+
       .madhhab.drop-down Мазхаб:
-        span.drop-down__selected-item Ханафи
+        span.selected-item Ханафи
+
       .basmalah
         router-link(to="/")
           img.img(src="./basmalah.png")
+
       .language.drop-down Язык:
-        span.drop-down__selected-item Русский
+        span.selected-item Русский
           img.flag(src="./ru.png")
+
       router-link.tutoring(to="/xxx") Обучение намазу
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      genderOpen: false,
+    };
+  },
   computed: {
     gender() {
+      return this.$store.state.gender;
+    },
+    genderText() {
       switch (this.$store.state.gender) {
         case 'm':
           return 'Для мужчин';
-
         case 'w':
           return 'Для женщин';
-
         default:
           return '???';
       }
     },
   },
-
   methods: {
     setGender(gender) {
       this.$store.commit('setGender', gender);
+    },
+    toggleGender() {
+      this.genderOpen = !this.genderOpen;
     },
   },
 };
@@ -50,6 +71,10 @@ export default {
   height: 50px;
   background: url(./bg.png) no-repeat center / cover;
   border-bottom: 1px solid #a9b8cf;
+
+  @media (max-width: 1365px) {
+    width: 100%;
+  }
 }
 
 .menu {
@@ -73,6 +98,13 @@ export default {
   font-family: $pt-sans;
   font-size: 13px;
   color: #465d73;
+
+  @media (max-width: 1365px) {
+    max-width: 100%;
+    margin-right: 0;
+    margin-left: 58px;
+  }
+
   > * {
     display: flex;
     justify-content: center;
@@ -116,11 +148,12 @@ export default {
   width: 162px;
   cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &.active {
     background-color: #e5eff8;
   }
 
-  &__selected-item {
+  .selected-item {
     color: #0a6e9c;
     margin-left: 3px;
     padding-right: 15px;
@@ -131,15 +164,26 @@ export default {
     }
   }
 
-  &__items {
-    // display: none;
+  .items {
+    display: none;
     position: absolute;
     top: 50px;
     right: 0;
     left: 0;
   }
 
-  &__item {
+  &.active {
+    &::before,
+    + ::before {
+      height: 49px;
+    }
+
+    .items {
+      display: block;
+    }
+  }
+
+  .item {
     display: flex;
     align-items: center;
     width: 163px;
@@ -151,7 +195,8 @@ export default {
     border-left: 1px solid #c1cfdd;
     border-bottom: 1px solid #c1cfdd;
 
-    &:hover {
+    &:hover,
+    &.active {
       background-color: #f6fbff;
     }
   }
@@ -160,6 +205,7 @@ export default {
 .madhhab,
 .language {
   cursor: initial;
+
   &:hover {
     background-color: initial;
   }

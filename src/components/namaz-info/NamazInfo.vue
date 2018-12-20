@@ -51,9 +51,9 @@ export default {
       const h2 = this.endTime.split(':')[0];
       const m2 = this.endTime.split(':')[1];
       if (h1 <= h2) {
-        this.isCurrent = (h1 < h || h1 === h && m1 <= m) && (h < h2 || h === h2 && m < m2);
+        this.isCurrent = (h1 < h || (h1 === h && m1 <= m)) && (h < h2 || (h === h2 && m < m2));
       } else {
-        this.isCurrent = h1 < h || h1 === h && m1 <= m || h < h2 || h === h2 && m < m2;
+        this.isCurrent = h1 < h || (h1 === h && m1 <= m) || h < h2 || (h === h2 && m < m2);
       }
     }
   },

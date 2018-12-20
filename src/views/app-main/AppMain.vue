@@ -13,14 +13,27 @@
       primaryRed
       secondaryTitle="ПОДРОБНЫЕ УРОКИ"
     )
+      Slogan
+    Banner(
+      type="namaz-detailed"
+      title="НАМАЗ: ПОДРОБНО"
+      shortDesc="Детализированное обучение намазу"
+      desc="Детальный обзор намаза “Зухр” состоящий из 4 ракаатов позволит Вам \
+        понять принцип исполнения большинства намазов. Если Вы научитесь \
+        читать “Зухр” - Вы сможете читать и другие намазы. Рекомендуем!"
+      descUpBorder
+      primaryTitle="НАЧАТЬ ОБУЧЕНИЕ"
+    )
 </template>
 
 <script>
 import Banner from '@/components/Banner.vue';
+import Slogan from '@/components/separator/slogan/Slogan.vue';
 
 export default {
   components: {
     Banner,
+    Slogan,
   },
 };
 </script>

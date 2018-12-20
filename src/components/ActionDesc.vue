@@ -5,7 +5,7 @@
     .desc(:class="{'up-border': descUpBorder}") {{ desc }}
     .buttons
       router-link.primary(to="/" :class="{red: primaryRed}") {{ primaryTitle }}
-      router-link.secondary(to="/") {{ secondaryTitle }}
+      router-link.secondary(to="/" v-if="secondaryTitle") {{ secondaryTitle }}
 </template>
 
 <script>

@@ -77,6 +77,9 @@ export default {
   @media (max-width: 1365px) {
     width: 100%;
   }
+  @media (max-width: $mobile) {
+    display: none;
+  }
 }
 
 .menu {

@@ -1,16 +1,19 @@
 <template lang="pug">
   section.banner(:class="[type, {reverse: reverse}]")
-    .desc
-      ActionDesc.action-desc(
-        :title="title"
-        :shortDesc="shortDesc"
-        :desc="desc"
-        :descUpBorder="descUpBorder"
-        :primaryTitle="primaryTitle"
-        :primaryRed="primaryRed"
-        :secondaryTitle="secondaryTitle"
-      )
-    .image
+    .top
+      .desc
+        ActionDesc.action-desc(
+          :title="title"
+          :shortDesc="shortDesc"
+          :desc="desc"
+          :descUpBorder="descUpBorder"
+          :primaryTitle="primaryTitle"
+          :primaryRed="primaryRed"
+          :secondaryTitle="secondaryTitle"
+        )
+      .image
+    .bottom
+      slot
 </template>
 
 <script>
@@ -37,34 +40,59 @@ export default {
 <style lang="scss" scoped>
 .banner {
   display: flex;
+  flex-direction: column;
   background-repeat: no-repeat;
   background-position: center;
 
   &.reverse {
-    flex-direction: row-reverse;
+    .top {
+      flex-direction: row-reverse;
+    }
+
     .desc .action-desc {
       margin-left: 0;
     }
   }
+}
+
+.top {
+  display: flex;
+  flex-grow: 1;
+
   > * {
     flex-basis: 50%;
   }
 }
+
 .desc {
   align-self: center;
+
   .action-desc {
     margin-left: 60px;
   }
 }
+
 .image {
   background-repeat: no-repeat;
   background-position: center;
 }
+
 .first-namaz {
   background-image: url(../views/app-main/first-namaz-bg.jpg);
-  height: 477px;
+  height: 610px;
+
   .image {
-    background-image: url(../views/app-main/first-namaz-qari.png);
+    background-image: url(../views/app-main/first-namaz.png);
+    background-position: bottom right;
+  }
+}
+
+.namaz-detailed {
+  background-image: url(../views/app-main/namaz-detailed-bg.jpg);
+  height: 1031px;
+
+  .image {
+    background-image: url(../views/app-main/namaz-detailed.png);
     background-position: bottom right;
   }
 }

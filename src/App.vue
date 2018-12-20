@@ -32,5 +32,9 @@ export default {
 .content {
   margin-top: 50px;
   width: 100%;
+
+  @media (max-width: $mobile) {
+    margin-top: 0;
+  }
 }
 </style>

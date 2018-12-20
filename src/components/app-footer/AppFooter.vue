@@ -15,7 +15,7 @@
         router-link(to="/") Коран
         router-link(to="/") Намаз
         router-link(to="/") Обучение
-      .up
+      .up(@click="scrollUp")
     .bottom
       span Copyright © 2018 Azan.ru
       span.bar |
@@ -30,6 +30,11 @@ import Socials from '@/components/socials/Socials.vue';
 export default {
   components: {
     Socials,
+  },
+  methods: {
+    scrollUp() {
+      this.$scrollTo('body');
+    },
   },
 };
 </script>
@@ -97,6 +102,7 @@ export default {
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   vertical-align: bottom;
+  cursor: pointer;
 }
 .bottom {
   padding-top: 40px;

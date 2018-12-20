@@ -1,5 +1,5 @@
 <template lang="pug">
-  router-link.button(:to="link" :class="{red: red, blue: blue}") {{ title }}  
+  router-link.button(:to="link" :class="{red: red, blue: blue}") {{ title }}
 </template>
 
 <script>

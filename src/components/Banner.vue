@@ -66,6 +66,11 @@ export default {
     flex-basis: 50%;
   }
 }
+.bottom {
+  width: 1080px;
+  margin-right: auto;
+  margin-left: auto;
+}
 
 .desc {
   align-self: center;

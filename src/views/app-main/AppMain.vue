@@ -14,7 +14,8 @@
       secondaryTitle="ПОДРОБНЫЕ УРОКИ"
     )
       Slogan
-    Banner(
+
+    Banner.namaz-detailed(
       type="namaz-detailed"
       title="НАМАЗ: ПОДРОБНО"
       shortDesc="Детализированное обучение намазу"
@@ -24,16 +25,33 @@
       descUpBorder
       primaryTitle="НАЧАТЬ ОБУЧЕНИЕ"
     )
+      .buttons
+        AppButton(title="ВСЕ ВИДЫ НАМАЗА" link="/" blue)
+        AppButton(title="УСЛОВИЯ НАМАЗА" link="/")
 </template>
 
 <script>
 import Banner from '@/components/Banner.vue';
+import AppButton from '@/components/AppButton.vue';
 import Slogan from '@/components/separator/slogan/Slogan.vue';
 
 export default {
   components: {
     Banner,
+    AppButton,
     Slogan,
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.namaz-detailed {
+  .buttons {
+    text-align: center;
+    padding: 75px 0;
+    a {
+      margin-right: 10px;
+    }
+  }
+}
+</style>

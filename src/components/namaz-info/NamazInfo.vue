@@ -43,21 +43,18 @@ export default {
   },
   created() {
     if (this.type !== 'witr') {
-      const current = new Date();
-      const start = new Date(current.getTime());
-      const end = new Date(current.getTime());
-      start.setHours(this.startTime.split(':')[0]);
-      start.setMinutes(this.startTime.split(':')[1]);
-      start.setSeconds(0);
-      end.setDate(end.getDate() + (this.type === 'isha' ? 1 : 0));
-      end.setHours(this.endTime.split(':')[0]);
-      end.setMinutes(this.endTime.split(':')[1]);
-      end.setSeconds(0);
-      console.log(current);
-      console.log(start);
-      console.log(end);
-      
-      this.isCurrent = start <= current && current < end;
+      const c = new Date();
+      const h = c.getHours();
+      const m = c.getMinutes();
+      const h1 = this.startTime.split(':')[0];
+      const m1 = this.startTime.split(':')[1];
+      const h2 = this.endTime.split(':')[0];
+      const m2 = this.endTime.split(':')[1];
+      if (h1 <= h2) {
+        this.isCurrent = (h1 < h || (h1 === h && m1 <= m)) && (h < h2 || (h === h2 && m < m2));
+      } else {
+        this.isCurrent = h1 < h || (h1 === h && m1 <= m) || (h < h2 || (h === h2 && m < m2));
+      }
     }
   },
 };

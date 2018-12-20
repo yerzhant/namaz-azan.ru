@@ -29,7 +29,7 @@
           type="fadjr"
           title="ФАДЖР"
           desc="Утренний намаз"
-          startTime="00:59"
+          startTime="00:19"
           endTime="23:42"
           :namaz1Count=2
           namaz1Type="сунны"

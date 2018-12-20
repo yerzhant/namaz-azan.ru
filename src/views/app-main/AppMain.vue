@@ -116,8 +116,8 @@ export default {
   .table {
     display: flex;
     flex-flow: column wrap;
-    width: 1080px;
-    height: 3 * 132px + 1px;
+    width: 2 * 538px + 1px;
+    height: 3 * 134px + 1px;
     margin-right: auto;
     margin-left: auto;
     border-right: 1px solid #c7d2da;

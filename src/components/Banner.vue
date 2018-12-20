@@ -43,14 +43,11 @@ export default {
   flex-direction: column;
   background-repeat: no-repeat;
   background-position: center;
+  width: 100%;
 
   &.reverse {
     .top {
       flex-direction: row-reverse;
-    }
-
-    .desc .action-desc {
-      margin-left: 0;
     }
   }
 }
@@ -67,17 +64,11 @@ export default {
   }
 }
 .bottom {
-  width: 1080px;
-  margin-right: auto;
-  margin-left: auto;
+  width: 100%;
 }
 
 .desc {
   align-self: center;
-
-  .action-desc {
-    margin-left: 60px;
-  }
 }
 
 .image {

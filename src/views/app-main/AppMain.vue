@@ -73,7 +73,7 @@
           type="isha"
           title="ИША"
           desc="Ночной намаз"
-          startTime="06:59"
+          startTime="18:59"
           endTime="07:42"
           :namaz1Count=4
           namaz1Type="фарда"

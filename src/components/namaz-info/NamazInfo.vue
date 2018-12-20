@@ -49,9 +49,14 @@ export default {
       start.setHours(this.startTime.split(':')[0]);
       start.setMinutes(this.startTime.split(':')[1]);
       start.setSeconds(0);
+      end.setDate(end.getDate() + (this.type === 'isha' ? 1 : 0));
       end.setHours(this.endTime.split(':')[0]);
       end.setMinutes(this.endTime.split(':')[1]);
       end.setSeconds(0);
+      console.log(current);
+      console.log(start);
+      console.log(end);
+      
       this.isCurrent = start <= current && current < end;
     }
   },

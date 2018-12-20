@@ -2,7 +2,6 @@
   section.main
     Banner(
       type="first-namaz"
-      reverse
       title="МОЙ ПЕРВЫЙ НАМАЗ"
       shortDesc="Экспресс обзор намаза для новичков"
       desc="Насколько сложно или просто читать намаз?  Что бы выяснить это мы \

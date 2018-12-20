@@ -66,6 +66,7 @@ export default {
 
 <style lang="scss" scoped>
 .header {
+  z-index: 5000;
   position: fixed;
   top: 0;
   width: calc(100% - 200px);

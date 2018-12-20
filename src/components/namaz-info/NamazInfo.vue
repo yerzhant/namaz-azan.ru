@@ -82,14 +82,14 @@ export default {
     opacity: 0;
     transition: opacity 1s ease;
   }
-  &:hover {
-    &::before {
-      opacity: 1;
-    }
-  }
   &.current {
     &::before {
       opacity: 0.5;
+    }
+  }
+  &:hover {
+    &::before {
+      opacity: 1;
     }
   }
 }

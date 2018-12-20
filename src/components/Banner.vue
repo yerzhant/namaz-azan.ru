@@ -1,5 +1,5 @@
 <template lang="pug">
-  section.banner(:class="[type, {reverse: reverse}]")
+  section.banner(:class="type")
     .top
       .desc
         ActionDesc.action-desc(
@@ -22,7 +22,6 @@ import ActionDesc from '@/components/ActionDesc.vue';
 export default {
   props: {
     type: String,
-    reverse: Boolean,
     title: String,
     shortDesc: String,
     desc: String,
@@ -44,18 +43,12 @@ export default {
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
-
-  &.reverse {
-    .top {
-      flex-direction: row-reverse;
-    }
-  }
 }
 
 .top {
   display: flex;
   flex-grow: 1;
-  width: 1080px;
+  width: 2 * 538px + 1px;
   margin-right: auto;
   margin-left: auto;
 
@@ -80,6 +73,9 @@ export default {
   background-image: url(../views/app-main/first-namaz-bg.jpg);
   height: 610px;
 
+  .top {
+    flex-direction: row-reverse;
+  }
   .image {
     background-image: url(../views/app-main/first-namaz.png);
     background-position: bottom right;

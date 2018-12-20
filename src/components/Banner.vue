@@ -58,6 +58,9 @@ export default {
 .top {
   display: flex;
   flex-grow: 1;
+  width: 1080px;
+  margin-right: auto;
+  margin-left: auto;
 
   > * {
     flex-basis: 50%;
@@ -93,7 +96,6 @@ export default {
 
   .image {
     background-image: url(../views/app-main/namaz-detailed.png);
-    background-position: bottom right;
   }
 }
 </style>

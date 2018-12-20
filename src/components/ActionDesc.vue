@@ -4,11 +4,13 @@
     .short-desc {{ shortDesc }}
     .desc(:class="{'up-border': descUpBorder}") {{ desc }}
     .buttons
-      router-link.primary(to="/" :class="{red: primaryRed}") {{ primaryTitle }}
-      router-link.secondary(to="/" v-if="secondaryTitle") {{ secondaryTitle }}
+      AppButton(:title="primaryTitle" link="/" :red="primaryRed" :blue="!primaryRed")
+      AppButton(:title="secondaryTitle" link="/" v-if="secondaryTitle")
 </template>
 
 <script>
+import AppButton from './AppButton.vue';
+
 export default {
   props: {
     title: String,
@@ -18,6 +20,9 @@ export default {
     primaryTitle: String,
     primaryRed: Boolean,
     secondaryTitle: String,
+  },
+  components: {
+    AppButton,
   },
 };
 </script>
@@ -49,28 +54,7 @@ export default {
     border-top: 1px solid rgba(#8197aa, 0.4);
   }
 }
-.primary {
-  display: inline-block;
-  width: 155px;
-  text-align: center;
-  padding: 10px 0;
+.buttons a:first-child {
   margin-right: 10px;
-  font-size: 12px;
-  color: #fff;
-  background-color: #2b9ace;
-  border: 1px solid #2b9ace;
-  &.red {
-    background-color: #d55d81;
-    border-color: #d55d81;
-  }
-}
-.secondary {
-  display: inline-block;
-  width: 155px;
-  text-align: center;
-  padding: 10px 0;
-  font-size: 12px;
-  color: #2d2d2d;
-  border: 1px solid #afb2bb;
 }
 </style>

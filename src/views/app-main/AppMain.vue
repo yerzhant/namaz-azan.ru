@@ -30,11 +30,11 @@
           type="fadjr"
           title="ФАДЖР"
           desc="Утренний намаз"
-          startTime="06:59"
-          endTime="07:42"
-          namaz1Count="2"
+          startTime="00:59"
+          endTime="23:42"
+          :namaz1Count=2
           namaz1Type="сунны"
-          namaz2Count="2"
+          :namaz2Count=2
           namaz2Type="фарда"
         )
         NamazInfo(
@@ -43,11 +43,11 @@
           desc="Обеденный намаз"
           startTime="06:59"
           endTime="07:42"
-          namaz1Count="4"
+          :namaz1Count=4
           namaz1Type="сунны"
-          namaz2Count="4"
+          :namaz2Count=4
           namaz2Type="фарда"
-          namaz3Count="2"
+          :namaz3Count=2
           namaz3Type="сунны"
         )
         NamazInfo(
@@ -56,7 +56,7 @@
           desc="Предвечерний намаз"
           startTime="06:59"
           endTime="07:42"
-          namaz1Count="4"
+          :namaz1Count=4
           namaz1Type="фарда"
         )
         NamazInfo(
@@ -65,9 +65,9 @@
           desc="Вечерний намаз"
           startTime="06:59"
           endTime="07:42"
-          namaz1Count="3"
+          :namaz1Count=3
           namaz1Type="фарда"
-          namaz2Count="2"
+          :namaz2Count=2
           namaz2Type="сунны"
         )
         NamazInfo(
@@ -76,9 +76,9 @@
           desc="Ночной намаз"
           startTime="06:59"
           endTime="07:42"
-          namaz1Count="4"
+          :namaz1Count=4
           namaz1Type="фарда"
-          namaz2Count="2"
+          :namaz2Count=2
           namaz2Type="сунны"
         )
         NamazInfo(
@@ -87,7 +87,7 @@
           desc="Заключительный намаз"
           startTime="После намаза Иша"
           endTime="07:42"
-          namaz1Count="3"
+          :namaz1Count=3
           namaz1Type="ваджиба"
         )
       .buttons

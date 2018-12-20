@@ -1,5 +1,5 @@
 <template lang="pug">
-  .info(:class="type")
+  .info(:class="[type, {current: isCurrent}]")
     .number
     .details
       .title {{ title }}
@@ -31,10 +31,29 @@ export default {
     namaz3Count: Number,
     namaz3Type: String,
   },
+  data() {
+    return {
+      isCurrent: false,
+    };
+  },
   computed: {
     time() {
-      return `${this.startTime} - ${this.endTime}`;
+      return `${this.startTime} - ${this.endTime}${this.isCurrent ? ' (текущий)' : ''}`;
     },
+  },
+  created() {
+    if (this.type !== 'witr') {
+      const current = new Date();
+      const start = new Date(current.getTime());
+      const end = new Date(current.getTime());
+      start.setHours(this.startTime.split(':')[0]);
+      start.setMinutes(this.startTime.split(':')[1]);
+      start.setSeconds(0);
+      end.setHours(this.endTime.split(':')[0]);
+      end.setMinutes(this.endTime.split(':')[1]);
+      end.setSeconds(0);
+      this.isCurrent = start <= current && current < end;
+    }
   },
 };
 </script>
@@ -66,6 +85,11 @@ export default {
   &:hover {
     &::before {
       opacity: 1;
+    }
+  }
+  &.current {
+    &::before {
+      opacity: 0.5;
     }
   }
 }

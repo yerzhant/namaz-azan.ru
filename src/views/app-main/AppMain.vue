@@ -92,11 +92,22 @@
       .buttons
         AppButton(title="ВСЕ ВИДЫ НАМАЗА" link="/" blue)
         AppButton(title="УСЛОВИЯ НАМАЗА" link="/")
+
+    AppSection(title="ВИДЫ ОЧИЩЕНИЯ")
+      Banner(
+        type="gusl"
+        title="ГУСЛЬ"
+        shortDesc="Полное омовение"
+        desc="Полное ритуальное омовение водой всего тела целиком. В ряде \
+          случаев тахарат недостаточен для достижения ритуальной чистоты"
+        primaryTitle="НАЧАТЬ ОБУЧЕНИЕ"
+      )
 </template>
 
 <script>
 import Banner from '@/components/Banner.vue';
 import AppButton from '@/components/AppButton.vue';
+import AppSection from '@/components/app-section/AppSection.vue';
 import Slogan from '@/components/separator/slogan/Slogan.vue';
 import NamazInfo from '@/components/namaz-info/NamazInfo.vue';
 
@@ -104,6 +115,7 @@ export default {
   components: {
     Banner,
     AppButton,
+    AppSection,
     Slogan,
     NamazInfo,
   },

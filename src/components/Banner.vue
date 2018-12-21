@@ -90,4 +90,19 @@ export default {
     background-image: url(../views/app-main/namaz-detailed.png);
   }
 }
+
+.gusl {
+  background-image: url(../views/app-main/gusl-bg.jpg);
+  width: 1076px;
+  height: 268px;
+  border: 1px solid #d4dee8;
+
+  .top {
+    flex-direction: row-reverse;
+  }
+  .image {
+    background-image: url(../views/app-main/gusl.png);
+    background-position: bottom;
+  }
+}
 </style>

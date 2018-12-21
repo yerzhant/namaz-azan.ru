@@ -96,6 +96,7 @@
     AppSection(title="ВИДЫ ОЧИЩЕНИЯ")
       Banner(
         type="gusl"
+        descStyleBlackBlue
         title="ГУСЛЬ"
         shortDesc="Полное омовение"
         desc="Полное ритуальное омовение водой всего тела целиком. В ряде \

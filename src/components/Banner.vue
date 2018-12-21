@@ -10,6 +10,7 @@
           :primaryTitle="primaryTitle"
           :primaryRed="primaryRed"
           :secondaryTitle="secondaryTitle"
+          :styleBlackBlue="descStyleBlackBlue"
         )
       .image
     .bottom
@@ -29,6 +30,7 @@ export default {
     primaryTitle: String,
     primaryRed: Boolean,
     secondaryTitle: String,
+    descStyleBlackBlue: Boolean,
   },
   components: {
     ActionDesc,

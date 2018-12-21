@@ -1,5 +1,5 @@
 <template lang="pug">
-  section.action-desc(:class="{'black-blue': styleBlackBlue}")
+  section.action-desc(:class="{'black-blue': styleBlackBlue, 'with-margin': withMargin}")
     h2.title {{ title }}
     .short-desc {{ shortDesc }}
     .desc(:class="{'up-border': descUpBorder}") {{ desc }}
@@ -21,6 +21,7 @@ export default {
     primaryRed: Boolean,
     secondaryTitle: String,
     styleBlackBlue: Boolean,
+    withMargin: Boolean,
   },
   components: {
     AppButton,
@@ -31,6 +32,10 @@ export default {
 <style lang="scss" scoped>
 .action-desc {
   width: 490px;
+  &.with-margin {
+    margin-left: 80px;
+    width: 410px;
+  }
 }
 .title {
   font-family: $pt-sans;

@@ -103,6 +103,16 @@
           случаев тахарат недостаточен для достижения ритуальной чистоты"
         primaryTitle="НАЧАТЬ ОБУЧЕНИЕ"
       )
+      Banner(
+        type="taharat"
+        descStyleBlackBlue
+        descWithMargin
+        title="ТАХАРАТ"
+        shortDesc="Малое омовение"
+        desc="Малое омовение является доступным и простым способом очищения \
+          и состоит всего из 4 фардов."
+        primaryTitle="НАЧАТЬ ОБУЧЕНИЕ"
+      )
 </template>
 
 <script>

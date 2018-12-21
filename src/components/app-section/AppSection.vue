@@ -19,6 +19,7 @@ export default {
   flex-direction: column;
   align-items: center;
   padding-top: 100px;
+  padding-bottom: 100px;
   background: url(./shadow.png) no-repeat top, url(./bg.png) no-repeat top;
 }
 .title {

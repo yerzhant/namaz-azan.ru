@@ -11,6 +11,7 @@
           :primaryRed="primaryRed"
           :secondaryTitle="secondaryTitle"
           :styleBlackBlue="descStyleBlackBlue"
+          :withMargin="descWithMargin"
         )
       .image
     .bottom
@@ -31,6 +32,7 @@ export default {
     primaryRed: Boolean,
     secondaryTitle: String,
     descStyleBlackBlue: Boolean,
+    descWithMargin: Boolean,
   },
   components: {
     ActionDesc,
@@ -104,6 +106,19 @@ export default {
   }
   .image {
     background-image: url(../views/app-main/gusl.png);
+    background-position: bottom;
+  }
+}
+
+.taharat {
+  background-image: url(../views/app-main/taharat-bg.jpg);
+  width: 1076px;
+  height: 265px;
+  border: 1px solid #d4dee8;
+  border-top: none;
+
+  .image {
+    background-image: url(../views/app-main/taharat.png);
     background-position: bottom;
   }
 }

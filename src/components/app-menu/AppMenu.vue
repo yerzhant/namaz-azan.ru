@@ -4,7 +4,7 @@
 
 <style lang="scss" scoped>
 .menu {
-  width: 200px;
+  width: 197px;
 
   @media (max-width: 1365px) {
     display: none;

@@ -69,8 +69,8 @@ export default {
   z-index: 5000;
   position: fixed;
   top: 0;
-  width: calc(100% - 200px);
-  max-width: 1920px - 200px;
+  width: calc(100% - 197px);
+  max-width: 1920px - 197px;
   height: 50px;
   background: url(./bg.png) no-repeat center / cover;
   border-bottom: 1px solid #a9b8cf;

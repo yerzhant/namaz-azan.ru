@@ -29,6 +29,10 @@ export default {
   margin-right: auto;
   margin-left: auto;
 }
+.menu {
+  align-self: stretch;
+  background-color: #142b4f;
+}
 .content {
   margin-top: 50px;
   width: 100%;

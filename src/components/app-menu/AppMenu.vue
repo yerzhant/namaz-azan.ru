@@ -1,13 +1,133 @@
 <template lang="pug">
   menu.menu
+    .header
+      .title ЭНЦИКЛОПЕДИЯ НАМАЗА
+      .desc Самоучитель и справочник
+        br
+        | Cпецпроект Azan.ru
+
+    nav.items
+      router-link.item(to="/")
+        .title ГЛАВНАЯ
+        .desc {{ $route.path === '/' ? 'Вы на главной' : 'Перейти на главную' }}
+      .item.right(to="/ttt")
+        .title ТАХАРАТ
+        .desc Очищение
+      .item.right(to="/ttt")
+        .title НАМАЗ
+        .desc Все виды намаза
+      .item.right(to="/ttt")
+        .title ОБУЧЕНИЕ
+        .desc Видео-фото уроки
+
+    menu.taharat
+      img.image(src="./taharat-bg.jpg")
+      nav.items
+        router-link.item(to="/xxx")
+          .title ГУСЛЬ
+          .desc Полное омовение
+        router-link.item(to="/xxx")
+          .title ВУДУ
+          .desc Малое омовение
+
+    .socials-block
+      Socials
 </template>
+
+<script>
+import Socials from '@/components/socials/Socials.vue';
+
+export default {
+  components: {
+    Socials,
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 .menu {
+  position: relative;
   width: 197px;
 
   @media (max-width: 1365px) {
     display: none;
   }
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 22px;
+  height: 145px;
+  background: url(./bg.jpg) no-repeat;
+  background-position-y: -13px;
+  border-bottom: 1px solid #313e54;
+  .title {
+    font-size: 16px;
+    letter-spacing: -0.5px;
+    line-height: 24px;
+    color: #f0faff;
+    font-family: $open-sans;
+    font-weight: bold;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.75);
+    border-bottom: 1px solid #2f4a75;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  .desc {
+    color: #aebbd2;
+    font-weight: 300;
+    font-size: 11px;
+    line-height: 17px;
+  }
+}
+.items {
+  background-color: #081934;
+}
+.item {
+  display: block;
+  border-bottom: 1px solid #313e54;
+  font-size: 12px;
+  padding: 18px 22px;
+  cursor: pointer;
+  .title {
+    color: #d8e3f0;
+    margin-bottom: 4px;
+  }
+  .desc {
+    font-weight: 300;
+    color: #aebbd2;
+  }
+  &:hover,
+  &.router-link-exact-active {
+    background-color: #07162d;
+    .title {
+      color: #fff;
+    }
+  }
+  &.right {
+    background-image: url(./right.png);
+    background-repeat: no-repeat;
+    background-position: 197px - 22px;
+  }
+  &:hover {
+    &.right {
+      background-image: url(./right-active.png);
+    }
+  }
+}
+.taharat {
+  z-index: 10000;
+  position: absolute;
+  top: 0;
+  right: -197px;
+  border-left: 1px solid #313e54;
+  .image {
+    display: block;
+  }
+}
+.socials-block {
+  text-align: center;
+  margin-top: 20px;
 }
 </style>

@@ -74,7 +74,7 @@
       menu.submenu(v-show="flags.fard")
         .filler
         nav.items
-          router-link.item(to="#")
+          router-link.item(to="/fard/fadjr")
             .title ФАДЖР
             .desc Утренний
           router-link.item(to="#")
@@ -164,10 +164,13 @@ export default {
   background-color: #081934;
 }
 .item {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 71px;
   border-bottom: 1px solid #313e54;
   font-size: 12px;
-  padding: 18px 22px;
+  padding: 0 22px;
   cursor: pointer;
   .title {
     color: #d8e3f0;

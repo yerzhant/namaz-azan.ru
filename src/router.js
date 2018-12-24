@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import AppMain from './views/app-main/AppMain.vue';
+import Namaz from './views/Namaz.vue';
 
 Vue.use(Router);
 
@@ -10,8 +11,11 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
       component: AppMain,
+    },
+    {
+      path: '/fard/:type',
+      component: Namaz,
     },
     // {
     //   path: '/about',

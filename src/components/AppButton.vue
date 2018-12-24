@@ -3,13 +3,13 @@
     :to="link"
     :class="{red: red, blue: blue}"
     :style="{width: `${width}px`, height: `${height}px`}"
-  ) {{ title }}
+  )
+    slot
 </template>
 
 <script>
 export default {
   props: {
-    title: String,
     link: String,
     red: Boolean,
     blue: Boolean,

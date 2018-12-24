@@ -10,8 +10,8 @@
       descUpBorder
     )
       template(slot="buttons")
-        AppButton(title="ДА, НАЧАТЬ!" link="/" red)
-        AppButton(title="ПОДРОБНЫЕ УРОКИ" link="/")
+        AppButton(link="/" red) ДА, НАЧАТЬ!
+        AppButton(link="/") ПОДРОБНЫЕ УРОКИ
       Slogan
 
     Banner.namaz-detailed(
@@ -24,7 +24,7 @@
       descUpBorder
     )
       template(slot="buttons")
-        AppButton(title="НАЧАТЬ ОБУЧЕНИЕ" link="/" blue :height="36")
+        AppButton(link="/" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
       .table
         NamazInfo(
           type="fadjr"
@@ -91,8 +91,8 @@
           namaz1Type="ваджиба"
         )
       .buttons
-        AppButton(title="ВСЕ ВИДЫ НАМАЗА" link="/" blue)
-        AppButton(title="УСЛОВИЯ НАМАЗА" link="/")
+        AppButton(link="/" blue) ВСЕ ВИДЫ НАМАЗА
+        AppButton(link="/") УСЛОВИЯ НАМАЗА
 
     AppSection(title="ВИДЫ ОЧИЩЕНИЯ")
       Banner(
@@ -104,7 +104,7 @@
           случаев тахарат недостаточен для достижения ритуальной чистоты"
       )
         template(slot="buttons")
-          AppButton(title="НАЧАТЬ ОБУЧЕНИЕ" link="/" blue :height="36")
+          AppButton(link="/" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
       Banner(
         type="taharat"
         descStyleBlackBlue
@@ -115,7 +115,7 @@
           и состоит всего из 4 фардов."
       )
         template(slot="buttons")
-          AppButton(title="НАЧАТЬ ОБУЧЕНИЕ" link="/" blue :height="36")
+          AppButton(link="/" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 </template>
 
 <script>

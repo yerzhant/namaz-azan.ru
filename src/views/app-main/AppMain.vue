@@ -24,7 +24,7 @@
       descUpBorder
     )
       template(slot="buttons")
-        AppButton(title="НАЧАТЬ ОБУЧЕНИЕ" link="/" blue)
+        AppButton(title="НАЧАТЬ ОБУЧЕНИЕ" link="/" blue :height="36")
       .table
         NamazInfo(
           type="fadjr"
@@ -102,8 +102,9 @@
         shortDesc="Полное омовение"
         desc="Полное ритуальное омовение водой всего тела целиком. В ряде \
           случаев тахарат недостаточен для достижения ритуальной чистоты"
-        primaryTitle="НАЧАТЬ ОБУЧЕНИЕ"
       )
+        template(slot="buttons")
+          AppButton(title="НАЧАТЬ ОБУЧЕНИЕ" link="/" blue :height="36")
       Banner(
         type="taharat"
         descStyleBlackBlue
@@ -112,8 +113,9 @@
         shortDesc="Малое омовение"
         desc="Малое омовение является доступным и простым способом очищения \
           и состоит всего из 4 фардов."
-        primaryTitle="НАЧАТЬ ОБУЧЕНИЕ"
       )
+        template(slot="buttons")
+          AppButton(title="НАЧАТЬ ОБУЧЕНИЕ" link="/" blue :height="36")
 </template>
 
 <script>

@@ -1,5 +1,9 @@
 <template lang="pug">
-  router-link.button(:to="link" :class="{red: red, blue: blue}") {{ title }}
+  router-link.button(
+    :to="link"
+    :class="{red: red, blue: blue}"
+    :style="{width: `${width}px`, height: `${height}px`}"
+  ) {{ title }}
 </template>
 
 <script>
@@ -9,6 +13,14 @@ export default {
     link: String,
     red: Boolean,
     blue: Boolean,
+    width: {
+      type: Number,
+      default: 155,
+    },
+    height: {
+      type: Number,
+      default: 41,
+    },
   },
 };
 </script>
@@ -18,8 +30,6 @@ export default {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 155px;
-  height: 41px;
   font-size: 12px;
   color: #2d2d2d;
   border: 1px solid #afb2bb;

@@ -4,27 +4,18 @@
     .short-desc {{ shortDesc }}
     .desc(:class="{'up-border': descUpBorder}") {{ desc }}
     .buttons
-      AppButton(:title="primaryTitle" link="/" :red="primaryRed" :blue="!primaryRed")
-      AppButton(:title="secondaryTitle" link="/" v-if="secondaryTitle")
+      slot
 </template>
 
 <script>
-import AppButton from './AppButton.vue';
-
 export default {
   props: {
     title: String,
     shortDesc: String,
     desc: String,
     descUpBorder: Boolean,
-    primaryTitle: String,
-    primaryRed: Boolean,
-    secondaryTitle: String,
     styleBlackBlue: Boolean,
     withMargin: Boolean,
-  },
-  components: {
-    AppButton,
   },
 };
 </script>

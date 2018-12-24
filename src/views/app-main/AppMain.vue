@@ -8,10 +8,10 @@
         подготовили для Вас тур по намазу состоящий всего из 20 шагов. Начните \
         прямо сейчас и через 20 минут Вы будете знать о втором столпе Ислама!"
       descUpBorder
-      primaryTitle="ДА, НАЧАТЬ!"
-      primaryRed
-      secondaryTitle="ПОДРОБНЫЕ УРОКИ"
     )
+      template(slot="buttons")
+        AppButton(title="ДА, НАЧАТЬ!" link="/" red)
+        AppButton(title="ПОДРОБНЫЕ УРОКИ" link="/")
       Slogan
 
     Banner.namaz-detailed(
@@ -22,8 +22,9 @@
         понять принцип исполнения большинства намазов. Если Вы научитесь \
         читать “Зухр” - Вы сможете читать и другие намазы. Рекомендуем!"
       descUpBorder
-      primaryTitle="НАЧАТЬ ОБУЧЕНИЕ"
     )
+      template(slot="buttons")
+        AppButton(title="НАЧАТЬ ОБУЧЕНИЕ" link="/" blue)
       .table
         NamazInfo(
           type="fadjr"

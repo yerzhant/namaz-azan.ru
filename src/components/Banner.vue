@@ -7,12 +7,10 @@
           :shortDesc="shortDesc"
           :desc="desc"
           :descUpBorder="descUpBorder"
-          :primaryTitle="primaryTitle"
-          :primaryRed="primaryRed"
-          :secondaryTitle="secondaryTitle"
           :styleBlackBlue="descStyleBlackBlue"
           :withMargin="descWithMargin"
         )
+          slot(name="buttons")
       .image
     .bottom
       slot
@@ -28,9 +26,6 @@ export default {
     shortDesc: String,
     desc: String,
     descUpBorder: Boolean,
-    primaryTitle: String,
-    primaryRed: Boolean,
-    secondaryTitle: String,
     descStyleBlackBlue: Boolean,
     descWithMargin: Boolean,
   },

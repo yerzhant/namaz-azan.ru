@@ -4,7 +4,8 @@
     :style="{'background-image': `url(${bgImage})`}"
   )
     section.info
-    section.desc {{ desc }}
+    section.desc(:class="{closed: !descOpen}")
+      .desc-text {{ desc }}
     .button
       AppButton(
         :width="109"
@@ -24,7 +25,7 @@ export default {
   },
   data() {
     return {
-      descOpen: true,
+      descOpen: false,
     };
   },
   components: {
@@ -35,7 +36,6 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  padding-bottom: 30px;
   background-repeat: no-repeat;
   background-position: center -50px;
   &.desc-open {
@@ -46,15 +46,34 @@ export default {
   height: 445px;
 }
 .desc {
-  font-family: $pt-sans;
-  font-size: 16px;
-  line-height: 24px;
-  column-count: 2;
-  column-gap: 65px;
-  padding: 25px 75px 35px;
+  position: relative;
+  &-text {
+    font-family: $pt-sans;
+    font-size: 16px;
+    line-height: 24px;
+    column-count: 2;
+    column-gap: 65px;
+    padding: 25px 75px 0;
+  }
+  &.closed {
+    height: 70px;
+    overflow: hidden;
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      content: '';
+      background: linear-gradient(to bottom, transparent, #f7fcff);
+      z-index: 1;
+    }
+  }
 }
 .button {
   background-color: #f7fcff;
   text-align: center;
+  padding-top: 35px;
+  padding-bottom: 30px;
 }
 </style>

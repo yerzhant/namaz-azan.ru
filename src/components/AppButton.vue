@@ -1,5 +1,5 @@
 <template lang="pug">
-  router-link.button(
+  router-link.app-button(
     :to="link"
     :class="{red: red, blue: blue, small: small}"
     :style="{width: `${width}px`, height: `${height}px`}"
@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.button {
+.app-button {
   display: inline-flex;
   justify-content: center;
   align-items: center;

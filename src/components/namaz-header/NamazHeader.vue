@@ -1,29 +1,30 @@
 <template lang="pug">
   header.header(:class="[type, {'desc-open': descOpen}]")
-    section.info
-      h1.title {{ title }}
-      .short-desc {{ shortDesc }}
-      .details
-        .type {{ typeText }}
-        .clocks {{ time }}
+    .info-wrapper
+      section.info
+        h1.title {{ title }}
+        .short-desc {{ shortDesc }}
+        .details
+          .type {{ typeText }}
+          .clocks {{ time }}
+            span.footnote *
+          .rakaats
+            .rakaats-count {{ rakaats1 }}
+            .rakaats-title {{ rakaats1Title }}
+          .rakaats(v-if="rakaats2")
+            .rakaats-count {{ rakaats2 }}
+            .rakaats-title {{ rakaats2Title }}
+          .rakaats(v-if="rakaats3")
+            .rakaats-count {{ rakaats3 }}
+            .rakaats-title {{ rakaats3Title }}
+        .buttons
+          AppButton(:link="button1Link" :width="114" :height="36" :blue="button1Blue") {{ button1 }}
+          AppButton(:link="button2Link" :width="114" :height="36" :blue="button2Blue") {{ button2 }}
+        .city-info
           span.footnote *
-        .rakaats
-          .rakaats-count {{ rakaats1 }}
-          .rakaats-title {{ rakaats1Title }}
-        .rakaats(v-if="rakaats2")
-          .rakaats-count {{ rakaats2 }}
-          .rakaats-title {{ rakaats2Title }}
-        .rakaats(v-if="rakaats3")
-          .rakaats-count {{ rakaats3 }}
-          .rakaats-title {{ rakaats3Title }}
-      .buttons
-        AppButton(:link="button1Link" :width="114" :height="36" :blue="button1Blue") {{ button1 }}
-        AppButton(:link="button2Link" :width="114" :height="36" :blue="button2Blue") {{ button2 }}
-      .city-info
-        span.footnote *
-        span Указано время намаза для города: {{ $store.state.city }}
-        span.bar |
-        span.select(@click="$store.commit('toggleSelectCity')") Другой город
+          span Указано время намаза для города: {{ $store.state.city }}
+          span.bar |
+          span.select(@click="$store.commit('toggleSelectCity')") Другой город
 
     section.desc(:class="{closed: !descOpen}")
       .desc-text {{ desc }}
@@ -94,9 +95,14 @@ export default {
   }
 }
 .info {
-  width: 480px + 2 * 75px;
+  &-wrapper {
+    width: 2 * 470px + 90px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  width: 480px;
   height: 445px;
-  padding: 60px 75px;
+  padding: 60px 0;
   .title {
     font-family: $pt-sans;
     font-weight: bold;
@@ -193,7 +199,10 @@ export default {
     line-height: 24px;
     column-count: 2;
     column-gap: 65px;
-    padding: 25px 75px 0;
+    padding-top: 25px;
+    width: 2 * 470px + 90px;
+    margin-right: auto;
+    margin-left: auto;
   }
   &.closed {
     height: 70px;

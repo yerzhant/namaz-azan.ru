@@ -2,9 +2,19 @@
   section.namaz
     NamazHeader(
       type="fadjr"
+      typeText="Утро"
       title="ФАДЖР: УТРЕННИЙ НАМАЗ"
       shortDesc="Детальный обзор утреннего намаза “Фаджр”, состоящего из 2 ракаатов \
                  фарда. Фаджр является первым из пяти обязательных намазов."
+      rakaats1="2"
+      rakaats1Title="Сунны"
+      rakaats2="2"
+      rakaats2Title="Фарда"
+      button1="СУННА"
+      button1Link="#"
+      button2="ФАРД"
+      button2Link="#"
+      button2Blue
       bgImage="http://localhost/media/images/namaz/fadjr-bg.png"
       desc="Фаджр состоит из 2 ракаатов сунны и 2 ракаатов фарда. Время его совершения yачинается \
             с наступлением рассвета и заканчивается за несколько мгновений до восхода солнца. \

@@ -4,7 +4,7 @@
     .container
       .gender.drop-down(
         :class="{active: genderOpen}"
-        @click="toggleGender"
+        @click.stop="toggleGender"
       ) Намаз:
         span.selected-item {{ genderText }}
         .items
@@ -61,6 +61,9 @@ export default {
       this.genderOpen = !this.genderOpen;
     },
   },
+  created() {
+    document.addEventListener('click', () => this.genderOpen = false);
+  }
 };
 </script>
 

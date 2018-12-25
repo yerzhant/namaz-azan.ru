@@ -1,5 +1,6 @@
 <template lang="pug">
-  section.namaz fffxx
+  section.namaz
+    NamazHeader
 </template>
 
 <script>

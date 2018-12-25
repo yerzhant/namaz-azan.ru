@@ -60,10 +60,16 @@ export default {
     toggleGender() {
       this.genderOpen = !this.genderOpen;
     },
+    hideMenus() {
+      this.genderOpen = false;
+    },
   },
   created() {
-    document.addEventListener('click', () => this.genderOpen = false);
-  }
+    document.addEventListener('click', this.hideMenus);
+  },
+  destroyed() {
+    document.removeEventListener('click', this.hideMenus);
+  },
 };
 </script>
 

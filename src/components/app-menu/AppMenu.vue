@@ -12,19 +12,19 @@
         .desc {{ $route.path === '/' ? 'Вы на главной' : 'Перейти на главную' }}
       .item.right(
         :class="{open: flags.taharat}"
-        @click="flags.taharat = !flags.taharat, closeAll('taharat')"
+        @click.stop="flags.taharat = !flags.taharat, closeAll('taharat')"
       )
         .title ТАХАРАТ
         .desc Очищение
       .item.right(
         :class="{open: flags.tutoring}"
-        @click="flags.tutoring = !flags.tutoring, closeAll('tutoring')"
+        @click.stop="flags.tutoring = !flags.tutoring, closeAll('tutoring')"
       )
         .title ОБУЧЕНИЕ
         .desc Видео-фото уроки
       .item.right(
         :class="{open: flags.namaz}"
-        @click="flags.namaz = !flags.namaz, closeAll('namaz')"
+        @click.stop="flags.namaz = !flags.namaz, closeAll('namaz')"
       )
         .title НАМАЗ
         .desc Все виды намаза
@@ -60,7 +60,7 @@
           .desc К прочтению
         .item.right(
           :class="{open: flags.fard}"
-          @click="flags.fard = !flags.fard, closeAll('namaz', 'fard')"
+          @click.stop="flags.fard = !flags.fard, closeAll('namaz', 'fard')"
         )
           .title ФАРД НАМАЗЫ
           .desc Обязательные
@@ -74,7 +74,7 @@
       menu.submenu(v-show="flags.fard")
         .filler
         nav.items
-          router-link.item(to="/fard/fadjr")
+          router-link.item(to="/fadjr")
             .title ФАДЖР
             .desc Утренний
           router-link.item(to="#")
@@ -116,6 +116,12 @@ export default {
           this.flags[k] = false;
         });
     },
+  },
+  created() {
+    document.addEventListener('click', this.closeAll);
+  },
+  destroyed() {
+    document.removeEventListener('click', this.closeAll);
   },
   components: {
     Socials,

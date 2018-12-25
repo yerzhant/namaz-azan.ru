@@ -1,5 +1,5 @@
 <template lang="pug">
-  section.namaz fff
+  section.namaz fffxx
 </template>
 
 <script>

@@ -14,7 +14,7 @@ export default new Router({
       component: AppMain,
     },
     {
-      path: '/fard/:type',
+      path: '/:type',
       component: Namaz,
     },
     // {

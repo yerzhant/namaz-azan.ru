@@ -6,24 +6,28 @@
       AppHeader
       router-view
       AppFooter
+    SelectCity
 </template>
 
 <script>
 import AppHeader from '@/components/app-header/AppHeader.vue';
 import AppFooter from '@/components/app-footer/AppFooter.vue';
 import AppMenu from '@/components/app-menu/AppMenu.vue';
+import SelectCity from '@/components/select-city/SelectCity.vue';
 
 export default {
   components: {
     AppHeader,
     AppFooter,
     AppMenu,
+    SelectCity,
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .site {
+  position: relative;
   display: flex;
   max-width: 1920px;
   margin-right: auto;

@@ -7,6 +7,7 @@ export default new Vuex.Store({
   state: {
     gender: 'm',
     city: 'Алматы',
+    selectCity: false,
   },
   mutations: {
     setGender: (state, gender) => {
@@ -14,6 +15,9 @@ export default new Vuex.Store({
     },
     setCity: (state, city) => {
       state.city = city;
+    },
+    toggleSelectCity: (state) => {
+      state.selectCity = !state.selectCity;
     },
   },
   actions: {

@@ -23,7 +23,7 @@
         span.footnote *
         span Указано время намаза для города: {{ $store.state.city }}
         span.bar |
-        span.select Другой город
+        span.select(@click="$store.commit('toggleSelectCity')") Другой город
 
     section.desc(:class="{closed: !descOpen}")
       .desc-text {{ desc }}
@@ -101,6 +101,7 @@ export default {
     font-family: $pt-sans;
     font-weight: bold;
     font-size: 25px;
+    letter-spacing: -0.8px;
     padding-bottom: 12px;
     margin-bottom: 16px;
     border-bottom: 1px solid #b8c2cb;
@@ -180,6 +181,7 @@ export default {
     }
     .select {
       color: #01498c;
+      cursor: pointer;
     }
   }
 }

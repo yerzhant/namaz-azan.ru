@@ -1,9 +1,6 @@
 <template lang="pug">
-  header.header(
-    :class="{'desc-open': descOpen}"
-    :style="{'background-image': `url(${bgImage})`}"
-  )
-    section.info(:class="type")
+  header.header(:class="[type, {'desc-open': descOpen}]")
+    section.info
       h1.title {{ title }}
       .short-desc {{ shortDesc }}
       .details
@@ -163,17 +160,6 @@ export default {
       margin-bottom: 8px;
     }
   }
-  &.fadjr {
-    .rakaats:last-child {
-      color: #175682;
-      .rakaats-count {
-        color: #146eb4;
-      }
-    }
-    .type {
-      background: url(./fadjr.png) no-repeat top;
-    }
-  }
   .buttons {
     > * {
       margin-right: 10px;
@@ -227,5 +213,19 @@ export default {
   text-align: center;
   padding-top: 35px;
   padding-bottom: 30px;
+}
+.fadjr {
+  background-image: url(./fadjr-bg.png);
+  .info {
+    .rakaats:last-child {
+      color: #175682;
+      .rakaats-count {
+        color: #146eb4;
+      }
+    }
+    .type {
+      background: url(./fadjr.png) no-repeat top;
+    }
+  }
 }
 </style>

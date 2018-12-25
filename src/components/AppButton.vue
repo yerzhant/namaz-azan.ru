@@ -1,8 +1,9 @@
 <template lang="pug">
   router-link.button(
     :to="link"
-    :class="{red: red, blue: blue}"
+    :class="{red: red, blue: blue, small: small}"
     :style="{width: `${width}px`, height: `${height}px`}"
+    @click.native="$emit('click')"
   )
     slot
 </template>
@@ -10,9 +11,13 @@
 <script>
 export default {
   props: {
-    link: String,
+    link: {
+      type: String,
+      default: '#',
+    },
     red: Boolean,
     blue: Boolean,
+    small: Boolean,
     width: {
       type: Number,
       default: 155,
@@ -33,6 +38,7 @@ export default {
   font-size: 12px;
   color: #2d2d2d;
   border: 1px solid #afb2bb;
+  outline: none;
   &.blue {
     color: #fff;
     background-color: #2b9ace;
@@ -42,6 +48,10 @@ export default {
     color: #fff;
     background-color: #d55d81;
     border-color: #d55d81;
+  }
+  &.small {
+    color: #717171;
+    font-size: 11px;
   }
 }
 </style>

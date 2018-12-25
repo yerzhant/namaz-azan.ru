@@ -21,7 +21,7 @@
         AppButton(:link="button2Link" :width="114" :height="36" :blue="button2Blue") {{ button2 }}
       .city-info
         span.footnote *
-        span Указано время намаза для города: Алматы
+        span Указано время намаза для города: {{ $store.state.city }}
         span.bar |
         span.select Другой город
 

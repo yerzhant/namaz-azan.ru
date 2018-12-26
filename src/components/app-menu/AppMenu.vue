@@ -1,10 +1,14 @@
 <template lang="pug">
-  menu.menu
+  menu.menu(:class="$store.state.menu")
     .header
       .title ЭНЦИКЛОПЕДИЯ НАМАЗА
       .desc Самоучитель и справочник
         br
         | Cпецпроект Azan.ru
+
+    .back-to-main
+      span Назад в меню
+      img(src="./menu.png")
 
     nav.items
       router-link.item(to="/")
@@ -112,7 +116,7 @@ export default {
     closeAll(exceptL1, exceptL2) {
       Object.keys(this.flags)
         .filter(k => k !== exceptL1 && k !== exceptL2)
-        .forEach((k) => {
+        .forEach(k => {
           this.flags[k] = false;
         });
     },
@@ -133,6 +137,17 @@ export default {
 .menu {
   position: relative;
   width: 197px;
+  .back-to-main {
+    display: none;
+  }
+  &.level-2 {
+    .header {
+      display: none;
+    }
+    .back-to-main {
+      display: block;
+    }
+  }
 
   @media (max-width: 1365px) {
     display: none;

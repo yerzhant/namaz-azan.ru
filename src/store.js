@@ -6,22 +6,26 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     gender: 'm',
-    namaz: '',
+    namaz: 'fadjr',
     city: 'Алматы',
     selectCity: false,
+    menu: 'level-2',
   },
   mutations: {
-    setGender: (state, gender) => {
+    setGender(state, gender) {
       state.gender = gender;
     },
-    setNamaz: (state, namaz) => {
+    setNamaz(state, namaz) {
       state.namaz = namaz;
     },
-    setCity: (state, city) => {
+    setCity(state, city) {
       state.city = city;
     },
-    toggleSelectCity: (state) => {
+    toggleSelectCity(state) {
       state.selectCity = !state.selectCity;
+    },
+    setCurrentMenu(state, menu) {
+      state.menu = menu;
     },
   },
   actions: {

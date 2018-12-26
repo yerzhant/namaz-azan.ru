@@ -1,5 +1,5 @@
 <template lang="pug">
-  header.header(:class="[type, {'desc-open': descOpen}]")
+  header.header(:class="type")
     .info-wrapper
       section.info
         h1.title {{ title }}
@@ -19,7 +19,20 @@
             .rakaats-title {{ rakaats3Title }}
         .buttons
           AppButton(:link="button1Link" :width="114" :height="36" :blue="button1Blue") {{ button1 }}
-          AppButton(:link="button2Link" :width="114" :height="36" :blue="button2Blue") {{ button2 }}
+          AppButton(
+            :link="button2Link"
+            :width="114"
+            :height="36"
+            :blue="button2Blue"
+            v-if="button2"
+          ) {{ button2 }}
+          AppButton(
+            :link="button3Link"
+            :width="114"
+            :height="36"
+            :blue="button3Blue"
+            v-if="button3"
+          ) {{ button3 }}
         .city-info
           span.footnote *
           span Указано время намаза для города: {{ $store.state.city }}
@@ -51,7 +64,7 @@ export default {
     rakaats2: String,
     rakaats2Title: String,
     rakaats3: String,
-    rakaats4Title: String,
+    rakaats3Title: String,
     button1: String,
     button1Link: String,
     button1Blue: Boolean,
@@ -62,7 +75,6 @@ export default {
     button3Link: String,
     button3Blue: Boolean,
     desc: String,
-    bgImage: String,
   },
   data() {
     return {
@@ -73,6 +85,19 @@ export default {
     time() {
       switch (this.type) {
         case 'fadjr':
+          return '06:59 - 07:42';
+
+        case 'dhuhr':
+          return '06:59 - 07:42';
+
+        case 'asr':
+          return '06:59 - 07:42';
+
+        case 'maghrib':
+          return '06:59 - 07:42';
+
+        case 'isha':
+        case 'witr':
           return '06:59 - 07:42';
 
         default:
@@ -90,9 +115,7 @@ export default {
 .header {
   background-repeat: no-repeat;
   background-position: center -50px;
-  &.desc-open {
-    background-color: #f7fcff;
-  }
+  background-color: #f7fcff;
 }
 .info {
   &-wrapper {
@@ -236,6 +259,104 @@ export default {
     }
     .type {
       background: url(./fadjr.png) no-repeat top;
+    }
+  }
+}
+.dhuhr {
+  background-image: url(./dhuhr-bg.png);
+  .info {
+    .rakaats:nth-last-child(2) {
+      color: #175682;
+      .rakaats-count {
+        color: #146eb4;
+      }
+    }
+    .type {
+      background: url(./dhuhr.png) no-repeat top;
+    }
+  }
+}
+.asr {
+  background-image: url(./asr-bg.png);
+  background-color: #fdfcfa;
+  .button {
+    background-color: #fdfcfa;
+  }
+  .desc.closed::before {
+    background: linear-gradient(to bottom, transparent, #fdfcfa);
+  }
+  .info {
+    .rakaats:last-child {
+      color: #175682;
+      .rakaats-count {
+        color: #146eb4;
+      }
+    }
+    .type {
+      background: url(./asr.png) no-repeat center 10px;
+    }
+  }
+}
+.maghrib {
+  background-image: url(./maghrib-bg.png);
+  background-color: #f7f9ff;
+  .button {
+    background-color: #f7f9ff;
+  }
+  .desc.closed::before {
+    background: linear-gradient(to bottom, transparent, #f7f9ff);
+  }
+  .info {
+    .rakaats:nth-last-child(2) {
+      color: #175682;
+      .rakaats-count {
+        color: #146eb4;
+      }
+    }
+    .type {
+      background: url(./maghrib.png) no-repeat top;
+    }
+  }
+}
+.isha {
+  background-image: url(./isha-bg.png);
+  background-color: #f7f8ff;
+  .button {
+    background-color: #f7f8ff;
+  }
+  .desc.closed::before {
+    background: linear-gradient(to bottom, transparent, #f7f8ff);
+  }
+  .info {
+    .rakaats:nth-last-child(3) {
+      color: #175682;
+      .rakaats-count {
+        color: #146eb4;
+      }
+    }
+    .type {
+      background: url(./isha.png) no-repeat top;
+    }
+  }
+}
+.witr {
+  background-image: url(./witr-bg.png);
+  background-color: #faf7ff;
+  .button {
+    background-color: #faf7ff;
+  }
+  .desc.closed::before {
+    background: linear-gradient(to bottom, transparent, #faf7ff);
+  }
+  .info {
+    .rakaats:last-child {
+      color: #175682;
+      .rakaats-count {
+        color: #146eb4;
+      }
+    }
+    .type {
+      background: url(./witr.png) no-repeat center 5px;
     }
   }
 }

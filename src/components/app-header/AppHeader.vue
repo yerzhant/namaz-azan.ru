@@ -1,5 +1,5 @@
 <template lang="pug">
-  header.header
+  header.header(:class="$store.state.namaz")
     .menu
     .container
       .gender.drop-down(
@@ -81,8 +81,26 @@ export default {
   width: calc(100% - 197px);
   max-width: 1920px - 197px;
   height: 50px;
-  background: url(./bg.png) no-repeat center / cover;
+  background: url(./bg.png) no-repeat center;
   border-bottom: 1px solid #a9b8cf;
+  &.fadjr {
+    background-image: url(./bg-fadjr.png);
+  }
+  &.dhuhr {
+    background-image: url(./bg-dhuhr.png);
+  }
+  &.asr {
+    background-image: url(./bg-asr.png);
+  }
+  &.maghrib {
+    background-image: url(./bg-maghrib.png);
+  }
+  &.isha {
+    background-image: url(./bg-isha.png);
+  }
+  &.witr {
+    background-image: url(./bg-witr.png);
+  }
 
   @media (max-width: 1365px) {
     width: 100%;

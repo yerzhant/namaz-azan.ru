@@ -10,6 +10,29 @@ export default new Vuex.Store({
     city: 'Алматы',
     selectCity: false,
     menu: 'level-2',
+    menuItems: [{
+      title: 'Fadjr',
+      right: true,
+      items: [{
+        title: 'Fadjr',
+        url: '#',
+        active: true,
+      }, {
+        title: 'Dhuhr',
+        url: '#',
+      }],
+    }, {
+      title: 'Fard',
+      right: true,
+      items: [{
+        title: 'Sunna',
+        url: '#',
+      }, {
+        title: 'Fard',
+        url: '#',
+        active: true,
+      }],
+    }],
   },
   mutations: {
     setGender(state, gender) {
@@ -24,7 +47,7 @@ export default new Vuex.Store({
     toggleSelectCity(state) {
       state.selectCity = !state.selectCity;
     },
-    setCurrentMenu(state, menu) {
+    setMenu(state, menu) {
       state.menu = menu;
     },
   },

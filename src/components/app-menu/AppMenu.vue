@@ -6,9 +6,10 @@
         br
         | Cпецпроект Azan.ru
 
-    .back-to-main
+    .back-to-main(@click="$store.commit('setMenu')")
       span Назад в меню
       img(src="./menu.png")
+    .level-2-image(:class="$store.state.namaz")
 
     nav.items
       router-link.item(to="/")
@@ -137,7 +138,8 @@ export default {
 .menu {
   position: relative;
   width: 197px;
-  .back-to-main {
+  .back-to-main,
+  .level-2-image {
     display: none;
   }
   &.level-2 {
@@ -145,10 +147,28 @@ export default {
       display: none;
     }
     .back-to-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 50px;
+      padding: 0 23px;
+      font-weight: 300;
+      font-size: 13px;
+      color: #aebbd2;
+      background-color: #081934;
+      cursor: pointer;
+    }
+    .level-2-image {
       display: block;
+      height: 69px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      &.fadjr {
+        background-image: url(./fadjr.png);
+      }
     }
   }
-
   @media (max-width: 1365px) {
     display: none;
   }

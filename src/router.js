@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import AppMain from './views/app-main/AppMain.vue';
-import Namaz from './views/Namaz.vue';
+// import Namaz from './views/Namaz.vue';
 
 Vue.use(Router);
 
@@ -15,7 +15,8 @@ export default new Router({
     },
     {
       path: '/:type',
-      component: Namaz,
+      // component: Namaz,
+      component: () => import(/* webpackChunkName: "namaz" */ './views/Namaz.vue'),
     },
     // {
     //   path: '/about',

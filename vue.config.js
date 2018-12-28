@@ -1,10 +1,13 @@
 module.exports = {
+  configureWebpack: {
+    performance: {
+      // maxEntrypointSize: 512000,
+      maxAssetSize: 512000,
+    },
+  },
   css: {
     loaderOptions: {
-      // pass options to sass-loader
       sass: {
-        // @/ is an alias to src/
-        // so this assumes you have a file named `src/variables.scss`
         data: '@import "@/styles/vars.scss";',
       },
     },

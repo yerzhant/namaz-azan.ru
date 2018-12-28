@@ -34,7 +34,7 @@
           .tab-content(:class="{active: tab2}") {{ content2 }}
           .tab-content(:class="{active: tab3}") {{ content3 }}
           .tab-content(:class="{active: tab4}") {{ content4 }}
-          // Player
+          AppPlayer.player(:type="type")
           AppButton(:height="36" blue) ДАЛЕЕ
       .media
         .image-1(:class="{active: image1}")
@@ -49,6 +49,7 @@
 
 <script>
 import AppButton from '@/components/AppButton.vue';
+import AppPlayer from '@/components/app-player/AppPlayer.vue';
 
 export default {
   props: {
@@ -76,6 +77,7 @@ export default {
   },
   components: {
     AppButton,
+    AppPlayer,
   },
 };
 </script>
@@ -210,7 +212,14 @@ export default {
     display: none;
   }
 }
+.player {
+  margin-top: 67px;
+  margin-bottom: 41px;
+}
 .niet {
+  .player {
+    display: none;
+  }
   .image-1 {
     background-image: url(./niet.png);
   }

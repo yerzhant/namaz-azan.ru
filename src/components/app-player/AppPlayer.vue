@@ -42,7 +42,7 @@ export default {
         onfinish: () => {
           this.playing = false;
           this.player = null;
-          this.time = '00:00',
+          this.time = '00:00';
           this.position = '0';
         },
       });

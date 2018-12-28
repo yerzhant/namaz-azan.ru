@@ -25,14 +25,26 @@
             фаджра до того, как солнце выйдет из-за горизонта. В случае совершения фаджр-намаза \
             в одиночку, предпочительно выполнить его в самом начале времени.  "
     )
+    AppSection(title="1 РАКААТ" rakaat)
+      .line
 </template>
 
 <script>
 import NamazHeader from '@/components/namaz-header/NamazHeader.vue';
+import AppSection from '@/components/app-section/AppSection.vue';
 
 export default {
   components: {
     NamazHeader,
+    AppSection,
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #b0bacc;
+}
+</style>

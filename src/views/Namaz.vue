@@ -27,16 +27,26 @@
     )
     AppSection(title="1 РАКААТ" rakaat)
       .line
+      Rukn(
+        type="takbir"
+        title="ТАКБИР"
+        subTitle="Вступление в намаз"
+        number="2"
+        shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
+                   и произносит первый такбир:"
+      )
 </template>
 
 <script>
 import NamazHeader from '@/components/namaz-header/NamazHeader.vue';
 import AppSection from '@/components/app-section/AppSection.vue';
+import Rukn from '@/components/rukn/Rukn.vue';
 
 export default {
   components: {
     NamazHeader,
     AppSection,
+    Rukn,
   },
 };
 </script>

@@ -9,26 +9,38 @@
     .info
       .description
         .tabs
-          .tab-1 Транскрипция
-          .tab-2 Перевод
-          .tab-3 Арабский
-          .tab-4 Описание
+          .tab(
+            :class="{active: tab1}"
+            @click="tab2 = tab3 = tab4 = false; tab1 = true"
+          ) Транскрипция
+          .tab(
+            :class="{active: tab2}"
+            @click="tab1 = tab3 = tab4 = false; tab2 = true"
+          ) Перевод
+          .tab(
+            :class="{active: tab3}"
+            @click="tab1 = tab2 = tab4 = false; tab3 = true"
+          ) Арабский
+          .tab(
+            :class="{active: tab4}"
+            @click="tab1 = tab2 = tab3 = false; tab4 = true"
+          ) Описание
         .tab-contents
-          .tab-content-1 {{ content1 }}
-          .tab-content-2 {{ content2 }}
-          .tab-content-3 {{ content3 }}
-          .tab-content-4 {{ content4 }}
-        // Player
-        AppButton(:height="36" blue) ДАЛЕЕ
+          .tab-content(:class="{active: tab1}") {{ content1 }}
+          .tab-content(:class="{active: tab2}") {{ content2 }}
+          .tab-content(:class="{active: tab3}") {{ content3 }}
+          .tab-content(:class="{active: tab4}") {{ content4 }}
+          // Player
+          AppButton(:height="36" blue) ДАЛЕЕ
       .media
-        .main-1
-        .main-2
-        .main-3
+        .image-1(:class="{active: image1}")
+        .image-2(:class="{active: image2}")
+        .image-3(:class="{active: image3}")
         .tool-bar
           .button.image.active
-          .button.b1.active 1
-          .button.b2 2
-          .button.b3 3
+          .button.b1(:class="{active: image1}" @click="image2 = image3 = false; image1 = true") 1
+          .button.b2(:class="{active: image2}" @click="image1 = image3 = false; image2 = true") 2
+          .button.b3(:class="{active: image3}" @click="image1 = image2 = false; image3 = true") 3
 </template>
 
 <script>
@@ -46,6 +58,17 @@ export default {
     content2: String,
     content3: String,
     content4: String,
+  },
+  data() {
+    return {
+      image1: true,
+      image2: false,
+      image3: false,
+      tab1: true,
+      tab2: false,
+      tab3: false,
+      tab4: false,
+    };
   },
   components: {
     AppButton,
@@ -90,28 +113,63 @@ export default {
 .info {
   display: flex;
 }
+.description {
+  flex-grow: 1;
+}
 .tabs {
   display: flex;
   background-color: #eff4f7;
+  border-left: 1px solid #cbd3db;
+  margin-bottom: 50px;
+  > .tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 120px;
+    height: 41px;
+    border: 1px solid #cbd3db;
+    border-left: none;
+    cursor: pointer;
+    font-family: $pt-sans;
+    font-size: 13px;
+    color: #465d73;
+    &.active {
+      background-color: #fff;
+      border-bottom: 1px solid #fff;
+    }
+  }
+}
+.tab-contents {
+  padding: 0 10px;
+}
+.tab-content {
+  display: none;
+  font-family: $pt-sans;
+  font-size: 16px;
+  line-height: 24px;
+  &.active {
+    display: block;
+  }
 }
 .media {
   display: flex;
   width: 480px;
   height: 569px;
+  margin-left: 58px;
   background: url(./bg-media.png) no-repeat top;
   background-color: #f7fcff;
   border-top: 1px solid #cbd3db;
 }
-.main-1,
-.main-2,
-.main-3 {
+.image-1,
+.image-2,
+.image-3 {
   display: none;
   flex-grow: 1;
   background-repeat: no-repeat;
   background-position: center;
-}
-.main-1 {
-  display: block;
+  &.active {
+    display: block;
+  }
 }
 .tool-bar {
   background-color: #eff5f7;
@@ -125,8 +183,9 @@ export default {
     font-size: 17px;
     color: #9bafbf;
     border-bottom: 1px solid #cbd3db;
+    cursor: pointer;
     &.image {
-      background: url(./image.png) no-repeat center;
+      background: url(./images.png) no-repeat center;
       margin-bottom: 175px;
     }
     &.b1 {
@@ -137,10 +196,22 @@ export default {
       color: #2b87ce;
     }
   }
+  .b1,
+  .b2,
+  .b3 {
+    display: none;
+  }
 }
 .takbir {
-  .main-1 {
+  .b1,
+  .b2 {
+    display: flex;
+  }
+  .image-1 {
     background-image: url(./takbir-1.png);
+  }
+  .image-2 {
+    background-image: url(./takbir-2.png);
   }
 }
 </style>

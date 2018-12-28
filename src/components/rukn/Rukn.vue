@@ -1,5 +1,5 @@
 <template lang="pug">
-  section.rukn(:class="type")
+  section.rukn(:class="[type, {first: first}]")
     .header
       .header-text
         h2.title {{ title }}
@@ -8,23 +8,27 @@
     .short-desc {{ shortDesc }}
     .info
       .description
-        .tabs
+        .tabs(v-if="content1 || content2 || content3")
           .tab(
+            v-if="content1"
             :class="{active: tab1}"
             @click="tab2 = tab3 = tab4 = false; tab1 = true"
           ) Транскрипция
           .tab(
+            v-if="content2"
             :class="{active: tab2}"
             @click="tab1 = tab3 = tab4 = false; tab2 = true"
           ) Перевод
           .tab(
+            v-if="content3"
             :class="{active: tab3}"
             @click="tab1 = tab2 = tab4 = false; tab3 = true"
           ) Арабский
-          .tab(
-            :class="{active: tab4}"
-            @click="tab1 = tab2 = tab3 = false; tab4 = true"
-          ) Описание
+          //- .tab(
+          //-   v-if="content4"
+          //-   :class="{active: tab4}"
+          //-   @click="tab1 = tab2 = tab3 = false; tab4 = true"
+          //- ) Описание
         .tab-contents
           .tab-content(:class="{active: tab1}") {{ content1 }}
           .tab-content(:class="{active: tab2}") {{ content2 }}
@@ -81,6 +85,10 @@ export default {
   width: 100%;
   padding: 70px 35px;
   background: url(./bg-top.png) no-repeat top;
+  &.first {
+    background: none;
+    padding-top: 86px;
+  }
 }
 .header {
   display: flex;
@@ -119,7 +127,8 @@ export default {
 .tabs {
   display: flex;
   background-color: #eff4f7;
-  border-left: 1px solid #cbd3db;
+  border: 1px solid #cbd3db;
+  height: 41px;
   margin-bottom: 50px;
   > .tab {
     display: flex;
@@ -127,8 +136,7 @@ export default {
     align-items: center;
     flex-basis: 120px;
     height: 41px;
-    border: 1px solid #cbd3db;
-    border-left: none;
+    border-right: 1px solid #cbd3db;
     cursor: pointer;
     font-family: $pt-sans;
     font-size: 13px;
@@ -200,6 +208,11 @@ export default {
   .b2,
   .b3 {
     display: none;
+  }
+}
+.niet {
+  .image-1 {
+    background-image: url(./niet.png);
   }
 }
 .takbir {

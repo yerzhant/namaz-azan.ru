@@ -28,13 +28,22 @@
     AppSection(title="1 РАКААТ" rakaat)
       .line
       Rukn(
+        type="niet"
+        title="ТАКБИР"
+        subTitle="Вступление в намаз"
+        number="1"
+        shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
+                   и произносит первый такбир:"
+        first
+      )
+      Rukn(
         type="takbir"
         title="ТАКБИР"
         subTitle="Вступление в намаз"
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
                    и произносит первый такбир:"
-        content1="1"
+        content1="Аллаху Акбар!"
         content2="2"
         content3="3"
         content4="4"

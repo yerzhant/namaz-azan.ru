@@ -2,7 +2,7 @@
   section.rukn(:class="[type, {first: first}]")
     .header
       .header-text
-        h2.title {{ title }}
+        h3.title {{ title }}
         .sub-title(v-if="subTitle") {{ subTitle }}
       .number {{ number }}
     .short-desc {{ shortDesc }}
@@ -328,6 +328,37 @@ export default {
   }
   .image-2 {
     background-image: url(./sitting-2.png);
+  }
+}
+.tashahhud {
+  .b1,
+  .b2,
+  .b3 {
+    display: flex;
+  }
+  .image-1 {
+    background-image: url(./tashahhud-1.png);
+  }
+  .image-2 {
+    background-image: url(./tashahhud-2.png);
+  }
+  .image-3 {
+    background-image: url(./tashahhud-3.png);
+  }
+}
+.salam-right {
+  .image-1 {
+    background-image: url(./salam-right.png);
+  }
+}
+.salam-left {
+  .image-1 {
+    background-image: url(./salam-left.png);
+  }
+}
+.dua {
+  .image-1 {
+    background-image: url(./dua.png);
   }
 }
 </style>

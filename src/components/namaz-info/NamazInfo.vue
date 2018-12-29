@@ -107,6 +107,7 @@ export default {
   flex-grow: 1;
 }
 .title {
+  font-weight: 500;
   font-size: 18px;
   color: #3a3a3a;
 }
@@ -131,6 +132,7 @@ export default {
   text-align: center;
   border-left: 1px solid #c9e7e9;
   .count {
+    font-weight: 500;
     font-size: 20px;
     color: #989898;
     margin-bottom: 3px;

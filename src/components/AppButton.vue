@@ -35,12 +35,12 @@ export default {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  font-weight: 500;
   font-size: 12px;
   color: #2d2d2d;
   border: 1px solid #afb2bb;
   outline: none;
   &.blue {
-    font-weight: 500;
     color: #fff;
     background-color: #2b9ace;
     border: 1px solid #2b9ace;

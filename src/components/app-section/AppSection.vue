@@ -1,7 +1,7 @@
 <template lang="pug">
   section.app-section(:class="{rakaat: rakaat, 'not-first': notFirst}")
-    .header(:class="[$store.state.namaz]")
-      h1.title {{ title }}
+    .header(:class="$store.state.namaz")
+      h2.title {{ title }}
       img.moon(src="./moon.png")
     .content
       slot
@@ -19,35 +19,32 @@ export default {
 
 <style lang="scss" scoped>
 .app-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding-bottom: 100px;
 }
 .header {
   padding-top: 100px;
   background: url(./shadow.png) no-repeat top, url(./bg.png) no-repeat top;
+  text-align: center;
 }
 .title {
   margin: 0;
   font-weight: 300;
   font-size: 36px;
   color: #002f56;
-  text-align: center;
 }
 .moon {
-  margin-top: 15px;
-  margin-bottom: 80px;
+  margin-top: 20px;
+  margin-bottom: 86px;
 }
 .content {
   width: 1077px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .rakaat {
   .header {
     background-image: url(./shadow.png), url(./bg-small.png);
     padding-top: 75px;
-    width: 100%;
-    text-align: center;
   }
   .title {
     font-weight: normal;
@@ -58,11 +55,13 @@ export default {
     margin-bottom: 40px;
   }
   &.not-first {
-    border-top: 1px solid #cbd3db;
-    // border-bottom: 1px solid #b0c4c5;
+    .header {
+      height: 206px;
+      margin-bottom: 138px - 86px;
+    }
+    .fadjr {
+      background: url(./bg-fadjr.png) no-repeat center;
+    }
   }
-}
-.fadjr {
-  background: url(./bg-fadjr.png) no-repeat center;
 }
 </style>

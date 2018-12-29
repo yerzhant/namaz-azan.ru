@@ -144,6 +144,51 @@
         content2="2"
         content3="3"
         content4="4"
+        first
+      )
+      Rukn(
+        type="tashahhud"
+        title="ТАКБИР"
+        number="2"
+        shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
+                   и произносит первый такбир:"
+        content1="Аллаху Акбар!"
+        content2="2"
+        content3="3"
+        content4="4"
+      )
+      Rukn(
+        type="salam-right"
+        title="ТАКБИР"
+        number="2"
+        shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
+                   и произносит первый такбир:"
+        content1="Аллаху Акбар!"
+        content2="2"
+        content3="3"
+        content4="4"
+      )
+      Rukn(
+        type="salam-left"
+        title="ТАКБИР"
+        number="2"
+        shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
+                   и произносит первый такбир:"
+        content1="Аллаху Акбар!"
+        content2="2"
+        content3="3"
+        content4="4"
+      )
+      Rukn(
+        type="dua"
+        title="ТАКБИР"
+        number="2"
+        shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
+                   и произносит первый такбир:"
+        content1="Аллаху Акбар!"
+        content2="2"
+        content3="3"
+        content4="4"
       )
 </template>
 

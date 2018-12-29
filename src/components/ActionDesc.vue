@@ -1,5 +1,7 @@
 <template lang="pug">
-  section.action-desc(:class="{'black-blue': styleBlackBlue, 'with-margin': withMargin}")
+  section.action-desc(
+    :class="{'black-blue': styleBlackBlue, 'with-margin': withMargin, 'with-margin-2': withMargin2}"
+  )
     h2.title {{ title }}
     .short-desc {{ shortDesc }}
     .desc(:class="{'up-border': descUpBorder}") {{ desc }}
@@ -16,6 +18,7 @@ export default {
     descUpBorder: Boolean,
     styleBlackBlue: Boolean,
     withMargin: Boolean,
+    withMargin2: Boolean,
   },
 };
 </script>
@@ -26,6 +29,11 @@ export default {
   &.with-margin {
     margin-left: 80px;
     width: 410px;
+  }
+  &.with-margin-2 {
+    width: auto;
+    margin-right: 60px;
+    margin-left: 60px;
   }
 }
 .title {

@@ -190,18 +190,89 @@
         content3="3"
         content4="4"
       )
+    .line.type-2
+    AppSection(title="ОБЯЗАТЕЛЬНЫЕ НАМАЗЫ" regular bg1)
+      .fards
+        Banner(
+          type="fard fadjr"
+          :shadow="$store.state.namaz === 'fadjr'"
+          descStyleBlackBlue
+          descWithMargin2
+          title="ФАДЖР"
+          shortDesc="Утренний намаз"
+          desc="Детальный обзор утреннего намаза “Фаджр”, состоящего из 2 ракаатов \
+                фарда. Фаджр является первым из пяти обязательных намазов."
+        )
+          template(slot="buttons")
+            AppButton(link="/fadjr" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+
+        Banner(
+          type="fard dhuhr"
+          :shadow="$store.state.namaz === 'dhuhr'"
+          descStyleBlackBlue
+          descWithMargin2
+          title="ЗУХР"
+          shortDesc="Обеденный намаз"
+          desc="Детальный обзор обеденного намаза “Зухр”, состоящего из 4 ракаатов \
+                фарда. Зухр является вторым из пяти обязательных намазов."
+        )
+          template(slot="buttons")
+            AppButton(link="/dhuhr" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+
+        Banner(
+          type="fard asr"
+          :shadow="$store.state.namaz === 'asr'"
+          descStyleBlackBlue
+          descWithMargin2
+          title="АСР"
+          shortDesc="Полуденный намаз"
+          desc="Детальный обзор послеполуденного намаза “Аср”, состоящего из 4 \
+                ракаатов фарда. Аср является третьим из пяти обязательных намазов."
+        )
+          template(slot="buttons")
+            AppButton(link="/asr" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+
+        Banner(
+          type="fard maghrib"
+          :shadow="$store.state.namaz === 'maghrib'"
+          descStyleBlackBlue
+          descWithMargin2
+          title="МАГРИБ"
+          shortDesc="Вечерний намаз"
+          desc="Детальный обзор вечернего намаза “Магриб”, состоящего из 3 ракаатов \
+                фарда. Магриб является четвёртым из пяти обязательных намазов."
+        )
+          template(slot="buttons")
+            AppButton(link="/maghrib" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+
+        Banner(
+          type="fard isha"
+          :shadow="$store.state.namaz === 'isha'"
+          descStyleBlackBlue
+          descWithMargin2
+          title="ИША"
+          shortDesc="Ночной намаз"
+          desc="Детальный обзор обеденного намаза “Иша”, состоящего из 4 ракаатов \
+                фарда. Иша является последним из пяти обязательных намазов."
+        )
+          template(slot="buttons")
+            AppButton(link="/isha" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 </template>
 
 <script>
 import NamazHeader from '@/components/namaz-header/NamazHeader.vue';
 import AppSection from '@/components/app-section/AppSection.vue';
+import AppButton from '@/components/AppButton.vue';
 import Rukn from '@/components/rukn/Rukn.vue';
+import Banner from '@/components/Banner.vue';
 
 export default {
   components: {
     NamazHeader,
     AppSection,
+    AppButton,
     Rukn,
+    Banner,
   },
 };
 </script>
@@ -211,5 +282,13 @@ export default {
   width: 100%;
   height: 1px;
   background-color: #b0bacc;
+  &.type-2 {
+    background-color: #bfcad1;
+  }
+}
+.fards {
+  > * {
+    margin-bottom: 17px;
+  }
 }
 </style>

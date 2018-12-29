@@ -1,7 +1,7 @@
 <template lang="pug">
-  section.app-section(:class="{rakaat: rakaat, 'not-first': notFirst}")
+  section.app-section(:class="{rakaat: rakaat, 'not-first': notFirst, 'bg-1': bg1}")
     .header(:class="$store.state.namaz")
-      h2.title {{ title }}
+      h2.title(:class="{regular: regular}") {{ title }}
       img.moon(src="./moon.png")
     .content
       slot
@@ -11,6 +11,8 @@
 export default {
   props: {
     title: String,
+    regular: Boolean,
+    bg1: Boolean,
     rakaat: Boolean,
     notFirst: Boolean,
   },
@@ -20,6 +22,9 @@ export default {
 <style lang="scss" scoped>
 .app-section {
   padding-bottom: 100px;
+  &.bg-1 {
+    background-color: #f7fcff;
+  }
 }
 .header {
   padding-top: 100px;
@@ -31,6 +36,9 @@ export default {
   font-weight: 300;
   font-size: 36px;
   color: #002f56;
+  &.regular {
+    font-weight: normal;
+  }
 }
 .moon {
   margin-top: 20px;

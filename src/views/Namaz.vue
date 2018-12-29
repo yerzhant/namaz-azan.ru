@@ -1,7 +1,7 @@
 <template lang="pug">
   section.namaz
     NamazHeader(
-      type="fadjr"
+      :type="$store.state.namaz"
       typeText="Утро"
       title="ФАДЖР: УТРЕННИЙ НАМАЗ"
       shortDesc="Детальный обзор утреннего намаза “Фаджр”, состоящего из 2 ракаатов \

@@ -40,6 +40,7 @@ export default {
   border: 1px solid #afb2bb;
   outline: none;
   &.blue {
+    font-weight: 500;
     color: #fff;
     background-color: #2b9ace;
     border: 1px solid #2b9ace;

@@ -76,6 +76,75 @@
         content3="3"
         content4="4"
       )
+      Rukn(
+        type="qiraat"
+        title="ТАКБИР"
+        subTitle="Вступление в намаз"
+        number="2"
+        shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
+                   и произносит первый такбир:"
+        content1="Аллаху Акбар!"
+        content2="2"
+        content3="3"
+        content4="4"
+      )
+      Rukn(
+        type="ruku"
+        title="ТАКБИР"
+        subTitle="Вступление в намаз"
+        number="2"
+        shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
+                   и произносит первый такбир:"
+        content1="Аллаху Акбар!"
+        content2="2"
+        content3="3"
+        content4="4"
+      )
+      Rukn(
+        type="straight-up"
+        title="ТАКБИР"
+        number="2"
+        shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
+                   и произносит первый такбир:"
+        content1="Аллаху Акбар!"
+        content2="2"
+        content3="3"
+        content4="4"
+      )
+      Rukn(
+        type="sadjda"
+        title="ТАКБИР"
+        number="2"
+        shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
+                   и произносит первый такбир:"
+        content1="Аллаху Акбар!"
+        content2="2"
+        content3="3"
+        content4="4"
+      )
+      Rukn(
+        type="sitting"
+        title="ТАКБИР"
+        number="2"
+        shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
+                   и произносит первый такбир:"
+        content1="Аллаху Акбар!"
+        content2="2"
+        content3="3"
+        content4="4"
+      )
+    AppSection(title="2 РАКААТ" rakaat notFirst)
+      Rukn(
+        type="sitting"
+        title="ТАКБИР"
+        number="2"
+        shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
+                   и произносит первый такбир:"
+        content1="Аллаху Акбар!"
+        content2="2"
+        content3="3"
+        content4="4"
+      )
 </template>
 
 <script>

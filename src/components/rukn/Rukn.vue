@@ -3,7 +3,7 @@
     .header
       .header-text
         h2.title {{ title }}
-        .sub-title {{ subTitle }}
+        .sub-title(v-if="subTitle") {{ subTitle }}
       .number {{ number }}
     .short-desc {{ shortDesc }}
     .info
@@ -137,7 +137,7 @@ export default {
   margin-bottom: 17px;
   border-bottom: 1px solid #cbd3db;
   .title {
-    font-weight: normal;
+    font-weight: 500;
     font-size: 20px;
     color: #464747;
   }
@@ -283,7 +283,8 @@ export default {
     background-image: url(./takbir-2.png);
   }
 }
-.qiyam {
+.qiyam,
+.qiraat {
   .b1,
   .b2 {
     display: flex;
@@ -293,6 +294,40 @@ export default {
   }
   .image-2 {
     background-image: url(./qiyam-2.png);
+  }
+}
+.ruku {
+  .b1,
+  .b2 {
+    display: flex;
+  }
+  .image-1 {
+    background-image: url(./ruku-1.png);
+  }
+  .image-2 {
+    background-image: url(./ruku-2.png);
+  }
+}
+.straight-up {
+  .image-1 {
+    background-image: url(./straight-up.png);
+  }
+}
+.sadjda {
+  .image-1 {
+    background-image: url(./sadjda.png);
+  }
+}
+.sitting {
+  .b1,
+  .b2 {
+    display: flex;
+  }
+  .image-1 {
+    background-image: url(./sitting-1.png);
+  }
+  .image-2 {
+    background-image: url(./sitting-2.png);
   }
 }
 </style>

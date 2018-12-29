@@ -1,8 +1,9 @@
 <template lang="pug">
-  section.section(:class="{rakaat: rakaat}")
+  section.app-section(:class="{rakaat: rakaat}")
     h1.title {{ title }}
     img.moon(src="./moon.png")
-    slot
+    .content
+      slot
 </template>
 
 <script>
@@ -15,7 +16,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.section {
+.app-section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,8 +25,6 @@ export default {
   background: url(./shadow.png) no-repeat top, url(./bg.png) no-repeat top;
   &.rakaat {
     padding-top: 75px;
-    padding-right: 47px;
-    padding-left: 47px;
     background-image: url(./shadow.png), url(./bg-small.png);
     .title {
       font-weight: normal;
@@ -46,5 +45,8 @@ export default {
 .moon {
   margin-top: 15px;
   margin-bottom: 80px;
+}
+.content {
+  width: 1077px;
 }
 </style>

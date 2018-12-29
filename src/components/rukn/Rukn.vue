@@ -94,15 +94,11 @@ export default {
   },
   methods: {
     print() {
-      // document.getElementById('printer').innerHTML = `<p>${this.content1}</p>\
-      //   <p>${this.content2}</p><p>${this.content3}</p><p>${this.content4}</p>`;
-      // window.print();
       const win = window.open();
       win.document.write(`<p>${this.content1}</p>\
         <p>${this.content2}</p><p>${this.content3}</p><p>${this.content4}</p>`);
       win.print();
       win.close();
-      // return false;
     },
   },
   created() {

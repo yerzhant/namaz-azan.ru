@@ -24,19 +24,3 @@ h6 {
   margin: 0;
   padding: 0;
 }
-
-@media screen {
-  #printer {
-    display: none;
-  }
-}
-
-@media print {
-  body * {
-    display: none;
-  }
-
-  #printer, #printer * {
-    display: block;
-  }
-}

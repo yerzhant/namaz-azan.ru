@@ -95,6 +95,9 @@
             .title ИША
             .desc Ночной
 
+    nav.items-l2
+
+
     .socials-block
       Socials
 </template>
@@ -137,14 +140,15 @@ export default {
 <style lang="scss" scoped>
 .menu {
   position: fixed;
-  top: 0;
   width: 197px;
   .back-to-main,
-  .level-2-image {
+  .level-2-image,
+  .items-l2 {
     display: none;
   }
   &.level-2 {
-    .header {
+    .header,
+    .items {
       display: none;
     }
     .back-to-main {
@@ -180,6 +184,12 @@ export default {
       &.isha {
         background-image: url(./isha.png);
       }
+      &.witr {
+        background-image: url(./witr.png);
+      }
+    }
+    .items-l2 {
+      display: block;
     }
   }
   @media (max-width: 1365px) {

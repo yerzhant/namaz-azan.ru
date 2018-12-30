@@ -116,6 +116,7 @@ export default {
   background-repeat: no-repeat;
   background-position: center -50px;
   background-color: #f7fcff;
+  border-bottom: 1px solid #cbd3db;
 }
 .info {
   &-wrapper {

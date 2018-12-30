@@ -15,22 +15,40 @@ export default new Vuex.Store({
       right: true,
       items: [{
         title: 'Fadjr',
-        url: '#',
+        link: '#',
         active: true,
       }, {
         title: 'Dhuhr',
-        url: '#',
+        link: '#',
       }],
     }, {
       title: 'Fard',
       right: true,
       items: [{
         title: 'Sunna',
-        url: '#',
+        link: '#',
       }, {
         title: 'Fard',
-        url: '#',
+        link: '#',
         active: true,
+      }],
+    }, {
+      title: '1 rakaat',
+      items: [{
+        title: 'Niet',
+        link: '#',
+      }, {
+        title: 'Takbir',
+        link: '#',
+      }],
+    }, {
+      title: '2 rakaat',
+      items: [{
+        title: 'Qiyam',
+        link: '#',
+      }, {
+        title: 'Qyraat',
+        link: '#',
       }],
     }],
   },

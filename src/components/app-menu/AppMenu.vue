@@ -96,11 +96,17 @@
             .desc Ночной
 
     nav.items.items-l2
-      .item(
+      .item-l2(
         v-for="item in $store.state.menuItems"
-        :class="{right: item.right, down: !item.right}"
+        :class="{right: item.right, down: !item.right, open: item.open}"
+        @click="openL2(item)"
       )
         .title {{ item.title }}
+        .submenu-l2(v-show="item.open")
+          .subitem-l2(
+            v-for="subitem in item.items"
+            :class="{active: subitem.active}"
+          ) {{ subitem.title }}
 
     .socials-block
       Socials
@@ -127,6 +133,12 @@ export default {
         .forEach(k => {
           this.flags[k] = false;
         });
+    },
+    openL2(item) {
+      this.$store.state.menuItems.forEach(i => {
+        i.open = false;
+      });
+      item.open = true;
     },
   },
   created() {
@@ -194,6 +206,7 @@ export default {
     }
     .items-l2 {
       display: block;
+      border-top: 1px solid #313f54;
     }
   }
   @media (max-width: 1365px) {
@@ -275,7 +288,6 @@ export default {
   }
 }
 .submenu {
-  z-index: 10000;
   position: absolute;
   top: 0;
   right: -197px;
@@ -293,20 +305,77 @@ export default {
   text-align: center;
   margin-top: 20px;
 }
-.items-l2 {
-  .item {
+.item-l2 {
+  position: relative;
+  cursor: pointer;
+  &:hover {
+    background-color: #07162d;
+  }
+  &.right > .title {
+    background: url(./right-2.png) no-repeat;
+    background-position: 197px - 27px;
+  }
+  &.right.open > .title {
+    background-image: url(./right-open.png);
+    background-color: #07162d;
+  }
+  &.down > .title {
+    background: url(./down.png) no-repeat;
+    background-position: 197px - 30px;
+  }
+  &.down.open > .title {
+    background-image: url(./up.png);
+    background-color: #07162d;
+  }
+  .title {
+    display: flex;
+    align-items: center;
     height: 51px;
-    &.right {
-      background-position-x: 197px - 27px;
+    font-size: 13px;
+    color: #d8e4f3;
+    padding: 0 22px;
+    border-bottom: 1px solid #313f54;
+  }
+  &.right {
+    .submenu-l2 {
+      position: absolute;
+      top: -1px;
+      right: -197px;
+      width: 197px;
+      border-top: 1px solid #313f54;
+      background-color: #0c1e3b;
+      padding: 0;
     }
-    &.down {
-      
-    }
-    .title {
+    .subitem-l2 {
+      display: flex;
+      align-items: center;
+      height: 51px;
+      padding: 0 22px;
       font-weight: normal;
-      font-size: 13px;
       color: #d8e4f3;
+      border-bottom: 1px solid #313f54;
+      &:hover,
+      &.active {
+        color: #fff;
+        background: #081934;
+      }
     }
+  }
+}
+.submenu-l2 {
+  padding: 13px 0;
+  background-color: #0e2243;
+}
+.subitem-l2 {
+  font-weight: 300;
+  font-size: 13px;
+  color: #d8e3f0;
+  padding: 5px 22px;
+  &:hover,
+  &.active {
+    font-weight: normal;
+    color: #ade9ff;
+    background: url(./subitem-active.png) no-repeat 12px;
   }
 }
 </style>

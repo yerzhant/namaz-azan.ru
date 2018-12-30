@@ -11,10 +11,10 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'arrow-parens': 'off',
-    'no-param-reassign': ['error', {
-      props: true,
-      ignorePropertyModificationsFor: [
-        'state', // for vuex state
+    'no-param-reassign': 'off',//['error', {
+      // props: true,
+      // ignorePropertyModificationsFor: [
+      //   'state', // for vuex state
         // 'acc', // for reduce accumulators
         // 'e', // for e.returnvalue
         // 'ctx', // for Koa routing
@@ -23,8 +23,8 @@ module.exports = {
         // 'res', // for Express responses
         // 'response', // for Express responses
         // '$scope', // for Angular 1 scopes
-      ]
-    }],
+    //   ]
+    // }],
   },
   parserOptions: {
     parser: 'babel-eslint',

@@ -11,47 +11,48 @@ export default new Vuex.Store({
     selectCity: false,
     menu: 'level-2',
     menuItems: [{
-      title: 'Fadjr',
-      open: false,
+      title: 'Фаджр',
+      open: true,
       right: true,
       items: [{
-        title: 'Fadjr',
+        title: 'Фадрж',
         link: '#',
         active: true,
       }, {
-        title: 'Dhuhr',
+        title: 'Зухр',
         link: '#',
       }],
     }, {
-      title: 'Fard',
+      title: 'Фард',
       open: false,
       right: true,
       items: [{
-        title: 'Sunna',
+        title: 'Сунна',
         link: '#',
       }, {
-        title: 'Fard',
+        title: 'Фард',
         link: '#',
         active: true,
       }],
     }, {
-      title: '1 rakaat',
+      title: '1 ракаат',
       open: false,
       items: [{
-        title: 'Niet',
+        title: 'Ниет',
         link: '#',
+        active: true,
       }, {
-        title: 'Takbir',
+        title: 'Такбир',
         link: '#',
       }],
     }, {
-      title: '2 rakaat',
+      title: '2 ракаат',
       open: false,
       items: [{
-        title: 'Qiyam',
+        title: 'Кыям',
         link: '#',
       }, {
-        title: 'Qyraat',
+        title: 'Кыраат',
         link: '#',
       }],
     }],

@@ -37,6 +37,7 @@ export default {
   align-self: stretch;
   background-color: #142b4f;
   width: 197px;
+  z-index: 10000;
 }
 .content {
   margin-top: 50px;

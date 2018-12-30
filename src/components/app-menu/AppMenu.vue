@@ -135,10 +135,12 @@ export default {
         });
     },
     openL2(item) {
-      this.$store.state.menuItems.forEach(i => {
-        i.open = false;
-      });
-      item.open = true;
+      this.$store.state.menuItems
+        .filter(i => i !== item)
+        .forEach(i => {
+          i.open = false;
+        });
+      item.open = !item.open;
     },
   },
   created() {

@@ -11,7 +11,7 @@
       img(src="./menu.png")
     .level-2-image(:class="$store.state.namaz")
 
-    nav.items
+    nav.items.items-l1
       router-link.item(to="/")
         .title ГЛАВНАЯ
         .desc {{ $route.path === '/' ? 'Вы на главной' : 'Перейти на главную' }}
@@ -95,8 +95,12 @@
             .title ИША
             .desc Ночной
 
-    nav.items-l2
-
+    nav.items.items-l2
+      .item(
+        v-for="item in $store.state.menuItems"
+        :class="{right: item.right, down: !item.right}"
+      )
+        .title {{ item.title }}
 
     .socials-block
       Socials
@@ -148,7 +152,7 @@ export default {
   }
   &.level-2 {
     .header,
-    .items {
+    .items-l1 {
       display: none;
     }
     .back-to-main {
@@ -288,5 +292,21 @@ export default {
 .socials-block {
   text-align: center;
   margin-top: 20px;
+}
+.items-l2 {
+  .item {
+    height: 51px;
+    &.right {
+      background-position-x: 197px - 27px;
+    }
+    &.down {
+      
+    }
+    .title {
+      font-weight: normal;
+      font-size: 13px;
+      color: #d8e4f3;
+    }
+  }
 }
 </style>

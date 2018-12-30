@@ -12,6 +12,7 @@ export default new Vuex.Store({
     menu: 'level-2',
     menuItems: [{
       title: 'Fadjr',
+      open: false,
       right: true,
       items: [{
         title: 'Fadjr',
@@ -23,6 +24,7 @@ export default new Vuex.Store({
       }],
     }, {
       title: 'Fard',
+      open: false,
       right: true,
       items: [{
         title: 'Sunna',
@@ -34,6 +36,7 @@ export default new Vuex.Store({
       }],
     }, {
       title: '1 rakaat',
+      open: false,
       items: [{
         title: 'Niet',
         link: '#',
@@ -43,6 +46,7 @@ export default new Vuex.Store({
       }],
     }, {
       title: '2 rakaat',
+      open: false,
       items: [{
         title: 'Qiyam',
         link: '#',

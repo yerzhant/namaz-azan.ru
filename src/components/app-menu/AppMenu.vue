@@ -167,6 +167,18 @@ export default {
       &.fadjr {
         background-image: url(./fadjr.png);
       }
+      &.dhuhr {
+        background-image: url(./dhuhr.png);
+      }
+      &.asr {
+        background-image: url(./asr.png);
+      }
+      &.maghrib {
+        background-image: url(./maghrib.png);
+      }
+      &.isha {
+        background-image: url(./isha.png);
+      }
     }
   }
   @media (max-width: 1365px) {

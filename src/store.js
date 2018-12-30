@@ -6,7 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     gender: 'm',
-    namaz: 'dhuhr',
+    namaz: 'isha',
     city: 'Алматы',
     selectCity: false,
     menu: 'level-2',

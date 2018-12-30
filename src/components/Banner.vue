@@ -128,30 +128,30 @@ export default {
   }
   &.fadjr {
     .image {
-      background-image: url(/img/namaz/fard-fadjr.jpg);
+      background-image: url(../views/namaz/fard-fadjr.jpg);
       background-position: -1px 0;
     }
   }
   &.dhuhr {
     .image {
-      background-image: url(/img/namaz/fard-dhuhr.jpg);
+      background-image: url(../views/namaz/fard-dhuhr.jpg);
     }
   }
   &.asr {
-    height: 264px;
     .image {
-      background-image: url(/img/namaz/fard-asr.jpg);
+      background-image: url(../views/namaz/fard-asr.jpg);
+      background-position: 0 0;
     }
   }
   &.maghrib {
-    height: 264px;
     .image {
-      background-image: url(/img/namaz/fard-maghrib.jpg);
+      background-image: url(../views/namaz/fard-maghrib.jpg);
+      background-position: 0 0;
     }
   }
   &.isha {
     .image {
-      background-image: url(/img/namaz/fard-isha.jpg);
+      background-image: url(../views/namaz/fard-isha.jpg);
       background-position: -1px -1px;
     }
   }

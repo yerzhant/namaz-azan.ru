@@ -36,10 +36,11 @@ export default {
 .menu {
   align-self: stretch;
   background-color: #142b4f;
+  width: 197px;
 }
 .content {
   margin-top: 50px;
-  width: 100%;
+  width: calc(100% - 197px);
 
   @media (max-width: $mobile) {
     margin-top: 0;

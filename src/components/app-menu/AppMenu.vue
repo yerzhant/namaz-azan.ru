@@ -136,7 +136,8 @@ export default {
 
 <style lang="scss" scoped>
 .menu {
-  position: relative;
+  position: fixed;
+  top: 0;
   width: 197px;
   .back-to-main,
   .level-2-image {
@@ -226,6 +227,7 @@ export default {
   padding: 0 22px;
   cursor: pointer;
   .title {
+    font-weight: 500;
     color: #d8e3f0;
     margin-bottom: 4px;
   }

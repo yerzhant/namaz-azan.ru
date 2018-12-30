@@ -303,9 +303,11 @@ export default {
   }
   .image-1 {
     background-image: url(./ruku-1.png);
+    background-position-y: 215px;
   }
   .image-2 {
     background-image: url(./ruku-2.png);
+    background-position-y: 200px;
   }
 }
 .straight-up {
@@ -316,6 +318,7 @@ export default {
 .sadjda {
   .image-1 {
     background-image: url(./sadjda.png);
+    background-position-y: 300px;
   }
 }
 .sitting {
@@ -325,9 +328,11 @@ export default {
   }
   .image-1 {
     background-image: url(./sitting-1.png);
+    background-position-y: 160px;
   }
   .image-2 {
     background-image: url(./sitting-2.png);
+    background-position-y: 170px;
   }
 }
 .tashahhud {
@@ -338,9 +343,11 @@ export default {
   }
   .image-1 {
     background-image: url(./tashahhud-1.png);
+    background-position-y: 160px;
   }
   .image-2 {
     background-image: url(./tashahhud-2.png);
+    background-position-y: 170px;
   }
   .image-3 {
     background-image: url(./tashahhud-3.png);
@@ -349,16 +356,19 @@ export default {
 .salam-right {
   .image-1 {
     background-image: url(./salam-right.png);
+    background-position-y: 160px;
   }
 }
 .salam-left {
   .image-1 {
     background-image: url(./salam-left.png);
+    background-position-y: 160px;
   }
 }
 .dua {
   .image-1 {
     background-image: url(./dua.png);
+    background-position-y: 160px;
   }
 }
 </style>

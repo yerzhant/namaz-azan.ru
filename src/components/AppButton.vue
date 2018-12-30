@@ -37,7 +37,7 @@ export default {
   align-items: center;
   font-weight: 500;
   font-size: 12px;
-  color: #2d2d2d;
+  color: #4a4a4a;
   border: 1px solid #afb2bb;
   outline: none;
   &.blue {

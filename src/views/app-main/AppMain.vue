@@ -11,7 +11,7 @@
     )
       template(slot="buttons")
         AppButton(link="/" red) ДА, НАЧАТЬ!
-        AppButton(link="/") ПОДРОБНЫЕ УРОКИ
+        AppButton.color-2d(link="/") ПОДРОБНЫЕ УРОКИ
       Slogan
 
     Banner.namaz-detailed(
@@ -92,7 +92,7 @@
         )
       .buttons
         AppButton(link="/" blue) ВСЕ ВИДЫ НАМАЗА
-        AppButton(link="/") УСЛОВИЯ НАМАЗА
+        AppButton.color-2d(link="/") УСЛОВИЯ НАМАЗА
 
     AppSection(title="ВИДЫ ОЧИЩЕНИЯ")
       Banner(
@@ -155,5 +155,8 @@ export default {
       margin-right: 10px;
     }
   }
+}
+.color-2d {
+  color: #2d2d2d;
 }
 </style>

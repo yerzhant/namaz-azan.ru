@@ -40,7 +40,7 @@
           AppPlayer.player(:type="type")
           .buttons
             AppButton(:height="36" blue) ДАЛЕЕ
-            AppButton(:height="36" @click="print") РАСПЕЧАТАТЬ
+            AppButton.print(:height="36" @click="print") РАСПЕЧАТАТЬ
       .media
         .image-1(:class="{active: image1}")
         .image-2(:class="{active: image2}")
@@ -210,6 +210,9 @@ export default {
 .buttons {
   > * {
     margin-right: 10px;
+  }
+  .print {
+    color: #4a5a67;
   }
 }
 .media {

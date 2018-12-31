@@ -28,7 +28,9 @@
     AppSection(title="1 РАКААТ" rakaat)
       .line
       Rukn(
+        rakaat="1"
         type="niet"
+        next="#r1-takbir"
         title="ТАКБИР"
         subTitle="Вступление в намаз"
         number="1"
@@ -38,6 +40,7 @@
         first
       )
       Rukn(
+        rakaat="1"
         type="takbir"
         title="ТАКБИР"
         subTitle="Вступление в намаз"

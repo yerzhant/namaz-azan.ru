@@ -1,6 +1,6 @@
 <template lang="pug">
-  section.rukn(:class="[type, {first: first}]")
-    .header
+  section.rukn(:id="`r${rakaat}-${type}`" :class="[type, {first: first}]")
+    .header(id="xxx")
       .header-text
         h3.title {{ title }}
         .sub-title(v-if="subTitle") {{ subTitle }}
@@ -39,7 +39,7 @@
           .tab-content(:class="{active: tab4}") {{ content4 }}
           AppPlayer.player(:type="type")
           .buttons
-            AppButton(:height="36" blue) ДАЛЕЕ
+            AppButton(:height="36" blue @click="goNext") ДАЛЕЕ
             AppButton.print(:height="36" @click="print") РАСПЕЧАТАТЬ
       .media
         .image-1(:class="{active: image1}")
@@ -58,7 +58,9 @@ import AppPlayer from '@/components/app-player/AppPlayer.vue';
 
 export default {
   props: {
+    rakaat: String,
     type: String,
+    next: String,
     first: Boolean,
     title: String,
     subTitle: String,
@@ -93,6 +95,11 @@ export default {
     };
   },
   methods: {
+    goNext() {
+      if (this.next.substr(0, 1) === '#' && this.next.length > 1) {
+        this.$scrollTo(this.next);
+      }
+    },
     print() {
       const win = window.open();
       win.document.write(`<p>${this.content1}</p>\

@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    gender: 'm',
+    gender: 'man',
     namaz: 'fadjr',
     city: 'Алматы',
     selectCity: false,

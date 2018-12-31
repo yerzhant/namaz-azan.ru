@@ -1,6 +1,6 @@
 <template lang="pug">
   section.rukn(:id="`r${rakaat}-${type}`" :class="[type, {first: first}]")
-    .header(id="xxx")
+    .header
       .header-text
         h3.title {{ title }}
         .sub-title(v-if="subTitle") {{ subTitle }}
@@ -42,10 +42,10 @@
             AppButton(:height="36" blue @click="goNext") ДАЛЕЕ
             AppButton.print(:height="36" @click="print") РАСПЕЧАТАТЬ
       .media
-        .image-1(:class="{active: image1}")
-        .image-2(:class="{active: image2}")
-        .image-3(:class="{active: image3}")
-        .tool-bar
+        .image-1(:class="[$store.state.gender, {active: image1}]")
+        .image-2(:class="[$store.state.gender, {active: image2}]")
+        .image-3(:class="[$store.state.gender, {active: image3}]")
+        .tool-bar(:class="$store.state.gender")
           .button.image.active
           .button.b1(:class="{active: image1}" @click="image2 = image3 = false; image1 = true") 1
           .button.b2(:class="{active: image2}" @click="image1 = image3 = false; image2 = true") 2
@@ -281,6 +281,9 @@ export default {
   }
   .image-1 {
     background-image: url(./niet.png);
+    &.woman {
+      background-image: url(./niet-woman.png);
+    }
   }
 }
 .takbir {
@@ -288,11 +291,23 @@ export default {
   .b2 {
     display: flex;
   }
+  .tool-bar.woman {
+    .b1,
+    .b2 {
+      display: none;
+    }
+  }
   .image-1 {
     background-image: url(./takbir-1.png);
+    &.woman {
+      background-image: url(./takbir-woman.png);
+    }
   }
   .image-2 {
     background-image: url(./takbir-2.png);
+    &.woman {
+      background-image: url(./takbir-woman.png);
+    }
   }
 }
 .qiyam,
@@ -303,9 +318,15 @@ export default {
   }
   .image-1 {
     background-image: url(./qiyam-1.png);
+    &.woman {
+      background-image: url(./qiyam-woman-1.png);
+    }
   }
   .image-2 {
     background-image: url(./qiyam-2.png);
+    &.woman {
+      background-image: url(./qiyam-woman-2.png);
+    }
   }
 }
 .ruku {
@@ -313,24 +334,45 @@ export default {
   .b2 {
     display: flex;
   }
+  .tool-bar.woman {
+    .b1,
+    .b2 {
+      display: none;
+    }
+  }
   .image-1 {
     background-image: url(./ruku-1.png);
     background-position-y: 215px;
+    &.woman {
+      background-image: url(./ruku-woman.png);
+      background-position-y: 110px;
+    }
   }
   .image-2 {
     background-image: url(./ruku-2.png);
     background-position-y: 200px;
+    &.woman {
+      background-image: url(./ruku-woman.png);
+      background-position-y: 110px;
+    }
   }
 }
 .straight-up {
   .image-1 {
-    background-image: url(./straight-up.png);
+    background-image: url(./niet.png);
+    &.woman {
+      background-image: url(./niet-woman.png);
+    }
   }
 }
 .sadjda {
   .image-1 {
     background-image: url(./sadjda.png);
     background-position-y: 300px;
+    &.woman {
+      background-image: url(./sadjda-woman.png);
+      background-position-y: 270px;
+    }
   }
 }
 .sitting {
@@ -341,10 +383,17 @@ export default {
   .image-1 {
     background-image: url(./sitting-1.png);
     background-position-y: 160px;
+    &.woman {
+      background-image: url(./sitting-woman-1.png);
+    }
   }
   .image-2 {
     background-image: url(./sitting-2.png);
     background-position-y: 170px;
+    &.woman {
+      background-image: url(./sitting-woman-2.png);
+      background-position-y: 250px;
+    }
   }
 }
 .tashahhud {
@@ -354,33 +403,51 @@ export default {
     display: flex;
   }
   .image-1 {
-    background-image: url(./tashahhud-1.png);
+    background-image: url(./sitting-1.png);
     background-position-y: 160px;
+    &.woman {
+      background-image: url(./sitting-woman-1.png);
+    }
   }
   .image-2 {
-    background-image: url(./tashahhud-2.png);
+    background-image: url(./sitting-2.png);
     background-position-y: 170px;
+    &.woman {
+      background-image: url(./sitting-woman-2.png);
+    }
   }
   .image-3 {
-    background-image: url(./tashahhud-3.png);
+    background-image: url(./tashahhud.png);
+    &.woman {
+      background-image: url(./tashahhud-woman.png);
+    }
   }
 }
 .salam-right {
   .image-1 {
     background-image: url(./salam-right.png);
     background-position-y: 160px;
+    &.woman {
+      background-image: url(./salam-right-woman.png);
+    }
   }
 }
 .salam-left {
   .image-1 {
     background-image: url(./salam-left.png);
     background-position-y: 160px;
+    &.woman {
+      background-image: url(./salam-left-woman.png);
+    }
   }
 }
 .dua {
   .image-1 {
     background-image: url(./dua.png);
     background-position-y: 160px;
+    &.woman {
+      background-image: url(./dua-woman.png);
+    }
   }
 }
 </style>

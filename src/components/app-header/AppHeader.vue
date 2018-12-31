@@ -9,12 +9,12 @@
         span.selected-item {{ genderText }}
         .items
           .item(
-            :class="{active: gender == 'm'}"
-            @click="setGender('m')"
+            :class="{active: gender == 'man'}"
+            @click="setGender('man')"
           ) Для мужчин
           .item(
-            :class="{active: gender == 'w'}"
-            @click="setGender('w')"
+            :class="{active: gender == 'woman'}"
+            @click="setGender('woman')"
           ) Для женщин
 
       .madhhab.drop-down Мазхаб:
@@ -44,9 +44,9 @@ export default {
     },
     genderText() {
       switch (this.$store.state.gender) {
-        case 'm':
+        case 'man':
           return 'Для мужчин';
-        case 'w':
+        case 'woman':
           return 'Для женщин';
         default:
           return '???';

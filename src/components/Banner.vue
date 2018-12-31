@@ -12,7 +12,7 @@
           :withMargin2="descWithMargin2"
         )
           slot(name="buttons")
-      .image
+      .image(:class="$store.state.gender")
     .bottom
       slot
 </template>
@@ -130,29 +130,44 @@ export default {
     .image {
       background-image: url(../views/namaz/fard-fadjr.jpg);
       background-position: -1px 0;
+      &.woman {
+        background-image: url(../views/namaz/fard-fadjr-woman.jpg);
+      }
     }
   }
   &.dhuhr {
     .image {
       background-image: url(../views/namaz/fard-dhuhr.jpg);
+      &.woman {
+        background-image: url(../views/namaz/fard-dhuhr-woman.jpg);
+      }
     }
   }
   &.asr {
     .image {
       background-image: url(../views/namaz/fard-asr.jpg);
       background-position: 0 0;
+      &.woman {
+        background-image: url(../views/namaz/fard-asr-woman.jpg);
+      }
     }
   }
   &.maghrib {
     .image {
       background-image: url(../views/namaz/fard-maghrib.jpg);
       background-position: 0 0;
+      &.woman {
+        background-image: url(../views/namaz/fard-maghrib-woman.jpg);
+      }
     }
   }
   &.isha {
     .image {
       background-image: url(../views/namaz/fard-isha.jpg);
       background-position: -1px -1px;
+      &.woman {
+        background-image: url(../views/namaz/fard-isha-woman.jpg);
+      }
     }
   }
 }

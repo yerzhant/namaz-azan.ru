@@ -74,7 +74,22 @@ export default {
       margin-bottom: 138px - 86px;
     }
     .fadjr {
-      background: url(./bg-fadjr.png) no-repeat center;
+      background: url(./bg-fadjr.jpg) no-repeat center;
+    }
+    .dhuhr {
+      background: url(./bg-dhuhr.jpg) no-repeat center;
+    }
+    .asr {
+      background: url(./bg-asr.jpg) no-repeat center;
+    }
+    .maghrib {
+      background: url(./bg-maghrib.jpg) no-repeat center;
+    }
+    .isha {
+      background: url(./bg-isha.jpg) no-repeat center;
+    }
+    .witr {
+      background: url(./bg-witr.jpg) no-repeat center;
     }
   }
 }

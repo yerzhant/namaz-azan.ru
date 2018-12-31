@@ -53,6 +53,12 @@ export default {
   .header {
     background-image: url(./shadow.png), url(./bg-small.png);
     padding-top: 75px;
+    &.witr {
+      background-image: url(./shadow.png), url(./bg-small-witr.png);
+    }
+    &.asr {
+      background-image: url(./shadow.png), url(./bg-small-asr.png);
+    }
   }
   .title {
     font-weight: normal;

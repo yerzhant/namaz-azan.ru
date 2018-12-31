@@ -106,6 +106,8 @@
           .subitem-l2(
             v-for="subitem in item.items"
             :class="{active: subitem.active}"
+            :data-link="subitem.link.substring(1)"
+            @click.stop="goTo(subitem.link, item)"
           ) {{ subitem.title }}
 
     .socials-block
@@ -142,12 +144,35 @@ export default {
         });
       item.open = !item.open;
     },
+    goTo(link, item) {
+      if (link.substr(0, 1) === '#') {
+        this.$scrollTo(link);
+      } else {
+        this.$router.push(link);
+        item.open = false;
+      }
+    },
+    scrolling() {
+      const curPos = window.scrollY + 50;
+      document.querySelectorAll('.subitem-l2.active').forEach(i => {
+        i.classList.remove('active');
+      });
+      const bodyRect = document.body.getBoundingClientRect();
+      document.querySelectorAll('.rukn').forEach(r => {
+        const rect = r.getBoundingClientRect();
+        if (curPos >= rect.top - bodyRect.top && curPos <= rect.bottom - bodyRect.top) {
+          document.querySelector(`.subitem-l2[data-link=${r.id}]`).classList.add('active');
+        }
+      });
+    },
   },
   created() {
     document.addEventListener('click', this.closeAll);
+    document.addEventListener('scroll', this.scrolling);
   },
   destroyed() {
     document.removeEventListener('click', this.closeAll);
+    document.removeEventListener('scroll', this.scrolling);
   },
   components: {
     Socials,

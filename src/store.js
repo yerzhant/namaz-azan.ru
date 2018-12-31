@@ -12,15 +12,15 @@ export default new Vuex.Store({
     menu: 'level-2',
     menuItems: [{
       title: 'Фаджр',
-      open: true,
+      open: false,
       right: true,
       items: [{
         title: 'Фадрж',
-        link: '#',
+        link: '/fadjr',
         active: true,
       }, {
         title: 'Зухр',
-        link: '#',
+        link: '/dhuhr',
       }],
     }, {
       title: 'Фард',
@@ -39,11 +39,10 @@ export default new Vuex.Store({
       open: false,
       items: [{
         title: 'Ниет',
-        link: '#',
-        active: true,
+        link: '#r1-niet',
       }, {
         title: 'Такбир',
-        link: '#',
+        link: '#r1-takbir',
       }],
     }, {
       title: '2 ракаат',
@@ -53,7 +52,7 @@ export default new Vuex.Store({
         link: '#',
       }, {
         title: 'Кыраат',
-        link: '#',
+        link: '#r2-sitting',
       }],
     }],
   },

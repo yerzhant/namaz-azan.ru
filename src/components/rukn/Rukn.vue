@@ -96,8 +96,10 @@ export default {
   },
   methods: {
     goNext() {
-      if (this.next.substr(0, 1) === '#' && this.next.length > 1) {
+      if (this.next.substr(0, 1) === '#') {
         this.$scrollTo(this.next);
+      } else {
+        this.$router.push(this.next);
       }
     },
     print() {

@@ -138,6 +138,7 @@
       )
     AppSection(title="2 РАКААТ" rakaat notFirst)
       Rukn(
+        rakaat="2"
         type="sitting"
         title="ТАКБИР"
         number="2"
@@ -184,6 +185,7 @@
       )
       Rukn(
         type="dua"
+        next="/"
         title="ТАКБИР"
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \

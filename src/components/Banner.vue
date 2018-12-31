@@ -78,6 +78,10 @@ export default {
   .image {
     background-image: url(../views/app-main/first-namaz.png);
     background-position: bottom right;
+    &.woman {
+      background-image: url(../views/app-main/first-namaz-woman.png);
+      background-position-x: 50px;
+    }
   }
 }
 .namaz-detailed {
@@ -85,6 +89,9 @@ export default {
   height: 1031px;
   .image {
     background-image: url(../views/app-main/namaz-detailed.png);
+    &.woman {
+      background-image: url(../views/app-main/namaz-detailed-woman.png);
+    }
   }
 }
 .gusl {

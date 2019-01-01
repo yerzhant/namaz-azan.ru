@@ -172,6 +172,7 @@ export default {
 .tutoring {
   width: 162px;
   font-family: $roboto;
+  font-weight: 500;
   color: #fff;
   background: url(./tutoring.png) no-repeat center;
 }

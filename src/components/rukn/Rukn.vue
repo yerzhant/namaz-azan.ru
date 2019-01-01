@@ -37,7 +37,7 @@
           .tab-content(:class="{active: tab2}") {{ content2 }}
           .tab-content(:class="{active: tab3}") {{ content3 }}
           .tab-content(:class="{active: tab4}") {{ content4 }}
-          AppPlayer.player(:type="type")
+          AppPlayer.player(:type="audio")
           .buttons
             AppButton(:height="36" blue @click="goNext") ДАЛЕЕ
             AppButton.print(:height="36" @click="print") РАСПЕЧАТАТЬ
@@ -93,6 +93,16 @@ export default {
       tab3: false,
       tab4: false,
     };
+  },
+  computed: {
+    audio() {
+      switch (this.type) {
+        case 'qiyam':
+          return this.rakaat === '1' ? 'sana+istiatha' : 'basmala';
+        default:
+          return this.type;
+      }
+    },
   },
   methods: {
     goNext() {

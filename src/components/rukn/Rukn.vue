@@ -59,7 +59,9 @@ import AppPlayer from '@/components/app-player/AppPlayer.vue';
 export default {
   props: {
     rakaat: String,
+    rakaats: String,
     type: String,
+    kind: String,
     next: String,
     first: Boolean,
     title: String,
@@ -99,6 +101,24 @@ export default {
       switch (this.type) {
         case 'qiyam':
           return this.rakaat === '1' ? 'sana+istiatha' : 'basmala';
+        case 'qiraat':
+          switch (this.rakaat) {
+            case '1':
+              return 'fatiha+kauthar';
+            case '2':
+              return 'fatiha+ikhlas';
+            case '3':
+              return this.kind === 'sunna' || this.kind === 'wadjib' ? 'fatiha+falaq' : 'fatiha';
+            default:
+              return this.kind === 'sunna' ? 'fatiha+nas' : 'fatiha';
+          }
+        case 'tashahhud':
+          if (this.rakaats === '2') return 'attahiyat+salawat+dua';
+          if (this.rakaat === '2') return 'attahiyat';
+          return 'attahiyat+salawat+dua';
+        case 'salam-right':
+        case 'salam-left':
+          return 'salam';
         default:
           return this.type;
       }
@@ -457,6 +477,24 @@ export default {
     background-position-y: 160px;
     &.woman {
       background-image: url(./dua-woman.png);
+    }
+  }
+}
+.qunoot {
+  .b1,
+  .b2 {
+    display: flex;
+  }
+  .image-1 {
+    background-image: url(./takbir-1.png);
+    &.woman {
+      background-image: url(./takbir-woman.png);
+    }
+  }
+  .image-2 {
+    background-image: url(./qiyam-1.png);
+    &.woman {
+      background-image: url(./qiyam-woman-1.png);
     }
   }
 }

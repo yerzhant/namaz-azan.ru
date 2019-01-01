@@ -80,8 +80,10 @@
         content4="4"
       )
       Rukn(
+        rakaat="4"
         type="qiraat"
-        title="ТАКБИР"
+        kind="sunnaX"
+        title="ТАКБИР qiraat"
         subTitle="Вступление в намаз"
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
@@ -151,6 +153,8 @@
         first
       )
       Rukn(
+        rakaat="3"
+        rakaats="4"
         type="tashahhud"
         title="ТАКБИР"
         number="2"
@@ -187,6 +191,18 @@
         type="dua"
         next="/"
         title="ТАКБИР"
+        number="2"
+        shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
+                   и произносит первый такбир:"
+        content1="Аллаху Акбар!"
+        content2="2"
+        content3="3"
+        content4="4"
+      )
+      Rukn(
+        type="qunoot"
+        next="/"
+        title="ТАКБИР qunoot"
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
                    и произносит первый такбир:"

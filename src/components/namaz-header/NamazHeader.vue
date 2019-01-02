@@ -18,17 +18,17 @@
             .rakaats-count {{ rakaats3 }}
             .rakaats-title {{ rakaats3Title }}
         .buttons
-          AppButton(:link="button1Link" :width="114" :height="36" :blue="button1Blue") {{ button1 }}
+          AppButton(:link="button1Link" :width="buttonWidth" :height="36" :blue="button1Blue") {{ button1 }}
           AppButton(
             :link="button2Link"
-            :width="114"
+            :width="buttonWidth"
             :height="36"
             :blue="button2Blue"
             v-if="button2"
           ) {{ button2 }}
           AppButton(
             :link="button3Link"
-            :width="114"
+            :width="buttonWidth"
             :height="36"
             :blue="button3Blue"
             v-if="button3"
@@ -65,6 +65,10 @@ export default {
     rakaats2Title: String,
     rakaats3: String,
     rakaats3Title: String,
+    buttonWidth: {
+      type: Number,
+      default: 114,
+    },
     button1: String,
     button1Link: String,
     button1Blue: Boolean,
@@ -359,6 +363,21 @@ export default {
     .type {
       background: url(./witr.png) no-repeat center 5px;
     }
+  }
+}
+.wudu {
+  background-image: url(./wudu-bg.png);
+  .details,
+  .city-info {
+    display: none;
+  }
+  .short-desc {
+    padding-bottom: 16px;
+    margin-bottom: 23px;
+    border-bottom: 1px solid #b8c2cb;
+  }
+  .info {
+    padding: 95px 0;
   }
 }
 </style>

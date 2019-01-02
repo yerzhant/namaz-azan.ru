@@ -32,7 +32,7 @@ export default {
   }
   &.with-margin-2 {
     width: auto;
-    margin-right: 60px;
+    margin-right: 40px;
     margin-left: 60px;
   }
 }

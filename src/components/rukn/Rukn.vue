@@ -119,6 +119,8 @@ export default {
         case 'salam-right':
         case 'salam-left':
           return 'salam';
+        case 'wudu dua':
+          return 'wudu-dua';
         default:
           return this.type;
       }
@@ -495,6 +497,79 @@ export default {
     background-image: url(./qiyam-1.png);
     &.woman {
       background-image: url(./qiyam-woman-1.png);
+    }
+  }
+}
+.wudu {
+  .player {
+    display: none;
+  }
+  &.niet {
+    .image-1 {
+      background-image: url(./wudu/niet.png);
+      background-position-y: 100px;
+    }
+  }
+  &.hands {
+    .image-1 {
+      background-image: url(./wudu/hands.png);
+      background-position-y: 130px;
+    }
+  }
+  &.mouth {
+    .image-1 {
+      background-image: url(./wudu/mouth.png);
+      background-position-y: 140px;
+    }
+  }
+  &.nose {
+    .image-1 {
+      background-image: url(./wudu/nose.png);
+      background-position-y: 140px;
+    }
+  }
+  &.face {
+    .image-1 {
+      background-image: url(./wudu/face.png);
+      background-position-y: 140px;
+    }
+  }
+  &.full-hands {
+    .image-1 {
+      background-image: url(./wudu/full-hands.png);
+      background-position-y: 110px;
+    }
+  }
+  &.head {
+    .image-1 {
+      background-image: url(./wudu/head.png);
+      background-position-y: 140px;
+    }
+  }
+  &.ears-and-neck {
+    .image-1 {
+      background-image: url(./wudu/ears-and-neck.png);
+    }
+  }
+  &.leg-right {
+    .image-1 {
+      background-image: url(./wudu/leg-right.png);
+      background-position-y: 110px;
+    }
+  }
+  &.leg-left {
+    .image-1 {
+      background-image: url(./wudu/leg-left.png);
+      background-position-y: 110px;
+    }
+  }
+  &.dua {
+    .player {
+      display: flex;
+    }
+    .image-1 {
+      background-image: url(./wudu/dua.png);
+      background-position-y: 100px;
     }
   }
 }

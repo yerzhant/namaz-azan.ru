@@ -18,7 +18,12 @@
             .rakaats-count {{ rakaats3 }}
             .rakaats-title {{ rakaats3Title }}
         .buttons
-          AppButton(:link="button1Link" :width="buttonWidth" :height="36" :blue="button1Blue") {{ button1 }}
+          AppButton(
+            :link="button1Link"
+            :width="buttonWidth"
+            :height="36"
+            :blue="button1Blue"
+          ) {{ button1 }}
           AppButton(
             :link="button2Link"
             :width="buttonWidth"

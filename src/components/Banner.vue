@@ -177,5 +177,16 @@ export default {
       }
     }
   }
+  &.wudu {
+    .image {
+      background-image: url(../views/namaz/tahharah/wudu.jpg);
+    }
+  }
+  &.gusl {
+    background: #fff;
+    .image {
+      background-image: url(../views/namaz/tahharah/gusl.jpg);
+    }
+  }
 }
 </style>

@@ -382,6 +382,18 @@
             template(slot="buttons")
               AppButton(link="/tahharah/gusl" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
+      Banner.namaz-detailed(
+        type="namaz-detailed short"
+        title="НАМАЗ: ПОДРОБНО"
+        shortDesc="Детализированное обучение намазу"
+        desc="Детальный обзор намаза “Зухр” состоящий из 4 ракаатов позволит Вам \
+          понять принцип исполнения большинства намазов. Если Вы научитесь \
+          читать “Зухр” - Вы сможете читать и другие намазы. Рекомендуем!"
+        descUpBorder
+      )
+        template(slot="buttons")
+          AppButton(link="/" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+
     .line.type-2
     AppSection(title="ОБЯЗАТЕЛЬНЫЕ НАМАЗЫ" bg1)
       .fards

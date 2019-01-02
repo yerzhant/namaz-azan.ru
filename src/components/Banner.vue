@@ -93,6 +93,13 @@ export default {
       background-image: url(../views/app-main/namaz-detailed-woman.png);
     }
   }
+  &.short {
+    height: 355px;
+    background-position: top;
+    .image {
+      background-position: bottom;
+    }
+  }
 }
 .gusl {
   background-image: url(../views/app-main/gusl-bg.jpg);

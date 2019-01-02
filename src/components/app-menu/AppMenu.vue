@@ -37,10 +37,10 @@
     menu.submenu(v-show="flags.taharat")
       img.image(src="./taharat-bg.jpg")
       nav.items
-        router-link.item(to="#")
+        router-link.item(to="/tahharah/gusl")
           .title ГУСЛЬ
           .desc Полное омовение
-        router-link.item(to="#")
+        router-link.item(to="/tahharah/wudu")
           .title ВУДУ
           .desc Малое омовение
 

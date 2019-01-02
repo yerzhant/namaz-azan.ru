@@ -11,6 +11,9 @@ export default new Router({
     path: '/',
     component: AppMain,
   }, {
+    path: '/tahharah/wudu',
+    component: () => import(/* webpackChunkName: "namaz" */ './views/namaz/Namaz.vue'),
+  }, {
     path: '/:type',
     component: () => import(/* webpackChunkName: "namaz" */ './views/namaz/Namaz.vue'),
   }],

@@ -195,5 +195,13 @@ export default {
       background-image: url(../views/namaz/tahharah/gusl.jpg);
     }
   }
+  &.blue {
+    background-color: #f7fcff;
+    &.gusl {
+      .image {
+        background-image: url(../views/tahharah/gusl.jpg);
+      }
+    }
+  }
 }
 </style>

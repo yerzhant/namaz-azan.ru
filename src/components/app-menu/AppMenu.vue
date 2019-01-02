@@ -235,6 +235,9 @@ export default {
       &.witr {
         background-image: url(./witr.jpg);
       }
+      &.gusl {
+        background-image: url(./gusl.jpg);
+      }
       &.wudu {
         background-image: url(./wudu.jpg);
       }

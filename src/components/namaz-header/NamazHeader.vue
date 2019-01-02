@@ -4,7 +4,7 @@
       section.info
         h1.title {{ title }}
         .short-desc {{ shortDesc }}
-        .details
+        .details(v-if="isNamaz")
           .type {{ typeText }}
           .clocks {{ time }}
             span.footnote *
@@ -23,6 +23,7 @@
             :width="buttonWidth"
             :height="36"
             :blue="button1Blue"
+            v-if="button1"
           ) {{ button1 }}
           AppButton(
             :link="button2Link"
@@ -38,15 +39,15 @@
             :blue="button3Blue"
             v-if="button3"
           ) {{ button3 }}
-        .city-info
+        .city-info(v-if="isNamaz")
           span.footnote *
           span Указано время намаза для города: {{ $store.state.city }}
           span.bar |
           span.select(@click="$store.commit('toggleSelectCity')") Другой город
 
-    section.desc(:class="{closed: !descOpen}")
+    section.desc(v-if="desc" :class="{closed: !descOpen}")
       .desc-text {{ desc }}
-    .button
+    .button(v-if="desc")
       AppButton(
         :width="109"
         :height="32"
@@ -111,6 +112,15 @@ export default {
 
         default:
           return '???';
+      }
+    },
+    isNamaz() {
+      switch (this.$store.state.namaz) {
+        case 'gusl':
+        case 'wudu':
+          return false;
+        default:
+          return true;
       }
     },
   },
@@ -372,10 +382,6 @@ export default {
 }
 .wudu {
   background-image: url(./wudu-bg.png);
-  .details,
-  .city-info {
-    display: none;
-  }
   .short-desc {
     padding-bottom: 16px;
     margin-bottom: 23px;
@@ -384,5 +390,18 @@ export default {
   .info {
     padding: 95px 0;
   }
+}
+.tahharah {
+  border-bottom: none;
+  .short-desc {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #b8c2cb;
+  }
+  .info {
+    padding: 120px 0;
+  }
+}
+.gusl {
+  background-image: url(../../views/tahharah/gusl-bg.png);
 }
 </style>

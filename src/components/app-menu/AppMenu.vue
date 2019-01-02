@@ -218,22 +218,25 @@ export default {
       background-position: center;
       background-size: cover;
       &.fadjr {
-        background-image: url(./fadjr.png);
+        background-image: url(./fadjr.jpg);
       }
       &.dhuhr {
-        background-image: url(./dhuhr.png);
+        background-image: url(./dhuhr.jpg);
       }
       &.asr {
-        background-image: url(./asr.png);
+        background-image: url(./asr.jpg);
       }
       &.maghrib {
-        background-image: url(./maghrib.png);
+        background-image: url(./maghrib.jpg);
       }
       &.isha {
-        background-image: url(./isha.png);
+        background-image: url(./isha.jpg);
       }
       &.witr {
-        background-image: url(./witr.png);
+        background-image: url(./witr.jpg);
+      }
+      &.wudu {
+        background-image: url(./wudu.jpg);
       }
     }
     .items-l2 {

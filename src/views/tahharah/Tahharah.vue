@@ -7,8 +7,47 @@
                  доступным способом достичь состояния ритаульной чистоты, кроме тех \
                  случаев, когда требуется полное омовение - гусль."
     )
-    p fdsafasdfasdfs
-    .line.type-2
+
+    section.admin-text
+      section.section
+        h2.header Когда ГУСЛЬ обязателен
+        <div>
+        <div>Действия и состояния, делающие обязательным совершение гусля:<br /> &nbsp;</div>
+
+        <ol>
+          <li>
+          <div><strong>Оргазм. &nbsp;</strong>Оргазм и выделение спермы (у мужчины) делает обязательным совершение гусля как для мужчины, так и для женщины, даже если оргазм случился не в результате полового акта, а, например, при поллюции.<br /> &nbsp;</div>
+          </li>
+          <li>
+          <div><strong>Половой акт. </strong>Даже если он не сопровождался оргазмом. Если быть более точным, делает обязательным совершение гусля уже само введение головки полового члена мужчины во влагалище женщины, даже если за этим ничего не последовало.<br /> &nbsp;</div>
+          </li>
+          <li>
+          <div><strong>После завершения хайда </strong>(менструации) и нифаса (послеродового кровотечения) у женщины.<br /> &nbsp;</div>
+          </li>
+          <li>
+          <div><strong>Смерть.&nbsp;</strong>Обязательно совершить полное омовение тела умершего мусульманина перед погребением. Это коллективная обязанность (фард кифая), возложенная Шариатом на общину мусульман местности, где скончался этот мусульманин.</div>
+          </li>
+        </ol>
+
+        <div>&nbsp;</div>
+
+        <div>
+        <div class="azan--appendix">
+        <div><strong>Тому</strong><strong>, кто принимает Ислам, обязательно совершить гусль, если до Ислама он совершал то, после чего необходим гусль.</strong></div>
+        </div>
+        </div>
+        </div>
+
+      section.section
+        h2.header Когда ГУСЛЬ обязателен
+        <ul>
+          <li>перед пятничным намазом (джума);<br /> &nbsp;</li>
+          <li>перед двумя праздничными намазами (Ураза-байрам и Курбан-байрам);<br /> &nbsp;</li>
+          <li>перед входом в состояние ихрама для хаджа или умры;<br /> &nbsp;</li>
+          <li>в день стояния на Арафа (9-го числа месяца Зуль-Хиджжа) после наступления времени дневного намаза (зухр).</li>
+        </ul>
+
+    .line
     AppSection(title="ДРУГИЕ ВИДЫ ОЧИЩЕНИЯ")
       .fards
         Banner(
@@ -47,7 +86,7 @@
       template(slot="buttons")
         AppButton(link="/" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
-    .line.type-2
+    .line
     AppSection(title="ОБЯЗАТЕЛЬНЫЕ НАМАЗЫ" bg1)
       .fards
         Banner(
@@ -135,17 +174,62 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.tahharah {
+  background-color: #f7fcff;
+}
 .line {
   width: 100%;
   height: 1px;
-  background-color: #b0bacc;
-  &.type-2 {
-    background-color: #bfcad1;
-  }
+  background-color: #bfcad1;
 }
 .fards {
   > * {
     margin-bottom: 17px;
+  }
+}
+.admin-text {
+  font-family: $pt-sans;
+  font-size: 16px;
+  line-height: 24px;
+  width: 1018px;
+  margin: 30px auto 0;
+  .section {
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px dashed #aab9c3;
+    &:last-child {
+      margin-bottom: 40px;
+      border-bottom: none;
+    }
+  }
+  .header {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  ol {
+    font-weight: bold;
+    padding-left: 16px;
+    div {
+      font-weight: initial;
+    }
+  }
+  ul {
+    list-style: none;
+    li {
+      padding-left: 14px;
+      background: url(./list-item.png) no-repeat left 11px;
+    }
+  }
+  .azan--appendix {
+    font-weight: bold;
+    border: 1px solid #ea7555;
+    border-left-width: 7px;
+    padding: 25px 13px;
+    background-color: #fff;
+    margin-top: 10px;
   }
 }
 </style>

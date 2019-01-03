@@ -1,7 +1,7 @@
 export default {
   computed: {
     isFullSite() {
-      const full = ['/'];
+      const full = ['/', '/tour'];
       return full.some(p => this.$route.path === p);
     },
   },

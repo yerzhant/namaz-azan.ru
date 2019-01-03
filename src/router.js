@@ -15,6 +15,9 @@ export default new Router({
     path: '/main',
     component: AppMain,
   }, {
+    path: '/tour',
+    component: () => import(/* webpackChunkName: "tour" */ './views/tour/Tour.vue'),
+  }, {
     path: '/tahharah/wudu',
     component: () => import(/* webpackChunkName: "namaz" */ './views/namaz/Namaz.vue'),
   }, {

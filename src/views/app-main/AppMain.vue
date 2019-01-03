@@ -10,7 +10,7 @@
       descUpBorder
     )
       template(slot="buttons")
-        AppButton(link="/" red) ДА, НАЧАТЬ!
+        AppButton(link="/tour" red) ДА, НАЧАТЬ!
         AppButton.color-2d(link="/") ПОДРОБНЫЕ УРОКИ
       Slogan
 

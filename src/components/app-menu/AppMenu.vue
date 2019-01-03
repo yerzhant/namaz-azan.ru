@@ -4,7 +4,8 @@
       .title ЭНЦИКЛОПЕДИЯ НАМАЗА
       .desc Самоучитель и справочник
         br
-        | Cпецпроект Azan.ru
+        | Cпецпроект
+        a.desc(href="https://azan.ru")  Azan.ru
 
     .back-to-main(@click="$store.commit('setMenu')")
       span Назад в меню

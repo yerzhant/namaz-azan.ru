@@ -35,8 +35,8 @@ export default new Vuex.Store({
         active: true,
       }],
     }, {
-      title: '1 ракаат',
-      open: false,
+      // title: '1 ракаат',
+      open: true,
       items: [{
         title: 'Ниет',
         link: '#r1-niet',

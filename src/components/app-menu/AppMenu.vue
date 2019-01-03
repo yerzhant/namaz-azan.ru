@@ -101,7 +101,7 @@
         :class="{right: item.right, down: !item.right, open: item.open}"
         @click="openL2(item)"
       )
-        .title {{ item.title }}
+        .title(v-if="item.title") {{ item.title }}
         .submenu-l2(v-show="item.open")
           .subitem-l2(
             v-for="subitem in item.items"
@@ -139,6 +139,7 @@ export default {
     openL2(item) {
       this.$store.state.menuItems
         .filter(i => i !== item)
+        .filter(i => i.title)
         .forEach(i => {
           i.open = false;
         });

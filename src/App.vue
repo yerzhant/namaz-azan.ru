@@ -1,15 +1,12 @@
 <template lang="pug">
-  .wrapper
-    section.site(v-if="$store.state.site === 'main'")
-      section.menu
-        AppMenu
-      section.content
-        AppHeader
-        router-view
-        AppFooter
-      SelectCity
-    section.site(v-if="$store.state.site !== 'main'")
+  section.site
+    section.menu(v-if="!isFullSite")
+      AppMenu
+    section.content
       AppHeader
+      router-view
+      AppFooter(v-if="!isFullSite")
+    SelectCity(v-if="!isFullSite")
 </template>
 
 <script>
@@ -17,6 +14,7 @@ import AppHeader from '@/components/app-header/AppHeader.vue';
 import AppFooter from '@/components/app-footer/AppFooter.vue';
 import AppMenu from '@/components/app-menu/AppMenu.vue';
 import SelectCity from '@/components/select-city/SelectCity.vue';
+import isFullSite from '@/mixins/isFullSite';
 
 export default {
   components: {
@@ -25,6 +23,7 @@ export default {
     AppMenu,
     SelectCity,
   },
+  mixins: [isFullSite],
 };
 </script>
 

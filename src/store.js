@@ -5,7 +5,6 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    site: 'select',
     gender: 'man',
     namaz: 'gusl',
     city: 'Алматы',
@@ -58,9 +57,6 @@ export default new Vuex.Store({
     }],
   },
   mutations: {
-    setSite(state, site) {
-      state.site = site;
-    },
     setGender(state, gender) {
       state.gender = gender;
     },

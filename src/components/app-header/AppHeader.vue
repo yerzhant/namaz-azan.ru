@@ -1,5 +1,5 @@
 <template lang="pug">
-  header.header(:class="[$store.state.namaz, {full: $store.state.site !== 'main'}]")
+  header.header(:class="[$store.state.namaz, {full: isFullSite}]")
     .menu
     .container
       .gender.drop-down(
@@ -32,6 +32,8 @@
 </template>
 
 <script>
+import isFullSite from '@/mixins/isFullSite';
+
 export default {
   data() {
     return {
@@ -70,6 +72,7 @@ export default {
   destroyed() {
     document.removeEventListener('click', this.hideMenus);
   },
+  mixins: [isFullSite],
 };
 </script>
 
@@ -145,6 +148,15 @@ export default {
     justify-content: center;
     align-items: center;
     height: 49px;
+  }
+}
+.full {
+  .container {
+    @media (max-width: 1366px + 58px * 2) {
+      max-width: 100%;
+      margin-right: 0;
+      margin-left: 58px;
+    }
   }
 }
 .gender,

@@ -91,8 +91,8 @@
           namaz1Type="ваджиба"
         )
       .buttons
-        AppButton(link="/" blue) ВСЕ ВИДЫ НАМАЗА
-        AppButton.color-2d(link="/") УСЛОВИЯ НАМАЗА
+      //-   AppButton(link="/" blue) ВСЕ ВИДЫ НАМАЗА
+      //-   AppButton.color-2d(link="/") УСЛОВИЯ НАМАЗА
 
     AppSection(title="ВИДЫ ОЧИЩЕНИЯ")
       Banner(
@@ -104,7 +104,7 @@
           случаев тахарат недостаточен для достижения ритуальной чистоты"
       )
         template(slot="buttons")
-          AppButton(link="/" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+          AppButton(link="/tahharah/gusl" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
       Banner(
         type="taharat"
         descStyleBlackBlue
@@ -115,7 +115,7 @@
           и состоит всего из 4 фардов."
       )
         template(slot="buttons")
-          AppButton(link="/" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+          AppButton(link="/tahharah/wudu" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 </template>
 
 <script>
@@ -150,7 +150,8 @@ export default {
   }
   .buttons {
     text-align: center;
-    padding: 75px 0;
+    // padding: 75px 0; Revert in Banner height: 1031
+    padding: 40px 0;
     a {
       margin-right: 10px;
     }

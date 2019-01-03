@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import AppMain from './views/app-main/AppMain.vue';
+import AppSelect from '@/views/app-select/AppSelect.vue';
+import AppMain from '@/views/app-main/AppMain.vue';
 
 Vue.use(Router);
 
@@ -9,6 +10,9 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [{
     path: '/',
+    component: AppSelect,
+  }, {
+    path: '/main',
     component: AppMain,
   }, {
     path: '/tahharah/wudu',

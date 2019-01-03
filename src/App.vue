@@ -1,12 +1,15 @@
 <template lang="pug">
-  section.site
-    section.menu
-      AppMenu
-    section.content
+  .wrapper
+    section.site(v-if="$store.state.site === 'main'")
+      section.menu
+        AppMenu
+      section.content
+        AppHeader
+        router-view
+        AppFooter
+      SelectCity
+    section.site(v-if="$store.state.site !== 'main'")
       AppHeader
-      router-view
-      AppFooter
-    SelectCity
 </template>
 
 <script>
@@ -42,7 +45,6 @@ export default {
 .content {
   margin-top: 50px;
   width: calc(100% - 197px);
-
   @media (max-width: $mobile) {
     margin-top: 0;
   }

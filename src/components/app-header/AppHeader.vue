@@ -1,5 +1,5 @@
 <template lang="pug">
-  header.header(:class="$store.state.namaz")
+  header.header(:class="[$store.state.namaz, {full: $store.state.site !== 'main'}]")
     .menu
     .container
       .gender.drop-down(
@@ -101,7 +101,14 @@ export default {
   &.witr {
     background-image: url(./bg-witr.png);
   }
-
+  &.full {
+    width: 100%;
+    max-width: 1920px;
+    background-image: url(./full-bg.png);
+    .menu {
+      display: block;
+    }
+  }
   @media (max-width: 1365px) {
     width: 100%;
   }
@@ -109,7 +116,6 @@ export default {
     display: none;
   }
 }
-
 .menu {
   position: absolute;
   top: 0;
@@ -117,12 +123,10 @@ export default {
   width: 58px;
   height: 49px;
   background: url(./menu.png) no-repeat center;
-
   @media (min-width: 1366px) {
     display: none;
   }
 }
-
 .container {
   display: flex;
   max-width: 1366px;
@@ -131,13 +135,11 @@ export default {
   font-family: $pt-sans;
   font-size: 13px;
   color: #465d73;
-
   @media (max-width: 1365px) {
     max-width: 100%;
     margin-right: 0;
     margin-left: 58px;
   }
-
   > * {
     display: flex;
     justify-content: center;
@@ -145,7 +147,6 @@ export default {
     height: 49px;
   }
 }
-
 .gender,
 .madhhab,
 .language,
@@ -160,15 +161,12 @@ export default {
     background-color: #bfcde1;
   }
 }
-
 .basmalah {
   flex-grow: 1;
-
   .img {
     display: block;
   }
 }
-
 .tutoring {
   width: 162px;
   font-family: $roboto;
@@ -176,28 +174,23 @@ export default {
   color: #fff;
   background: url(./tutoring.png) no-repeat center;
 }
-
 .drop-down {
   position: relative;
   width: 162px;
   cursor: pointer;
-
   &:hover,
   &.active {
     background-color: #e5eff8;
   }
-
   .selected-item {
     color: #0a6e9c;
     margin-left: 3px;
     padding-right: 15px;
     background: url(./drop-down.png) no-repeat right;
-
     .flag {
       margin-left: 10px;
     }
   }
-
   .items {
     display: none;
     position: absolute;
@@ -205,18 +198,15 @@ export default {
     right: 0;
     left: 0;
   }
-
   &.active {
     &::before,
     + ::before {
       height: 49px;
     }
-
     .items {
       display: block;
     }
   }
-
   .item {
     display: flex;
     align-items: center;
@@ -228,18 +218,15 @@ export default {
     border-right: 1px solid #c1cfdd;
     border-left: 1px solid #c1cfdd;
     border-bottom: 1px solid #c1cfdd;
-
     &:hover,
     &.active {
       background-color: #f6fbff;
     }
   }
 }
-
 .madhhab,
 .language {
   cursor: initial;
-
   &:hover {
     background-color: initial;
   }

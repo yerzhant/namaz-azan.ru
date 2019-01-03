@@ -2,7 +2,7 @@
   section.site
     section.menu(v-if="!isFullSite")
       AppMenu
-    section.content
+    section.content(:class="{full: isFullSite}")
       AppHeader
       router-view
       AppFooter(v-if="!isFullSite")
@@ -44,6 +44,9 @@ export default {
 .content {
   margin-top: 50px;
   width: calc(100% - 197px);
+  &.full {
+    width: 100%;
+  }
   @media (max-width: $mobile) {
     margin-top: 0;
   }

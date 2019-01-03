@@ -3,13 +3,13 @@
     .content
     .progress-bar
       .to-main На главную
-      .left.item
+      .left.item(@click="slideProgressLeft")
       .items-viewport
-        .items
+        .items(:style="{left: `${progressPosition}px`}")
           .item(v-for="item in progressItems" :class="item.type")
             .title(v-if="item.title") {{ item.title }}
             .sub-title {{ item.subTitle }}
-      .right.item
+      .right.item(@click="slideProgressRight")
 </template>
 
 <script>
@@ -18,11 +18,20 @@ import progressItems from './progressItems';
 export default {
   data() {
     return {
-      progressItems: [],
+      progressPosition: 0,
+      progressItems,
     };
   },
-  created() {
-    this.progressItems = progressItems;
+  methods: {
+    slideProgressLeft() {
+      this.progressPosition += 50;
+      if (this.progressPosition > 0) this.progressPosition = 0;
+    },
+    slideProgressRight() {
+      const diff = -65 * 28 + document.querySelector('.items-viewport').offsetWidth;
+      this.progressPosition -= 50;
+      if (this.progressPosition < diff) this.progressPosition = diff;
+    },
   },
 };
 </script>
@@ -65,6 +74,7 @@ export default {
   align-items: center;
   width: 65px;
   height: 100%;
+  user-select: none;
   cursor: pointer;
   &.section {
     flex-direction: column;
@@ -102,7 +112,46 @@ export default {
       }
     }
     &.gusl {
-      background-image: url(./gusl.png);
+      background-image: url(./gusl.jpg);
+    }
+    &.wudu-face {
+      background-image: url(./wudu-face.jpg);
+    }
+    &.wudu-hands {
+      background-image: url(./wudu-hands.jpg);
+    }
+    &.wudu-head {
+      background-image: url(./wudu-head.jpg);
+    }
+    &.wudu-legs {
+      background-image: url(./wudu-legs.jpg);
+    }
+    &.niet {
+      background-image: url(./niet.jpg);
+    }
+    &.takbir {
+      background-image: url(./takbir.jpg);
+    }
+    &.qiyam {
+      background-image: url(./qiyam.jpg);
+    }
+    &.ruku {
+      background-image: url(./ruku.jpg);
+    }
+    &.sadjda {
+      background-image: url(./sadjda.jpg);
+    }
+    &.sitting {
+      background-image: url(./sitting.jpg);
+    }
+    &.salam-right {
+      background-image: url(./salam-right.jpg);
+    }
+    &.salam-left {
+      background-image: url(./salam-left.jpg);
+    }
+    &.dua {
+      background-image: url(./dua.jpg);
     }
   }
 }
@@ -122,10 +171,13 @@ export default {
   }
 }
 .items-viewport {
-  flex-grow: 1;
+  width: calc(100% - 134px - 65px * 2);
+  overflow: hidden;
 }
 .items {
+  position: relative;
   display: flex;
+  width: 134px + 65px * 30;
   height: 100%;
 }
 </style>

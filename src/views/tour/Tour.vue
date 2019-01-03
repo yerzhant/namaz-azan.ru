@@ -6,7 +6,7 @@
       .left.item(@click="slideProgressLeft")
       .items-viewport
         .items(:style="{left: `${progressPosition}px`}")
-          .item(v-for="item in progressItems" :class="item.type")
+          .item(v-for="item in progressItems" :class="[item.type, $store.state.gender]")
             .title(v-if="item.title") {{ item.title }}
             .sub-title {{ item.subTitle }}
       .right.item(@click="slideProgressRight")
@@ -152,6 +152,35 @@ export default {
     }
     &.dua {
       background-image: url(./dua.jpg);
+    }
+    &.woman {
+      &.niet {
+        background-image: url(./niet-woman.jpg);
+      }
+      &.takbir {
+        background-image: url(./takbir-woman.jpg);
+      }
+      &.qiyam {
+        background-image: url(./qiyam-woman.jpg);
+      }
+      &.ruku {
+        background-image: url(./ruku-woman.jpg);
+      }
+      &.sadjda {
+        background-image: url(./sadjda-woman.jpg);
+      }
+      &.sitting {
+        background-image: url(./sitting-woman.jpg);
+      }
+      &.salam-right {
+        background-image: url(./salam-right-woman.jpg);
+      }
+      &.salam-left {
+        background-image: url(./salam-left-woman.jpg);
+      }
+      &.dua {
+        background-image: url(./dua-woman.jpg);
+      }
     }
   }
 }

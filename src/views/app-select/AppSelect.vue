@@ -41,14 +41,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.app-select {
-  background: url(./bg.jpg) no-repeat center -50px;
-}
 .buttons {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 185px;
+  background: url(./buttons-bg.jpg) no-repeat top;
+  @media (max-width: 1366px) {
+    height: 112px;
+  }
   > * {
     margin-right: 10px;
     &:last-child {
@@ -62,7 +63,7 @@ export default {
   border-top: 1px solid #bfced5;
   border-bottom: 1px solid #c7d1d7;
   height: 504px;
-  background: url(./select-bg.png) no-repeat center -2px;
+  background: url(./select-bg.png) no-repeat center -2px, url(./select-bg.jpg) no-repeat top;
 }
 .middle {
   width: 1px;
@@ -108,14 +109,25 @@ export default {
 }
 .right-text,
 .left-text {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 539px;
-  height: 70px;
+  width: 538px;
+  height: 100%;
   cursor: pointer;
-  border-right: 1px solid #dde3ee;
+  &:hover {
+    background-color: #eff5f8;
+  }
+  &::before {
+    position: absolute;
+    right: -1px;
+    width: 1px;
+    height: 70px;
+    content: '';
+    background-color: #dde3ee;
+  }
   .line-1 {
     font-size: 20px;
     font-weight: 500;
@@ -124,8 +136,10 @@ export default {
   }
 }
 .left-text {
-  border-right: none;
-  border-left: 1px solid #dde3ee;
+  &::before {
+    right: initial;
+    left: -1px;
+  }
 }
 .footer {
   background: url(./footer-bg.png) no-repeat top;

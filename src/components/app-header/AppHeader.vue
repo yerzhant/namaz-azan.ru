@@ -152,7 +152,7 @@ export default {
 }
 .full {
   .container {
-    @media (max-width: 1366px + 58px * 2) {
+    @media (max-width: 1366px + 58px * 2 + 17px) {
       max-width: 100%;
       margin-right: 0;
       margin-left: 58px;

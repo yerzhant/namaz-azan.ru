@@ -1,26 +1,53 @@
 <template lang="pug">
   section.tour
     .content
+      .section-slide(v-show="type === 'section'")
+        .title {{ data.title }}
+        .short-desc {{ data.shortDesc }}
+        img.moon(src="./moon.png")
+        AppButton ДАЛЕЕ
+      .rukn-slide(v-show="type === 'rukn'")
+        .prev
+        Rukn(
+          tour
+          type="niet"
+          title="ТАКБИР"
+          subTitle="Вступление в намаз"
+          number="1"
+          content4="Аллаху Акбар!"
+        )
+        .next
     .progress-bar
       .to-main На главную
       .left.item(@click="slideProgressLeft")
       .items-viewport
         .items(:style="{left: `${progressPosition}px`}")
-          .item(v-for="item in progressItems" :class="[item.type, $store.state.gender]")
+          .item(v-for="item in items" :class="[item.type, $store.state.gender]")
             .title(v-if="item.title") {{ item.title }}
             .sub-title {{ item.subTitle }}
       .right.item(@click="slideProgressRight")
 </template>
 
 <script>
-import progressItems from './progressItems';
+import Rukn from '@/components/rukn/Rukn.vue';
+import AppButton from '@/components/AppButton.vue';
+import items from './items';
 
 export default {
   data() {
     return {
+      index: 1,
+      items,
       progressPosition: 0,
-      progressItems,
     };
+  },
+  computed: {
+    type() {
+      return this.items[this.index].type.split(' ')[0];
+    },
+    data() {
+      return this.items[this.index].data;
+    },
   },
   methods: {
     slideProgressLeft() {
@@ -32,6 +59,10 @@ export default {
       this.progressPosition -= 50;
       if (this.progressPosition < diff) this.progressPosition = diff;
     },
+  },
+  components: {
+    Rukn,
+    AppButton,
   },
 };
 </script>
@@ -208,5 +239,46 @@ export default {
   display: flex;
   width: 134px + 65px * 30;
   height: 100%;
+}
+.section-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  background: url(./section-bg.png) no-repeat top;
+  background-color: #ecf7fd;
+  .title {
+    font-size: 36px;
+    color: #002f56;
+    margin-bottom: 5px;
+  }
+  .short-desc {
+    font-size: 15px;
+    line-height: 24px;
+    width: 650px;
+  }
+  .moon {
+    margin-top: 23px;
+    margin-bottom: 32px;
+  }
+}
+.rukn-slide {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.prev {
+  flex-grow: 1;
+  height: 100%;
+  cursor: pointer;
+  background: url(./prev.png) no-repeat center;
+}
+.next {
+  flex-grow: 1;
+  height: 100%;
+  cursor: pointer;
+  background: url(./next.png) no-repeat center;
 }
 </style>

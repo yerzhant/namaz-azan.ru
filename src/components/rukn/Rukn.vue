@@ -1,11 +1,11 @@
 <template lang="pug">
-  section.rukn(:id="`r${rakaat}-${type}`" :class="[type, {first: first}]")
-    .header
+  section.rukn(:id="`r${rakaat}-${type}`" :class="[type, {first: first, 'in-tour': tour}]")
+    .header(v-if="!tour")
       .header-text
         h3.title {{ title }}
         .sub-title(v-if="subTitle") {{ subTitle }}
       .number {{ number }}
-    .short-desc {{ shortDesc }}
+    .short-desc(v-if="!tour") {{ shortDesc }}
     .info
       .description
         .tabs(
@@ -64,6 +64,7 @@ export default {
     kind: String,
     next: String,
     first: Boolean,
+    tour: Boolean,
     title: String,
     subTitle: String,
     number: String,
@@ -168,6 +169,11 @@ export default {
   &.first {
     background: none;
     padding-top: 86px;
+  }
+  &.in-tour {
+    width: 1022px;
+    padding: 0;
+    background: no-repeat;
   }
 }
 .header {

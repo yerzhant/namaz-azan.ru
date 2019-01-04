@@ -144,7 +144,7 @@ export default {
     },
     print() {
       const win = window.open();
-      win.document.write(`<p>${this.content1}</p>\
+      win.document.write(`<p>${this.content1}</p>
         <p>${this.content2}</p><p>${this.content3}</p><p>${this.content4}</p>`);
       win.print();
       win.close();
@@ -634,8 +634,30 @@ export default {
     line-height: 22px;
     max-height: 500px;
     overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 5px;
+      &-track {
+        background-color: #eff4f7;
+      }
+      &-thumb {
+        background-color: #cbd3db;
+      }
+    }
     @media (max-width: 1366px) {
-      max-height: 200px;
+      max-height: 270px;
+    }
+  }
+  @media (max-width: 1366px) {
+    &.ruku {
+      .image-1,
+      .image-2 {
+        background-position-y: 170px;
+      }
+    }
+    &.sadjda {
+      .image-1 {
+        background-position-y: 290px;
+      }
     }
   }
 }

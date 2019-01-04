@@ -33,10 +33,15 @@
             @click="tab1 = tab2 = tab3 = false; tab4 = true"
           ) Описание
         .tab-contents
-          .tab-content(:class="{active: tab1}") {{ content1 }}
-          .tab-content(:class="{active: tab2}") {{ content2 }}
-          .tab-content(:class="{active: tab3}") {{ content3 }}
-          .tab-content(:class="{active: tab4}") {{ content4 }}
+          .header(v-if="tour")
+            .header-text
+              h3.title {{ title }}
+              .sub-title(v-if="subTitle") {{ subTitle }}
+            .number {{ number }}
+          .tab-content(:class="{active: tab1}" v-html="content1")
+          .tab-content(:class="{active: tab2}" v-html="content2")
+          .tab-content(:class="{active: tab3}" v-html="content3")
+          .tab-content(:class="{active: tab4}" v-html="content4")
           AppPlayer.player(:type="audio")
           .buttons
             AppButton(:height="36" blue @click="goNext") ДАЛЕЕ
@@ -129,7 +134,9 @@ export default {
   },
   methods: {
     goNext() {
-      if (this.next.substr(0, 1) === '#') {
+      if (this.tour) {
+        this.$emit('next');
+      } else if (this.next.substr(0, 1) === '#') {
         this.$scrollTo(this.next);
       } else {
         this.$router.push(this.next);
@@ -505,6 +512,12 @@ export default {
   .player {
     display: none;
   }
+  &.gusl {
+    .image-1 {
+      background-image: url(./wudu/gusl.png);
+      background-position-y: bottom;
+    }
+  }
   &.niet {
     .image-1 {
       background-image: url(./wudu/niet.png);
@@ -580,6 +593,21 @@ export default {
   background: no-repeat;
   .media {
     background-color: #ecf7fd;
+  }
+  .tabs {
+    margin-bottom: 40px;
+  }
+  .tab.active {
+    background-color: #f7fcff;
+    border-bottom-color: #f7fcff;
+  }
+  .header {
+    padding-left: 0;
+    padding-right: 10px;
+  }
+  .tab-content {
+    font-size: 15px;
+    line-height: 22px;
   }
 }
 </style>

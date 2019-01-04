@@ -7,16 +7,17 @@
         img.moon(src="./moon.png")
         AppButton ДАЛЕЕ
       .rukn-slide(v-show="type === 'rukn'")
-        .prev
+        .prev(@click="previous")
         Rukn(
           tour
-          type="niet"
-          title="ТАКБИР"
-          subTitle="Вступление в намаз"
-          number="1"
-          content4="Аллаху Акбар!"
+          :type="data.type"
+          :title="data.title"
+          :subTitle="data.subTitle"
+          :number="data.number"
+          :content4="data.content4"
+          @next="next"
         )
-        .next
+        .next(@click="next")
     .progress-bar
       .to-main На главную
       .left.item(@click="slideProgressLeft")
@@ -36,7 +37,7 @@ import items from './items';
 export default {
   data() {
     return {
-      index: 1,
+      index: 2,
       items,
       progressPosition: 0,
     };
@@ -50,6 +51,12 @@ export default {
     },
   },
   methods: {
+    previous() {
+      if (this.index > 0) this.index--;
+    },
+    next() {
+      if (this.index < this.items.length - 1) this.index++;
+    },
     slideProgressLeft() {
       this.progressPosition += 50;
       if (this.progressPosition > 0) this.progressPosition = 0;

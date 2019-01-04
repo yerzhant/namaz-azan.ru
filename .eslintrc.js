@@ -11,6 +11,7 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'arrow-parens': 'off',
+    'no-plusplus': 'off',
     'no-param-reassign': 'off',//['error', {
       // props: true,
       // ignorePropertyModificationsFor: [

@@ -23,7 +23,7 @@
         )
         .next(@click="next")
     .progress-bar
-      .to-main На главную
+      .to-main(@click="$router.push('/')") На главную
       .left.item(@click="slideProgressLeft")
       .items-viewport
         .items(:style="{left: `${progressPosition}px`}")
@@ -46,7 +46,7 @@ import items from './items';
 export default {
   data() {
     return {
-      index: 1,
+      index: 0,
       items,
       progressPosition: 0,
     };

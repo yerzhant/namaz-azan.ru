@@ -150,7 +150,7 @@ export default {
       win.close();
     },
   },
-  created() {
+  updated() {
     if (this.content1) {
       this.tab1 = true;
     } else if (this.content2) {
@@ -573,6 +573,20 @@ export default {
   }
   &.leg-left {
     .image-1 {
+      background-image: url(./wudu/leg-left.png);
+      background-position-y: 110px;
+    }
+  }
+  &.legs {
+    .b1,
+    .b2 {
+      display: flex;
+    }
+    .image-1 {
+      background-image: url(./wudu/leg-right.png);
+      background-position-y: 110px;
+    }
+    .image-2 {
       background-image: url(./wudu/leg-left.png);
       background-position-y: 110px;
     }

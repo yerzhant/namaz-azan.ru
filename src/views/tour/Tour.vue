@@ -5,7 +5,7 @@
         .title {{ data.title }}
         .short-desc {{ data.shortDesc }}
         img.moon(src="./moon.png")
-        AppButton ДАЛЕЕ
+        AppButton(@click="next") ДАЛЕЕ
       .rukn-slide(v-show="type === 'rukn'")
         .prev(@click="previous")
         Rukn(
@@ -23,7 +23,12 @@
       .left.item(@click="slideProgressLeft")
       .items-viewport
         .items(:style="{left: `${progressPosition}px`}")
-          .item(v-for="item in items" :class="[item.type, $store.state.gender]")
+          .item(
+            v-for="(item, i) in items"
+            :key="i"
+            :class="[item.type, $store.state.gender, {active: i === index}]"
+            @click="index = i"
+          )
             .title(v-if="item.title") {{ item.title }}
             .sub-title {{ item.subTitle }}
       .right.item(@click="slideProgressRight")
@@ -37,7 +42,7 @@ import items from './items';
 export default {
   data() {
     return {
-      index: 2,
+      index: 0,
       items,
       progressPosition: 0,
     };
@@ -143,6 +148,7 @@ export default {
       font-size: 24px;
       color: #2b87ce;
     }
+    &.active,
     &:hover {
       &::before,
       .title {
@@ -264,7 +270,7 @@ export default {
   .short-desc {
     font-size: 15px;
     line-height: 24px;
-    width: 650px;
+    width: 635px;
   }
   .moon {
     margin-top: 23px;

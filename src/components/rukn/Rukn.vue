@@ -149,17 +149,24 @@ export default {
       win.print();
       win.close();
     },
+    reset() {
+      Object.keys(this.$data).forEach(k => {
+        this.$data[k] = false;
+      });
+      this.image1 = true;
+      if (this.content1) {
+        this.tab1 = true;
+      } else if (this.content2) {
+        this.tab2 = true;
+      } else if (this.content3) {
+        this.tab3 = true;
+      } else if (this.content4) {
+        this.tab4 = true;
+      }
+    },
   },
-  updated() {
-    if (this.content1) {
-      this.tab1 = true;
-    } else if (this.content2) {
-      this.tab2 = true;
-    } else if (this.content3) {
-      this.tab3 = true;
-    } else if (this.content4) {
-      this.tab4 = true;
-    }
+  created() {
+    this.reset();
   },
   components: {
     AppButton,
@@ -607,6 +614,9 @@ export default {
   background: no-repeat;
   .media {
     background-color: #ecf7fd;
+    @media (max-width: 1366px) {
+      height: 500px;
+    }
   }
   .tabs {
     margin-bottom: 40px;
@@ -622,6 +632,11 @@ export default {
   .tab-content {
     font-size: 15px;
     line-height: 22px;
+    max-height: 500px;
+    overflow-y: scroll;
+    @media (max-width: 1366px) {
+      max-height: 200px;
+    }
   }
 }
 </style>

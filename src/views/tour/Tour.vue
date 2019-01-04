@@ -9,11 +9,15 @@
       .rukn-slide(v-show="type === 'rukn'")
         .prev(@click="previous")
         Rukn(
+          ref="rukn"
           tour
           :type="data.type"
           :title="data.title"
           :subTitle="data.subTitle"
           :number="data.number"
+          :content1="data.content1"
+          :content2="data.content2"
+          :content3="data.content3"
           :content4="data.content4"
           @next="next"
         )
@@ -42,7 +46,7 @@ import items from './items';
 export default {
   data() {
     return {
-      index: 0,
+      index: 1,
       items,
       progressPosition: 0,
     };
@@ -53,6 +57,13 @@ export default {
     },
     data() {
       return this.items[this.index].data;
+    },
+  },
+  watch: {
+    index() {
+      this.$nextTick(() => {
+        this.$refs.rukn.reset();
+      });
     },
   },
   methods: {
@@ -96,6 +107,8 @@ export default {
   height: calc(100vh - 50px);
 }
 .content {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
 }
 .progress-bar {
@@ -263,11 +276,11 @@ export default {
   height: 100%;
 }
 .section-slide {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
   text-align: center;
   background: url(./section-bg.png) no-repeat top;
   background-color: #ecf7fd;
@@ -287,19 +300,19 @@ export default {
   }
 }
 .rukn-slide {
+  flex-grow: 1;
   display: flex;
   align-items: center;
-  height: 100%;
 }
 .prev {
   flex-grow: 1;
-  height: 100%;
+  height: 200px;
   cursor: pointer;
   background: url(./prev.png) no-repeat center;
 }
 .next {
   flex-grow: 1;
-  height: 100%;
+  height: 200px;
   cursor: pointer;
   background: url(./next.png) no-repeat center;
 }

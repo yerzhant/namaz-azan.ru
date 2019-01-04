@@ -58,18 +58,27 @@ export default {
   methods: {
     previous() {
       if (this.index > 0) this.index--;
+      this.normalizeProgressPosition();
     },
     next() {
       if (this.index < this.items.length - 1) this.index++;
+      this.normalizeProgressPosition();
+    },
+    normalizeProgressPosition() {
+      if (this.index < 16) this.progressPosition = 0;
+      else this.progressPosition = this.getProgressMaxPosition();
     },
     slideProgressLeft() {
       this.progressPosition += 50;
       if (this.progressPosition > 0) this.progressPosition = 0;
     },
     slideProgressRight() {
-      const diff = -65 * 28 + document.querySelector('.items-viewport').offsetWidth;
+      const diff = this.getProgressMaxPosition();
       this.progressPosition -= 50;
       if (this.progressPosition < diff) this.progressPosition = diff;
+    },
+    getProgressMaxPosition() {
+      return -65 * 28 + document.querySelector('.items-viewport').offsetWidth;
     },
   },
   components: {

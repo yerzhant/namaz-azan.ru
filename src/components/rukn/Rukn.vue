@@ -170,11 +170,6 @@ export default {
     background: none;
     padding-top: 86px;
   }
-  &.in-tour {
-    width: 1022px;
-    padding: 0;
-    background: no-repeat;
-  }
 }
 .header {
   display: flex;
@@ -577,6 +572,14 @@ export default {
       background-image: url(./wudu/dua.png);
       background-position-y: 100px;
     }
+  }
+}
+.in-tour {
+  width: 1022px;
+  padding: 0;
+  background: no-repeat;
+  .media {
+    background-color: #ecf7fd;
   }
 }
 </style>

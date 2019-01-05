@@ -633,7 +633,7 @@ export default {
     font-size: 15px;
     line-height: 22px;
     max-height: 500px;
-    overflow-y: scroll;
+    overflow-y: auto;
     &::-webkit-scrollbar {
       width: 5px;
       &-track {

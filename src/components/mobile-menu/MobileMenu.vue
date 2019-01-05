@@ -29,7 +29,8 @@
             .sub-title Все виды намаза
         .subitems(v-show="namaz")
           .subitem
-            .title(:class="{open: fard}" @click.stop="fard = !fard") ФАРД НАМАЗЫ
+            .title-block(:class="{open: fard}" @click.stop="fard = !fard")
+              .title ФАРД НАМАЗЫ
             .subitems(v-show="fard")
               .subitem-l2(@click="goTo('/fadjr')") Фаджр
               .subitem-l2(@click="goTo('/dhuhr')") Зухр
@@ -37,11 +38,13 @@
               .subitem-l2(@click="goTo('/maghrib')") Магриб
               .subitem-l2(@click="goTo('/isha')") Иша
           .subitem
-            .title(:class="{open: wadjib}" @click.stop="wadjib = !wadjib") ВАДЖИБ НАМАЗЫ
+            .title-block(:class="{open: wadjib}" @click.stop="wadjib = !wadjib")
+              .title ВАДЖИБ НАМАЗЫ
             .subitems(v-show="wadjib")
               .subitem-l2(@click="goTo('/witr')") Витр
           .subitem
-            .title(:class="{open: sunnah}" @click.stop="sunnah = !sunnah") СУННАТ НАМАЗЫ
+            .title-block(:class="{open: sunnah}" @click.stop="sunnah = !sunnah")
+              .title СУННАТ НАМАЗЫ
             .subitems(v-show="sunnah")
               .subitem-l2(@click="goTo('/fadjr')") Фаджр
               .subitem-l2(@click="goTo('/dhuhr')") Зухр
@@ -137,6 +140,12 @@ export default {
 .items {
   height: calc(100% - 90px);
   overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 5px;
+    &-thumb {
+      background-color: #34455e;
+    }
+  }
 }
 .item {
   display: block;
@@ -184,20 +193,27 @@ export default {
   }
 }
 .subitem {
-  .title {
-    background: url(./down-subitem.png) no-repeat 256px / 12px, url(./dot.png) no-repeat 20px / 3px;
+  .title-block {
     background-color: #0d1e3c;
     border-bottom: 1px solid #34455e;
-    font-size: 13px;
-    line-height: 1;
-    color: #d8e3f0;
-    padding: 20px 30px;
+    padding: 20px;
+    padding-right: 22px;
     &:hover {
       background-color: #07162d;
     }
     &.open {
       background-color: #07162d;
-      background-image: url(./open-subitem.png), url(./dot-open.png);
+      .title {
+        background-image: url(./open-subitem.png), url(./dot-open.png);
+      }
+    }
+    .title {
+      background: url(./down-subitem.png) no-repeat right / 12px,
+        url(./dot.png) no-repeat left / 3px;
+      font-size: 13px;
+      line-height: 1;
+      color: #d8e3f0;
+      padding-left: 10px;
     }
   }
 }
@@ -210,6 +226,7 @@ export default {
 }
 .socials-block {
   margin-top: 24px;
+  margin-bottom: 24px;
   padding-left: 20px;
 }
 </style>

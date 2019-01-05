@@ -7,16 +7,39 @@
         a.link(href="https://azan.ru")  Azan.ru
     .static-bar Главное меню
     .items
+      router-link.item(to="/main")
+        .info
+          .titles
+            .title ГЛАВНАЯ
+            .sub-title {{ $route.path === '/main' ? 'Вы на главной' : 'Перейти на главную' }}
+      .item
+        .info
+          .titles.submenu
+            .title ТАХАРАТ
+            .sub-title Очищение
+      .item
+        .info
+          .titles.submenu
+            .title НАМАЗ
+            .sub-title Все виды намаза
+      .socials-block
+        Socials(mobile)
 </template>
 
 <script>
-export default {};
+import Socials from '@/components/socials/Socials.vue';
+
+export default {
+  components: {
+    Socials,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 .mobile-menu {
   z-index: 10000;
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   width: 290px;
@@ -68,5 +91,47 @@ export default {};
   background-color: #303e53;
   padding: 0 20px;
   height: 20px;
+}
+.items {
+  height: calc(100% - 90px);
+  overflow-y: auto;
+}
+.item {
+  display: block;
+  outline: none;
+  cursor: pointer;
+  .info {
+    padding: 23px 20px;
+    border-bottom: 1px solid #34455e;
+    .titles {
+      font-size: 13px;
+      line-height: 1;
+      &.submenu {
+        background: url(./down.png) no-repeat right / 14px;
+      }
+      .title {
+        font-weight: 500;
+        color: #d8e3f0;
+        margin-bottom: 6px;
+      }
+      .sub-title {
+        font-weight: 300;
+        color: #aebbd2;
+      }
+    }
+  }
+  &.router-link-exact-active,
+  &:hover {
+    background-color: #07162d;
+    .titles {
+      .title {
+        color: #f0faff;
+      }
+    }
+  }
+}
+.socials-block {
+  text-align: center;
+  margin-top: 20px;
 }
 </style>

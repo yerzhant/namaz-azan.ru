@@ -13,9 +13,9 @@
     .level-2-image(:class="$store.state.namaz")
 
     nav.items.items-l1
-      router-link.item(to="/")
+      router-link.item(to="/main")
         .title ГЛАВНАЯ
-        .desc {{ $route.path === '/' ? 'Вы на главной' : 'Перейти на главную' }}
+        .desc {{ $route.path === '/main' ? 'Вы на главной' : 'Перейти на главную' }}
       .item.right(
         :class="{open: flags.taharat}"
         @click.stop="flags.taharat = !flags.taharat, closeAll('taharat')"

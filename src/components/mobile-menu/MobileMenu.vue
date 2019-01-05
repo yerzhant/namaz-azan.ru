@@ -19,8 +19,8 @@
             .title ТАХАРАТ
             .sub-title Очищение
         .subitems(v-show="tahharah")
-          router-link.subitem-l2(to="/tahharah/gusl") Гусль
-          router-link.subitem-l2(to="/tahharah/wudu") Вуду
+          .subitem-l2(@click="goTo('/tahharah/gusl')") Гусль
+          .subitem-l2(@click="goTo('/tahharah/wudu')") Вуду
 
       .item(:class="{open: namaz}" @click="namaz = !namaz")
         .info
@@ -31,23 +31,23 @@
           .subitem
             .title(:class="{open: fard}" @click.stop="fard = !fard") ФАРД НАМАЗЫ
             .subitems(v-show="fard")
-              router-link.subitem-l2(to="/fadjr") Фаджр
-              router-link.subitem-l2(to="/dhuhr") Зухр
-              router-link.subitem-l2(to="/asr") Аср
-              router-link.subitem-l2(to="/maghrib") Магриб
-              router-link.subitem-l2(to="/isha") Иша
+              .subitem-l2(@click="goTo('/fadjr')") Фаджр
+              .subitem-l2(@click="goTo('/dhuhr')") Зухр
+              .subitem-l2(@click="goTo('/asr')") Аср
+              .subitem-l2(@click="goTo('/maghrib')") Магриб
+              .subitem-l2(@click="goTo('/isha')") Иша
           .subitem
             .title(:class="{open: wadjib}" @click.stop="wadjib = !wadjib") ВАДЖИБ НАМАЗЫ
             .subitems(v-show="wadjib")
-              router-link.subitem-l2(to="/witr") Витр
+              .subitem-l2(@click="goTo('/witr')") Витр
           .subitem
             .title(:class="{open: sunnah}" @click.stop="sunnah = !sunnah") СУННАТ НАМАЗЫ
             .subitems(v-show="sunnah")
-              router-link.subitem-l2(to="/fadjr") Фаджр
-              router-link.subitem-l2(to="/dhuhr") Зухр
-              router-link.subitem-l2(to="/asr") Аср
-              router-link.subitem-l2(to="/maghrib") Магриб
-              router-link.subitem-l2(to="/isha") Иша
+              .subitem-l2(@click="goTo('/fadjr')") Фаджр
+              .subitem-l2(@click="goTo('/dhuhr')") Зухр
+              .subitem-l2(@click="goTo('/asr')") Аср
+              .subitem-l2(@click="goTo('/maghrib')") Магриб
+              .subitem-l2(@click="goTo('/isha')") Иша
 
       .socials-block
         Socials(mobile)
@@ -65,6 +65,12 @@ export default {
       wadjib: false,
       sunnah: false,
     };
+  },
+  methods: {
+    goTo(path) {
+      this.$store.commit('showMenu', false);
+      this.$router.push(path);
+    },
   },
   components: {
     Socials,
@@ -196,7 +202,6 @@ export default {
   }
 }
 .subitem-l2 {
-  display: block;
   background-color: #162a4e;
   border-bottom: 1px solid #34455e;
   color: #d8e3f0;

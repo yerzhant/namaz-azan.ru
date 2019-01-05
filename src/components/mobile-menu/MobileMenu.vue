@@ -12,16 +12,20 @@
           .titles
             .title ГЛАВНАЯ
             .sub-title {{ $route.path === '/main' ? 'Вы на главной' : 'Перейти на главную' }}
-      .item
+      .item(:class="{open: tahharah}" @click="tahharah = !tahharah")
         .info
           .titles.submenu
             .title ТАХАРАТ
             .sub-title Очищение
-      .item
+      .item(:class="{open: namaz}" @click="namaz = !namaz")
         .info
           .titles.submenu
             .title НАМАЗ
             .sub-title Все виды намаза
+        .subitems(v-show="namaz")
+          .subitem ФАРД НАМАЗЫ
+          .subitem ВАДЖИБ НАМАЗЫ
+          .subitem СУННАТ НАМАЗЫ
       .socials-block
         Socials(mobile)
 </template>
@@ -30,6 +34,12 @@
 import Socials from '@/components/socials/Socials.vue';
 
 export default {
+  data() {
+    return {
+      tahharah: false,
+      namaz: false,
+    };
+  },
   components: {
     Socials,
   },
@@ -129,9 +139,29 @@ export default {
       }
     }
   }
+  &.open {
+    background-color: #07162d;
+    .titles {
+      &.submenu {
+        background-image: url(./open.png);
+      }
+      .title {
+        color: #fff;
+      }
+    }
+  }
+}
+.subitem {
+  background: url(./down-subitem.png) no-repeat 256px / 12px, url(./dot.png) no-repeat 20px / 3px;
+  background-color: #0d1e3c;
+  border-bottom: 1px solid #34455e;
+  font-size: 13px;
+  line-height: 1;
+  color: #d8e3f0;
+  padding: 20px 30px;
 }
 .socials-block {
-  text-align: center;
-  margin-top: 20px;
+  margin-top: 24px;
+  padding-left: 20px;
 }
 </style>

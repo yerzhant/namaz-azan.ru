@@ -32,6 +32,8 @@ export default {
   }
   &.mobile {
     > a {
+      width: 27px;
+      height: 27px;
       vertical-align: top;
     }
     .fb {
@@ -55,7 +57,7 @@ export default {
       background-image: url(./logo-mobile.png);
       background-size: 18px;
       background-position-x: 8px;
-      padding: 7px 12px;
+      padding: 6px 12px;
       text-align: right;
       color: #5ca5e2;
       font-size: 12px;

@@ -1,6 +1,6 @@
 <template lang="pug">
   header.header(:class="[$store.state.namaz, {full: isFullSite}]")
-    .menu
+    .menu(@click="$store.commit('showMenu', true)")
     .container
       .gender.drop-down(
         :class="{active: genderOpen}"
@@ -125,6 +125,7 @@ export default {
   left: 0;
   width: 58px;
   height: 49px;
+  cursor: pointer;
   background: url(./menu.png) no-repeat center;
   @media (min-width: 1366px) {
     display: none;

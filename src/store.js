@@ -9,6 +9,7 @@ export default new Vuex.Store({
     namaz: 'gusl',
     city: 'Алматы',
     selectCity: false,
+    showMenu: true,
     menu: 'level-2',
     menuItems: [{
       title: 'Фаджр',
@@ -68,6 +69,9 @@ export default new Vuex.Store({
     },
     toggleSelectCity(state) {
       state.selectCity = !state.selectCity;
+    },
+    showMenu(state, show) {
+      state.showMenu = show;
     },
     setMenu(state, menu) {
       state.menu = menu;

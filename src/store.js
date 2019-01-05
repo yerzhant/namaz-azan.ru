@@ -9,7 +9,7 @@ export default new Vuex.Store({
     namaz: 'gusl',
     city: 'Алматы',
     selectCity: false,
-    showMenu: true,
+    showMenu: false,
     menu: 'level-2',
     menuItems: [{
       title: 'Фаджр',

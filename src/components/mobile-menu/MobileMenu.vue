@@ -12,20 +12,43 @@
           .titles
             .title ГЛАВНАЯ
             .sub-title {{ $route.path === '/main' ? 'Вы на главной' : 'Перейти на главную' }}
+
       .item(:class="{open: tahharah}" @click="tahharah = !tahharah")
         .info
           .titles.submenu
             .title ТАХАРАТ
             .sub-title Очищение
+        .subitems(v-show="tahharah")
+          router-link.subitem-l2(to="/tahharah/gusl") Гусль
+          router-link.subitem-l2(to="/tahharah/wudu") Вуду
+
       .item(:class="{open: namaz}" @click="namaz = !namaz")
         .info
           .titles.submenu
             .title НАМАЗ
             .sub-title Все виды намаза
         .subitems(v-show="namaz")
-          .subitem ФАРД НАМАЗЫ
-          .subitem ВАДЖИБ НАМАЗЫ
-          .subitem СУННАТ НАМАЗЫ
+          .subitem
+            .title(:class="{open: fard}" @click.stop="fard = !fard") ФАРД НАМАЗЫ
+            .subitems(v-show="fard")
+              router-link.subitem-l2(to="/fadjr") Фаджр
+              router-link.subitem-l2(to="/dhuhr") Зухр
+              router-link.subitem-l2(to="/asr") Аср
+              router-link.subitem-l2(to="/maghrib") Магриб
+              router-link.subitem-l2(to="/isha") Иша
+          .subitem
+            .title(:class="{open: wadjib}" @click.stop="wadjib = !wadjib") ВАДЖИБ НАМАЗЫ
+            .subitems(v-show="wadjib")
+              router-link.subitem-l2(to="/witr") Витр
+          .subitem
+            .title(:class="{open: sunnah}" @click.stop="sunnah = !sunnah") СУННАТ НАМАЗЫ
+            .subitems(v-show="sunnah")
+              router-link.subitem-l2(to="/fadjr") Фаджр
+              router-link.subitem-l2(to="/dhuhr") Зухр
+              router-link.subitem-l2(to="/asr") Аср
+              router-link.subitem-l2(to="/maghrib") Магриб
+              router-link.subitem-l2(to="/isha") Иша
+
       .socials-block
         Socials(mobile)
 </template>
@@ -38,6 +61,9 @@ export default {
     return {
       tahharah: false,
       namaz: false,
+      fard: false,
+      wadjib: false,
+      sunnah: false,
     };
   },
   components: {
@@ -152,13 +178,30 @@ export default {
   }
 }
 .subitem {
-  background: url(./down-subitem.png) no-repeat 256px / 12px, url(./dot.png) no-repeat 20px / 3px;
-  background-color: #0d1e3c;
+  .title {
+    background: url(./down-subitem.png) no-repeat 256px / 12px, url(./dot.png) no-repeat 20px / 3px;
+    background-color: #0d1e3c;
+    border-bottom: 1px solid #34455e;
+    font-size: 13px;
+    line-height: 1;
+    color: #d8e3f0;
+    padding: 20px 30px;
+    &:hover {
+      background-color: #07162d;
+    }
+    &.open {
+      background-color: #07162d;
+      background-image: url(./open-subitem.png), url(./dot-open.png);
+    }
+  }
+}
+.subitem-l2 {
+  display: block;
+  background-color: #162a4e;
   border-bottom: 1px solid #34455e;
-  font-size: 13px;
-  line-height: 1;
   color: #d8e3f0;
-  padding: 20px 30px;
+  line-height: 1;
+  padding: 19px 30px;
 }
 .socials-block {
   margin-top: 24px;

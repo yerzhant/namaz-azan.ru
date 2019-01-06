@@ -26,6 +26,9 @@ export default {
 <style lang="scss" scoped>
 .action-desc {
   width: 490px;
+  @media (max-width: $mobile) {
+    width: 100%;
+  }
   &.with-margin {
     margin-left: 80px;
     width: 410px;
@@ -48,6 +51,9 @@ export default {
 .short-desc {
   color: #464646;
   margin-bottom: 20px;
+  @media (max-width: $mobile) {
+    margin-bottom: 15px;
+  }
 }
 .desc {
   font-weight: 300;
@@ -57,6 +63,9 @@ export default {
   &.up-border {
     padding-top: 20px;
     border-top: 1px solid rgba(#8197aa, 0.4);
+    @media (max-width: $mobile) {
+      padding-top: 10px;
+    }
   }
 }
 .buttons a:first-child {

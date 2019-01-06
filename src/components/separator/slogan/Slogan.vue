@@ -1,7 +1,7 @@
 <template lang="pug">
   section.slogan
     p Спешите к намазу! Спешите к успеху!
-    a.link(href="/")
+    a.link(href="https://azan.ru")
       img.image(src="./logo.png")
     p Специальный проект портала Azan.ru
 </template>

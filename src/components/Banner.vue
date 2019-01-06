@@ -55,6 +55,10 @@ export default {
   width: 2 * 538px + 1px;
   margin-right: auto;
   margin-left: auto;
+  @media (max-width: $mobile) {
+    width: 100%;
+    justify-content: space-between;
+  }
   > * {
     flex-basis: 50%;
   }
@@ -64,6 +68,9 @@ export default {
 }
 .desc {
   align-self: center;
+  @media (max-width: $mobile) {
+    padding: 33px 20px;
+  }
 }
 .image {
   background-repeat: no-repeat;
@@ -72,12 +79,26 @@ export default {
 .first-namaz {
   background-image: url(../views/app-main/first-namaz-bg.jpg);
   height: 610px;
+  @media (max-width: $mobile) {
+    height: 750px;
+    background-image: url(../views/app-main/first-namaz-bg-m.png);
+    background-position-y: -5px;
+    background-size: cover;
+  }
   .top {
     flex-direction: row-reverse;
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
   }
   .image {
     background-image: url(../views/app-main/first-namaz.png);
     background-position: bottom right;
+    @media (max-width: $mobile) {
+      height: 449px;
+      background-position-x: center;
+      background-size: contain;
+    }
     &.woman {
       background-image: url(../views/app-main/first-namaz-woman.png);
       background-position-x: 50px;

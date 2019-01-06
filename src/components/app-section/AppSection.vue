@@ -25,17 +25,29 @@ export default {
   &.bg-1 {
     background-color: #f7fcff;
   }
+  @media (max-width: $mobile) {
+    padding-bottom: 40px;
+  }
 }
 .header {
   padding-top: 100px;
   background: url(./shadow.png) no-repeat top, url(./bg.png) no-repeat top;
   text-align: center;
+  @media (max-width: $mobile) {
+    padding-top: 60px;
+    background: url(./bg-m.png) no-repeat center -2px / 360px;
+    border-top: 1px solid #8e9faa;
+  }
 }
 .title {
   margin: 0;
   font-weight: 300;
   font-size: 36px;
   color: #002f56;
+  @media (max-width: $mobile) {
+    font-weight: normal;
+    font-size: 27px;
+  }
   &.regular {
     font-weight: normal;
   }
@@ -43,11 +55,19 @@ export default {
 .moon {
   margin-top: 20px;
   margin-bottom: 86px;
+  @media (max-width: $mobile) {
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
 }
 .content {
   width: 1077px;
   margin-right: auto;
   margin-left: auto;
+  @media (max-width: $mobile) {
+    width: 100%;
+    padding: 0 20px;
+  }
 }
 .rakaat {
   .header {

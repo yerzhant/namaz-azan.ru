@@ -32,6 +32,10 @@ export default {
   &.with-margin {
     margin-left: 80px;
     width: 410px;
+    @media (max-width: $mobile) {
+      width: 100%;
+      margin-left: 0;
+    }
   }
   &.with-margin-2 {
     width: auto;

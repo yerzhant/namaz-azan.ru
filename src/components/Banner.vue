@@ -148,16 +148,27 @@ export default {
   border: 1px solid #d4dee8;
   @media (max-width: $mobile) {
     width: 100%;
+    height: initial;
+    background: none;
+    .desc {
+      padding-top: 15px;
+      padding-bottom: 31px;
+    }
   }
   .top {
     flex-direction: row-reverse;
     @media (max-width: $mobile) {
       flex-direction: column-reverse;
+      background-color: #f7fcff;
     }
   }
   .image {
     background-image: url(../views/app-main/gusl.png);
     background-position: bottom;
+    @media (max-width: $mobile) {
+      background: url(../views/app-main/gusl-m.jpg) no-repeat top / contain;
+      flex-basis: 180px;
+    }
   }
 }
 .taharat {
@@ -168,10 +179,24 @@ export default {
   border-top: none;
   @media (max-width: $mobile) {
     width: 100%;
+    height: initial;
+    background: none;
+    .desc {
+      padding-top: 15px;
+      padding-bottom: 31px;
+    }
+    .top {
+      flex-direction: column-reverse;
+      background-color: #f7fcff;
+    }
   }
   .image {
     background-image: url(../views/app-main/taharat.png);
     background-position: bottom;
+    @media (max-width: $mobile) {
+      background: url(../views/app-main/taharat-m.jpg) no-repeat top / contain;
+      flex-basis: 180px;
+    }
   }
 }
 .fard {

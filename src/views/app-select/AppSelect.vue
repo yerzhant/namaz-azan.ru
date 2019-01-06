@@ -17,6 +17,17 @@
       .right-text(@click="selectGender('woman')")
         .line-1 ЖЕНЩИНАМ
         .line-2 Намаз для женщин
+    .select-m
+      .option(@click="selectGender('man')")
+        .image
+        .text
+          .line-1 МУЖЧИНАМ
+          .line-2 Намаз для мужчин
+      .option(@click="selectGender('woman')")
+        .image.woman
+        .text
+          .line-1 ЖЕНЩИНАМ
+          .line-2 Намаз для женщин
     footer.footer
       .line-1 ЭНЦИКЛОПЕДИЯ НАМАЗА
       .line-2 Самоучитель и справочник
@@ -50,10 +61,18 @@ export default {
   @media (max-width: 1366px) {
     height: 112px;
   }
+  @media (max-width: $mobile) {
+    height: 100px;
+  }
   > * {
     margin-right: 10px;
     &:last-child {
       margin-right: 0;
+    }
+    @media (max-width: $mobile) {
+      width: 148px !important;
+      font-size: 10.3px !important;
+      margin-right: 21px;
     }
   }
 }
@@ -64,6 +83,9 @@ export default {
   border-bottom: 1px solid #c7d1d7;
   height: 504px;
   background: url(./select-bg.png) no-repeat center -2px, url(./select-bg.jpg) no-repeat top;
+  @media (max-width: $mobile) {
+    display: none;
+  }
 }
 .middle {
   width: 1px;
@@ -101,6 +123,9 @@ export default {
   height: 114px;
   color: #5d6b7b;
   background-color: #e4eef3;
+  @media (max-width: $mobile) {
+    display: none;
+  }
 }
 .middle-text {
   width: 1px;
@@ -150,6 +175,10 @@ export default {
   color: #7f9ab3;
   padding-top: 219px - 114px;
   padding-bottom: 59px;
+  @media (max-width: $mobile) {
+    background-image: url(./footer-bg-m.png);
+    background-size: 100%;
+  }
   .line-1 {
     font-family: $pt-sans;
     font-weight: bold;
@@ -159,5 +188,38 @@ export default {
 }
 .link {
   color: #7f9ab3;
+}
+.select-m {
+  display: none;
+  border-bottom: 1px solid #9bacb6;
+  @media (max-width: $mobile) {
+    display: block;
+  }
+  .option {
+    background: url(./image-bg-m.jpg) no-repeat top / cover;
+    border-top: 1px solid #c9d3d8;
+  }
+  .image {
+    height: 253px;
+    background: url(./man-m.png) no-repeat bottom / 48%;
+    &.woman {
+      background-image: url(./woman-m.png);
+      background-size: 41%;
+    }
+  }
+  .text {
+    background-color: #e7f0f5;
+    border-top: 1px solid #c9d3d8;
+    text-align: center;
+    padding: 21px;
+  }
+  .line-1 {
+    font-weight: 500;
+    color: #0b91cf;
+  }
+  .line-2 {
+    font-size: 10px;
+    color: #5d6b7b;
+  }
 }
 </style>

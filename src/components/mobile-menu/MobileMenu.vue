@@ -7,7 +7,7 @@
         a.link(href="https://azan.ru")  Azan.ru
     .static-bar Главное меню
     .items
-      router-link.item(to="/main")
+      .item(@click="goTo('/main')")
         .info
           .titles
             .title ГЛАВНАЯ
@@ -52,6 +52,16 @@
               .subitem-l2(@click="goTo('/maghrib')") Магриб
               .subitem-l2(@click="goTo('/isha')") Иша
 
+      .item(:class="{open: tutoring}" @click="tutoring = !tutoring")
+        .info
+          .titles.submenu
+            .title ОБУЧЕНИЕ
+            .sub-title Видео-фото уроки
+        .subitems(v-show="tutoring")
+          .subitem-l2(@click="goTo('/fadjr')") Мой первый намаз
+          .subitem-l2(@click="goTo('/dhuhr')") Намаз: подробно
+          .subitem-l2(@click="goTo('/asr')") Видео уроки
+
       .socials-block
         Socials(mobile)
 </template>
@@ -67,6 +77,7 @@ export default {
       fard: false,
       wadjib: false,
       sunnah: false,
+      tutoring: false,
     };
   },
   methods: {

@@ -249,9 +249,6 @@ export default {
       border-top: 1px solid #313f54;
     }
   }
-  @media (max-width: 1365px) {
-    display: none;
-  }
 }
 .header {
   display: flex;

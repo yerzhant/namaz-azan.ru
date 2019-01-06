@@ -43,11 +43,17 @@ export default {
   background-color: #142b4f;
   width: 197px;
   z-index: 10000;
+  @media (max-width: 1365px) {
+    display: none;
+  }
 }
 .content {
   margin-top: 50px;
   width: calc(100% - 197px);
   &.full {
+    width: 100%;
+  }
+  @media (max-width: 1365px) {
     width: 100%;
   }
   @media (max-width: $mobile) {

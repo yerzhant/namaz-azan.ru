@@ -7,6 +7,7 @@ export default new Vuex.Store({
   state: {
     gender: 'man',
     namaz: 'gusl',
+    mobileHeaderStatus: 'Выбор пола, возраста и мазхаба',
     city: 'Алматы',
     selectCity: false,
     showMenu: false,
@@ -63,6 +64,9 @@ export default new Vuex.Store({
     },
     setNamaz(state, namaz) {
       state.namaz = namaz;
+    },
+    setMobileHeaderStatus(state, status) {
+      state.mobileHeaderStatus = status;
     },
     setCity(state, city) {
       state.city = city;

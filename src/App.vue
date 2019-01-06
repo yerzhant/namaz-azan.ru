@@ -4,6 +4,7 @@
       AppMenu
     section.content(:class="{full: isFullSite}")
       AppHeader
+      MobileHeader
       router-view
       AppFooter(v-if="!isFullSite")
     SelectCity(v-if="!isFullSite")
@@ -15,6 +16,7 @@ import AppHeader from '@/components/app-header/AppHeader.vue';
 import AppFooter from '@/components/app-footer/AppFooter.vue';
 import AppMenu from '@/components/app-menu/AppMenu.vue';
 import MobileMenu from '@/components/mobile-menu/MobileMenu.vue';
+import MobileHeader from '@/components/mobile-header/MobileHeader.vue';
 import SelectCity from '@/components/select-city/SelectCity.vue';
 import isFullSite from '@/mixins/isFullSite';
 
@@ -24,6 +26,7 @@ export default {
     AppFooter,
     AppMenu,
     MobileMenu,
+    MobileHeader,
     SelectCity,
   },
   mixins: [isFullSite],

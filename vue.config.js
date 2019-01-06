@@ -13,4 +13,7 @@ module.exports = {
       },
     },
   },
+  pwa: {
+    themeColor: '#1a3157',
+  },
 };

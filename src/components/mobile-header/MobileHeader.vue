@@ -2,7 +2,7 @@
   header.mobile-header
     .top
       .menu(@click="$store.commit('showMenu', true)")
-      .text
+      .text(@click="$router.push('/')")
         .title ЭНЦИКЛОПЕДИЯ НАМАЗА
         .sub-title Самоучитель и справочник. Cпецпроект
           a.link(href="https://azan.ru")  Azan.ru

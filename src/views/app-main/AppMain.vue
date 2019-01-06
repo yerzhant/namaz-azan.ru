@@ -122,7 +122,7 @@
 import Banner from '@/components/Banner.vue';
 import AppButton from '@/components/AppButton.vue';
 import AppSection from '@/components/app-section/AppSection.vue';
-import Slogan from '@/components/separator/slogan/Slogan.vue';
+import Slogan from '@/components/slogan/Slogan.vue';
 import NamazInfo from '@/components/namaz-info/NamazInfo.vue';
 
 export default {

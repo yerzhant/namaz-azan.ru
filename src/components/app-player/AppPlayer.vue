@@ -13,6 +13,12 @@ import 'soundmanager2';
 
 const sm = window.soundManager;
 
+sm.setup({
+  url: '',
+  debugMode: process.env.NODE_ENV !== 'production',
+});
+sm.beginDelayedInit();
+
 export default {
   props: {
     type: String,
@@ -51,7 +57,7 @@ export default {
       this.player.play({
         whileplaying() {
           thiz.time = thiz.getTimeAsString(this.position);
-          thiz.position = `${this.position / this.duration * 100}%`;
+          thiz.position = `${(this.position / this.duration) * 100}%`;
         },
       });
       this.playing = true;

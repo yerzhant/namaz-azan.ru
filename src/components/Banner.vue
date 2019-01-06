@@ -56,6 +56,7 @@ export default {
   margin-right: auto;
   margin-left: auto;
   @media (max-width: $mobile) {
+    flex-direction: column;
     width: 100%;
     justify-content: space-between;
   }
@@ -69,7 +70,7 @@ export default {
 .desc {
   align-self: center;
   @media (max-width: $mobile) {
-    padding: 33px 20px;
+    padding: 33px 20px 0;
   }
 }
 .image {
@@ -109,8 +110,14 @@ export default {
   background-image: url(../views/app-main/namaz-detailed-bg.jpg);
   // height: 1031px;
   height: 920px;
+  @media (max-width: $mobile) {
+    background-size: cover;
+    height: 1150px;
+  }
   .image {
     background-image: url(../views/app-main/namaz-detailed.png);
+    background-size: 80%;
+    background-position: 25px bottom;
     &.woman {
       background-image: url(../views/app-main/namaz-detailed-woman.png);
     }
@@ -128,8 +135,14 @@ export default {
   width: 1076px;
   height: 268px;
   border: 1px solid #d4dee8;
+  @media (max-width: $mobile) {
+    width: 100%;
+  }
   .top {
     flex-direction: row-reverse;
+    @media (max-width: $mobile) {
+      flex-direction: column-reverse;
+    }
   }
   .image {
     background-image: url(../views/app-main/gusl.png);
@@ -142,6 +155,9 @@ export default {
   height: 265px;
   border: 1px solid #d4dee8;
   border-top: none;
+  @media (max-width: $mobile) {
+    width: 100%;
+  }
   .image {
     background-image: url(../views/app-main/taharat.png);
     background-position: bottom;

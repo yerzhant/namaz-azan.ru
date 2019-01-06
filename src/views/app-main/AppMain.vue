@@ -94,7 +94,7 @@
       //-   AppButton(link="/" blue) ВСЕ ВИДЫ НАМАЗА
       //-   AppButton.color-2d(link="/") УСЛОВИЯ НАМАЗА
 
-    AppSection(title="ВИДЫ ОЧИЩЕНИЯ")
+    //- AppSection(title="ВИДЫ ОЧИЩЕНИЯ")
       Banner(
         type="gusl"
         descStyleBlackBlue
@@ -147,11 +147,20 @@ export default {
     margin-left: auto;
     border-right: 1px solid #c7d2da;
     border-bottom: 1px solid #c7d2da;
+    @media (max-width: $mobile) {
+      width: 100%;
+      height: initial;
+      padding: 0 20px;
+      border: none;
+    }
   }
   .buttons {
     text-align: center;
     // padding: 75px 0; Revert in Banner height: 1031
     padding: 40px 0;
+    @media (max-width: $mobile) {
+      padding: 20px 0;
+    }
     a {
       margin-right: 10px;
     }

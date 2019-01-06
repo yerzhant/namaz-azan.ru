@@ -71,6 +71,15 @@ export default {
   border-left: 1px solid #c7d2da;
   font-size: 13px;
   z-index: 1;
+  @media (max-width: $mobile) {
+    width: 100%;
+    height: 86px;
+    font-size: 9px;
+    border-right: 1px solid #c7d2da;
+    &:last-child {
+      border-bottom: 1px solid #c7d2da;
+    }
+  }
   &::before {
     content: '';
     position: absolute;
@@ -83,6 +92,9 @@ export default {
     z-index: -1;
     opacity: 0;
     transition: opacity 1s ease;
+    @media (max-width: $mobile) {
+      background-size: cover;
+    }
   }
   &.current {
     &::before {
@@ -102,6 +114,11 @@ export default {
   background-position: right;
   margin-right: 20px;
   margin-left: 20px;
+  @media (max-width: $mobile) {
+    background-size: 12px;
+    margin-right: 17px;
+    margin-left: 10px;
+  }
 }
 .details {
   flex-grow: 1;
@@ -110,6 +127,9 @@ export default {
   font-weight: 500;
   font-size: 18px;
   color: #3a3a3a;
+  @media (max-width: $mobile) {
+    font-size: 13px;
+  }
 }
 .desc {
   color: #505d68;
@@ -121,6 +141,10 @@ export default {
   color: #005fa1;
   background: url(./clocks.png) no-repeat left;
   padding-left: 18px;
+  @media (max-width: $mobile) {
+    font-size: 7px;
+    background-size: 9px;
+  }
 }
 .namaz {
   display: flex;
@@ -131,6 +155,10 @@ export default {
   height: 93px;
   text-align: center;
   border-left: 1px solid #c9e7e9;
+  @media (max-width: $mobile) {
+    width: 55px;
+    height: 55px;
+  }
   .count {
     font-weight: 500;
     font-size: 20px;

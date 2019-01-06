@@ -115,9 +115,9 @@ export default {
   margin-right: 20px;
   margin-left: 20px;
   @media (max-width: $mobile) {
-    background-size: 12px;
-    margin-right: 17px;
-    margin-left: 10px;
+    background-size: 10px;
+    margin-right: 15px;
+    margin-left: 2px;
   }
 }
 .details {
@@ -143,7 +143,8 @@ export default {
   padding-left: 18px;
   @media (max-width: $mobile) {
     font-size: 7px;
-    background-size: 9px;
+    background-size: 8px;
+    padding-left: 11px;
   }
 }
 .namaz {
@@ -184,6 +185,9 @@ export default {
   }
   .number {
     background-image: url(./1.png);
+    @media (max-width: $mobile) {
+      background-size: 8px;
+    }
   }
   .n2 {
     @extend %fardNamaz;

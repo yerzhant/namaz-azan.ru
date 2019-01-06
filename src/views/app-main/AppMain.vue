@@ -94,28 +94,28 @@
       //-   AppButton(link="/" blue) ВСЕ ВИДЫ НАМАЗА
       //-   AppButton.color-2d(link="/") УСЛОВИЯ НАМАЗА
 
-    //- AppSection(title="ВИДЫ ОЧИЩЕНИЯ")
-      Banner(
-        type="gusl"
-        descStyleBlackBlue
-        title="ГУСЛЬ"
-        shortDesc="Полное омовение"
-        desc="Полное ритуальное омовение водой всего тела целиком. В ряде \
-          случаев тахарат недостаточен для достижения ритуальной чистоты"
-      )
-        template(slot="buttons")
-          AppButton(link="/tahharah/gusl" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
-      Banner(
-        type="taharat"
-        descStyleBlackBlue
-        descWithMargin
-        title="ТАХАРАТ"
-        shortDesc="Малое омовение"
-        desc="Малое омовение является доступным и простым способом очищения \
-          и состоит всего из 4 фардов."
-      )
-        template(slot="buttons")
-          AppButton(link="/tahharah/wudu" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+    AppSection(title="ВИДЫ ОЧИЩЕНИЯ")
+      //- Banner(
+      //-   type="gusl"
+      //-   descStyleBlackBlue
+      //-   title="ГУСЛЬ"
+      //-   shortDesc="Полное омовение"
+      //-   desc="Полное ритуальное омовение водой всего тела целиком. В ряде \
+      //-     случаев тахарат недостаточен для достижения ритуальной чистоты"
+      //- )
+      //-   template(slot="buttons")
+      //-     AppButton(link="/tahharah/gusl" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+      //- Banner(
+      //-   type="taharat"
+      //-   descStyleBlackBlue
+      //-   descWithMargin
+      //-   title="ТАХАРАТ"
+      //-   shortDesc="Малое омовение"
+      //-   desc="Малое омовение является доступным и простым способом очищения \
+      //-     и состоит всего из 4 фардов."
+      //- )
+      //-   template(slot="buttons")
+      //-     AppButton(link="/tahharah/wudu" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 </template>
 
 <script>

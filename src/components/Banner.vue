@@ -103,6 +103,10 @@ export default {
     &.woman {
       background-image: url(../views/app-main/first-namaz-woman.png);
       background-position-x: 50px;
+      @media (max-width: $mobile) {
+        background-position-x: center;
+        background-size: 65%;
+      }
     }
   }
 }
@@ -116,10 +120,17 @@ export default {
   }
   .image {
     background-image: url(../views/app-main/namaz-detailed.png);
-    background-size: 80%;
-    background-position: 25px bottom;
+    @media (max-width: $mobile) {
+      height: 305px;
+      background-size: 80%;
+      background-position: 25px bottom;
+    }
     &.woman {
       background-image: url(../views/app-main/namaz-detailed-woman.png);
+      @media (max-width: $mobile) {
+        height: 308px;
+        background-position: center 32px;
+      }
     }
   }
   &.short {

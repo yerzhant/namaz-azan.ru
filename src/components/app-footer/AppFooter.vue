@@ -12,12 +12,11 @@
       .links
         router-link(to="/") Главная
         router-link(to="/") Тахарат
-        router-link(to="/") Коран
         router-link(to="/") Намаз
         router-link(to="/") Обучение
-      .up(@click="scrollUp")
+      .up(@click="$scrollTo('body')")
     .bottom
-      span Copyright © 2018 Azan.ru
+      span Copyright © 2019 Azan.ru
       span.bar |
       a(href="/agreement") Соглашение об использовании
       span.bar |
@@ -30,11 +29,6 @@ import Socials from '@/components/socials/Socials.vue';
 export default {
   components: {
     Socials,
-  },
-  methods: {
-    scrollUp() {
-      this.$scrollTo('body');
-    },
   },
 };
 </script>
@@ -51,6 +45,11 @@ export default {
   background: url(./top-bg.png) no-repeat top;
   background-color: #1a3053;
   padding-top: 125px;
+  @media (max-width: $mobile) {
+    background-image: url(./top-bg-m.png);
+    background-size: 360px;
+    padding-top: 104px;
+  }
 }
 .title {
   font-family: $open-sans;
@@ -77,6 +76,10 @@ export default {
 .links {
   margin-top: 110px;
   margin-bottom: 55px;
+  @media (max-width: $mobile) {
+    margin-top: 102px;
+    margin-bottom: 77px;
+  }
   > a {
     display: inline-block;
     border: 1px solid #67758b;
@@ -88,6 +91,9 @@ export default {
     margin-right: 10px;
     &:last-child {
       margin-right: 0;
+    }
+    @media (max-width: $mobile) {
+      min-width: 71px;
     }
   }
 }
@@ -110,6 +116,10 @@ export default {
   background: url(./bottom-bg.png) no-repeat bottom;
   background-color: #07162d;
   border-top: 1px solid #313f53;
+  @media (max-width: $mobile) {
+    background-image: url(./bottom-bg-m.png);
+    background-size: 360px;
+  }
   > * {
     color: #bbc8dd;
     font-size: 13px;

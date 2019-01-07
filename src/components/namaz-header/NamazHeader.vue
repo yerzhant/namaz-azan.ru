@@ -150,7 +150,6 @@ export default {
     @media (max-width: $mobile) {
       width: 100%;
       padding: 33px 20px 300px;
-      background: url(./dhuhr-bg-m.png) no-repeat bottom / cover;
     }
   }
   width: 480px;
@@ -173,7 +172,7 @@ export default {
       line-height: 1;
       font-size: 42px;
       padding-bottom: 18px;
-      letter-spacing: .3px;
+      letter-spacing: 0.3px;
     }
   }
   .short-desc {
@@ -307,6 +306,11 @@ export default {
     width: 2 * 470px + 90px;
     margin-right: auto;
     margin-left: auto;
+    @media (max-width: $mobile) {
+      width: 100%;
+      columns: initial;
+      padding: 25px 20px 0;
+    }
   }
   &.closed {
     height: 70px;
@@ -349,6 +353,11 @@ export default {
     background-image: none;
   }
   .info {
+    &-wrapper {
+      @media (max-width: $mobile) {
+        background: url(./dhuhr-bg-m.png) no-repeat bottom / cover;
+      }
+    }
     .rakaats:nth-last-child(2) {
       color: #175682;
       .rakaats-count {

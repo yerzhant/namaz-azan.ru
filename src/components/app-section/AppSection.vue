@@ -47,6 +47,7 @@ export default {
   @media (max-width: $mobile) {
     font-weight: normal;
     font-size: 27px;
+    padding: 0 20px;
   }
   &.regular {
     font-weight: normal;
@@ -92,6 +93,9 @@ export default {
     .header {
       height: 206px;
       margin-bottom: 138px - 86px;
+      @media (max-width: $mobile) {
+        margin-bottom: 0;
+      }
     }
     .fadjr {
       background: url(./bg-fadjr.jpg) no-repeat center;

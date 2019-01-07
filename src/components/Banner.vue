@@ -204,20 +204,39 @@ export default {
   width: 1076px;
   height: 265px;
   border: 1px solid #b1bcc2;
+  @media (max-width: $mobile) {
+    width: 100%;
+    height: auto;
+  }
   .top {
     flex-direction: row-reverse;
+    @media (max-width: $mobile) {
+      flex-direction: column-reverse;
+    }
   }
   .desc {
     flex-basis: fill;
     flex-grow: 1;
+    @media (max-width: $mobile) {
+      padding-top: 20px;
+      padding-bottom: 30px;
+    }
   }
   .image {
     flex-basis: 480px;
+    @media (max-width: $mobile) {
+      flex-basis: 176px;
+      background-size: cover;
+    }
   }
   &.fadjr {
     .image {
       background-image: url(../views/namaz/fard-fadjr.jpg);
       background-position: -1px 0;
+      @media (max-width: $mobile) {
+        background-image: url(../views/namaz/fard-fadjr-m.jpg);
+        background-position: initial;
+      }
       &.woman {
         background-image: url(../views/namaz/fard-fadjr-woman.jpg);
       }
@@ -226,6 +245,9 @@ export default {
   &.dhuhr {
     .image {
       background-image: url(../views/namaz/fard-dhuhr.jpg);
+      @media (max-width: $mobile) {
+        background-image: url(../views/namaz/fard-dhuhr-m.jpg);
+      }
       &.woman {
         background-image: url(../views/namaz/fard-dhuhr-woman.jpg);
       }
@@ -235,6 +257,9 @@ export default {
     .image {
       background-image: url(../views/namaz/fard-asr.jpg);
       background-position: 0 0;
+      @media (max-width: $mobile) {
+        background-image: url(../views/namaz/fard-asr-m.jpg);
+      }
       &.woman {
         background-image: url(../views/namaz/fard-asr-woman.jpg);
       }
@@ -244,6 +269,9 @@ export default {
     .image {
       background-image: url(../views/namaz/fard-maghrib.jpg);
       background-position: 0 0;
+      @media (max-width: $mobile) {
+        background-image: url(../views/namaz/fard-maghrib-m.jpg);
+      }
       &.woman {
         background-image: url(../views/namaz/fard-maghrib-woman.jpg);
       }
@@ -253,6 +281,10 @@ export default {
     .image {
       background-image: url(../views/namaz/fard-isha.jpg);
       background-position: -1px -1px;
+      @media (max-width: $mobile) {
+        background-image: url(../views/namaz/fard-isha-m.jpg);
+        background-position: initial;
+      }
       &.woman {
         background-image: url(../views/namaz/fard-isha-woman.jpg);
       }

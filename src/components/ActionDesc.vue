@@ -41,6 +41,10 @@ export default {
     width: auto;
     margin-right: 40px;
     margin-left: 60px;
+    @media (max-width: $mobile) {
+      margin-right: 0;
+      margin-left: 0;
+    }
   }
 }
 .title {

@@ -3,7 +3,7 @@
     .info-wrapper
       section.info
         h1.title {{ title }}
-          span.title-colon :
+          span.title-colon {{ ': ' }}
           span.sub-title {{ subTitle }}
         .short-desc {{ shortDesc }}
         .details(v-if="isNamaz")
@@ -19,7 +19,6 @@
           .rakaats(v-if="rakaats3")
             .rakaats-count {{ rakaats3 }}
             .rakaats-title {{ rakaats3Title }}
-          .rakaats(v-if="rakaats4")
         .buttons
           AppButton(
             :link="button1Link"
@@ -75,7 +74,6 @@ export default {
     rakaats2Title: String,
     rakaats3: String,
     rakaats3Title: String,
-    rakaats4: String,
     buttonWidth: {
       type: Number,
       default: 114,
@@ -234,12 +232,8 @@ export default {
           border-bottom: 1px solid #b8c2cb;
         }
         &:nth-child(4)::before,
-        &:nth-child(5)::before,
-        &:nth-child(6)::before {
+        &:nth-child(5)::before {
           border-top: none;
-        }
-        &:nth-child(6)::after {
-          background-color: transparent;
         }
       }
     }
@@ -477,6 +471,9 @@ export default {
 .gusl {
   background-image: url(../../views/tahharah/gusl-bg.png);
 }
+.sub-title {
+  text-transform: uppercase;
+}
 @media (max-width: $mobile) {
   .sub-title {
     display: block;
@@ -485,6 +482,7 @@ export default {
     font-size: 16px;
     line-height: 1;
     letter-spacing: normal;
+    text-transform: initial;
     margin-top: 10px;
     color: #1a467a;
   }

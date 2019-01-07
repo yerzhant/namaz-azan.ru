@@ -13,7 +13,6 @@
       rakaats2Title="Фарда"
       rakaats3="2"
       rakaats3Title="Фарда"
-      rakaats4="x"
       button1="СУННА"
       button1Link="#"
       button2="ФАРД"

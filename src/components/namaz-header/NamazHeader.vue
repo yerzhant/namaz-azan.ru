@@ -274,6 +274,9 @@ export default {
     font-weight: 300;
     font-size: 13px;
     color: #000;
+    @media (max-width: $mobile) {
+      font-size: 10px;
+    }
     .footnote {
       color: #ff0000;
       margin-right: 3px;

@@ -52,6 +52,7 @@
         .image-3(:class="[$store.state.gender, {active: image3}]")
         .tool-bar(:class="$store.state.gender")
           .button.image.active
+          .filler
           .button.b1(:class="{active: image1}" @click="image2 = image3 = false; image1 = true") 1
           .button.b2(:class="{active: image2}" @click="image1 = image3 = false; image2 = true") 2
           .button.b3(:class="{active: image3}" @click="image1 = image2 = false; image3 = true") 3
@@ -184,6 +185,9 @@ export default {
     background: none;
     padding-top: 86px;
   }
+  @media (max-width: $mobile) {
+    padding: 60px 0;
+  }
 }
 .header {
   display: flex;
@@ -212,13 +216,23 @@ export default {
   font-size: 16px;
   line-height: 23px;
   margin-bottom: 52px;
+  @media (max-width: $mobile) {
+    padding: 0 7px;
+    margin-bottom: 40px;
+  }
 }
 .info {
   display: flex;
+  @media (max-width: $mobile) {
+    flex-wrap: wrap;
+  }
 }
 .description {
   flex-grow: 1;
   flex-basis: 469px;
+  @media (max-width: $mobile) {
+    flex-basis: fill;
+  }
 }
 .tabs {
   display: flex;
@@ -226,6 +240,9 @@ export default {
   border: 1px solid #cbd3db;
   height: 41px;
   margin-bottom: 50px;
+  @media (max-width: $mobile) {
+    margin-bottom: 20px;
+  }
   &.full {
     border-right: none;
   }
@@ -240,6 +257,9 @@ export default {
     font-family: $pt-sans;
     font-size: 13px;
     color: #465d73;
+    @media (max-width: $mobile) {
+      font-size: 9px;
+    }
     &.active {
       background-color: #fff;
       border-bottom: 1px solid #fff;
@@ -262,8 +282,14 @@ export default {
 .player {
   margin-top: 67px;
   margin-bottom: 41px;
+  @media (max-width: $mobile) {
+    margin-top: 30px;
+  }
 }
 .buttons {
+  @media (max-width: $mobile) {
+    display: none;
+  }
   > * {
     margin-right: 10px;
   }
@@ -279,6 +305,12 @@ export default {
   background: url(./bg-media.png) no-repeat top;
   background-color: #f7fcff;
   border-top: 1px solid #cbd3db;
+  @media (max-width: $mobile) {
+    width: 100%;
+    height: 610px;
+    margin-left: 0;
+    flex-direction: column-reverse;
+  }
 }
 .image-1,
 .image-2,
@@ -287,6 +319,9 @@ export default {
   flex-grow: 1;
   background-repeat: no-repeat;
   background-position: center;
+  @media (max-width: $mobile) {
+    background-size: contain;
+  }
   &.active {
     display: block;
   }
@@ -295,6 +330,15 @@ export default {
   background-color: #eff5f7;
   width: 43px;
   border-left: 1px solid #cbd3db;
+  @media (max-width: $mobile) {
+    width: 100%;
+    display: flex;
+    border-left: none;
+    border-bottom: 1px solid #cbd3db;
+    .filler {
+      flex-grow: 1;
+    }
+  }
   .button {
     display: flex;
     justify-content: center;
@@ -304,12 +348,25 @@ export default {
     color: #9bafbf;
     border-bottom: 1px solid #cbd3db;
     cursor: pointer;
+    @media (max-width: $mobile) {
+      width: 43px;
+      border-bottom: none;
+      border-left: 1px solid #cbd3db;
+    }
     &.image {
       background: url(./images.png) no-repeat center;
       margin-bottom: 175px;
+      @media (max-width: $mobile) {
+        margin-bottom: 0;
+        border-right: 1px solid #cbd3db;
+        border-left: none;
+      }
     }
     &.b1 {
       border-top: 1px solid #cbd3db;
+      @media (max-width: $mobile) {
+        border-top: none;
+      }
     }
     &.active {
       background-color: #fff;
@@ -328,6 +385,9 @@ export default {
   }
   .image-1 {
     background-image: url(./niet.png);
+    @media (max-width: $mobile) {
+      background-size: initial;
+    }
     &.woman {
       background-image: url(./niet-woman.png);
     }
@@ -346,6 +406,9 @@ export default {
   }
   .image-1 {
     background-image: url(./takbir-1.png);
+    @media (max-width: $mobile) {
+      background-size: initial;
+    }
     &.woman {
       background-image: url(./takbir-woman.png);
     }
@@ -365,6 +428,9 @@ export default {
   }
   .image-1 {
     background-image: url(./qiyam-1.png);
+    @media (max-width: $mobile) {
+      background-size: initial;
+    }
     &.woman {
       background-image: url(./qiyam-woman-1.png);
     }
@@ -390,6 +456,9 @@ export default {
   .image-1 {
     background-image: url(./ruku-1.png);
     background-position-y: 215px;
+    @media (max-width: $mobile) {
+      background-size: initial;
+    }
     &.woman {
       background-image: url(./ruku-woman.png);
       background-position-y: 110px;
@@ -398,6 +467,9 @@ export default {
   .image-2 {
     background-image: url(./ruku-2.png);
     background-position-y: 200px;
+    @media (max-width: $mobile) {
+      background-size: initial;
+    }
     &.woman {
       background-image: url(./ruku-woman.png);
       background-position-y: 110px;
@@ -407,6 +479,9 @@ export default {
 .straight-up {
   .image-1 {
     background-image: url(./niet.png);
+    @media (max-width: $mobile) {
+      background-size: initial;
+    }
     &.woman {
       background-image: url(./niet-woman.png);
     }
@@ -504,12 +579,18 @@ export default {
   }
   .image-1 {
     background-image: url(./takbir-1.png);
+    @media (max-width: $mobile) {
+      background-size: initial;
+    }
     &.woman {
       background-image: url(./takbir-woman.png);
     }
   }
   .image-2 {
     background-image: url(./qiyam-1.png);
+    @media (max-width: $mobile) {
+      background-size: initial;
+    }
     &.woman {
       background-image: url(./qiyam-woman-1.png);
     }
@@ -570,6 +651,9 @@ export default {
   &.ears-and-neck {
     .image-1 {
       background-image: url(./wudu/ears-and-neck.png);
+      @media (max-width: $mobile) {
+        background-size: initial;
+      }
     }
   }
   &.leg-right {

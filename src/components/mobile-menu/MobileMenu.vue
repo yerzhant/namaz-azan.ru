@@ -58,7 +58,7 @@
             .title ОБУЧЕНИЕ
             .sub-title Видео-фото уроки
         .subitems(v-show="tutoring")
-          .subitem-l2(@click="goTo('/fadjr')") Мой первый намаз
+          .subitem-l2(@click="goTo('/tour')") Мой первый намаз
           .subitem-l2(@click="goTo('/dhuhr')") Намаз: подробно
           .subitem-l2(@click="goTo('/asr')") Видео уроки
 

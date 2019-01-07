@@ -105,6 +105,9 @@ export default {
   flex-direction: column;
   background-color: #f7fcff;
   height: calc(100vh - 50px);
+  @media (max-width: $mobile) {
+    height: calc(100vh - 90px);
+  }
 }
 .content {
   display: flex;

@@ -56,6 +56,8 @@
           .button.b1(:class="{active: image1}" @click="image2 = image3 = false; image1 = true") 1
           .button.b2(:class="{active: image2}" @click="image1 = image3 = false; image2 = true") 2
           .button.b3(:class="{active: image3}" @click="image1 = image2 = false; image3 = true") 3
+      .next-button(v-if="tour")
+        AppButton(:height="36" blue @click="goNext") ДАЛЕЕ
 </template>
 
 <script>
@@ -604,6 +606,9 @@ export default {
     .image-1 {
       background-image: url(./wudu/gusl.png);
       background-position-y: bottom;
+      @media (max-width: $mobile) {
+        background-size: initial;
+      }
     }
   }
   &.niet {
@@ -696,18 +701,31 @@ export default {
   width: 1022px;
   padding: 0;
   background: no-repeat;
+  @media (max-width: $mobile) {
+    width: 100%;
+  }
   .media {
     background-color: #ecf7fd;
     @media (max-width: 1366px) {
       height: 500px;
     }
+    @media (max-width: $mobile) {
+      height: 610px;
+    }
   }
   .tabs {
     margin-bottom: 40px;
+    @media (max-width: $mobile) {
+      margin-bottom: 20px;
+    }
   }
   .tab.active {
     background-color: #f7fcff;
     border-bottom-color: #f7fcff;
+    @media (max-width: $mobile) {
+      background-color: #fff;
+      border-bottom-color: #fff;
+    }
   }
   .header {
     padding-left: 0;
@@ -730,6 +748,9 @@ export default {
     @media (max-width: 1366px) {
       max-height: 270px;
     }
+    @media (max-width: $mobile) {
+      max-height: none;
+    }
   }
   @media (max-width: 1366px) {
     &.ruku {
@@ -742,6 +763,16 @@ export default {
       .image-1 {
         background-position-y: 290px;
       }
+    }
+  }
+  .next-button {
+    display: none;
+    @media (max-width: $mobile) {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 50px;
     }
   }
 }

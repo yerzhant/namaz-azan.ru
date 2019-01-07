@@ -28,7 +28,7 @@
         span.selected-item Русский
           img.flag(src="./ru.png")
 
-      router-link.tutoring(to="/xxx") Обучение намазу
+      router-link.tutoring(to="/tour") Обучение намазу
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template lang="pug">
-  section.tour
+  section.tour(:class="type")
     .content
       .section-slide(v-show="type === 'section'")
         .title {{ data.title }}
@@ -23,7 +23,8 @@
         )
         .next(@click="next")
     .progress-bar
-      .to-main(@click="$router.push('/')") На главную
+      .to-main(@click="$router.push('/')")
+        span На главную
       .left.item(@click="slideProgressLeft")
       .items-viewport
         .items(:style="{left: `${progressPosition}px`}")
@@ -76,8 +77,13 @@ export default {
       this.normalizeProgressPosition();
     },
     normalizeProgressPosition() {
-      if (this.index < 16) this.progressPosition = 0;
-      else this.progressPosition = this.getProgressMaxPosition();
+      const max = this.getProgressMaxPosition();
+      if (this.index < 5) this.progressPosition = 0;
+      else if (this.index < 9) this.progressPosition = max / 5;
+      else if (this.index < 14) this.progressPosition = max / 5 * 2;
+      else if (this.index < 19) this.progressPosition = max / 5 * 3;
+      else if (this.index < 23) this.progressPosition = max / 5 * 4;
+      else this.progressPosition = max;
     },
     slideProgressLeft() {
       this.progressPosition += 50;
@@ -89,7 +95,9 @@ export default {
       if (this.progressPosition < diff) this.progressPosition = diff;
     },
     getProgressMaxPosition() {
-      return -65 * 28 + document.querySelector('.items-viewport').offsetWidth;
+      const itemWidth = document.querySelector('.tour .items-viewport .item').offsetWidth;
+
+      return itemWidth * -28 + document.querySelector('.items-viewport').offsetWidth;
     },
   },
   components: {
@@ -106,7 +114,13 @@ export default {
   background-color: #f7fcff;
   height: calc(100vh - 50px);
   @media (max-width: $mobile) {
-    height: calc(100vh - 90px);
+    background-color: #fff;
+    &.section {
+      height: calc(100vh - 90px - 44px);
+    }
+    &.rukn {
+      height: auto;
+    }
   }
 }
 .content {
@@ -118,6 +132,13 @@ export default {
   display: flex;
   height: 65px;
   border-top: 1px solid #cdd5db;
+  @media (max-width: $mobile) {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 44px;
+  }
 }
 .to-main {
   display: flex;
@@ -130,6 +151,14 @@ export default {
   background: url(./to-main.png) no-repeat 15px;
   background-color: #21334f;
   cursor: pointer;
+  @media (max-width: $mobile) {
+    width: 44px;
+    background-position: center;
+    background-size: 15px;
+    span {
+      display: none;
+    }
+  }
   &:hover {
     color: #bac8df;
     background-image: url(./to-main-active.png);
@@ -144,13 +173,23 @@ export default {
   height: 100%;
   user-select: none;
   cursor: pointer;
+  @media (max-width: $mobile) {
+    width: 44px;
+  }
   &.section {
     flex-direction: column;
     font-size: 13px;
     color: #fff;
     background-color: #2b9ace;
+    @media (max-width: $mobile) {
+      font-size: 9px;
+    }
     .title {
       font-size: 16px;
+      @media (max-width: $mobile) {
+        font-size: 12px;
+        font-weight: 500;
+      }
     }
   }
   &.rukn {
@@ -167,11 +206,17 @@ export default {
       content: '';
       background-color: rgba($color: #eff5f9, $alpha: 0.9);
     }
+    @media (max-width: $mobile) {
+      background-size: cover;
+    }
     .title {
       z-index: 1;
       font-weight: bold;
       font-size: 24px;
       color: #2b87ce;
+      @media (max-width: $mobile) {
+        font-size: 20px;
+      }
     }
     &.active,
     &:hover {
@@ -260,6 +305,9 @@ export default {
   &:hover {
     background-image: url(./left-active.png);
   }
+  @media (max-width: $mobile) {
+    background-size: 6px;
+  }
 }
 .right {
   background: url(./right.png) no-repeat center;
@@ -267,16 +315,25 @@ export default {
   &:hover {
     background-image: url(./right-active.png);
   }
+  @media (max-width: $mobile) {
+    background-size: 6px;
+  }
 }
 .items-viewport {
   width: calc(100% - 134px - 65px * 2);
   overflow: hidden;
+  @media (max-width: $mobile) {
+    width: calc(100% - 44px * 3);
+  }
 }
 .items {
   position: relative;
   display: flex;
   width: 134px + 65px * 30;
   height: 100%;
+  @media (max-width: $mobile) {
+    width: 44px * 31;
+  }
 }
 .section-slide {
   flex-grow: 1;
@@ -296,6 +353,11 @@ export default {
     font-size: 15px;
     line-height: 24px;
     width: 635px;
+    @media (max-width: $mobile) {
+      width: 100%;
+      padding: 0 20px;
+      margin-top: 10px;
+    }
   }
   .moon {
     margin-top: 23px;
@@ -306,6 +368,13 @@ export default {
   flex-grow: 1;
   display: flex;
   align-items: center;
+  @media (max-width: $mobile) {
+    padding: 33px 20px;
+    .prev,
+    .next {
+      display: none;
+    }
+  }
 }
 .prev {
   flex-grow: 1;

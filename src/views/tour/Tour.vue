@@ -19,6 +19,7 @@
           :content2="data.content2"
           :content3="data.content3"
           :content4="data.content4"
+          :last="index === items.length - 1"
           @next="next"
         )
         .next(@click="next")

@@ -44,7 +44,7 @@
           .tab-content(:class="{active: tab4}" v-html="content4")
           AppPlayer.player(:type="audio")
           .buttons
-            AppButton(:height="36" blue @click="goNext") ДАЛЕЕ
+            AppButton(:height="36" blue @click="goNext" v-if="!last") ДАЛЕЕ
             AppButton.print(:height="36" @click="print") РАСПЕЧАТАТЬ
       .media
         .image-1(:class="[$store.state.gender, {active: image1}]")
@@ -56,7 +56,7 @@
           .button.b1(:class="{active: image1}" @click="image2 = image3 = false; image1 = true") 1
           .button.b2(:class="{active: image2}" @click="image1 = image3 = false; image2 = true") 2
           .button.b3(:class="{active: image3}" @click="image1 = image2 = false; image3 = true") 3
-      .next-button(v-if="tour")
+      .next-button(v-if="tour && !last")
         AppButton(:height="36" blue @click="goNext") ДАЛЕЕ
 </template>
 
@@ -72,6 +72,7 @@ export default {
     kind: String,
     next: String,
     first: Boolean,
+    last: Boolean,
     tour: Boolean,
     title: String,
     subTitle: String,

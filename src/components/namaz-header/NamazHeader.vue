@@ -459,6 +459,12 @@ export default {
   }
   .info {
     padding: 95px 0;
+    @media (max-width: $mobile) {
+      padding: 0;
+      &-wrapper {
+        padding-bottom: 70px;
+      }
+    }
   }
 }
 .tahharah {

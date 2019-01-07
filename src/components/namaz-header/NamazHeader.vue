@@ -479,6 +479,14 @@ export default {
 }
 .gusl {
   background-image: url(../../views/tahharah/gusl-bg.png);
+  @media (max-width: $mobile) {
+    .info {
+      padding: 0;
+      &-wrapper {
+        padding-bottom: 100px;
+      }
+    }
+  }
 }
 .sub-title {
   text-transform: uppercase;

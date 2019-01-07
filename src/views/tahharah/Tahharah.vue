@@ -197,12 +197,21 @@ export default {
     margin-bottom: 17px;
   }
 }
+.namaz-detailed {
+  @media (max-width: $mobile) {
+    display: none;
+  }
+}
 .admin-text {
   font-family: $pt-sans;
   font-size: 16px;
   line-height: 24px;
   width: 1018px;
   margin: 30px auto 0;
+  @media (max-width: $mobile) {
+    width: 100%;
+    padding: 0 20px;
+  }
   .section {
     margin-bottom: 50px;
     padding-bottom: 50px;

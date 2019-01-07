@@ -3,6 +3,8 @@
     .info-wrapper
       section.info
         h1.title {{ title }}
+          span.title-colon :
+          span.sub-title {{ subTitle }}
         .short-desc {{ shortDesc }}
         .details(v-if="isNamaz")
           .type {{ typeText }}
@@ -17,6 +19,7 @@
           .rakaats(v-if="rakaats3")
             .rakaats-count {{ rakaats3 }}
             .rakaats-title {{ rakaats3Title }}
+          .rakaats(v-if="rakaats4")
         .buttons
           AppButton(
             :link="button1Link"
@@ -41,7 +44,7 @@
           ) {{ button3 }}
         .city-info(v-if="isNamaz")
           span.footnote *
-          span Указано время намаза для города: {{ $store.state.city }}
+          span Указано время намаза для: {{ $store.state.city }}
           span.bar |
           span.select(@click="$store.commit('toggleSelectCity')") Другой город
 
@@ -64,6 +67,7 @@ export default {
     type: String,
     typeText: String,
     title: String,
+    subTitle: String,
     shortDesc: String,
     rakaats1: String,
     rakaats1Title: String,
@@ -71,6 +75,7 @@ export default {
     rakaats2Title: String,
     rakaats3: String,
     rakaats3Title: String,
+    rakaats4: String,
     buttonWidth: {
       type: Number,
       default: 114,
@@ -142,10 +147,20 @@ export default {
     width: 2 * 470px + 90px;
     margin-right: auto;
     margin-left: auto;
+    @media (max-width: $mobile) {
+      width: 100%;
+      padding: 33px 20px 300px;
+      background: url(./dhuhr-bg-m.png) no-repeat bottom / cover;
+    }
   }
   width: 480px;
   height: 445px;
   padding: 60px 0;
+  @media (max-width: $mobile) {
+    width: 100%;
+    height: initial;
+    padding: 0;
+  }
   .title {
     font-family: $pt-sans;
     font-weight: bold;
@@ -154,6 +169,12 @@ export default {
     padding-bottom: 12px;
     margin-bottom: 16px;
     border-bottom: 1px solid #b8c2cb;
+    @media (max-width: $mobile) {
+      line-height: 1;
+      font-size: 42px;
+      padding-bottom: 18px;
+      letter-spacing: .3px;
+    }
   }
   .short-desc {
     font-weight: 300;
@@ -167,6 +188,11 @@ export default {
     border-bottom: 1px solid #b8c2cb;
     margin-top: 16px;
     margin-bottom: 22px;
+    @media (max-width: $mobile) {
+      height: auto;
+      flex-wrap: wrap;
+      border: none;
+    }
     > * {
       display: flex;
       justify-content: center;
@@ -189,6 +215,33 @@ export default {
       }
       &:last-child::after {
         display: none;
+        @media (max-width: $mobile) {
+          display: initial;
+        }
+      }
+      @media (max-width: $mobile) {
+        width: 106px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        flex-grow: 0;
+        &::before {
+          position: absolute;
+          top: -15px;
+          bottom: -15px;
+          right: 0;
+          left: 0;
+          content: '';
+          border-top: 1px solid #b8c2cb;
+          border-bottom: 1px solid #b8c2cb;
+        }
+        &:nth-child(4)::before,
+        &:nth-child(5)::before,
+        &:nth-child(6)::before {
+          border-top: none;
+        }
+        &:nth-child(6)::after {
+          background-color: transparent;
+        }
       }
     }
   }
@@ -213,6 +266,14 @@ export default {
   .buttons {
     > * {
       margin-right: 10px;
+      &:last-child {
+        margin-right: 0;
+      }
+      @media (max-width: $mobile) {
+        font-size: 10px;
+        width: 100px !important;
+        height: 31px !important;
+      }
     }
   }
   .city-info {
@@ -284,6 +345,9 @@ export default {
 }
 .dhuhr {
   background-image: url(./dhuhr-bg.png);
+  @media (max-width: $mobile) {
+    background-image: none;
+  }
   .info {
     .rakaats:nth-last-child(2) {
       color: #175682;
@@ -403,5 +467,20 @@ export default {
 }
 .gusl {
   background-image: url(../../views/tahharah/gusl-bg.png);
+}
+@media (max-width: $mobile) {
+  .sub-title {
+    display: block;
+    font-family: $roboto;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: normal;
+    margin-top: 10px;
+    color: #1a467a;
+  }
+  .title-colon {
+    display: none;
+  }
 }
 </style>

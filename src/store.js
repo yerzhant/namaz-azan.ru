@@ -6,7 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     gender: 'man',
-    namaz: 'gusl',
+    namaz: 'dhuhr',
     mobileHeaderStatus: 'Выбор пола, возраста и мазхаба',
     city: 'Алматы',
     selectCity: false,

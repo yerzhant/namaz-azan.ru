@@ -477,17 +477,13 @@ export default {
       this.$store.commit('setNamaz', type);
     },
   },
-  created() {
-    console.log('ttttttttttt');
-    
-    console.log(this.$route.params.type);
-    this.getData();
+  watch: {
+    $route(to, from) {
+      this.getData();
+    },
   },
-  beforeRouteUpdate(to, from, next) {
-    console.log(this.$route.params.type);
-    
+  created() {
     this.getData();
-    next();
   },
   components: {
     NamazHeader,

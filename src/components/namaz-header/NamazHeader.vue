@@ -54,7 +54,7 @@
         :width="109"
         :height="32"
         small
-        @click="descOpen = !descOpen"
+        @click="descOpen = !descOpen; return false;"
       ) {{ descOpen ? 'СВЕРНУТЬ' : 'РАЗВЕРНУТЬ' }}
 </template>
 

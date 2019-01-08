@@ -1,6 +1,6 @@
 <template lang="pug">
   router-link.app-button(
-    :to="link"
+    :to="to"
     :class="{red: red, blue: blue, small: small}"
     :style="{width: `${width}px`, height: `${height}px`}"
     @click.native="$emit('click')"
@@ -11,10 +11,7 @@
 <script>
 export default {
   props: {
-    link: {
-      type: String,
-      default: '#',
-    },
+    link: String,
     red: Boolean,
     blue: Boolean,
     small: Boolean,
@@ -26,6 +23,14 @@ export default {
       type: Number,
       default: 41,
     },
+  },
+  data() {
+    return {
+      to: null,
+    };
+  },
+  created() {
+    this.to = this.link || this.$route.path;
   },
 };
 </script>

@@ -1,9 +1,9 @@
 <template lang="pug">
   section.socials(:class="{mobile}")
-    a.fb(href="#")
-    a.yt(href="#")
-    a.vk(href="#")
-    a.tg(href="#")
+    a.fb(:href="$store.state.socials.fb.value")
+    a.yt(:href="$store.state.socials.yt.value")
+    a.vk(:href="$store.state.socials.vk.value")
+    a.tg(:href="$store.state.socials.tg.value")
     a.logo(href="https://azan.ru" v-if="mobile") Azan.ru
 </template>
 

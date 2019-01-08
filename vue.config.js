@@ -23,4 +23,7 @@ module.exports = {
       maskIcon: '',
     },
   },
+  devServer: {
+    proxy: 'http://localhost',
+  },
 };

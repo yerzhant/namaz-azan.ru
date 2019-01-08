@@ -19,8 +19,14 @@ import MobileMenu from '@/components/mobile-menu/MobileMenu.vue';
 import MobileHeader from '@/components/mobile-header/MobileHeader.vue';
 import SelectCity from '@/components/select-city/SelectCity.vue';
 import isFullSite from '@/mixins/isFullSite';
+import axios from 'axios';
 
 export default {
+  created() {
+    axios.get('/api/site/socials').then(r => {
+      this.$store.commit('setSocials', r.data);
+    });
+  },
   components: {
     AppHeader,
     AppFooter,

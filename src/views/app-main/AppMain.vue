@@ -30,8 +30,8 @@
           type="fadjr"
           title="ФАДЖР"
           desc="Утренний намаз"
-          startTime="00:19"
-          endTime="23:42"
+          :startTime="$store.state.namazTimes.today[0]"
+          :endTime="$store.state.namazTimes.today[1]"
           :namaz1Count=2
           namaz1Type="сунны"
           :namaz2Count=2
@@ -41,8 +41,8 @@
           type="dhuhr"
           title="ЗУХР"
           desc="Обеденный намаз"
-          startTime="06:59"
-          endTime="07:42"
+          :startTime="$store.state.namazTimes.today[2]"
+          :endTime="$store.state.namazTimes.today[3]"
           :namaz1Count=4
           namaz1Type="сунны"
           :namaz2Count=4
@@ -54,8 +54,8 @@
           type="asr"
           title="АСР"
           desc="Предвечерний намаз"
-          startTime="06:59"
-          endTime="07:42"
+          :startTime="$store.state.namazTimes.today[3]"
+          :endTime="$store.state.namazTimes.today[4]"
           :namaz1Count=4
           namaz1Type="фарда"
         )
@@ -63,8 +63,8 @@
           type="maghrib"
           title="МАГРИБ"
           desc="Вечерний намаз"
-          startTime="06:59"
-          endTime="07:42"
+          :startTime="$store.state.namazTimes.today[4]"
+          :endTime="$store.state.namazTimes.today[5]"
           :namaz1Count=3
           namaz1Type="фарда"
           :namaz2Count=2
@@ -74,8 +74,8 @@
           type="isha"
           title="ИША"
           desc="Ночной намаз"
-          startTime="18:59"
-          endTime="07:42"
+          :startTime="$store.state.namazTimes.today[5]"
+          :endTime="$store.state.namazTimes.today[0]"
           :namaz1Count=4
           namaz1Type="фарда"
           :namaz2Count=2
@@ -86,7 +86,7 @@
           title="ВИТР"
           desc="Заключительный намаз"
           startTime="После намаза Иша"
-          endTime="07:42"
+          :endTime="$store.state.namazTimes.tomorrow[0]"
           :namaz1Count=3
           namaz1Type="ваджиба"
         )

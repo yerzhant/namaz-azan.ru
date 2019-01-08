@@ -8,7 +8,25 @@ export default new Vuex.Store({
     gender: 'man',
     namaz: null,
     mobileHeaderStatus: 'Выбор пола', // , возраста и мазхаба',
-    city: 'Алматы',
+    city: null,
+    namazTimes: {
+      today: [
+        '-',
+        '-',
+        '-',
+        '-',
+        '-',
+        '-',
+      ],
+      tomorrow: [
+        '-',
+        '-',
+        '-',
+        '-',
+        '-',
+        '-',
+      ],
+    },
     selectCity: false,
     socials: {
       fb: {},
@@ -76,6 +94,9 @@ export default new Vuex.Store({
     },
     setCity(state, city) {
       state.city = city;
+    },
+    setNamazTimes(state, times) {
+      state.namazTimes = times;
     },
     setSocials(state, socials) {
       state.socials = socials;

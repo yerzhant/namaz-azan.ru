@@ -26,6 +26,18 @@ export default {
     axios.get('/api/site/socials').then(r => {
       this.$store.commit('setSocials', r.data);
     });
+
+    let cityId = localStorage.getItem('cityId');
+    let city = localStorage.getItem('city');
+    if (!cityId) {
+      cityId = 50362;
+      city = 'Алматы';
+      localStorage.setItem('cityId', cityId);
+      localStorage.setItem('city', city);
+    }
+    axios.get(`/api/asr/today-and-tomorrow/${cityId}`).then(r => {
+      this.$store.commit('setNamazTimes', r.data);
+    });
   },
   components: {
     AppHeader,

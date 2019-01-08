@@ -41,21 +41,28 @@ export default {
       return `${this.startTime} - ${this.endTime}${this.isCurrent ? ' (текущий)' : ''}`;
     },
   },
-  created() {
-    if (this.type !== 'witr') {
-      const c = new Date();
-      const h = c.getHours();
-      const m = c.getMinutes();
-      const h1 = this.startTime.split(':')[0];
-      const m1 = this.startTime.split(':')[1];
-      const h2 = this.endTime.split(':')[0];
-      const m2 = this.endTime.split(':')[1];
-      if (h1 <= h2) {
-        this.isCurrent = (h1 < h || (h1 === h && m1 <= m)) && (h < h2 || (h === h2 && m < m2));
-      } else {
-        this.isCurrent = h1 < h || (h1 === h && m1 <= m) || h < h2 || (h === h2 && m < m2);
+  watch: {
+    endTime() {
+      this.update();
+    },
+  },
+  methods: {
+    update() {
+      if (this.endTime !== '-' && this.type !== 'witr') {
+        const c = new Date();
+        const h = c.getHours();
+        const m = c.getMinutes();
+        const h1 = parseInt(this.startTime.split(':')[0], 10);
+        const m1 = parseInt(this.startTime.split(':')[1], 10);
+        const h2 = parseInt(this.endTime.split(':')[0], 10);
+        const m2 = parseInt(this.endTime.split(':')[1], 10);
+        if (h1 <= h2) {
+          this.isCurrent = (h1 < h || (h1 === h && m1 <= m)) && (h < h2 || (h === h2 && m < m2));
+        } else {
+          this.isCurrent = h1 < h || (h1 === h && m1 <= m) || h < h2 || (h === h2 && m < m2);
+        }
       }
-    }
+    },
   },
 };
 </script>

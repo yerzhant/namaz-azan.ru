@@ -38,7 +38,7 @@
     menu.submenu(v-show="flags.taharat")
       img.image(src="./taharat-bg.jpg")
       nav.items
-        router-link.item(to="/tahharah/gusl")
+        router-link.item(to="/tahharah/ghusl")
           .title ГУСЛЬ
           .desc Полное омовение
         router-link.item(to="/tahharah/wudu")
@@ -48,10 +48,10 @@
     menu.submenu(v-show="flags.tutoring")
       img.image(src="./tutoring-bg.jpg")
       nav.items
-        router-link.item(to="#")
+        router-link.item(to="/first-namaz")
           .title МОЙ ПЕРВЫЙ НАМАЗ
           .desc Обзор для новичков
-        router-link.item(to="#")
+        router-link.item(to="/dhuhr/fard")
           .title НАМАЗ: ПОДРОБНО
           .desc Детализированый обзор
         router-link.item(to="#")
@@ -70,31 +70,63 @@
         )
           .title ФАРД НАМАЗЫ
           .desc Обязательные
-        .item.right
+        .item.right(
+          :class="{open: flags.wadjib}"
+          @click.stop="flags.wadjib = !flags.wadjib, closeAll('namaz', 'wadjib')"
+        )
           .title ВАДЖИБ НАМАЗЫ
           .desc Близко к обязательным
-        .item.right
+        .item.right(
+          :class="{open: flags.sunnah}"
+          @click.stop="flags.sunnah = !flags.sunnah, closeAll('namaz', 'sunnah')"
+        )
           .title СУННАТ НАМАЗЫ
           .desc Желательные
 
       menu.submenu(v-show="flags.fard")
         .filler
         nav.items
-          router-link.item(to="/fadjr")
+          router-link.item(to="/fadjr/fard")
             .title ФАДЖР
             .desc Утренний
-          router-link.item(to="#")
+          router-link.item(to="/dhuhr/fard")
             .title ЗУХР
             .desc Полуденный
-          router-link.item(to="#")
+          router-link.item(to="/asr/fard")
             .title АСР
             .desc Послеполуденный
-          router-link.item(to="#")
+          router-link.item(to="/maghrib/fard")
             .title МАГРИБ
             .desc Вечерний
-          router-link.item(to="#")
+          router-link.item(to="/isha/fard")
             .title ИША
             .desc Ночной
+
+      menu.submenu(v-show="flags.wadjib")
+        .filler
+        nav.items
+          router-link.item(to="/witr/wadjib")
+            .title ВИТР
+            .desc Нечетный
+
+      menu.submenu(v-show="flags.sunnah")
+        .filler
+        nav.items
+          router-link.item(to="/fadjr/sunnah")
+            .title ФАДЖР
+            .desc До фарда
+          router-link.item(to="/dhuhr/sunnah")
+            .title ЗУХР
+            .desc До фарда
+          router-link.item(to="/dhuhr/sunnah")
+            .title ЗУХР
+            .desc После фарда
+          router-link.item(to="/maghrib/sunnah")
+            .title МАГРИБ
+            .desc После фарда
+          router-link.item(to="/isha/sunnah")
+            .title ИША
+            .desc После фарда
 
     nav.items.items-l2
       .item-l2(
@@ -126,6 +158,8 @@ export default {
         tutoring: false,
         namaz: false,
         fard: false,
+        wadjib: false,
+        sunnah: false,
       },
     };
   },
@@ -237,8 +271,8 @@ export default {
       &.witr {
         background-image: url(./witr.jpg);
       }
-      &.gusl {
-        background-image: url(./gusl.jpg);
+      &.ghusl {
+        background-image: url(./ghusl.jpg);
       }
       &.wudu {
         background-image: url(./wudu.jpg);

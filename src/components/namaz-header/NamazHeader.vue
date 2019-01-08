@@ -119,7 +119,7 @@ export default {
     },
     isNamaz() {
       switch (this.$store.state.namaz) {
-        case 'gusl':
+        case 'ghusl':
         case 'wudu':
           return false;
         default:
@@ -477,8 +477,8 @@ export default {
     padding: 120px 0;
   }
 }
-.gusl {
-  background-image: url(../../views/tahharah/gusl-bg.png);
+.ghusl {
+  background-image: url(../../views/tahharah/ghusl-bg.png);
   @media (max-width: $mobile) {
     .info {
       padding: 0;

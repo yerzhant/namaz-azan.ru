@@ -6,12 +6,12 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     gender: 'man',
-    namaz: 'gusl',
-    mobileHeaderStatus: 'Выбор пола, возраста и мазхаба',
+    namaz: '',
+    mobileHeaderStatus: 'Выбор пола', // , возраста и мазхаба',
     city: 'Алматы',
     selectCity: false,
     showMenu: false,
-    menu: 'level-2',
+    menu: '', // 'level-2',
     menuItems: [{
       title: 'Фаджр',
       open: false,
@@ -80,8 +80,5 @@ export default new Vuex.Store({
     setMenu(state, menu) {
       state.menu = menu;
     },
-  },
-  actions: {
-
   },
 });

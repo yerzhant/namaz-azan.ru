@@ -15,16 +15,25 @@ export default new Router({
     path: '/main',
     component: AppMain,
   }, {
-    path: '/tour',
-    component: () => import(/* webpackChunkName: "tour" */ './views/tour/Tour.vue'),
+    path: '/first-namaz',
+    component: () => import(/* webpackChunkName: "first-namaz" */ './views/tour/Tour.vue'),
   }, {
-    path: '/tahharah/wudu',
+    path: '/tahharah/:type(wudu)',
     component: () => import(/* webpackChunkName: "namaz" */ './views/namaz/Namaz.vue'),
   }, {
     path: '/tahharah/:type',
     component: () => import(/* webpackChunkName: "tahharah" */ './views/tahharah/Tahharah.vue'),
   }, {
-    path: '/:type',
+    path: '/:type/:subType',
     component: () => import(/* webpackChunkName: "namaz" */ './views/namaz/Namaz.vue'),
+  }, {
+    path: '*',
+    beforeEnter() { window.location = 'https://azan.ru/not-found'; },
   }],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    }
+    return { x: 0, y: 0 };
+  },
 });

@@ -61,8 +61,8 @@
     AppSection(title="ДРУГИЕ ВИДЫ ОЧИЩЕНИЯ")
       .fards
         Banner(
-          type="fard gusl blue"
-          :shadow="$store.state.namaz === 'gusl'"
+          type="fard ghusl blue"
+          :shadow="$store.state.namaz === 'ghusl'"
           descStyleBlackBlue
           descWithMargin2
           title="ГУСЛЬ"
@@ -71,7 +71,7 @@
                 полное омовение носит название “Гусль”."
         )
           template(slot="buttons")
-            AppButton(link="/tahharah/gusl" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(link="/tahharah/ghusl" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
         Banner(
           type="fard wudu blue"
           descStyleBlackBlue
@@ -94,7 +94,7 @@
       descUpBorder
     )
       template(slot="buttons")
-        AppButton(link="/" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+        AppButton(link="/dhuhr/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
     .line
     AppSection(title="ОБЯЗАТЕЛЬНЫЕ НАМАЗЫ" bg1)
@@ -110,7 +110,7 @@
                 фарда. Фаджр является первым из пяти обязательных намазов."
         )
           template(slot="buttons")
-            AppButton(link="/fadjr" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(link="/fadjr/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
         Banner(
           type="fard dhuhr"
@@ -123,7 +123,7 @@
                 фарда. Зухр является вторым из пяти обязательных намазов."
         )
           template(slot="buttons")
-            AppButton(link="/dhuhr" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(link="/dhuhr/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
         Banner(
           type="fard asr"
@@ -136,7 +136,7 @@
                 ракаатов фарда. Аср является третьим из пяти обязательных намазов."
         )
           template(slot="buttons")
-            AppButton(link="/asr" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(link="/asr/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
         Banner(
           type="fard maghrib"
@@ -149,7 +149,7 @@
                 фарда. Магриб является четвёртым из пяти обязательных намазов."
         )
           template(slot="buttons")
-            AppButton(link="/maghrib" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(link="/maghrib/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
         Banner(
           type="fard isha"
@@ -162,7 +162,7 @@
                 фарда. Иша является последним из пяти обязательных намазов."
         )
           template(slot="buttons")
-            AppButton(link="/isha" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(link="/isha/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 </template>
 
 <script>
@@ -173,6 +173,14 @@ import Rukn from '@/components/rukn/Rukn.vue';
 import Banner from '@/components/Banner.vue';
 
 export default {
+  methods: {
+    getData() {
+      this.$store.commit('setNamaz', this.$route.params.type);
+    },
+  },
+  created() {
+    this.getData();
+  },
   components: {
     NamazHeader,
     AppSection,

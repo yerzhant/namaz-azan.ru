@@ -141,8 +141,8 @@ export default {
     }
   }
 }
-.gusl {
-  background-image: url(../views/app-main/gusl-bg.jpg);
+.ghusl {
+  background-image: url(../views/app-main/ghusl-bg.jpg);
   width: 1076px;
   height: 268px;
   border: 1px solid #d4dee8;
@@ -163,10 +163,10 @@ export default {
     }
   }
   .image {
-    background-image: url(../views/app-main/gusl.png);
+    background-image: url(../views/app-main/ghusl.png);
     background-position: bottom;
     @media (max-width: $mobile) {
-      background: url(../views/app-main/gusl-m.jpg) no-repeat top / contain;
+      background: url(../views/app-main/ghusl-m.jpg) no-repeat top / contain;
       flex-basis: 180px;
     }
   }
@@ -295,17 +295,17 @@ export default {
       background-image: url(../views/namaz/tahharah/wudu.jpg);
     }
   }
-  &.gusl {
+  &.ghusl {
     background: #fff;
     .image {
-      background-image: url(../views/namaz/tahharah/gusl.jpg);
+      background-image: url(../views/namaz/tahharah/ghusl.jpg);
     }
   }
   &.blue {
     background-color: #f7fcff;
-    &.gusl {
+    &.ghusl {
       .image {
-        background-image: url(../views/tahharah/gusl.jpg);
+        background-image: url(../views/tahharah/ghusl.jpg);
       }
     }
   }

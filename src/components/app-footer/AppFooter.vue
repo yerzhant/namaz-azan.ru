@@ -8,12 +8,12 @@
         | Cпецпроект Azan.ru
       .socials
         Socials
-        router-link.tutoring(to="xxx") Обучение намазу
+        router-link.tutoring(to="/first-namaz") Обучение намазу
       .links
-        router-link(to="/") Главная
-        router-link(to="/") Тахарат
-        router-link(to="/") Намаз
-        router-link(to="/") Обучение
+        router-link(to="/main") Главная
+        router-link(to="/tahharah/wudu") Тахарат
+        router-link(to="/fadjr/fard") Намаз
+        router-link(to="/dhuhr/fard") Обучение
       .up(@click="$scrollTo('body')")
     .bottom
       span Copyright © 2019 Azan.ru

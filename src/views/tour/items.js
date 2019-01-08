@@ -7,10 +7,10 @@ export default [{
                 Этого можно достичь с помощью полного и малого омовения.`,
   },
 }, {
-  type: 'rukn gusl',
+  type: 'rukn ghusl',
   title: '1',
   data: {
-    type: 'wudu gusl',
+    type: 'wudu ghusl',
     title: 'ГУСЛЬ',
     subTitle: 'Полное омовение',
     number: '1',

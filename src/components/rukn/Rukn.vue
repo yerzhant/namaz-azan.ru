@@ -603,9 +603,9 @@ export default {
   .player {
     display: none;
   }
-  &.gusl {
+  &.ghusl {
     .image-1 {
-      background-image: url(./wudu/gusl.png);
+      background-image: url(./wudu/ghusl.png);
       background-position-y: bottom;
       @media (max-width: $mobile) {
         background-size: initial;

@@ -10,8 +10,8 @@
       descUpBorder
     )
       template(slot="buttons")
-        AppButton(link="/tour" red) ДА, НАЧАТЬ!
-        AppButton.color-2d(link="/") ПОДРОБНЫЕ УРОКИ
+        AppButton(link="/first-namaz" red) ДА, НАЧАТЬ!
+        AppButton.color-2d(link="/fadjr/fard") ПОДРОБНЫЕ УРОКИ
       Slogan
 
     Banner.namaz-detailed(
@@ -24,7 +24,7 @@
       descUpBorder
     )
       template(slot="buttons")
-        AppButton(link="/" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+        AppButton(link="/dhuhr/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
       .table
         NamazInfo(
           type="fadjr"
@@ -96,7 +96,7 @@
 
     AppSection.tahharah(title="ВИДЫ ОЧИЩЕНИЯ")
       Banner(
-        type="gusl"
+        type="ghusl"
         descStyleBlackBlue
         title="ГУСЛЬ"
         shortDesc="Полное омовение"
@@ -104,7 +104,7 @@
           случаев тахарат недостаточен для достижения ритуальной чистоты"
       )
         template(slot="buttons")
-          AppButton(link="/tahharah/gusl" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+          AppButton(link="/tahharah/ghusl" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
       Banner(
         type="taharat"
         descStyleBlackBlue

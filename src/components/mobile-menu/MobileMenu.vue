@@ -19,7 +19,7 @@
             .title ТАХАРАТ
             .sub-title Очищение
         .subitems(v-show="tahharah")
-          .subitem-l2(@click="goTo('/tahharah/gusl')") Гусль
+          .subitem-l2(@click="goTo('/tahharah/ghusl')") Гусль
           .subitem-l2(@click="goTo('/tahharah/wudu')") Вуду
 
       .item(:class="{open: namaz}" @click="namaz = !namaz")
@@ -32,25 +32,25 @@
             .title-block(:class="{open: fard}" @click.stop="fard = !fard")
               .title ФАРД НАМАЗЫ
             .subitems(v-show="fard")
-              .subitem-l2(@click="goTo('/fadjr')") Фаджр
-              .subitem-l2(@click="goTo('/dhuhr')") Зухр
-              .subitem-l2(@click="goTo('/asr')") Аср
-              .subitem-l2(@click="goTo('/maghrib')") Магриб
-              .subitem-l2(@click="goTo('/isha')") Иша
+              .subitem-l2(@click="goTo('/fadjr/fard')") Фаджр
+              .subitem-l2(@click="goTo('/dhuhr/fard')") Зухр
+              .subitem-l2(@click="goTo('/asr/fard')") Аср
+              .subitem-l2(@click="goTo('/maghrib/fard')") Магриб
+              .subitem-l2(@click="goTo('/isha/fard')") Иша
           .subitem
             .title-block(:class="{open: wadjib}" @click.stop="wadjib = !wadjib")
               .title ВАДЖИБ НАМАЗЫ
             .subitems(v-show="wadjib")
-              .subitem-l2(@click="goTo('/witr')") Витр
+              .subitem-l2(@click="goTo('/witr/wadjib')") Витр
           .subitem
             .title-block(:class="{open: sunnah}" @click.stop="sunnah = !sunnah")
               .title СУННАТ НАМАЗЫ
             .subitems(v-show="sunnah")
-              .subitem-l2(@click="goTo('/fadjr')") Фаджр
-              .subitem-l2(@click="goTo('/dhuhr')") Зухр
-              .subitem-l2(@click="goTo('/asr')") Аср
-              .subitem-l2(@click="goTo('/maghrib')") Магриб
-              .subitem-l2(@click="goTo('/isha')") Иша
+              .subitem-l2(@click="goTo('/fadjr/sunnah')") Фаджр
+              .subitem-l2(@click="goTo('/dhuhr/sunnah-before')") Зухр
+              .subitem-l2(@click="goTo('/dhuhr/sunnah-after')") Зухр
+              .subitem-l2(@click="goTo('/maghrib/sunnah')") Магриб
+              .subitem-l2(@click="goTo('/isha/sunnah')") Иша
 
       .item(:class="{open: tutoring}" @click="tutoring = !tutoring")
         .info
@@ -58,9 +58,8 @@
             .title ОБУЧЕНИЕ
             .sub-title Видео-фото уроки
         .subitems(v-show="tutoring")
-          .subitem-l2(@click="goTo('/tour')") Мой первый намаз
-          .subitem-l2(@click="goTo('/dhuhr')") Намаз: подробно
-          .subitem-l2(@click="goTo('/asr')") Видео уроки
+          .subitem-l2(@click="goTo('/first-namaz')") Мой первый намаз
+          .subitem-l2(@click="goTo('/dhuhr/fard')") Намаз: подробно
 
       .socials-block
         Socials(mobile)

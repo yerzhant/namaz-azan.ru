@@ -226,8 +226,8 @@ export default {
         display: none;
       }
     }
-    &.gusl {
-      background-image: url(./gusl.jpg);
+    &.ghusl {
+      background-image: url(./ghusl.jpg);
     }
     &.wudu-face {
       background-image: url(./wudu-face.jpg);

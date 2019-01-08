@@ -36,6 +36,7 @@ export default {
       localStorage.setItem('city', city);
     }
     axios.get(`/api/asr/today-and-tomorrow/${cityId}`).then(r => {
+      this.$store.commit('setCity', city);
       this.$store.commit('setNamazTimes', r.data);
     });
   },

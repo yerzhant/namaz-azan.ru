@@ -96,22 +96,23 @@ export default {
   },
   computed: {
     time() {
+      const { today, tomorrow } = this.$store.state.namazTimes;
       switch (this.type) {
         case 'fadjr':
-          return '06:59 - 07:42';
+          return `${today[0]} - ${today[1]}`;
 
         case 'dhuhr':
-          return '06:59 - 07:42';
+          return `${today[2]} - ${today[3]}`;
 
         case 'asr':
-          return '06:59 - 07:42';
+          return `${today[3]} - ${today[4]}`;
 
         case 'maghrib':
-          return '06:59 - 07:42';
+          return `${today[4]} - ${today[5]}`;
 
         case 'isha':
         case 'witr':
-          return '06:59 - 07:42';
+          return `${today[5]} - ${tomorrow[0]}`;
 
         default:
           return '???';

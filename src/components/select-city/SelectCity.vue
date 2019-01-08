@@ -15,62 +15,19 @@
       .cities
         div(
           v-for="city in filtered"
-          @click="setCity(city)"
-          :class="{city: city.length > 1, \
-                   letter: city.length === 1, \
-                   active: city === $store.state.city}"
-        ) {{ city }}
+          @click="setCity(city.id, city.title)"
+          :class="{city: city.id, letter: city.letter, active: city.title === $store.state.city}"
+        ) {{ city.letter || city.title }}
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
       searchFilter: '',
-      cities: [
-        'А',
-        'Астана',
-        'Астана',
-        'Астана',
-        'Астана',
-        'Астана',
-        'Алматы',
-        'Астана',
-        'Астана',
-        'Астана',
-        'Астана',
-        'Астана',
-        'Астана',
-        'Астана',
-        'Астана',
-        'Астана',
-        'Астана',
-        'Астана',
-        'Астана',
-        'Астана',
-        'Астана',
-        'Б',
-        'Астана',
-        'Астана',
-        'Астана',
-        'Астана',
-        'Астана',
-        'Астана',
-        'Астана',
-        'Астана',
-        'Астана',
-        'New-York',
-        'Астана',
-        'Астана',
-        'Астана',
-        'Астана',
-        'Taraz',
-        'Астана',
-        'Астана',
-        'Астана',
-        'Астана',
-        'Астана',
-      ],
+      cities: null,
       filtered: null,
     };
   },
@@ -82,18 +39,27 @@ export default {
       }
       this.filtered = [];
       this.cities
-        .filter(c => c.length > 1)
-        .filter(c => c.toUpperCase().startsWith(this.searchFilter.toUpperCase()))
+        .filter(c => c.title)
+        .filter(c => c.title.toUpperCase().startsWith(this.searchFilter.toUpperCase()))
         .forEach(c => this.filtered.push(c));
     },
-    setCity(city) {
-      this.$store.commit('setCity', city);
+    setCity(id, city) {
+      if (!id) return;
+      axios.get(`/api/asr/today-and-tomorrow/${id}`).then(r => {
+        localStorage.setItem('cityId', id);
+        localStorage.setItem('city', city);
+        this.$store.commit('setCity', city);
+        this.$store.commit('setNamazTimes', r.data);
+      });
       this.filtered = this.cities;
       this.searchFilter = '';
     },
   },
   created() {
-    this.filtered = this.cities;
+    axios.get('/api/asr/cities-with-letters').then(r => {
+      this.cities = r.data;
+      this.filtered = this.cities;
+    });
   },
 };
 </script>

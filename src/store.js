@@ -6,23 +6,23 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     gender: 'man',
-    namaz: '',
+    namaz: null,
     mobileHeaderStatus: 'Выбор пола', // , возраста и мазхаба',
     city: 'Алматы',
     selectCity: false,
     showMenu: false,
-    menu: '', // 'level-2',
+    menu: null,
     menuItems: [{
       title: 'Фаджр',
       open: false,
       right: true,
       items: [{
         title: 'Фадрж',
-        link: '/fadjr',
+        link: '/fadjr/fard',
         active: true,
       }, {
         title: 'Зухр',
-        link: '/dhuhr',
+        link: '/dhuhr/fadr',
       }],
     }, {
       title: 'Фард',

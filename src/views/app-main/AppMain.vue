@@ -126,6 +126,9 @@ import Slogan from '@/components/slogan/Slogan.vue';
 import NamazInfo from '@/components/namaz-info/NamazInfo.vue';
 
 export default {
+  created() {
+    this.$store.commit('setMenu', null);
+  },
   components: {
     Banner,
     AppButton,

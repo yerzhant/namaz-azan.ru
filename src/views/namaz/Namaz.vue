@@ -472,18 +472,18 @@ import Banner from '@/components/Banner.vue';
 export default {
   methods: {
     getData() {
-      const type = this.$route.params.type;
-      const subType = this.$route.params.subType;
+      const { type } = this.$route.params;
       this.$store.commit('setNamaz', type);
     },
   },
   watch: {
-    $route(to, from) {
+    $route() {
       this.getData();
     },
   },
   created() {
     this.getData();
+    this.$store.commit('setMenu', 'level-2');
   },
   components: {
     NamazHeader,

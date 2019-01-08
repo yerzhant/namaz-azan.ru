@@ -2,26 +2,50 @@
   section.namaz
     NamazHeader(
       :type="$store.state.namaz"
-      :typeText="data.typeText"
-      :title="data.title"
-      :subTitle="data.namaz.title"
-      :shortDesc="data.shortDesc"
-      :rakaats1="data.rakaats1"
-      :rakaats1Title="data.rakaats1Title"
-      :rakaats2="data.rakaats2"
-      :rakaats2Title="data.rakaats2Title"
-      :rakaats3="data.rakaats3"
-      :rakaats3Title="data.rakaats3Title"
-      :button1="data.button1"
-      :button1Link="data.button1Link"
-      :button1Blue="data.button1Blue"
-      :button2="data.button2"
-      :button2Link="data.button2Link"
-      :button2Blue="data.button2Blue"
-      :button3="data.button3"
-      :button3Link="data.button3Link"
-      :button3Blue="data.button3Blue"
-      :desc="data.namaz.description"
+      typeText="Утро"
+      title="ЗУХР"
+      subTitle="Обеденный намаз"
+      shortDesc="Детальный обзор утреннего намаза “Фаджр”, состоящего из 2 ракаатов \
+                 фарда. Фаджр является первым из пяти обязательных намазов."
+      rakaats1="2"
+      rakaats1Title="Сунны"
+      rakaats2="2"
+      rakaats2Title="Фарда"
+      rakaats3="2"
+      rakaats3Title="Фарда"
+      button1="СУННА"
+      button1Link="#"
+      button2="ФАРД"
+      button2Link="#"
+      button2Blue
+      button3="СУННА"
+      button3Link="#"
+      desc="Фаджр состоит из 2 ракаатов сунны и 2 ракаатов фарда. Время его совершения yачинается \
+            с наступлением рассвета и заканчивается за несколько мгновений до восхода солнца. \
+            Наилучшее время для совершения утреннего намаза: ближе к концу его времени, когда \
+            становятся видны контуры предметов. Однако, не следует излишне откладывать фаджр, \
+            что бы не выйти за пределы установленного для него временного промежутка. \
+            У мусульманина должно быть достаточно времени для того, что бы подготовится к намазу \
+            (совершить омовение, одеться и т.д.) и неторопливо прочитать Коран в обоих ракаатах \
+            фаджра до того, как солнце выйдет из-за горизонта. В случае совершения фаджр-намаза \
+            в одиночку, предпочительно выполнить его в самом начале времени.  "
+    )
+    NamazHeader(
+      :type="$store.state.namaz"
+      title="ЗУХР"
+      subTitle="Обеденный намаз"
+      shortDesc="Вуду - это малое ритуальное омовение тела, которое является простым и \
+                 доступным способом достичь состояния ритаульной чистоты, кроме тех \
+                 случаев, когда требуется полное омовение - гусль."
+      desc="Фаджр состоит из 2 ракаатов сунны и 2 ракаатов фарда. Время его совершения yачинается \
+            с наступлением рассвета и заканчивается за несколько мгновений до восхода солнца. \
+            Наилучшее время для совершения утреннего намаза: ближе к концу его времени, когда \
+            становятся видны контуры предметов. Однако, не следует излишне откладывать фаджр, \
+            что бы не выйти за пределы установленного для него временного промежутка. \
+            У мусульманина должно быть достаточно времени для того, что бы подготовится к намазу \
+            (совершить омовение, одеться и т.д.) и неторопливо прочитать Коран в обоих ракаатах \
+            фаджра до того, как солнце выйдет из-за горизонта. В случае совершения фаджр-намаза \
+            в одиночку, предпочительно выполнить его в самом начале времени.  "
     )
     AppSection(title="1 РАКААТ" rakaat)
       .line
@@ -445,29 +469,17 @@ import AppSection from '@/components/app-section/AppSection.vue';
 import AppButton from '@/components/AppButton.vue';
 import Rukn from '@/components/rukn/Rukn.vue';
 import Banner from '@/components/Banner.vue';
-import axios from 'axios';
 
 export default {
-  data() {
-    return {
-      data: {
-        namaz: {},
-      },
-    };
+  methods: {
+    getData() {
+      const { type } = this.$route.params;
+      this.$store.commit('setNamaz', type);
+    },
   },
   watch: {
     $route() {
       this.getData();
-      this.$store.commit('setMenu', 'level-2');
-    },
-  },
-  methods: {
-    getData() {
-      const { type, subType } = this.$route.params;
-      this.$store.commit('setNamaz', type);
-      axios.get(`/api/namaz/namaz/${this.$store.state.gender}/${type}/${subType}`).then(r => {
-        this.data = r.data;
-      });
     },
   },
   created() {

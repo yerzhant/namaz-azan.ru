@@ -43,12 +43,12 @@
           ) {{ button3 }}
         .city-info(v-if="isNamaz")
           span.footnote *
-          span Указано время намаза для: {{ $store.state.city }}
+          span Указано время намаза для {{ $store.state.city }}
           span.bar |
           span.select(@click="$store.commit('toggleSelectCity')") Другой город
 
     section.desc(v-if="desc" :class="{closed: !descOpen}")
-      .desc-text {{ desc }}
+      .desc-text(v-html="desc")
     .button(v-if="desc")
       AppButton(
         :width="109"

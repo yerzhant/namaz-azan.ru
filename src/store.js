@@ -10,22 +10,8 @@ export default new Vuex.Store({
     mobileHeaderStatus: 'Выбор пола', // , возраста и мазхаба',
     city: null,
     namazTimes: {
-      today: [
-        '-',
-        '-',
-        '-',
-        '-',
-        '-',
-        '-',
-      ],
-      tomorrow: [
-        '-',
-        '-',
-        '-',
-        '-',
-        '-',
-        '-',
-      ],
+      today: ['-', '-', '-', '-', '-', '-'],
+      tomorrow: ['-', '-', '-', '-', '-', '-'],
     },
     selectCity: false,
     socials: {

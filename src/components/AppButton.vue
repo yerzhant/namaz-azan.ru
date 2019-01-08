@@ -26,8 +26,13 @@ export default {
   },
   data() {
     return {
-      to: null,
+      to: '',
     };
+  },
+  watch: {
+    link() {
+      this.to = this.link || this.$route.path;
+    },
   },
   created() {
     this.to = this.link || this.$route.path;

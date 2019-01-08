@@ -10,7 +10,12 @@ export default new Vuex.Store({
     mobileHeaderStatus: 'Выбор пола', // , возраста и мазхаба',
     city: 'Алматы',
     selectCity: false,
-    socials: null,
+    socials: {
+      fb: {},
+      yt: {},
+      vk: {},
+      tg: {},
+    },
     showMenu: false,
     menu: null,
     menuItems: [{

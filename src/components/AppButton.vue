@@ -1,9 +1,8 @@
 <template lang="pug">
-  router-link.app-button(
-    :to="to"
+  a.app-button(
     :class="{red: red, blue: blue, small: small}"
     :style="{width: `${width}px`, height: `${height}px`}"
-    @click.native="$emit('click')"
+    @click="$emit('click')"
   )
     slot
 </template>
@@ -24,18 +23,13 @@ export default {
       default: 41,
     },
   },
-  data() {
-    return {
-      to: '',
-    };
-  },
-  watch: {
-    link() {
-      this.to = this.link || this.$route.path;
+  methods: {
+    go() {
+      this.$emit('click');
+      if (this.link) {
+        this.$router.push(this.link);
+      }
     },
-  },
-  created() {
-    this.to = this.link || this.$route.path;
   },
 };
 </script>
@@ -50,6 +44,7 @@ export default {
   color: #4a4a4a;
   border: 1px solid #afb2bb;
   outline: none;
+  cursor: pointer;
   &.blue {
     color: #fff;
     background-color: #2b9ace;

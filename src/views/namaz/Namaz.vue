@@ -458,21 +458,21 @@ export default {
   watch: {
     $route() {
       this.getData();
-      this.$store.commit('setMenu', 'level-2');
     },
   },
   methods: {
     getData() {
       const { type, subType } = this.$route.params;
       this.$store.commit('setNamaz', type);
+      this.$store.commit('setMenu', 'level-2');
       axios.get(`/api/namaz/namaz/${this.$store.state.gender}/${type}/${subType}`).then(r => {
         this.data = r.data;
+        this.$store.commit('setMenuItems', this.data.menu);
       });
     },
   },
   created() {
     this.getData();
-    this.$store.commit('setMenu', 'level-2');
   },
   components: {
     NamazHeader,

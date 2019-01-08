@@ -32,7 +32,7 @@ export default new Vuex.Store({
         active: true,
       }, {
         title: 'Зухр',
-        link: '/dhuhr/fadr',
+        link: '/dhuhr/fard',
       }],
     }, {
       title: 'Фард',
@@ -95,6 +95,9 @@ export default new Vuex.Store({
     },
     setMenu(state, menu) {
       state.menu = menu;
+    },
+    setMenuItems(state, menu) {
+      state.menuItems = menu;
     },
   },
 });

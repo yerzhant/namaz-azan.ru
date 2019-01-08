@@ -190,7 +190,7 @@ export default {
     },
     scrolling() {
       const curPos = window.scrollY + 50;
-      document.querySelectorAll('.subitem-l2.active').forEach(i => {
+      document.querySelectorAll('.item-l2.down .subitem-l2.active').forEach(i => {
         i.classList.remove('active');
       });
       const bodyRect = document.body.getBoundingClientRect();

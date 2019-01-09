@@ -58,8 +58,16 @@ export default {
   margin-top: 20px;
   margin-bottom: 86px;
   @media (max-width: $mobile) {
+    display: none;
+  }
+  &-m {
+    width: 265px;
     margin-top: 10px;
     margin-bottom: 40px;
+    display: none;
+    @media (max-width: $mobile) {
+      display: inline;
+    }
   }
 }
 .content {
@@ -90,18 +98,6 @@ export default {
   }
   .moon {
     margin-bottom: 40px;
-    @media (max-width: $mobile) {
-      display: none;
-    }
-    &-m {
-      width: 265px;
-      margin-top: 10px;
-      margin-bottom: 40px;
-      display: none;
-      @media (max-width: $mobile) {
-        display: inline-block;
-      }
-    }
   }
   &.not-first {
     .header {

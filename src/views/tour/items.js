@@ -217,14 +217,26 @@ export default [{
   title: '18',
   data: {
     type: 'salam-right',
-    description: 'Аллаху Акбар!',
+    title: 'САЛЯМ',
+    arabic: `<div dir="rtl"><span style="font-size:24px;">السلام عليكم ورحمة 
+            <span style="color:#FF0000;">الله</span><br></span></div>`,
+    description: `После чтения салавата и дуа молящийся поворачивает голову направо
+                  и произносит салям. При этом молящийся смотрит на край своего плеча.`,
+    transcription: 'Ассаляму алейкум уа рахматуллах!',
+    translation: 'Мир вам и милость Аллаха!',
   },
 }, {
   type: 'rukn salam-left',
   title: '19',
   data: {
     type: 'salam-left',
-    description: 'Аллаху Акбар!',
+    title: 'САЛЯМ',
+    arabic: `<div dir="rtl"><span style="font-size:24px;">السلام عليكم ورحمة 
+            <span style="color:#FF0000;">الله</span><br></span></div>`,
+    description: `Затем, поворачивая голову налево, он второй раз произносит салям.
+                  При этом молящийся смотрит на край своего плеча.`,
+    transcription: 'Ассаляму алейкум уа рахматуллах!',
+    translation: 'Мир вам и милость Аллаха!',
   },
 }, {
   type: 'rukn dua',

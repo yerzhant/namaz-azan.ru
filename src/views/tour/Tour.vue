@@ -49,7 +49,7 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      index: 0,
+      index: 25,
       items,
       progressPosition: 0,
     };
@@ -117,11 +117,12 @@ export default {
         resp.data.rakaats.forEach((rakaat, ra) => {
           let offset = ra === 0 ? 7 : 17;
           rakaat.rukns.forEach((r, i) => {
-            const { data } = this.items[i + offset];
             if (ra === 1 && i === 8) {
-              this.setData(this.items[i + ++offset].data, r);
+              offset++;
+            } else {
+              const { data } = this.items[i + offset];
+              this.setData(data, r);
             }
-            this.setData(data, r);
           });
         });
       });

@@ -45,6 +45,9 @@ export default {
       this.$router.push('/main');
     },
   },
+  created() {
+    this.$store.commit('setMobileHeaderStatus', 'Выбор пола'); // , возраста и мазхаба',
+  },
   components: {
     AppButton,
   },

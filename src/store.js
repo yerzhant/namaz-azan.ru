@@ -7,7 +7,7 @@ export default new Vuex.Store({
   state: {
     gender: 'man',
     namaz: null,
-    mobileHeaderStatus: 'Выбор пола', // , возраста и мазхаба',
+    mobileHeaderStatus: null,
     city: null,
     namazTimes: {
       today: ['-', '-', '-', '-', '-', '-'],

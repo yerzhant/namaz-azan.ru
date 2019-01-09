@@ -65,7 +65,7 @@
       descUpBorder
     )
       template(slot="buttons")
-        AppButton(link="/dhuhr/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+        AppButton(link="/tutorial/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
     .line.type-2
     AppSection(title="ОБЯЗАТЕЛЬНЫЕ НАМАЗЫ" bg1)

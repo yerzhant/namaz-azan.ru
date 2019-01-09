@@ -118,7 +118,7 @@ export default {
           let offset = ra === 0 ? 7 : 17;
           rakaat.rukns.forEach((r, i) => {
             const { data } = this.items[i + offset];
-            if (i === 8) {
+            if (ra === 1 && i === 8) {
               this.setData(this.items[i + ++offset].data, r);
             }
             this.setData(data, r);

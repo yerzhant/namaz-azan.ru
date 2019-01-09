@@ -47,8 +47,8 @@
               .title СУННАТ НАМАЗЫ
             .subitems(v-show="sunnah")
               .subitem-l2(@click="goTo('/fadjr/sunnah')") Фаджр
-              .subitem-l2(@click="goTo('/dhuhr/sunnah-before')") Зухр
-              .subitem-l2(@click="goTo('/dhuhr/sunnah-after')") Зухр
+              .subitem-l2(@click="goTo('/dhuhr/sunnah-before')") Зухр до фарда
+              .subitem-l2(@click="goTo('/dhuhr/sunnah-after')") Зухр после фарда
               .subitem-l2(@click="goTo('/maghrib/sunnah')") Магриб
               .subitem-l2(@click="goTo('/isha/sunnah')") Иша
 
@@ -59,7 +59,8 @@
             .sub-title Видео-фото уроки
         .subitems(v-show="tutoring")
           .subitem-l2(@click="goTo('/first-namaz')") Мой первый намаз
-          .subitem-l2(@click="goTo('/dhuhr/fard')") Намаз: подробно
+          .subitem-l2(@click="goTo('/tutorial/fard')") Намаз: подробно
+          a.subitem-l2(href="https://www.youtube.com/watch?v=5b6t9fBLl9s") Видео уроки
 
       .socials-block
         Socials(mobile)
@@ -228,6 +229,7 @@ export default {
   }
 }
 .subitem-l2 {
+  display: block;
   background-color: #162a4e;
   border-bottom: 1px solid #34455e;
   color: #d8e3f0;

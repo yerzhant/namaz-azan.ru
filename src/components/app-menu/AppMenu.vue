@@ -182,7 +182,7 @@ export default {
     },
     goTo(link, item) {
       if (link.substr(0, 1) === '#') {
-        this.$scrollTo(link);
+        this.$scrollTo(link, {offset: -50});
       } else {
         this.$router.push(link);
         item.open = false;
@@ -194,7 +194,7 @@ export default {
         i.classList.remove('active');
       });
       const bodyRect = document.body.getBoundingClientRect();
-      document.querySelectorAll('.rukn').forEach(r => {
+      document.querySelectorAll('.rukn, .admin-text .section').forEach(r => {
         const rect = r.getBoundingClientRect();
         if (curPos >= rect.top - bodyRect.top && curPos <= rect.bottom - bodyRect.top) {
           document.querySelector(`.subitem-l2[data-link=${r.id}]`).classList.add('active');

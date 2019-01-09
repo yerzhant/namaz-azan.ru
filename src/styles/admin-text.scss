@@ -1,0 +1,57 @@
+.admin-text {
+  font-family: $pt-sans;
+  font-size: 16px;
+  line-height: 24px;
+  width: 1018px;
+  margin: 30px auto 0;
+
+  @media (max-width: $mobile) {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .section {
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px dashed #aab9c3;
+
+    &:last-child {
+      margin-bottom: 40px;
+      border-bottom: none;
+    }
+  }
+
+  .header {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  ol {
+    font-weight: bold;
+
+    div {
+      font-weight: initial;
+    }
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      padding-left: 14px;
+      background: url(../images/list-item.png) no-repeat left 11px;
+    }
+  }
+
+  .azan--appendix {
+    font-weight: bold;
+    border: 1px solid #ea7555;
+    border-left-width: 7px;
+    padding: 25px 13px;
+    background-color: #fff;
+    margin-top: 10px;
+  }
+}

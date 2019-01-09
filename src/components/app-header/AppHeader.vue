@@ -127,7 +127,7 @@ export default {
   height: 49px;
   cursor: pointer;
   background: url(./menu.png) no-repeat center;
-  @media (min-width: 1346px) {
+  @media (min-width: 1347px) {
     display: none;
   }
 }

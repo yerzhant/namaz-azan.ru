@@ -112,7 +112,7 @@ export default {
       display: block;
     }
   }
-  @media (max-width: 1365px) {
+  @media (max-width: 1346px) {
     width: 100%;
   }
   @media (max-width: $mobile) {
@@ -127,7 +127,7 @@ export default {
   height: 49px;
   cursor: pointer;
   background: url(./menu.png) no-repeat center;
-  @media (min-width: 1366px) {
+  @media (min-width: 1346px) {
     display: none;
   }
 }
@@ -139,7 +139,7 @@ export default {
   font-family: $pt-sans;
   font-size: 13px;
   color: #465d73;
-  @media (max-width: 1365px) {
+  @media (max-width: 1346px) {
     max-width: 100%;
     margin-right: 0;
     margin-left: 58px;

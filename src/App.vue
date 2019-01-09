@@ -65,7 +65,7 @@ export default {
   background-color: #142b4f;
   width: 197px;
   z-index: 10000;
-  @media (max-width: 1365px) {
+  @media (max-width: 1346px) {
     display: none;
   }
 }
@@ -75,7 +75,7 @@ export default {
   &.full {
     width: 100%;
   }
-  @media (max-width: 1365px) {
+  @media (max-width: 1346px) {
     width: 100%;
   }
   @media (max-width: $mobile) {

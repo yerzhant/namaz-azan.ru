@@ -71,6 +71,7 @@ export default {
   }
 }
 .rakaat {
+  padding-bottom: 50px;
   .header {
     background-image: url(./shadow.png), url(./bg-small.png);
     padding-top: 75px;

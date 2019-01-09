@@ -118,9 +118,9 @@ export default {
             case '2':
               return 'fatiha+ikhlas';
             case '3':
-              return this.kind === 'sunna' || this.kind === 'wadjib' ? 'fatiha+falaq' : 'fatiha';
+              return this.kind === 'sunnah' || this.kind === 'wadjib' ? 'fatiha+falaq' : 'fatiha';
             default:
-              return this.kind === 'sunna' ? 'fatiha+nas' : 'fatiha';
+              return this.kind === 'sunnah' ? 'fatiha+nas' : 'fatiha';
           }
         case 'tashahhud':
           if (this.rakaats === '2') return 'attahiyat+salawat+dua';
@@ -129,6 +129,8 @@ export default {
         case 'salam-right':
         case 'salam-left':
           return 'salam';
+        case 'salam':
+          return 'salam-2';
         case 'wudu dua':
           return 'wudu-dua';
         default:
@@ -490,7 +492,8 @@ export default {
     }
   }
 }
-.sadjda {
+.sadjda,
+.sadjda-2 {
   .image-1 {
     background-image: url(./sadjda.png);
     background-position-y: 300px;
@@ -548,7 +551,11 @@ export default {
     }
   }
 }
-.salam-right {
+.salam {
+  .b1,
+  .b2 {
+    display: flex;
+  }
   .image-1 {
     background-image: url(./salam-right.png);
     background-position-y: 160px;
@@ -556,9 +563,7 @@ export default {
       background-image: url(./salam-right-woman.png);
     }
   }
-}
-.salam-left {
-  .image-1 {
+  .image-2 {
     background-image: url(./salam-left.png);
     background-position-y: 160px;
     &.woman {

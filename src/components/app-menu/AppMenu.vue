@@ -196,7 +196,7 @@ export default {
       const bodyRect = document.body.getBoundingClientRect();
       document.querySelectorAll('.rukn, .admin-text .section').forEach(r => {
         const rect = r.getBoundingClientRect();
-        if (curPos >= rect.top - bodyRect.top && curPos <= rect.bottom - bodyRect.top) {
+        if (curPos >= rect.top - bodyRect.top && curPos < rect.bottom - bodyRect.top) {
           document.querySelector(`.subitem-l2[data-link=${r.id}]`).classList.add('active');
           this.$store.state.menuItems
             .filter(i => !i.right)

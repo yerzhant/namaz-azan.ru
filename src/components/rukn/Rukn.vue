@@ -368,6 +368,8 @@ export default {
         margin-bottom: 0;
         border-right: 1px solid #cbd3db;
         border-left: none;
+        background-image: url(./images-m.png);
+        background-size: 19px;
       }
     }
     &.b1 {

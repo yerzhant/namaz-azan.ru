@@ -128,6 +128,7 @@ import NamazInfo from '@/components/namaz-info/NamazInfo.vue';
 export default {
   created() {
     this.$store.commit('setMenu', null);
+    this.$store.commit('setMobileHeaderStatus', 'Главная');
   },
   components: {
     Banner,

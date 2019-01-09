@@ -164,6 +164,7 @@ export default {
   },
   created() {
     this.getData();
+    this.$store.commit('setMobileHeaderStatus', 'Назаз');
   },
   components: {
     NamazHeader,

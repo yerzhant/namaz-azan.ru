@@ -3,6 +3,7 @@
     .header(:class="$store.state.namaz")
       h2.title(:class="{regular: regular}") {{ title }}
       img.moon(src="./moon.png")
+      img.moon-m(src="./moon-m.png")
     .content
       slot
 </template>
@@ -89,6 +90,18 @@ export default {
   }
   .moon {
     margin-bottom: 40px;
+    @media (max-width: $mobile) {
+      display: none;
+    }
+    &-m {
+      width: 265px;
+      margin-top: 10px;
+      margin-bottom: 40px;
+      display: none;
+      @media (max-width: $mobile) {
+        display: inline-block;
+      }
+    }
   }
   &.not-first {
     .header {

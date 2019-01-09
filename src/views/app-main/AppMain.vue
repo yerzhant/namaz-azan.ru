@@ -11,7 +11,7 @@
     )
       template(slot="buttons")
         AppButton(link="/first-namaz" red) ДА, НАЧАТЬ!
-        AppButton.color-2d(link="/fadjr/fard") ПОДРОБНЫЕ УРОКИ
+        AppButton.color-2d(link="/tutorial/fard") ПОДРОБНЫЕ УРОКИ
       Slogan
 
     Banner.namaz-detailed(
@@ -24,7 +24,7 @@
       descUpBorder
     )
       template(slot="buttons")
-        AppButton(link="/dhuhr/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+        AppButton(link="/tutorial/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
       .table
         NamazInfo(
           type="fadjr"

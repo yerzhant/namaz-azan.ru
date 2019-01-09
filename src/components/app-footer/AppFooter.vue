@@ -13,7 +13,7 @@
         router-link(to="/main") Главная
         router-link(to="/tahharah/wudu") Тахарат
         router-link(to="/fadjr/fard") Намаз
-        router-link(to="/dhuhr/fard") Обучение
+        router-link(to="/tutorial/fard") Обучение
       .up(@click="$scrollTo('body')")
     .bottom
       span Copyright © 2019 Azan.ru

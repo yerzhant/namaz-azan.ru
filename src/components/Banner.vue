@@ -136,6 +136,9 @@ export default {
   &.short {
     height: 355px;
     background-position: top;
+    @media (max-width: $mobile) {
+      height: 570px;
+    }
     .image {
       background-position: bottom;
     }

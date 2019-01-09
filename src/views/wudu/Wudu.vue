@@ -55,7 +55,7 @@
           template(slot="buttons")
             AppButton(link="/tahharah/ghusl" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
-    Banner.namaz-detailed(
+    Banner(
       type="namaz-detailed short"
       title="НАМАЗ: ПОДРОБНО"
       shortDesc="Детализированное обучение намазу"

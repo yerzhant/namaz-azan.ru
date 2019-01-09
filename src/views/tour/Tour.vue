@@ -49,7 +49,7 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      index: 0,
+      index: 26,
       items,
       progressPosition: 0,
     };
@@ -102,13 +102,36 @@ export default {
       return itemWidth * -28 + document.querySelector('.items-viewport').offsetWidth;
     },
     getData() {
-      axios.get('/api/namaz/tour').then(r => {
+      const { gender } = this.$store.state;
+
+      axios.get(`/api/namaz/tour/${gender}`).then(r => {
         r.data.wudu.forEach((w, i) => {
           const { data } = this.items[i + 2];
           data.title = w.kindLabel.toUpperCase();
           data.description = w.text;
         });
       });
+
+      axios.get(`/api/namaz/namaz/${gender}/fadjr/fard`).then(resp => {
+        resp.data.rakaats.forEach((rakaat, ra) => {
+          let offset = ra === 0 ? 7 : 17;
+          rakaat.rukns.forEach((r, i) => {
+            const { data } = this.items[i + offset];
+            if (i === 8) {
+              this.setData(this.items[i + ++offset].data, r);
+            }
+            this.setData(data, r);
+          });
+        });
+      });
+    },
+    setData(data, rukn) {
+      data.title = rukn.title;
+      data.subTitle = rukn.subTitle;
+      data.arabic = rukn.arabic;
+      data.description = rukn.description;
+      data.transcription = rukn.transcription;
+      data.translation = rukn.translation;
     },
   },
   created() {

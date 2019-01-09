@@ -571,6 +571,24 @@ export default {
     }
   }
 }
+.salam-right {
+  .image-1 {
+    background-image: url(./salam-right.png);
+    background-position-y: 160px;
+    &.woman {
+      background-image: url(./salam-right-woman.png);
+    }
+  }
+}
+.salam-left {
+  .image-1 {
+    background-image: url(./salam-left.png);
+    background-position-y: 160px;
+    &.woman {
+      background-image: url(./salam-left-woman.png);
+    }
+  }
+}
 .dua {
   .image-1 {
     background-image: url(./dua.png);

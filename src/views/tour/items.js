@@ -144,7 +144,7 @@ export default [{
   type: 'rukn sadjda',
   title: '9',
   data: {
-    type: 'sadjda',
+    type: 'sadjda-2',
     description: 'Аллаху Акбар!',
   },
 }, {
@@ -202,7 +202,7 @@ export default [{
   type: 'rukn sadjda',
   title: '16',
   data: {
-    type: 'sadjda',
+    type: 'sadjda-2',
     description: 'Аллаху Акбар!',
   },
 }, {

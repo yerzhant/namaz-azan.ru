@@ -135,11 +135,6 @@ export default {
       },
     };
   },
-  watch: {
-    $route() {
-      this.getData();
-    },
-  },
   methods: {
     getData() {
       const { type, subType } = this.$route.params;
@@ -160,6 +155,11 @@ export default {
         return `#r${nextRakaat.number}-${nextRakaat.rukns[0].type}`;
       }
       return null;
+    },
+  },
+  watch: {
+    $route() {
+      this.getData();
     },
   },
   created() {

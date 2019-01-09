@@ -2,143 +2,30 @@
   section.wudu
     NamazHeader(
       :type="$store.state.namaz"
-      title="ЗУХР"
-      subTitle="Обеденный намаз"
+      title="ВУДУ"
+      subTitle="Малое омовение"
       shortDesc="Вуду - это малое ритуальное омовение тела, которое является простым и \
                  доступным способом достичь состояния ритаульной чистоты, кроме тех \
                  случаев, когда требуется полное омовение - гусль."
-      desc="Фаджр состоит из 2 ракаатов сунны и 2 ракаатов фарда. Время его совершения yачинается \
-            с наступлением рассвета и заканчивается за несколько мгновений до восхода солнца. \
-            Наилучшее время для совершения утреннего намаза: ближе к концу его времени, когда \
-            становятся видны контуры предметов. Однако, не следует излишне откладывать фаджр, \
-            что бы не выйти за пределы установленного для него временного промежутка. \
-            У мусульманина должно быть достаточно времени для того, что бы подготовится к намазу \
-            (совершить омовение, одеться и т.д.) и неторопливо прочитать Коран в обоих ракаатах \
-            фаджра до того, как солнце выйдет из-за горизонта. В случае совершения фаджр-намаза \
-            в одиночку, предпочительно выполнить его в самом начале времени.  "
+      desc="Вуду (тахарат) - это малое ритуальное омовение тела. Если человек находится \
+            в состоянии, когда у него нет полного омовения (гусля), ему необходимо совершить \
+            гусль. В этом случае совершать отдельно вуду ему не нужно. Тому же, у кого гусль есть, \
+            достаточно совершить вуду для совершения тех действий, которые нельзя совершать без \
+            малого ритуального омовения."
     )
-    AppSection(title="1 РАКААТ" rakaat)
+    AppSection(title="ОБУЧЕНИЕ ВУДУ" rakaat)
       .line
       Rukn(
-        type="wudu niet"
-        title="ТАКБИР"
-        number="2"
-        shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
-                   и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
-      )
-      Rukn(
-        type="wudu hands"
-        title="ТАКБИР"
-        number="2"
-        shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
-                   и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
-      )
-      Rukn(
-        type="wudu mouth"
-        title="ТАКБИР"
-        number="2"
-        shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
-                   и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
-      )
-      Rukn(
-        type="wudu nose"
-        title="ТАКБИР"
-        number="2"
-        shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
-                   и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
-      )
-      Rukn(
-        type="wudu face"
-        title="ТАКБИР"
-        number="2"
-        shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
-                   и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
-      )
-      Rukn(
-        type="wudu full-hands"
-        title="ТАКБИР"
-        number="2"
-        shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
-                   и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
-      )
-      Rukn(
-        type="wudu head"
-        title="ТАКБИР"
-        number="2"
-        shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
-                   и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
-      )
-      Rukn(
-        type="wudu ears-and-neck"
-        title="ТАКБИР"
-        number="2"
-        shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
-                   и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
-      )
-      Rukn(
-        type="wudu leg-right"
-        title="ТАКБИР"
-        number="2"
-        shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
-                   и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
-      )
-      Rukn(
-        type="wudu leg-left"
-        title="ТАКБИР"
-        number="2"
-        shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
-                   и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
-      )
-      Rukn(
-        type="wudu dua"
-        title="ТАКБИР"
-        number="2"
-        shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
-                   и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
+        v-for="(rukn, r) in rukns" :key="r"
+        rakaat="spec"
+        kind="wudu"
+        :type="rukn.type"
+        :title="rukn.title"
+        :number="(r + 1).toString()"
+        :description="rukn.text"
+        :first="r === 0"
+        :last="!getNext(r)"
+        :next="getNext(r)"
       )
 
     .line.type-2
@@ -255,12 +142,30 @@ import AppSection from '@/components/app-section/AppSection.vue';
 import AppButton from '@/components/AppButton.vue';
 import Rukn from '@/components/rukn/Rukn.vue';
 import Banner from '@/components/Banner.vue';
+import axios from 'axios';
 
 export default {
+  data() {
+    return {
+      rukns: null,
+    };
+  },
   methods: {
     getData() {
       const { type } = this.$route.params;
       this.$store.commit('setNamaz', type);
+      this.$store.commit('setMenu', 'level-2');
+      axios.get(`/api/namaz/${type}`).then(r => {
+        this.rukns = r.data.rukns;
+        this.$store.commit('setMenuItems', r.data.menu);
+      });
+    },
+    getNext(r) {
+      const nextRukn = this.rukns[r + 1];
+      if (nextRukn) {
+        return `#rspec-${nextRukn.type}`;
+      }
+      return null;
     },
   },
   watch: {
@@ -270,7 +175,6 @@ export default {
   },
   created() {
     this.getData();
-    this.$store.commit('setMenu', 'level-2');
   },
   components: {
     NamazHeader,

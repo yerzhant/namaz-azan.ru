@@ -1,5 +1,5 @@
 <template lang="pug">
-  section.rukn(:id="`r${rakaat}-${type}`" :class="[type, {first: first, 'in-tour': tour}]")
+  section.rukn(:id="`r${rakaat}-${type}`" :class="[type, kind, {first: first, 'in-tour': tour}]")
     .header(v-if="!tour")
       .header-text
         h3.title {{ title }}
@@ -637,6 +637,20 @@ export default {
   }
   &.nose {
     .image-1 {
+      background-image: url(./wudu/nose.png);
+      background-position-y: 140px;
+    }
+  }
+  &.mouth-nose {
+    .b1,
+    .b2 {
+      display: flex;
+    }
+    .image-1 {
+      background-image: url(./wudu/mouth.png);
+      background-position-y: 140px;
+    }
+    .image-2 {
       background-image: url(./wudu/nose.png);
       background-position-y: 140px;
     }

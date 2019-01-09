@@ -23,16 +23,10 @@
       :button3Blue="data.button3Blue"
       :desc="data.namaz.description"
     )
-    AppSection(
-      :title="rakaat.title"
-      :notFirst="rakaat.number !== 1"
-      v-for="(rakaat, ra) in data.rakaats"
-      :key="ra"
-      rakaat
-    )
+    AppSection(:title="rakaat.title" :notFirst="rakaat.number !== 1" rakaat v-for="(rakaat, ra) in data.rakaats")
       .line(v-if="rakaat.number === 1")
       Rukn(
-        v-for="(rukn, ru) in rakaat.rukns" :key="`${ra}-${ru}`"
+        v-for="(rukn, ru) in rakaat.rukns"
         :kind="$route.params.subType"
         :next="getNext(ra, ru)"
         :last="!getNext(ra, ru)"

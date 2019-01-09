@@ -54,7 +54,7 @@
         router-link.item(to="/tutorial/fard")
           .title НАМАЗ: ПОДРОБНО
           .desc Детализированый обзор
-        router-link.item(to="#")
+        a.item(href="https://www.youtube.com/watch?v=5b6t9fBLl9s")
           .title ВИДЕО УРОКИ
           .desc Омовение, намаз
 

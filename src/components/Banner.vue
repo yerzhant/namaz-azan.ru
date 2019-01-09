@@ -290,17 +290,6 @@ export default {
       }
     }
   }
-  &.wudu {
-    .image {
-      background-image: url(../views/namaz/tahharah/wudu.jpg);
-    }
-  }
-  &.ghusl {
-    background: #fff;
-    .image {
-      background-image: url(../views/namaz/tahharah/ghusl.jpg);
-    }
-  }
   &.blue {
     background-color: #f7fcff;
     &.ghusl {
@@ -310,4 +299,17 @@ export default {
     }
   }
 }
+/*
+  &.wudu {
+    .image {
+      background-image: url(../views/namaz/tahharah/wudu.jpg);
+    }
+  }
+&.ghusl {
+  background: #fff;
+  .image {
+    background-image: url(../views/namaz/tahharah/ghusl.jpg);
+  }
+}
+*/
 </style>

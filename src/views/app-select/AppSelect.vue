@@ -178,12 +178,18 @@ export default {
   @media (max-width: $mobile) {
     background-image: url(./footer-bg-m.png);
     background-size: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
   .line-1 {
     font-family: $pt-sans;
     font-weight: bold;
     font-size: 22px;
     margin-bottom: 16px;
+    @media (max-width: $mobile) {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
   }
 }
 .link {

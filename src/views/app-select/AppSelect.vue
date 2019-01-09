@@ -178,7 +178,7 @@ export default {
   @media (max-width: $mobile) {
     background-image: url(./footer-bg-m.png);
     background-size: 100%;
-    padding-top: 50px;
+    padding-top: 70px;
     padding-bottom: 50px;
   }
   .line-1 {

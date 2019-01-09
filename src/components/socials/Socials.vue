@@ -67,14 +67,30 @@ export default {
 }
 .fb {
   background-image: url(./fb.png);
+  @media (max-width: $mobile) {
+    background-image: url(./fb-mobile.png);
+    background-size: 8px;
+  }
 }
 .yt {
   background-image: url(./yt.png);
+  @media (max-width: $mobile) {
+    background-image: url(./yt-mobile.png);
+    background-size: 14px;
+  }
 }
 .vk {
   background-image: url(./vk.png);
+  @media (max-width: $mobile) {
+    background-image: url(./vk-mobile.png);
+    background-size: 19px;
+  }
 }
 .tg {
   background-image: url(./tg.png);
+  @media (max-width: $mobile) {
+    background-image: url(./tg-mobile.png);
+    background-size: 16px;
+  }
 }
 </style>

@@ -40,7 +40,7 @@
             .number {{ number }}
           .tab-content(:class="{active: tabTranscription}" v-html="transcription")
           .tab-content(:class="{active: tabTranslation}" v-html="translation")
-          .tab-content(:class="{active: tabArabic}" v-html="arabic")
+          .tab-content(:class="{active: tabArabic}" v-html="arabic").arabic
           .tab-content(:class="{active: tabDescription}" v-html="description")
           AppPlayer.player(:type="audio")
           .buttons
@@ -785,6 +785,9 @@ export default {
       &-thumb {
         background-color: #cbd3db;
       }
+    }
+    &.arabic {
+      line-height: 1.4;
     }
     @media (max-width: 1366px) {
       max-height: 270px;

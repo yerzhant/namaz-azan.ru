@@ -2,15 +2,17 @@
   section.tahharah
     NamazHeader(
       :type="`tahharah ${$store.state.namaz}`"
-      title="ФАДЖР: УТРЕННИЙ НАМАЗ"
-      shortDesc="Вуду - это малое ритуальное омовение тела, которое является простым и \
-                 доступным способом достичь состояния ритаульной чистоты, кроме тех \
-                 случаев, когда требуется полное омовение - гусль."
+      title="ГУСЛЬ"
+      subTitle="Полное омовение"
+      shortDesc="После совершения определенных действий Шариат предписывает \
+                 мусульманину совершить ритуальное купание – омовение водой всего \
+                 тела целиком. По-арабски полное омовение носит название «гусль»."
     )
 
     section.admin-text
-      section.section
-        h2.header Когда ГУСЛЬ обязателен
+      section.section(v-for="section in sections" :key="section.id")
+        h2.header {{ section.title }}
+        div(v-html="section.text")
         <div>
         <div>Действия и состояния, делающие обязательным совершение гусля:<br /> &nbsp;</div>
 
@@ -94,7 +96,7 @@
       descUpBorder
     )
       template(slot="buttons")
-        AppButton(link="/dhuhr/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+        AppButton(link="/tutorial/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
     .line
     AppSection(title="ОБЯЗАТЕЛЬНЫЕ НАМАЗЫ" bg1)
@@ -171,11 +173,23 @@ import AppSection from '@/components/app-section/AppSection.vue';
 import AppButton from '@/components/AppButton.vue';
 import Rukn from '@/components/rukn/Rukn.vue';
 import Banner from '@/components/Banner.vue';
+import axios from 'axios';
 
 export default {
+  data() {
+    return {
+      sections: null,
+    };
+  },
   methods: {
     getData() {
-      this.$store.commit('setNamaz', this.$route.params.type);
+      const { type } = this.$route.params;
+      this.$store.commit('setNamaz', type);
+      this.$store.commit('setMenu', 'level-2');
+      axios.get(`/api/namaz/${type}`).then(r => {
+        this.sections = r.data.sections;
+        this.$store.commit('setMenuItems', r.data.menu);
+      });
     },
   },
   created() {

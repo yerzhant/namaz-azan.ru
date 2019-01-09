@@ -168,11 +168,6 @@ export default {
       return null;
     },
   },
-  watch: {
-    $route() {
-      this.getData();
-    },
-  },
   created() {
     this.getData();
   },

@@ -41,11 +41,6 @@ export default {
       return `${this.startTime} - ${this.endTime}${this.isCurrent ? ' (текущий)' : ''}`;
     },
   },
-  watch: {
-    endTime() {
-      this.update();
-    },
-  },
   methods: {
     update() {
       if (this.endTime !== '-' && this.type !== 'witr') {
@@ -64,6 +59,14 @@ export default {
       }
     },
   },
+  watch: {
+    endTime() {
+      this.update();
+    },
+  },
+  created() {
+    this.update();
+  }
 };
 </script>
 

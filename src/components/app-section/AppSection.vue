@@ -101,6 +101,7 @@ export default {
     .fadjr {
       background: url(./bg-fadjr.jpg) no-repeat center;
     }
+    .tutorial,
     .dhuhr {
       background: url(./bg-dhuhr.jpg) no-repeat center;
     }

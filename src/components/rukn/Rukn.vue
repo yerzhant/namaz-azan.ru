@@ -108,6 +108,9 @@ export default {
   },
   computed: {
     audio() {
+      if (this.kind === 'wudu') {
+        return 'wudu-dua';
+      }
       switch (this.type) {
         case 'qiyam':
           return this.rakaat === '1' ? 'sana+istiatha' : 'basmala';
@@ -131,8 +134,8 @@ export default {
           return 'salam';
         case 'salam':
           return 'salam-2';
-        case 'wudu dua':
-          return 'wudu-dua';
+        case 'sadjda-2':
+          return 'sadjda';
         default:
           return this.type;
       }

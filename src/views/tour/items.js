@@ -13,8 +13,7 @@ export default [{
     type: 'wudu ghusl',
     title: 'ГУСЛЬ',
     subTitle: 'Полное омовение',
-    number: '1',
-    content4: `Совершение намаза требует от мусульманина состояния ритуальной чистоты, которое
+    description: `Совершение намаза требует от мусульманина состояния ритуальной чистоты, которое
               достигается омовением.</br>
               </br>
               <strong>Полное омовение (гусль) требуется</strong> в случае имевшихся половых
@@ -53,29 +52,28 @@ export default [{
   title: '2',
   data: {
     type: 'wudu face',
-    content1: 'Аллаху Акбар!',
-    content4: 'Аллаху Акбар!',
+    description: 'Аллаху Акбар!',
   },
 }, {
   type: 'rukn wudu-hands',
   title: '3',
   data: {
     type: 'wudu full-hands',
-    content4: 'Аллаху Акбар!',
+    description: 'Аллаху Акбар!',
   },
 }, {
   type: 'rukn wudu-head',
   title: '4',
   data: {
     type: 'wudu head',
-    content4: 'Аллаху Акбар!',
+    description: 'Аллаху Акбар!',
   },
 }, {
   type: 'rukn wudu-legs',
   title: '5',
   data: {
     type: 'wudu legs',
-    content4: 'Аллаху Акбар!',
+    description: 'Аллаху Акбар!',
   },
 }, {
   type: 'section',
@@ -91,63 +89,63 @@ export default [{
   title: '1',
   data: {
     type: 'niet',
-    content4: 'Аллаху Акбар!',
+    description: 'Аллаху Акбар!',
   },
 }, {
   type: 'rukn takbir',
   title: '2',
   data: {
     type: 'takbir',
-    content4: 'Аллаху Акбар!',
+    description: 'Аллаху Акбар!',
   },
 }, {
   type: 'rukn qiyam',
   title: '3',
   data: {
     type: 'qiyam',
-    content4: 'Аллаху Акбар!',
+    description: 'Аллаху Акбар!',
   },
 }, {
   type: 'rukn qiyam',
   title: '4',
   data: {
     type: 'qiraat',
-    content4: 'Аллаху Акбар!',
+    description: 'Аллаху Акбар!',
   },
 }, {
   type: 'rukn ruku',
   title: '5',
   data: {
     type: 'ruku',
-    content4: 'Аллаху Акбар!',
+    description: 'Аллаху Акбар!',
   },
 }, {
   type: 'rukn niet',
   title: '6',
   data: {
     type: 'straight-up',
-    content4: 'Аллаху Акбар!',
+    description: 'Аллаху Акбар!',
   },
 }, {
   type: 'rukn sadjda',
   title: '7',
   data: {
     type: 'sadjda',
-    content4: 'Аллаху Акбар!',
+    description: 'Аллаху Акбар!',
   },
 }, {
   type: 'rukn sitting',
   title: '8',
   data: {
     type: 'sitting',
-    content4: 'Аллаху Акбар!',
+    description: 'Аллаху Акбар!',
   },
 }, {
   type: 'rukn sadjda',
   title: '9',
   data: {
     type: 'sadjda',
-    content4: 'Аллаху Акбар!',
+    description: 'Аллаху Акбар!',
   },
 }, {
   type: 'section',
@@ -163,76 +161,76 @@ export default [{
   title: '10',
   data: {
     type: 'qiyam',
-    content4: 'Аллаху Акбар!',
+    description: 'Аллаху Акбар!',
   },
 }, {
   type: 'rukn qiyam',
   title: '11',
   data: {
     type: 'qiraat',
-    content4: 'Аллаху Акбар!',
+    description: 'Аллаху Акбар!',
   },
 }, {
   type: 'rukn ruku',
   title: '12',
   data: {
     type: 'ruku',
-    content4: 'Аллаху Акбар!',
+    description: 'Аллаху Акбар!',
   },
 }, {
   type: 'rukn niet',
   title: '13',
   data: {
     type: 'straight-up',
-    content4: 'Аллаху Акбар!',
+    description: 'Аллаху Акбар!',
   },
 }, {
   type: 'rukn sadjda',
   title: '14',
   data: {
     type: 'sadjda',
-    content4: 'Аллаху Акбар!',
+    description: 'Аллаху Акбар!',
   },
 }, {
   type: 'rukn sitting',
   title: '15',
   data: {
     type: 'sitting',
-    content4: 'Аллаху Акбар!',
+    description: 'Аллаху Акбар!',
   },
 }, {
   type: 'rukn sadjda',
   title: '16',
   data: {
     type: 'sadjda',
-    content4: 'Аллаху Акбар!',
+    description: 'Аллаху Акбар!',
   },
 }, {
   type: 'rukn sitting',
   title: '17',
   data: {
     type: 'tashahhud',
-    content4: 'Аллаху Акбар!',
+    description: 'Аллаху Акбар!',
   },
 }, {
   type: 'rukn salam-right',
   title: '18',
   data: {
     type: 'salam-right',
-    content4: 'Аллаху Акбар!',
+    description: 'Аллаху Акбар!',
   },
 }, {
   type: 'rukn salam-left',
   title: '19',
   data: {
     type: 'salam-left',
-    content4: 'Аллаху Акбар!',
+    description: 'Аллаху Акбар!',
   },
 }, {
   type: 'rukn dua',
   title: '20',
   data: {
     type: 'dua',
-    content4: 'Аллаху Акбар!',
+    description: 'Аллаху Акбар!',
   },
 }];

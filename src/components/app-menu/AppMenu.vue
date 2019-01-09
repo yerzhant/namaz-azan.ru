@@ -182,7 +182,7 @@ export default {
     },
     goTo(link, item) {
       if (link.substr(0, 1) === '#') {
-        this.$scrollTo(link, {offset: -50});
+        this.$scrollTo(link, { offset: -50 });
       } else {
         this.$router.push(link);
         item.open = false;

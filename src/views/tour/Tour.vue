@@ -14,11 +14,11 @@
           :type="data.type"
           :title="data.title"
           :subTitle="data.subTitle"
-          :number="data.number"
-          :content1="data.content1"
-          :content2="data.content2"
-          :content3="data.content3"
-          :content4="data.content4"
+          :number="items[index].title"
+          :arabic="data.arabic"
+          :transcription="data.transcription"
+          :translation="data.translation"
+          :description="data.description"
           :last="index === items.length - 1"
           @next="next"
         )
@@ -44,6 +44,7 @@
 import Rukn from '@/components/rukn/Rukn.vue';
 import AppButton from '@/components/AppButton.vue';
 import items from './items';
+import axios from 'axios';
 
 export default {
   data() {
@@ -81,9 +82,9 @@ export default {
       const max = this.getProgressMaxPosition();
       if (this.index < 5) this.progressPosition = 0;
       else if (this.index < 9) this.progressPosition = max / 5;
-      else if (this.index < 14) this.progressPosition = max / 5 * 2;
-      else if (this.index < 19) this.progressPosition = max / 5 * 3;
-      else if (this.index < 23) this.progressPosition = max / 5 * 4;
+      else if (this.index < 14) this.progressPosition = (max / 5) * 2;
+      else if (this.index < 19) this.progressPosition = (max / 5) * 3;
+      else if (this.index < 23) this.progressPosition = (max / 5) * 4;
       else this.progressPosition = max;
     },
     slideProgressLeft() {
@@ -100,6 +101,18 @@ export default {
 
       return itemWidth * -28 + document.querySelector('.items-viewport').offsetWidth;
     },
+    getData() {
+      axios.get('/api/namaz/tour').then(r => {
+        r.data.wudu.forEach((w, i) => {
+          const { data } = this.items[i + 2];
+          data.title = w.kindLabel.toUpperCase();
+          data.description = w.text;
+        });
+      });
+    },
+  },
+  created() {
+    this.getData();
   },
   components: {
     Rukn,

@@ -790,7 +790,7 @@ export default {
       line-height: 1.4;
     }
     @media (max-width: 1366px) {
-      max-height: 270px;
+      max-height: 150px;
     }
     @media (max-width: $mobile) {
       max-height: none;

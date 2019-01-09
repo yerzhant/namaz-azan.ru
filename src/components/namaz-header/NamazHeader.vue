@@ -526,7 +526,7 @@ export default {
     .info {
       padding: 0;
       &-wrapper {
-        padding-bottom: 100px;
+        padding-bottom: 180px;
       }
     }
   }

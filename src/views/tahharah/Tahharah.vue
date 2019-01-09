@@ -41,7 +41,7 @@
           template(slot="buttons")
             AppButton(link="/tahharah/wudu" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
-    Banner.namaz-detailed(
+    Banner(
       type="namaz-detailed short"
       title="НАМАЗ: ПОДРОБНО"
       shortDesc="Детализированное обучение намазу"
@@ -169,15 +169,13 @@ export default {
   width: 100%;
   height: 1px;
   background-color: #bfcad1;
+  @media (max-width: $mobile) {
+    display: none;
+  }
 }
 .fards {
   > * {
     margin-bottom: 17px;
-  }
-}
-.namaz-detailed {
-  @media (max-width: $mobile) {
-    display: none;
   }
 }
 </style>

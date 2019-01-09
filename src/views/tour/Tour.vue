@@ -136,6 +136,7 @@ export default {
   },
   created() {
     this.getData();
+    this.$store.commit('setMobileHeaderStatus', 'Мой первый намаз');
   },
   components: {
     Rukn,

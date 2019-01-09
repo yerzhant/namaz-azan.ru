@@ -149,6 +149,7 @@ export default {
   },
   created() {
     this.getData();
+    this.$store.commit('setMobileHeaderStatus', 'Тахарат');
   },
   components: {
     NamazHeader,

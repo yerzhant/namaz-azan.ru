@@ -334,7 +334,15 @@ export default {
 }
 .fadjr {
   background-image: url(./fadjr-bg.png);
+  @media (max-width: $mobile) {
+    background-image: none;
+  }
   .info {
+    &-wrapper {
+      @media (max-width: $mobile) {
+        background: url(./dhuhr-bg-m.png) no-repeat bottom / cover;
+      }
+    }
     .rakaats:last-child {
       color: #175682;
       .rakaats-count {
@@ -378,7 +386,15 @@ export default {
   .desc.closed::before {
     background: linear-gradient(to bottom, transparent, #fdfcfa);
   }
+  @media (max-width: $mobile) {
+    background-image: none;
+  }
   .info {
+    &-wrapper {
+      @media (max-width: $mobile) {
+        background: url(./dhuhr-bg-m.png) no-repeat bottom / cover;
+      }
+    }
     .rakaats:last-child {
       color: #175682;
       .rakaats-count {
@@ -399,7 +415,15 @@ export default {
   .desc.closed::before {
     background: linear-gradient(to bottom, transparent, #f7f9ff);
   }
+  @media (max-width: $mobile) {
+    background-image: none;
+  }
   .info {
+    &-wrapper {
+      @media (max-width: $mobile) {
+        background: url(./dhuhr-bg-m.png) no-repeat bottom / cover;
+      }
+    }
     .rakaats:nth-last-child(2) {
       color: #175682;
       .rakaats-count {
@@ -420,7 +444,15 @@ export default {
   .desc.closed::before {
     background: linear-gradient(to bottom, transparent, #f7f8ff);
   }
+  @media (max-width: $mobile) {
+    background-image: none;
+  }
   .info {
+    &-wrapper {
+      @media (max-width: $mobile) {
+        background: url(./dhuhr-bg-m.png) no-repeat bottom / cover;
+      }
+    }
     .rakaats:nth-last-child(3) {
       color: #175682;
       .rakaats-count {
@@ -441,7 +473,15 @@ export default {
   .desc.closed::before {
     background: linear-gradient(to bottom, transparent, #faf7ff);
   }
+  @media (max-width: $mobile) {
+    background-image: none;
+  }
   .info {
+    &-wrapper {
+      @media (max-width: $mobile) {
+        background: url(./dhuhr-bg-m.png) no-repeat bottom / cover;
+      }
+    }
     .rakaats:last-child {
       color: #175682;
       .rakaats-count {

@@ -9,28 +9,28 @@
     .info
       .description
         .tabs(
-          v-if="content1 || content2 || content3 || content4"
-          :class="{full: content1 && content2 && content3 && content4}"
+          v-if="transcription || translation || arabic || description"
+          :class="{full: transcription && translation && arabic && description}"
         )
           .tab(
-            v-if="content1"
-            :class="{active: tab1}"
-            @click="tab2 = tab3 = tab4 = false; tab1 = true"
+            v-if="transcription"
+            :class="{active: tabTranscription}"
+            @click="tabTranslation = tabArabic = tabDescription = false; tabTranscription = true"
           ) Транскрипция
           .tab(
-            v-if="content2"
-            :class="{active: tab2}"
-            @click="tab1 = tab3 = tab4 = false; tab2 = true"
+            v-if="translation"
+            :class="{active: tabTranslation}"
+            @click="tabTranscription = tabArabic = tabDescription = false; tabTranslation = true"
           ) Перевод
           .tab(
-            v-if="content3"
-            :class="{active: tab3}"
-            @click="tab1 = tab2 = tab4 = false; tab3 = true"
+            v-if="arabic"
+            :class="{active: tabArabic}"
+            @click="tabTranscription = tabTranslation = tabDescription = false; tabArabic = true"
           ) Арабский
           .tab(
-            v-if="content4"
-            :class="{active: tab4}"
-            @click="tab1 = tab2 = tab3 = false; tab4 = true"
+            v-if="description"
+            :class="{active: tabDescription}"
+            @click="tabTranscription = tabTranslation = tabArabic = false; tabDescription = true"
           ) Описание
         .tab-contents
           .header(v-if="tour")
@@ -38,10 +38,10 @@
               h3.title {{ title }}
               .sub-title(v-if="subTitle") {{ subTitle }}
             .number {{ number }}
-          .tab-content(:class="{active: tab1}" v-html="content1")
-          .tab-content(:class="{active: tab2}" v-html="content2")
-          .tab-content(:class="{active: tab3}" v-html="content3")
-          .tab-content(:class="{active: tab4}" v-html="content4")
+          .tab-content(:class="{active: tabTranscription}" v-html="transcription")
+          .tab-content(:class="{active: tabTranslation}" v-html="translation")
+          .tab-content(:class="{active: tabArabic}" v-html="arabic")
+          .tab-content(:class="{active: tabDescription}" v-html="description")
           AppPlayer.player(:type="audio")
           .buttons
             AppButton(:height="36" blue @click="goNext" v-if="!last") ДАЛЕЕ
@@ -78,19 +78,19 @@ export default {
     subTitle: String,
     number: String,
     shortDesc: String,
-    content1: {
+    transcription: {
       type: String,
       default: '',
     },
-    content2: {
+    translation: {
       type: String,
       default: '',
     },
-    content3: {
+    arabic: {
       type: String,
       default: '',
     },
-    content4: {
+    description: {
       type: String,
       default: '',
     },
@@ -100,10 +100,10 @@ export default {
       image1: true,
       image2: false,
       image3: false,
-      tab1: false,
-      tab2: false,
-      tab3: false,
-      tab4: false,
+      tabTranscription: false,
+      tabTranslation: false,
+      tabArabic: false,
+      tabDescription: false,
     };
   },
   computed: {
@@ -148,8 +148,8 @@ export default {
     },
     print() {
       const win = window.open();
-      win.document.write(`<p>${this.content1}</p>
-        <p>${this.content2}</p><p>${this.content3}</p><p>${this.content4}</p>`);
+      win.document.write(`<p>${this.transcription}</p>
+        <p>${this.translation}</p><p>${this.arabic}</p><p>${this.description}</p>`);
       win.print();
       win.close();
     },
@@ -158,14 +158,14 @@ export default {
         this.$data[k] = false;
       });
       this.image1 = true;
-      if (this.content1) {
-        this.tab1 = true;
-      } else if (this.content2) {
-        this.tab2 = true;
-      } else if (this.content3) {
-        this.tab3 = true;
-      } else if (this.content4) {
-        this.tab4 = true;
+      if (this.transcription) {
+        this.tabTranscription = true;
+      } else if (this.translation) {
+        this.tabTranslation = true;
+      } else if (this.arabic) {
+        this.tabArabic = true;
+      } else if (this.description) {
+        this.tabDescription = true;
       }
     },
   },

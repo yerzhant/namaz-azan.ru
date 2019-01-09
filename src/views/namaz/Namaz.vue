@@ -34,7 +34,7 @@
         number="1"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
                    и произносит первый такбир:"
-        content4="Аллаху Акбар!"
+        description="Аллаху Акбар!"
         first
       )
       Rukn(
@@ -45,10 +45,10 @@
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
                    и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="После такбира молящийся складывает руки под пупком так, чтобы правая рука \
+        transcription="Аллаху Акбар!"
+        translation="2"
+        arabic="3"
+        description="После такбира молящийся складывает руки под пупком так, чтобы правая рука \
           обхватывала мизинцем и большим пальцами запястье левой руки. Указательный, средний \
           и безымянный пальцы при этом расположены вдоль внешней стороны кисти и направлены \
           в сторону локтя. Не шевелитесь без крайней необходимости. Стойте спокойно — чем тише, \
@@ -72,10 +72,10 @@
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
                    и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
+        transcription="Аллаху Акбар!"
+        translation="2"
+        arabic="3"
+        description="4"
       )
       Rukn(
         rakaat="4"
@@ -86,10 +86,10 @@
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
                    и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
+        transcription="Аллаху Акбар!"
+        translation="2"
+        arabic="3"
+        description="4"
       )
       Rukn(
         type="ruku"
@@ -98,10 +98,10 @@
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
                    и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
+        transcription="Аллаху Акбар!"
+        translation="2"
+        arabic="3"
+        description="4"
       )
       Rukn(
         type="straight-up"
@@ -109,10 +109,10 @@
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
                    и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
+        transcription="Аллаху Акбар!"
+        translation="2"
+        arabic="3"
+        description="4"
       )
       Rukn(
         type="sadjda"
@@ -120,10 +120,10 @@
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
                    и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
+        transcription="Аллаху Акбар!"
+        translation="2"
+        arabic="3"
+        description="4"
       )
       Rukn(
         type="sitting"
@@ -131,10 +131,10 @@
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
                    и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
+        transcription="Аллаху Акбар!"
+        translation="2"
+        arabic="3"
+        description="4"
       )
       Rukn(
         type="wudu niet"
@@ -142,10 +142,10 @@
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
                    и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
+        transcription="Аллаху Акбар!"
+        translation="2"
+        arabic="3"
+        description="4"
       )
       Rukn(
         type="wudu hands"
@@ -153,10 +153,10 @@
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
                    и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
+        transcription="Аллаху Акбар!"
+        translation="2"
+        arabic="3"
+        description="4"
       )
       Rukn(
         type="wudu mouth"
@@ -164,10 +164,10 @@
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
                    и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
+        transcription="Аллаху Акбар!"
+        translation="2"
+        arabic="3"
+        description="4"
       )
       Rukn(
         type="wudu nose"
@@ -175,10 +175,10 @@
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
                    и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
+        transcription="Аллаху Акбар!"
+        translation="2"
+        arabic="3"
+        description="4"
       )
       Rukn(
         type="wudu face"
@@ -186,10 +186,10 @@
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
                    и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
+        transcription="Аллаху Акбар!"
+        translation="2"
+        arabic="3"
+        description="4"
       )
       Rukn(
         type="wudu full-hands"
@@ -197,10 +197,10 @@
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
                    и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
+        transcription="Аллаху Акбар!"
+        translation="2"
+        arabic="3"
+        description="4"
       )
       Rukn(
         type="wudu head"
@@ -208,10 +208,10 @@
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
                    и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
+        transcription="Аллаху Акбар!"
+        translation="2"
+        arabic="3"
+        description="4"
       )
       Rukn(
         type="wudu ears-and-neck"
@@ -219,10 +219,10 @@
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
                    и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
+        transcription="Аллаху Акбар!"
+        translation="2"
+        arabic="3"
+        description="4"
       )
       Rukn(
         type="wudu leg-right"
@@ -230,10 +230,10 @@
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
                    и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
+        transcription="Аллаху Акбар!"
+        translation="2"
+        arabic="3"
+        description="4"
       )
       Rukn(
         type="wudu leg-left"
@@ -241,10 +241,10 @@
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
                    и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
+        transcription="Аллаху Акбар!"
+        translation="2"
+        arabic="3"
+        description="4"
       )
       Rukn(
         type="wudu dua"
@@ -252,10 +252,10 @@
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
                    и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
+        transcription="Аллаху Акбар!"
+        translation="2"
+        arabic="3"
+        description="4"
       )
     AppSection(title="2 РАКААТ" rakaat notFirst)
       Rukn(
@@ -265,10 +265,10 @@
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
                    и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
+        transcription="Аллаху Акбар!"
+        translation="2"
+        arabic="3"
+        description="4"
         first
       )
       Rukn(
@@ -279,10 +279,10 @@
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
                    и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
+        transcription="Аллаху Акбар!"
+        translation="2"
+        arabic="3"
+        description="4"
       )
       Rukn(
         type="salam-right"
@@ -290,10 +290,10 @@
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
                    и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
+        transcription="Аллаху Акбар!"
+        translation="2"
+        arabic="3"
+        description="4"
       )
       Rukn(
         type="salam-left"
@@ -301,10 +301,10 @@
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
                    и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
+        transcription="Аллаху Акбар!"
+        translation="2"
+        arabic="3"
+        description="4"
       )
       Rukn(
         type="dua"
@@ -313,10 +313,10 @@
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
                    и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
+        transcription="Аллаху Акбар!"
+        translation="2"
+        arabic="3"
+        description="4"
       )
       Rukn(
         type="qunoot"
@@ -325,10 +325,10 @@
         number="2"
         shortDesc="Повернувшись в направлении киблы, мусульманин поднимает ладони до уровня ушей \
                    и произносит первый такбир:"
-        content1="Аллаху Акбар!"
-        content2="2"
-        content3="3"
-        content4="4"
+        transcription="Аллаху Акбар!"
+        translation="2"
+        arabic="3"
+        description="4"
       )
     section(v-if="$store.state.namaz === 'wudu'")
       .line.type-2

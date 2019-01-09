@@ -115,10 +115,10 @@
           router-link.item(to="/fadjr/sunnah")
             .title ФАДЖР
             .desc До фарда
-          router-link.item(to="/dhuhr/sunnah")
+          router-link.item(to="/dhuhr/sunnah-before")
             .title ЗУХР
             .desc До фарда
-          router-link.item(to="/dhuhr/sunnah")
+          router-link.item(to="/dhuhr/sunnah-after")
             .title ЗУХР
             .desc После фарда
           router-link.item(to="/maghrib/sunnah")

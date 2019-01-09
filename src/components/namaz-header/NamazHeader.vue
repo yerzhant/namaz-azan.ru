@@ -102,6 +102,7 @@ export default {
           return `${today[0]} - ${today[1]}`;
 
         case 'dhuhr':
+        case 'tutorial':
           return `${today[2]} - ${today[3]}`;
 
         case 'asr':
@@ -345,6 +346,7 @@ export default {
     }
   }
 }
+.tutorial,
 .dhuhr {
   background-image: url(./dhuhr-bg.png);
   @media (max-width: $mobile) {

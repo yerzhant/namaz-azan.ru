@@ -51,7 +51,7 @@
         router-link.item(to="/first-namaz")
           .title МОЙ ПЕРВЫЙ НАМАЗ
           .desc Обзор для новичков
-        router-link.item(to="/dhuhr/fard")
+        router-link.item(to="/tutorial/fard")
           .title НАМАЗ: ПОДРОБНО
           .desc Детализированый обзор
         router-link.item(to="#")
@@ -256,6 +256,7 @@ export default {
       &.fadjr {
         background-image: url(./fadjr.jpg);
       }
+      &.tutorial,
       &.dhuhr {
         background-image: url(./dhuhr.jpg);
       }

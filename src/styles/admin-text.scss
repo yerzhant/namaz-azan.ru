@@ -31,7 +31,10 @@
 
   ol {
     font-weight: bold;
-    margin-left: 25px;
+
+    @media (max-width: $mobile) {
+      margin-left: 25px;
+    }
 
     div {
       font-weight: initial;

@@ -505,7 +505,7 @@ export default {
     @media (max-width: $mobile) {
       padding: 0;
       &-wrapper {
-        padding-bottom: 70px;
+        padding-bottom: 130px;
       }
     }
   }

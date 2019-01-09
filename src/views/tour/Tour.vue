@@ -77,6 +77,7 @@ export default {
     next() {
       if (this.index < this.items.length - 1) this.index++;
       this.normalizeProgressPosition();
+      this.$scrollTo('body');
     },
     normalizeProgressPosition() {
       const max = this.getProgressMaxPosition();

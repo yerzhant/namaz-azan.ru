@@ -2,7 +2,7 @@
   a.app-button(
     :class="{red: red, blue: blue, small: small}"
     :style="{width: `${width}px`, height: `${height}px`}"
-    @click="$emit('click')"
+    @click="go"
   )
     slot
 </template>
@@ -25,9 +25,10 @@ export default {
   },
   methods: {
     go() {
-      this.$emit('click');
       if (this.link) {
         this.$router.push(this.link);
+      } else {
+        this.$emit('click');
       }
     },
   },

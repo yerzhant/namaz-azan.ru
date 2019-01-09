@@ -22,51 +22,7 @@ export default new Vuex.Store({
     },
     showMenu: false,
     menu: null,
-    menuItems: [{
-      title: 'Фаджр',
-      open: false,
-      right: true,
-      items: [{
-        title: 'Фадрж',
-        link: '/fadjr/fard',
-        active: true,
-      }, {
-        title: 'Зухр',
-        link: '/dhuhr/fard',
-      }],
-    }, {
-      title: 'Фард',
-      open: false,
-      right: true,
-      items: [{
-        title: 'Сунна',
-        link: '#',
-      }, {
-        title: 'Фард',
-        link: '#',
-        active: true,
-      }],
-    }, {
-      // title: '1 ракаат',
-      open: true,
-      items: [{
-        title: 'Ниет',
-        link: '#r1-niet',
-      }, {
-        title: 'Такбир',
-        link: '#r1-takbir',
-      }],
-    }, {
-      title: '2 ракаат',
-      open: false,
-      items: [{
-        title: 'Кыям',
-        link: '#',
-      }, {
-        title: 'Кыраат',
-        link: '#r2-sitting',
-      }],
-    }],
+    menuItems: null,
   },
   mutations: {
     setGender(state, gender) {

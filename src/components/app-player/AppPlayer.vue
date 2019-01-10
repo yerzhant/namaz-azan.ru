@@ -5,7 +5,7 @@
       .time {{ time }}
       .progress
         .current(:style="{width: position}")
-    a(:href="`/audio/${type}.mp3`" download).download
+    a(:href="`${baseUrl}audio/${type}.mp3`" download).download
 </template>
 
 <script>
@@ -29,6 +29,7 @@ export default {
       playing: false,
       time: '00:00',
       position: '0',
+      baseUrl: process.env.BASE_URL,
     };
   },
   methods: {
@@ -44,7 +45,7 @@ export default {
       }
 
       this.player = sm.createSound({
-        url: `/audio/${this.type}.mp3`,
+        url: `${this.baseUrl}audio/${this.type}.mp3`,
         onfinish: () => {
           this.playing = false;
           this.player = null;

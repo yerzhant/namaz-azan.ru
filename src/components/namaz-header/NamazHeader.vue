@@ -243,6 +243,10 @@ export default {
   .clocks {
     font-size: 11px;
     background: url(./clocks.png) no-repeat top;
+    @media (max-width: $mobile) {
+      background-image: url(./clocks-m.png);
+      background-size: 31px;
+    }
     .footnote {
       color: #e64343;
       margin-left: 3px;

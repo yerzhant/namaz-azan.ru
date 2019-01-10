@@ -1,4 +1,4 @@
-# namaz
+# namaz777
 
 ## Project setup
 ```

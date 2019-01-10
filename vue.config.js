@@ -1,5 +1,6 @@
 module.exports = {
   baseUrl: '/namaz/',
+  productionSourceMap: false,
   configureWebpack: {
     performance: {
       maxEntrypointSize: 350 * 1024,

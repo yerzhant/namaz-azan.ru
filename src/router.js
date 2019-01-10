@@ -10,6 +10,7 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [{
     path: '/',
+    alias: '/index.html',
     component: AppSelect,
   }, {
     path: '/main',
@@ -26,9 +27,9 @@ export default new Router({
   }, {
     path: '/:type/:subType',
     component: () => import(/* webpackChunkName: "namaz" */ './views/namaz/Namaz.vue'),
-  // }, {
-  //   path: '*',
-  //   beforeEnter() { window.location = 'https://azan.ru/not-found'; },
+  }, {
+    path: '*',
+    beforeEnter() { window.location = 'https://azan.ru/not-found'; },
   }],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {

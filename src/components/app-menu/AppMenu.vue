@@ -315,6 +315,7 @@ export default {
 }
 .items {
   background-color: #081934;
+  width: 197px;
 }
 .item {
   display: flex;

@@ -61,7 +61,7 @@
     menu.submenu(v-show="flags.namaz")
       img.image(src="./namaz-bg.jpg")
       nav.items
-        .item.right
+        a.item(href="https://azan.ru/durus/fikh")
           .title ОБЩАЯ ИНФОРМАЦИЯ
           .desc К прочтению
         .item.right(

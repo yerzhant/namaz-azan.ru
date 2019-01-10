@@ -5,6 +5,7 @@
         .title {{ data.title }}
         .short-desc {{ data.shortDesc }}
         img.moon(src="./moon.png")
+        img.moon-m(src="./moon-m.png")
         AppButton(@click="next") ДАЛЕЕ
       .rukn-slide(v-show="type === 'rukn'")
         .prev(@click="previous")
@@ -402,6 +403,18 @@ export default {
   .moon {
     margin-top: 23px;
     margin-bottom: 32px;
+    @media (max-width: $mobile) {
+      display: none;
+    }
+    &-m {
+      width: 265px;
+      margin-top: 23px;
+      margin-bottom: 32px;
+      display: none;
+      @media (max-width: $mobile) {
+        display: inline;
+      }
+    }
   }
 }
 .rukn-slide {

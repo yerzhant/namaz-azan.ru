@@ -3,7 +3,7 @@
     .button(@click="play")
     .info
       .time {{ time }}
-      .progress
+      .progress(@click.stop="setPosition" ref="progress")
         .current(:style="{width: position}")
     a(:href="url" download).download
 </template>
@@ -75,6 +75,11 @@ export default {
       if (sec < 10) sec = `0${sec}`;
       return `${min}:${sec}`;
     },
+    setPosition(e) {
+      let pos = e.clientX - this.$refs.progress.getBoundingClientRect().left;
+      pos = (pos / this.$refs.progress.offsetWidth) * this.player.duration;
+      this.player.setPosition(pos);
+    },
   },
 };
 </script>
@@ -109,6 +114,7 @@ export default {
   height: 3px;
   background-color: #dadada;
   margin-left: 7px;
+  cursor: pointer;
 }
 .current {
   height: 3px;

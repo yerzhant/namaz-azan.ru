@@ -29,8 +29,12 @@ export default {
       playing: false,
       time: '00:00',
       position: '0',
-      url: `/media/audio/namaz/${this.type}.mp3`,
     };
+  },
+  computed: {
+    url() {
+      return `/media/audio/namaz/${this.type}.mp3`;
+    },
   },
   methods: {
     play() {

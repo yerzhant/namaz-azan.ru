@@ -12,6 +12,8 @@
         Rukn(
           ref="rukn"
           tour
+          :rakaat="index < 16 ? '1' : '2'"
+          rakaats="2"
           :type="data.type"
           :title="data.title"
           :subTitle="data.subTitle"

@@ -33,7 +33,7 @@ export default {
   },
   computed: {
     url() {
-      return `/media/audio/namaz/${this.type}.mp3`;
+      return `https://azan.ru/media/audio/namaz/${this.type}.mp3`;
     },
   },
   methods: {

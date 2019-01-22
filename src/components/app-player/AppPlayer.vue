@@ -19,6 +19,8 @@ sm.setup({
 });
 sm.beginDelayedInit();
 
+let currentPlayer = null;
+
 export default {
   props: {
     type: String,
@@ -38,12 +40,21 @@ export default {
   },
   methods: {
     play() {
+      if (currentPlayer && currentPlayer !== this) {
+        currentPlayer.player.pause();
+        currentPlayer.playing = false;
+        currentPlayer = this;
+      }
+
       if (this.player) {
         if (this.playing) {
           this.player.pause();
           this.playing = false;
+          currentPlayer = null;
         } else {
           this.player.resume();
+          this.playing = true;
+          currentPlayer = this;
         }
         return;
       }
@@ -55,9 +66,11 @@ export default {
           this.player = null;
           this.time = '00:00';
           this.position = '0';
+          currentPlayer = null;
         },
       });
 
+      currentPlayer = this;
       const thiz = this;
       this.player.play({
         whileplaying() {

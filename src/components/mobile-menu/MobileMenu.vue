@@ -1,5 +1,8 @@
 <template lang="pug">
-  menu.mobile-menu(v-show="$store.state.showMenu")
+  menu.mobile-menu(
+    v-show="$store.state.showMenu"
+    @click="$store.commit('showMenu', false)"
+  )
     .header
       .close(@click="$store.commit('showMenu', false)")
       .bar
@@ -13,7 +16,7 @@
             .title ГЛАВНАЯ
             .sub-title {{ $route.path === '/main' ? 'Вы на главной' : 'Перейти на главную' }}
 
-      .item(:class="{open: tahharah}" @click="tahharah = !tahharah")
+      .item(:class="{open: tahharah}" @click.stop="tahharah = !tahharah")
         .info
           .titles.submenu
             .title ТАХАРАТ
@@ -22,7 +25,7 @@
           .subitem-l2(@click="goTo('/tahharah/ghusl')") Гусль
           .subitem-l2(@click="goTo('/tahharah/wudu')") Вуду
 
-      .item(:class="{open: namaz}" @click="namaz = !namaz")
+      .item(:class="{open: namaz}" @click.stop="namaz = !namaz")
         .info
           .titles.submenu
             .title НАМАЗ
@@ -52,7 +55,7 @@
               .subitem-l2(@click="goTo('/maghrib/sunnah')") Магриб
               .subitem-l2(@click="goTo('/isha/sunnah')") Иша
 
-      .item(:class="{open: tutoring}" @click="tutoring = !tutoring")
+      .item(:class="{open: tutoring}" @click.stop="tutoring = !tutoring")
         .info
           .titles.submenu
             .title ОБУЧЕНИЕ

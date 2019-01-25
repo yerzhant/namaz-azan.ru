@@ -34,8 +34,10 @@
           :endTime="$store.state.namazTimes.today[1]"
           :namaz1Count=2
           namaz1Type="сунны"
+          namaz1Link="/fadjr/sunnah"
           :namaz2Count=2
           namaz2Type="фарда"
+          namaz2Link="/fadjr/fard"
         )
         NamazInfo(
           type="dhuhr"
@@ -45,10 +47,13 @@
           :endTime="$store.state.namazTimes.today[3]"
           :namaz1Count=4
           namaz1Type="сунны"
+          namaz1Link="/dhuhr/sunnah-before"
           :namaz2Count=4
           namaz2Type="фарда"
+          namaz2Link="/dhuhr/fard"
           :namaz3Count=2
           namaz3Type="сунны"
+          namaz3Link="/dhuhr/sunnah-after"
         )
         NamazInfo(
           type="asr"
@@ -58,6 +63,7 @@
           :endTime="$store.state.namazTimes.today[4]"
           :namaz1Count=4
           namaz1Type="фарда"
+          namaz1Link="/asr/fard"
         )
         NamazInfo(
           type="maghrib"
@@ -67,8 +73,10 @@
           :endTime="$store.state.namazTimes.today[5]"
           :namaz1Count=3
           namaz1Type="фарда"
+          namaz1Link="/maghrib/fard"
           :namaz2Count=2
           namaz2Type="сунны"
+          namaz2Link="/maghrib/sunnah"
         )
         NamazInfo(
           type="isha"
@@ -78,8 +86,10 @@
           :endTime="$store.state.namazTimes.today[0]"
           :namaz1Count=4
           namaz1Type="фарда"
+          namaz1Link="/isha/fard"
           :namaz2Count=2
           namaz2Type="сунны"
+          namaz2Link="/isha/sunnah"
         )
         NamazInfo(
           type="witr"
@@ -89,6 +99,7 @@
           :endTime="$store.state.namazTimes.tomorrow[0]"
           :namaz1Count=3
           namaz1Type="ваджиба"
+          namaz1Link="/witr/wadjib"
         )
       .buttons
       //-   AppButton(link="/" blue) ВСЕ ВИДЫ НАМАЗА

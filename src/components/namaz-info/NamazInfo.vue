@@ -5,13 +5,13 @@
       .title {{ title }}
       .desc {{ desc }}
       .time {{ time }}
-    .namaz.n1(v-if="namaz1Count")
+    router-link.namaz.n1(v-if="namaz1Count" :to="namaz1Link")
       .count {{ namaz1Count }}
       .type {{ namaz1Type }}
-    .namaz.n2(v-if="namaz2Count")
+    router-link.namaz.n2(v-if="namaz2Count" :to="namaz2Link")
       .count {{ namaz2Count }}
       .type {{ namaz2Type }}
-    .namaz.n3(v-if="namaz3Count")
+    router-link.namaz.n3(v-if="namaz3Count" :to="namaz3Link")
       .count {{ namaz3Count }}
       .type {{ namaz3Type }}
 </template>
@@ -26,10 +26,13 @@ export default {
     endTime: String,
     namaz1Count: Number,
     namaz1Type: String,
+    namaz1Link: String,
     namaz2Count: Number,
     namaz2Type: String,
+    namaz2Link: String,
     namaz3Count: Number,
     namaz3Type: String,
+    namaz3Link: String,
   },
   data() {
     return {

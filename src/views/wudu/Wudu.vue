@@ -13,6 +13,13 @@
             достаточно совершить вуду для совершения тех действий, которые нельзя совершать без \
             малого ритуального омовения."
     )
+
+    AppSection(title="ОБЩИЕ ПОЛОЖЕНИЯ" bg1).generals
+      section.admin-text
+        section.section(v-for="section in sections" :key="section.id" :id="`section-${section.id}`")
+          h2.header {{ section.title }}
+          div(v-html="section.text")
+
     AppSection(title="ОБУЧЕНИЕ ВУДУ" rakaat)
       .line
       Rukn(
@@ -147,6 +154,7 @@ import axios from 'axios';
 export default {
   data() {
     return {
+      sections: null,
       rukns: null,
     };
   },
@@ -156,6 +164,7 @@ export default {
       this.$store.commit('setNamaz', type);
       this.$store.commit('setMenu', 'level-2');
       axios.get(`/api/namaz/${type}`).then(r => {
+        this.sections = r.data.sections;
         this.rukns = r.data.rukns;
         this.$store.commit('setMenuItems', r.data.menu);
       });
@@ -194,6 +203,20 @@ export default {
 .fards {
   > * {
     margin-bottom: 17px;
+  }
+}
+.generals {
+  padding-bottom: 0;
+  .admin-text {
+    margin-top: 0;
+    @media (max-width: $mobile) {
+      padding: 0;
+    }
+  }
+  .header {
+    background: none;
+    padding-top: 0;
+    border-top: none;
   }
 }
 </style>

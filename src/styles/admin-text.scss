@@ -16,7 +16,7 @@
     border-bottom: 1px dashed #aab9c3;
 
     &:last-child {
-      margin-bottom: 40px;
+      margin-bottom: 0;
       border-bottom: none;
     }
   }
@@ -30,15 +30,15 @@
   }
 
   ol {
-    font-weight: bold;
+    // font-weight: bold;
 
     @media (max-width: $mobile) {
       margin-left: 25px;
     }
 
-    div {
-      font-weight: initial;
-    }
+    // div {
+    //   font-weight: initial;
+    // }
   }
 
   ul {

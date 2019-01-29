@@ -572,6 +572,17 @@ export default {
     }
   }
 }
+.masah {
+  background-image: url(../../views/tahharah/masah-bg.png);
+  @media (max-width: $mobile) {
+    .info {
+      padding: 0;
+      &-wrapper {
+        padding-bottom: 210px;
+      }
+    }
+  }
+}
 .sub-title {
   text-transform: uppercase;
 }

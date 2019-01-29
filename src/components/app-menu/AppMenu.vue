@@ -55,7 +55,7 @@
           .desc Когда нет воды
         router-link.item(to="/tahharah/masah")
           .title МАСХ
-          .desc Протирание хуфов
+          .desc Протирание хуффов
 
     menu.submenu(v-show="flags.tutoring")
       img.image(src="./tutoring-bg.jpg")
@@ -299,6 +299,9 @@ export default {
       }
       &.tayammum {
         background-image: url(./tayammum.png);
+      }
+      &.masah {
+        background-image: url(./masah.png);
       }
     }
     .items-l2 {

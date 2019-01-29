@@ -3,7 +3,7 @@
     .info-wrapper
       section.info
         h1.title {{ title }}
-          span.title-colon {{ ': ' }}
+          span.title-colon(v-if="subTitle") {{ ': ' }}
           span.sub-title {{ subTitle }}
         .short-desc {{ shortDesc }}
         .details(v-if="isNamaz")
@@ -122,8 +122,11 @@ export default {
     isNamaz() {
       switch (this.$store.state.namaz) {
         case 'istibra':
+        case 'istinja':
         case 'ghusl':
         case 'wudu':
+        case 'tayammum':
+        case 'masah':
           return false;
         default:
           return true;
@@ -542,7 +545,18 @@ export default {
     .info {
       padding: 0;
       &-wrapper {
-        padding-bottom: 200px;
+        padding-bottom: 210px;
+      }
+    }
+  }
+}
+.istinja {
+  background-image: url(../../views/tahharah/istinja-bg.png);
+  @media (max-width: $mobile) {
+    .info {
+      padding: 0;
+      &-wrapper {
+        padding-bottom: 210px;
       }
     }
   }

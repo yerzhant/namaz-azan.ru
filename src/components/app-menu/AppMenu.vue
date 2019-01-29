@@ -287,6 +287,10 @@ export default {
       &.istibra {
         background-image: url(./istibra.png);
       }
+      &.istinja {
+        background-image: url(./istinja.png);
+        background-position-y: top;
+      }
       &.ghusl {
         background-image: url(./ghusl.jpg);
       }

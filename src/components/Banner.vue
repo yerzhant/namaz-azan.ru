@@ -146,7 +146,7 @@ export default {
 }
 .ghusl {
   background-image: url(../views/app-main/ghusl-bg.jpg);
-  width: 1076px;
+  width: 1077px;
   height: 268px;
   border: 1px solid #d4dee8;
   @media (max-width: $mobile) {
@@ -176,7 +176,7 @@ export default {
 }
 .taharat {
   background-image: url(../views/app-main/taharat-bg.jpg);
-  width: 1076px;
+  width: 1077px;
   height: 265px;
   border: 1px solid #d4dee8;
   border-top: none;

@@ -1,0 +1,95 @@
+<template lang="pug">
+  router-link(:to="link").small-banner(:class="{ bg2 }")
+    .image(:class="type")
+    .ornament
+    .info
+      .title {{ title }}
+      .sub-title {{ subTitle }}
+      .text {{ text }}
+</template>
+
+<script>
+export default {
+  props: {
+    link: String,
+    type: String,
+    title: String,
+    subTitle: String,
+    text: String,
+    bg2: Boolean,
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+.small-banner {
+  display: flex;
+  align-items: center;
+  width: 359px;
+  height: 269px;
+  background-color: #fcffff;
+  border-right: 1px solid #d5dee8;
+  border-bottom: 1px solid #d5dee8;
+  &:first-child,
+  &:nth-child(4) {
+    border-left: 1px solid #d5dee8;
+  }
+  &.bg2 {
+    background-color: #f7fcff;
+  }
+}
+.image {
+  width: 122px;
+  height: 188px;
+  background-repeat: no-repeat;
+  background-position: right;
+  margin-right: 1px;
+  &.istibra {
+    background-image: url(./istibra.png);
+  }
+  &.istinja {
+    background-image: url(./istinja.png);
+  }
+  &.tayammum {
+    background-image: url(./tayammum.png);
+  }
+  &.ghusl {
+    background-image: url(./ghusl.png);
+  }
+  &.wudu {
+    background-image: url(./wudu.png);
+  }
+  &.masah {
+    background-image: url(./masah.png);
+  }
+}
+.ornament {
+  width: 27px;
+  height: 188px;
+  margin-right: 33px;
+  background: url(./ornament.png) no-repeat left;
+}
+.info {
+  width: 127px;
+}
+.title {
+  font-weight: 500;
+  font-size: 17px;
+  color: #3a3a3a;
+}
+.sub-title {
+  font-size: 13px;
+  color: #3375b2;
+  padding-top: 3px;
+  padding-bottom: 12px;
+}
+.text {
+  font-size: 12px;
+  line-height: 18px;
+  color: #2a2a2a;
+  border-top: 1px solid #d3dae0;
+  border-bottom: 1px solid #d3dae0;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+</style>

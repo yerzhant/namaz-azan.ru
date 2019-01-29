@@ -127,10 +127,57 @@
       )
         template(slot="buttons")
           AppButton(link="/tahharah/wudu" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+      .small-banners
+        SmallBanner(
+          link="/tahharah/istibra"
+          type="istibra"
+          title="ИСТИБАРА"
+          subTitle="Сухое очищение"
+          text="Только для мужчин. Выполняется до принятия омовения."
+        )
+        SmallBanner(
+          link="/tahharah/istinja"
+          type="istinja"
+          title="ИСТИНДЖА"
+          subTitle="Подмывание"
+          text="Устранение остатков наджасы после малой или большой нужды."
+          bg2
+        )
+        SmallBanner(
+          link="/tahharah/tayammum"
+          type="tayammum"
+          title="ТАЯММУМ"
+          subTitle="Когда нет воды"
+          text="Протирание частей тела чистой землей либо песком. Служит заменой омовения."
+        )
+        SmallBanner(
+          link="/tahharah/ghusl"
+          type="ghusl"
+          title="ГУСЛЬ"
+          subTitle="Полное омовение"
+          text="Полное ритуальное омовение водой всего тела целиком."
+          bg2
+        )
+        SmallBanner(
+          link="/tahharah/wudu"
+          type="wudu"
+          title="ТАХАРАТ"
+          subTitle="Малое омовение"
+          text="Малое омовение является доступным и простым способом очищения."
+        )
+        SmallBanner(
+          link="/tahharah/masah"
+          type="masah"
+          title="МАСХ"
+          subTitle="Протирание носков"
+          text="Условия протирания водонепроницаемых носков."
+          bg2
+        )
 </template>
 
 <script>
 import Banner from '@/components/Banner.vue';
+import SmallBanner from '@/components/small-banner/SmallBanner.vue';
 import AppButton from '@/components/AppButton.vue';
 import AppSection from '@/components/app-section/AppSection.vue';
 import Slogan from '@/components/slogan/Slogan.vue';
@@ -144,6 +191,7 @@ export default {
   },
   components: {
     Banner,
+    SmallBanner,
     AppButton,
     AppSection,
     Slogan,
@@ -184,6 +232,10 @@ export default {
 }
 .color-2d {
   color: #2d2d2d;
+}
+.small-banners {
+  display: flex;
+  flex-wrap: wrap;
 }
 @media (max-width: $mobile) {
   .tahharah >>> .content {

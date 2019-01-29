@@ -38,12 +38,24 @@
     menu.submenu(v-show="flags.taharat")
       img.image(src="./taharat-bg.jpg")
       nav.items
+        router-link.item(to="/tahharah/istibra")
+          .title ИСТИБРА
+          .desc Сухое очищение
+        router-link.item(to="/tahharah/istinja")
+          .title ИСТИНДЖА
+          .desc Подмывание
         router-link.item(to="/tahharah/ghusl")
           .title ГУСЛЬ
-          .desc Полное омовение
+          .desc Малое омовение
         router-link.item(to="/tahharah/wudu")
           .title ВУДУ
           .desc Малое омовение
+        router-link.item(to="/tahharah/tayammum")
+          .title ТАЯММУМ
+          .desc Когда нет воды
+        router-link.item(to="/tahharah/masah")
+          .title МАСХ
+          .desc Протирание хуфов
 
     menu.submenu(v-show="flags.tutoring")
       img.image(src="./tutoring-bg.jpg")
@@ -271,6 +283,9 @@ export default {
       }
       &.witr {
         background-image: url(./witr.jpg);
+      }
+      &.istibra {
+        background-image: url(./istibra.png);
       }
       &.ghusl {
         background-image: url(./ghusl.jpg);

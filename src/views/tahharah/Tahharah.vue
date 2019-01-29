@@ -2,11 +2,9 @@
   section.tahharah
     NamazHeader(
       :type="`tahharah ${$store.state.namaz}`"
-      title="ГУСЛЬ"
-      subTitle="Полное омовение"
-      shortDesc="После совершения определенных действий Шариат предписывает \
-                 мусульманину совершить ритуальное купание – омовение водой всего \
-                 тела целиком. По-арабски полное омовение носит название «гусль»."
+      :title="title"
+      :subTitle="subTitle"
+      :shortDesc="shortDesc"
     )
 
     section.admin-text
@@ -133,6 +131,9 @@ import axios from 'axios';
 export default {
   data() {
     return {
+      title: null,
+      subTitle: null,
+      shortDesc: null,
       sections: null,
     };
   },
@@ -142,9 +143,17 @@ export default {
       this.$store.commit('setNamaz', type);
       this.$store.commit('setMenu', 'level-2');
       axios.get(`/api/namaz/${type}`).then(r => {
+        this.title = r.data.title;
+        this.subTitle = r.data.subTitle;
+        this.shortDesc = r.data.shortDesc;
         this.sections = r.data.sections;
         this.$store.commit('setMenuItems', r.data.menu);
       });
+    },
+  },
+  watch: {
+    $route() {
+      this.getData();
     },
   },
   created() {

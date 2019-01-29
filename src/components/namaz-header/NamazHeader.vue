@@ -121,6 +121,7 @@ export default {
     },
     isNamaz() {
       switch (this.$store.state.namaz) {
+        case 'istibra':
         case 'ghusl':
         case 'wudu':
           return false;
@@ -531,6 +532,17 @@ export default {
       padding: 0;
       &-wrapper {
         padding-bottom: 180px;
+      }
+    }
+  }
+}
+.istibra {
+  background-image: url(../../views/tahharah/istibra-bg.png);
+  @media (max-width: $mobile) {
+    .info {
+      padding: 0;
+      &-wrapper {
+        padding-bottom: 200px;
       }
     }
   }

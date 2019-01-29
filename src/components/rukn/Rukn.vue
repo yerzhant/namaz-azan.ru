@@ -5,7 +5,7 @@
         h3.title {{ title }}
         .sub-title(v-if="subTitle") {{ subTitle }}
       .number {{ number }}
-    .short-desc(v-if="!tour") {{ shortDesc }}
+    .short-desc(v-if="!tour" v-html="shortDesc")
     .info
       .description
         .tabs(

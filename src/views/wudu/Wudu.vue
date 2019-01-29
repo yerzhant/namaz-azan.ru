@@ -61,6 +61,51 @@
         )
           template(slot="buttons")
             AppButton(link="/tahharah/ghusl" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+        Banner(
+          type="fard istibra blue"
+          :shadow="$store.state.namaz === 'istibra'"
+          descStyleBlackBlue
+          descWithMargin2
+          title="ИСТИБРА"
+          shortDesc="Сухое очищение"
+          desc="Только для мужчин. Выполняется до принятия омовения. В определенных \
+                случаях мужчине обязательно следует совершить истибару."
+        )
+          template(slot="buttons")
+            AppButton(link="/tahharah/istibra" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+        Banner(
+          type="fard istinja blue"
+          :shadow="$store.state.namaz === 'istinja'"
+          descStyleBlackBlue
+          descWithMargin2
+          title="ИСТИНДЖА"
+          shortDesc="Подмывание"
+          desc="Устранение остатков наджасы после совершения малой или большой нужды."
+        )
+          template(slot="buttons")
+            AppButton(link="/tahharah/istinja" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+        Banner(
+          type="fard tayammum blue"
+          :shadow="$store.state.namaz === 'tayammum'"
+          descStyleBlackBlue
+          descWithMargin2
+          title="ТАЯММУМ"
+          shortDesc="Когда нет воды"
+          desc="Протирание частей тела чистой землей либо песком. Служит заменой омовения."
+        )
+          template(slot="buttons")
+            AppButton(link="/tahharah/tayammum" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+        Banner(
+          type="fard masah blue"
+          :shadow="$store.state.namaz === 'masah'"
+          descStyleBlackBlue
+          descWithMargin2
+          title="МАСХ"
+          shortDesc="Протирание носков"
+          desc="Условия и порядок протирания водонепроницаемых носков."
+        )
+          template(slot="buttons")
+            AppButton(link="/tahharah/masah" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
     Banner(
       type="namaz-detailed short"

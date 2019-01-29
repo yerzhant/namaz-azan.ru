@@ -311,6 +311,26 @@ export default {
         background-image: url(../views/tahharah/ghusl.jpg);
       }
     }
+    &.istibra {
+      .image {
+        background-image: url(../views/tahharah/istibra.png);
+      }
+    }
+    &.istinja {
+      .image {
+        background-image: url(../views/tahharah/istinja.png);
+      }
+    }
+    &.tayammum {
+      .image {
+        background-image: url(../views/tahharah/tayammum.png);
+      }
+    }
+    &.masah {
+      .image {
+        background-image: url(../views/tahharah/masah.png);
+      }
+    }
   }
 }
 </style>

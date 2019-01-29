@@ -324,6 +324,7 @@ export default {
     &.tayammum {
       .image {
         background-image: url(../views/tahharah/tayammum.png);
+        background-position-x: -1px;
       }
     }
     &.masah {

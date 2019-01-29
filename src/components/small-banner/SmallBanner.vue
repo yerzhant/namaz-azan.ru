@@ -1,5 +1,5 @@
 <template lang="pug">
-  router-link(:to="link").small-banner(:class="{ bg2 }")
+  router-link(:to="link").small-banner(:class="[type, { bg2 }]")
     .image(:class="type")
     .ornament
     .info
@@ -37,6 +37,18 @@ export default {
   &.bg2 {
     background-color: #f7fcff;
   }
+  @media (max-width: $mobile) {
+    &.ghusl,
+    &.wudu {
+      display: none;
+    }
+    margin-bottom: 20px;
+    border-top: 1px solid #d5dee8;
+    border-left: 1px solid #d5dee8;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 .image {
   width: 122px;
@@ -68,6 +80,9 @@ export default {
   height: 188px;
   margin-right: 33px;
   background: url(./ornament.png) no-repeat left;
+  @media (max-width: $mobile) {
+    margin-right: 20px;
+  }
 }
 .info {
   width: 127px;

@@ -297,6 +297,9 @@ export default {
       &.wudu {
         background-image: url(./wudu.jpg);
       }
+      &.tayammum {
+        background-image: url(./tayammum.png);
+      }
     }
     .items-l2 {
       display: block;

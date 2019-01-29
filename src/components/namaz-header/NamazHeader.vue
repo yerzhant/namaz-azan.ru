@@ -561,6 +561,17 @@ export default {
     }
   }
 }
+.tayammum {
+  background-image: url(../../views/tahharah/tayammum-bg.png);
+  @media (max-width: $mobile) {
+    .info {
+      padding: 0;
+      &-wrapper {
+        padding-bottom: 210px;
+      }
+    }
+  }
+}
 .sub-title {
   text-transform: uppercase;
 }

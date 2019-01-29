@@ -22,8 +22,12 @@
             .title ТАХАРАТ
             .sub-title Очищение
         .subitems(v-show="tahharah")
+          .subitem-l2(@click="goTo('/tahharah/istibra')") Истибра
+          .subitem-l2(@click="goTo('/tahharah/istinja')") Истинджа
           .subitem-l2(@click="goTo('/tahharah/ghusl')") Гусль
           .subitem-l2(@click="goTo('/tahharah/wudu')") Вуду
+          .subitem-l2(@click="goTo('/tahharah/tayammum')") Таяммум
+          .subitem-l2(@click="goTo('/tahharah/masah')") Масх
 
       .item(:class="{open: namaz}" @click.stop="namaz = !namaz")
         .info

@@ -441,6 +441,9 @@ export default {
   }
   &.azan-iqamat {
     background-image: url(../views/shart/azan-iqamat-bg.png);
+    @media (max-width: $mobile) {
+      height: 440px;
+    }
   }
 }
 </style>

@@ -409,5 +409,8 @@ export default {
   &.tahharah .image {
     background-image: url(../views/shart/tahharah.png);
   }
+  &.awrah .image {
+    background-image: url(../views/shart/awrah.png);
+  }
 }
 </style>

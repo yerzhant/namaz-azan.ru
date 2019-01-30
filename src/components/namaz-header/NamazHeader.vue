@@ -105,6 +105,9 @@ export default {
         case 'tutorial':
           return `${today[2]} - ${today[3]}`;
 
+        case 'jumuah':
+          return `${today[2]}`;
+
         case 'asr':
           return `${today[3]} - ${today[4]}`;
 
@@ -498,6 +501,28 @@ export default {
     }
     .type {
       background: url(./witr.png) no-repeat center 5px;
+    }
+  }
+}
+.jumuah {
+  background-image: url(./jumuah-bg.png);
+  @media (max-width: $mobile) {
+    background-image: none;
+  }
+  .info {
+    &-wrapper {
+      @media (max-width: $mobile) {
+        background: url(./dhuhr-bg-m.png) no-repeat bottom / cover;
+      }
+    }
+    .rakaats:nth-last-child(2) {
+      color: #175682;
+      .rakaats-count {
+        color: #146eb4;
+      }
+    }
+    .type {
+      background: url(./dhuhr.png) no-repeat top;
     }
   }
 }

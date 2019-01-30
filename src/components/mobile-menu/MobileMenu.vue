@@ -58,6 +58,7 @@
               .subitem-l2(@click="goTo('/asr/fard')") Аср
               .subitem-l2(@click="goTo('/maghrib/fard')") Магриб
               .subitem-l2(@click="goTo('/isha/fard')") Иша
+              .subitem-l2(@click="goTo('/jumuah/fard')") Джума
           .subitem
             .title-block(:class="{open: wadjib}" @click.stop="wadjib = !wadjib")
               .title ВАДЖИБ НАМАЗЫ

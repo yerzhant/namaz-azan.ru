@@ -144,6 +144,9 @@
           router-link.item(to="/isha/fard")
             .title ИША
             .desc Ночной
+          router-link.item(to="/jumuah/fard")
+            .title ДЖУМА
+            .desc Коллективный
 
       menu.submenu(v-show="flags.wadjib")
         .filler
@@ -315,6 +318,9 @@ export default {
       }
       &.witr {
         background-image: url(./witr.jpg);
+      }
+      &.jumuah {
+        background-image: url(./jumuah.png);
       }
       &.istibra {
         background-image: url(./istibra.png);

@@ -12,8 +12,8 @@
 
     AppSection(:title="title" regular)
       section.admin-text
-        section.section(v-for="section in sections" :key="section.id" :id="`section-${section.id}`")
-          h2.section-header(v-if="section.title") {{ section.title }}
+        section.shart-section(v-for="section in sections" :key="section.id")
+          h2.shart-header(v-if="section.title") {{ section.title }}
           div(v-html="section.text")
 
     .line

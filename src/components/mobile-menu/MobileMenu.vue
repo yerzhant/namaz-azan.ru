@@ -16,6 +16,19 @@
             .title ГЛАВНАЯ
             .sub-title {{ $route.path === '/main' ? 'Вы на главной' : 'Перейти на главную' }}
 
+      .item(:class="{open: shart}" @click.stop="shart = !shart")
+        .info
+          .titles.submenu
+            .title УСЛОВИЯ
+            .sub-title Условия намаза
+        .subitems(v-show="shart")
+          .subitem-l2(@click="goTo('/shart/makan')") Чистота места
+          .subitem-l2(@click="goTo('/shart/tahharah')") Омовение
+          .subitem-l2(@click="goTo('/shart/awrah')") Аурат
+          .subitem-l2(@click="goTo('/shart/qiblah')") Кибла
+          .subitem-l2(@click="goTo('/shart/zaman')") Время
+          .subitem-l2(@click="goTo('/shart/niet')") Намерение
+
       .item(:class="{open: tahharah}" @click.stop="tahharah = !tahharah")
         .info
           .titles.submenu
@@ -79,6 +92,7 @@ import Socials from '@/components/socials/Socials.vue';
 export default {
   data() {
     return {
+      shart: false,
       tahharah: false,
       namaz: false,
       fard: false,

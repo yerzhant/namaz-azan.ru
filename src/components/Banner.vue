@@ -417,6 +417,9 @@ export default {
       padding-top: 100px;
       height: 100%;
       background: url(../views/shart/qiblah-bg.png) no-repeat right bottom;
+      @media (max-width: $mobile) {
+        padding-top: 30px;
+      }
     }
     .image {
       background-image: url(../views/shart/qiblah.png);
@@ -425,6 +428,12 @@ export default {
   }
   &.zaman {
     background: url(../views/shart/zaman-bg.png) bottom;
+    @media (max-width: $mobile) {
+      background-image: none;
+      .image {
+        background: url(../views/shart/zaman-bg.png) no-repeat bottom / cover;
+      }
+    }
   }
   &.niet .image {
     background-image: url(../views/shart/niet.png);

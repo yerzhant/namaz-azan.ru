@@ -426,5 +426,8 @@ export default {
   &.zaman {
     background: url(../views/shart/zaman-bg.png) bottom;
   }
+  &.niet .image {
+    background-image: url(../views/shart/niet.png);
+  }
 }
 </style>

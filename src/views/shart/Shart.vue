@@ -231,4 +231,9 @@ export default {
     margin-bottom: 17px;
   }
 }
+.admin-text {
+  @media (max-width: $mobile) {
+    padding: 0;
+  }
+}
 </style>

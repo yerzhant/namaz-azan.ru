@@ -6,8 +6,10 @@
           :title="title"
           :shortDesc="shortDesc"
           :desc="desc"
-          :descUpBorder="descUpBorder"
+          :descTopBorder="descTopBorder"
+          :descBottomBorder="descBottomBorder"
           :styleBlackBlue="descStyleBlackBlue"
+          :styleBlackBlue0="descStyleBlackBlue0"
           :withMargin="descWithMargin"
           :withMargin2="descWithMargin2"
         )
@@ -26,8 +28,10 @@ export default {
     title: String,
     shortDesc: String,
     desc: String,
-    descUpBorder: Boolean,
+    descTopBorder: Boolean,
+    descBottomBorder: Boolean,
     descStyleBlackBlue: Boolean,
+    descStyleBlackBlue0: Boolean,
     descWithMargin: Boolean,
     descWithMargin2: Boolean,
     shadow: Boolean,
@@ -304,6 +308,36 @@ export default {
       background-image: url(../views/wudu/ghusl.jpg);
     }
   }
+  &.makan {
+    .image {
+      background-image: url(../views/shart/makan-b.png);
+    }
+  }
+  &.tahharah {
+    .image {
+      background-image: url(../views/shart/tahharah-b.png);
+    }
+  }
+  &.awrah {
+    .image {
+      background-image: url(../views/shart/awrah-b.png);
+    }
+  }
+  &.qibla {
+    .image {
+      background-image: url(../views/shart/qibla-b.png);
+    }
+  }
+  &.zaman {
+    .image {
+      background-image: url(../views/shart/zaman-b.png);
+    }
+  }
+  &.niet {
+    .image {
+      background-image: url(../views/shart/niet-b.png);
+    }
+  }
   &.blue {
     background-color: #f7fcff;
     &.ghusl {
@@ -331,6 +365,43 @@ export default {
       .image {
         background-image: url(../views/tahharah/masah.png);
       }
+    }
+  }
+}
+.shart {
+  background-color: #fbfcfd;
+  border-bottom: 1px solid #cbd3db;
+  height: 440px;
+  @media (max-width: $mobile) {
+    height: 500px;
+  }
+  .top {
+    width: 100%;
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+  }
+  .desc {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 30px;
+    @media (max-width: $mobile) {
+      padding-right: 20px;
+      padding-bottom: 30px;
+    }
+  }
+  .action-desc {
+    width: 460px;
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+  .image {
+    background-image: url(../views/shart/makan.png);
+    background-position: left;
+    @media (max-width: $mobile) {
+      background-position: bottom;
+      background-size: cover;
     }
   }
 }

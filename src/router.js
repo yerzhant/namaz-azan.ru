@@ -19,6 +19,9 @@ export default new Router({
     path: '/first-namaz',
     component: () => import(/* webpackChunkName: "first-namaz" */ './views/tour/Tour.vue'),
   }, {
+    path: '/shart/:type',
+    component: () => import(/* webpackChunkName: "shart" */ './views/shart/Shart.vue'),
+  }, {
     path: '/tahharah/:type(wudu)',
     component: () => import(/* webpackChunkName: "wudu" */ './views/wudu/Wudu.vue'),
   }, {

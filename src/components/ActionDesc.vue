@@ -1,10 +1,11 @@
 <template lang="pug">
   section.action-desc(
-    :class="{'black-blue': styleBlackBlue, 'with-margin': withMargin, 'with-margin-2': withMargin2}"
+    :class="{'black-blue': styleBlackBlue, 'black-blue-0': styleBlackBlue0, \
+      'with-margin': withMargin, 'with-margin-2': withMargin2}"
   )
     h2.title {{ title }}
     .short-desc {{ shortDesc }}
-    .desc(:class="{'up-border': descUpBorder}") {{ desc }}
+    .desc(:class="{'top-border': descTopBorder, 'bottom-border': descBottomBorder}") {{ desc }}
     .buttons
       slot
 </template>
@@ -15,8 +16,10 @@ export default {
     title: String,
     shortDesc: String,
     desc: String,
-    descUpBorder: Boolean,
+    descTopBorder: Boolean,
+    descBottomBorder: Boolean,
     styleBlackBlue: Boolean,
+    styleBlackBlue0: Boolean,
     withMargin: Boolean,
     withMargin2: Boolean,
   },
@@ -67,12 +70,18 @@ export default {
   font-weight: 300;
   line-height: 26px;
   padding-bottom: 25px;
-
-  &.up-border {
+  &.top-border {
     padding-top: 20px;
     border-top: 1px solid rgba(#8197aa, 0.4);
     @media (max-width: $mobile) {
       padding-top: 10px;
+    }
+  }
+  &.bottom-border {
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(#8197aa, 0.4);
+    @media (max-width: $mobile) {
+      padding-bottom: 10px;
     }
   }
 }
@@ -91,6 +100,17 @@ export default {
   .desc {
     line-height: 22px;
     padding-bottom: 15px;
+  }
+}
+.black-blue-0 {
+  .title {
+    color: #2a2a2a;
+  }
+  .short-desc {
+    color: #0b64b6;
+  }
+  .desc {
+    line-height: 22px;
   }
 }
 </style>

@@ -1,88 +1,95 @@
 <template lang="pug">
-  section.tahharah
-    NamazHeader(
-      :type="`tahharah ${$store.state.namaz}`"
+  section.condition
+    Banner(
+      :type="`shart ${$store.state.namaz}`"
       :title="title"
-      :subTitle="subTitle"
       :shortDesc="shortDesc"
+      :desc="desc"
+      descTopBorder
+      descBottomBorder
+      descStyleBlackBlue0
     )
 
-    section.admin-text
-      section.section(v-for="section in sections" :key="section.id" :id="`section-${section.id}`")
-        h2.header {{ section.title }}
-        div(v-html="section.text")
+    AppSection(:title="title" regular)
+      section.admin-text
+        section.section(v-for="section in sections" :key="section.id" :id="`section-${section.id}`")
+          h2.section-header(v-if="section.title") {{ section.title }}
+          div(v-html="section.text")
 
     .line
-    AppSection(title="ДРУГИЕ ВИДЫ ОЧИЩЕНИЯ")
+    AppSection(title="УСЛОВИЯ НАМАЗА" regular bg1)
       .fards
         Banner(
-          type="fard ghusl blue"
-          :shadow="$store.state.namaz === 'ghusl'"
+          type="fard makan"
+          :shadow="$store.state.namaz === 'makan'"
           descStyleBlackBlue
           descWithMargin2
-          title="ГУСЛЬ"
-          shortDesc="Полное омовение"
-          desc="Полное ритуальное омовение водой всего тела целиком. По-арабски \
-                полное омовение носит название “Гусль”."
+          title="ЧИСТОТА МЕСТА"
+          shortDesc="1 условие намаза"
+          desc="Это условие означает отсутствие канонически нечистых вещей (наджасы) \
+                на теле и одежде молящегося и на месте совершения намаза. "
         )
           template(slot="buttons")
-            AppButton(link="/tahharah/ghusl" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(link="/shart/makan" blue :height="36") ЧИТАТЬ ДАЛЕЕ
         Banner(
-          type="fard wudu blue"
+          type="fard tahharah"
+          :shadow="$store.state.namaz === 'tahharah'"
           descStyleBlackBlue
           descWithMargin2
-          title="ВУДУ (ТАХАРАТ)"
-          shortDesc="Малое омовение"
-          desc="Малое омовение является доступным и простым способом очищения \
-                однако, в ряде случаев, для достижения ритуальной чистоты нужен гусль."
+          title="ОМОВЕНИЕ"
+          shortDesc="2 условие намаза"
+          desc="Совершающему намаз надлежит находится в состоянии ритуальной \
+                чистоты - иметь малое омовение (вуду) и полное омовение (гусль)."
         )
           template(slot="buttons")
-            AppButton(link="/tahharah/wudu" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(link="/shart/tahharah" blue :height="36") ЧИТАТЬ ДАЛЕЕ
         Banner(
-          type="fard istibra blue"
-          :shadow="$store.state.namaz === 'istibra'"
+          type="fard awrah"
+          :shadow="$store.state.namaz === 'awrah'"
           descStyleBlackBlue
           descWithMargin2
-          title="ИСТИБРА"
-          shortDesc="Сухое очищение"
-          desc="Только для мужчин. Выполняется до принятия омовения. В определенных \
-                случаях мужчине обязательно следует совершить истибару."
+          title="АУРАТ"
+          shortDesc="3 условие намаза"
+          desc="Аурат - это области тела, которые следует обязательно закрывать \
+                перед посторонними. Намаз с открытым ауратом недействителен."
         )
           template(slot="buttons")
-            AppButton(link="/tahharah/istibra" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(link="/shart/awrah" blue :height="36") ЧИТАТЬ ДАЛЕЕ
         Banner(
-          type="fard istinja blue"
-          :shadow="$store.state.namaz === 'istinja'"
+          type="fard qibla"
+          :shadow="$store.state.namaz === 'qibla'"
           descStyleBlackBlue
           descWithMargin2
-          title="ИСТИНДЖА"
-          shortDesc="Подмывание"
-          desc="Устранение остатков наджасы после совершения малой или большой нужды."
+          title="КИБЛА"
+          shortDesc="4 условие намаза"
+          desc="Кибла - это направление на Каабу, которая находится в Заповедной мечети в Мекке."
         )
           template(slot="buttons")
-            AppButton(link="/tahharah/istinja" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(link="/shart/qibla" blue :height="36") ЧИТАТЬ ДАЛЕЕ
         Banner(
-          type="fard tayammum blue"
-          :shadow="$store.state.namaz === 'tayammum'"
+          type="fard zaman"
+          :shadow="$store.state.namaz === 'zaman'"
           descStyleBlackBlue
           descWithMargin2
-          title="ТАЯММУМ"
-          shortDesc="Когда нет воды"
-          desc="Протирание частей тела чистой землей либо песком. Служит заменой омовения."
+          title="ВРЕМЯ"
+          shortDesc="5 условие намаза"
+          desc="Каждый намаз необходимо совершить в установленное для него время. \
+                Намаз совершенный до наступления его времени недействителен."
         )
           template(slot="buttons")
-            AppButton(link="/tahharah/tayammum" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(link="/shart/zaman" blue :height="36") ЧИТАТЬ ДАЛЕЕ
         Banner(
-          type="fard masah blue"
-          :shadow="$store.state.namaz === 'masah'"
+          type="fard niet"
+          :shadow="$store.state.namaz === 'niet'"
           descStyleBlackBlue
           descWithMargin2
-          title="МАСХ"
-          shortDesc="Протирание носков"
-          desc="Условия и порядок протирания водонепроницаемых носков."
+          title="НАМЕРЕНИЕ"
+          shortDesc="6 условие намаза"
+          desc="Осознанное решение выполнить намаз выраженное в мысленной форме \
+                является намерением. Намаз без намерения недействителен."
         )
           template(slot="buttons")
-            AppButton(link="/tahharah/masah" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(link="/shart/niet" blue :height="36") ЧИТАТЬ ДАЛЕЕ
 
     Banner(
       type="namaz-detailed short"
@@ -97,7 +104,7 @@
         AppButton(link="/tutorial/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
     .line
-    AppSection(title="ОБЯЗАТЕЛЬНЫЕ НАМАЗЫ" bg1)
+    AppSection(title="ОБЯЗАТЕЛЬНЫЕ НАМАЗЫ" regular bg1)
       .fards
         Banner(
           type="fard fadjr"
@@ -166,7 +173,6 @@
 </template>
 
 <script>
-import NamazHeader from '@/components/namaz-header/NamazHeader.vue';
 import AppSection from '@/components/app-section/AppSection.vue';
 import AppButton from '@/components/AppButton.vue';
 import Banner from '@/components/Banner.vue';
@@ -176,8 +182,8 @@ export default {
   data() {
     return {
       title: null,
-      subTitle: null,
       shortDesc: null,
+      desc: null,
       sections: null,
     };
   },
@@ -185,13 +191,12 @@ export default {
     getData() {
       const { type } = this.$route.params;
       this.$store.commit('setNamaz', type);
-      this.$store.commit('setMenu', 'level-2');
-      axios.get(`/api/namaz/${type}`).then(r => {
+      this.$store.commit('setMenu', null);
+      axios.get(`/api/namaz/shart/${type}`).then(r => {
         this.title = r.data.title;
-        this.subTitle = r.data.subTitle;
         this.shortDesc = r.data.shortDesc;
+        this.desc = r.data.desc;
         this.sections = r.data.sections;
-        this.$store.commit('setMenuItems', r.data.menu);
       });
     },
   },
@@ -202,10 +207,9 @@ export default {
   },
   created() {
     this.getData();
-    this.$store.commit('setMobileHeaderStatus', 'Тахарат');
+    this.$store.commit('setMobileHeaderStatus', 'Условия намаза');
   },
   components: {
-    NamazHeader,
     AppSection,
     AppButton,
     Banner,
@@ -214,9 +218,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.tahharah {
-  background-color: #f7fcff;
-}
 .line {
   width: 100%;
   height: 1px;

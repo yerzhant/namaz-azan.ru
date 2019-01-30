@@ -17,6 +17,12 @@
         .title ГЛАВНАЯ
         .desc {{ $route.path === '/main' ? 'Вы на главной' : 'Перейти на главную' }}
       .item.right(
+        :class="{open: flags.shart}"
+        @click.stop="flags.shart = !flags.shart, closeAll('shart')"
+      )
+        .title УСЛОВИЯ
+        .desc Условия намаза
+      .item.right(
         :class="{open: flags.taharat}"
         @click.stop="flags.taharat = !flags.taharat, closeAll('taharat')"
       )
@@ -34,6 +40,28 @@
       )
         .title НАМАЗ
         .desc Все виды намаза
+
+    menu.submenu(v-show="flags.shart")
+      img.image(src="./taharat-bg.jpg")
+      nav.items
+        router-link.item(to="/shart/makan")
+          .title ЧИСТОТА МЕСТА
+          .desc 1 условие намаза
+        router-link.item(to="/shart/istibra")
+          .title ИСТИБРА
+          .desc Сухое
+        router-link.item(to="/shart/istibra")
+          .title ИСТИБРА
+          .desc Сухое
+        router-link.item(to="/shart/istibra")
+          .title ИСТИБРА
+          .desc Сухое
+        router-link.item(to="/shart/istibra")
+          .title ИСТИБРА
+          .desc Сухое
+        router-link.item(to="/shart/istibra")
+          .title ИСТИБРА
+          .desc Сухое
 
     menu.submenu(v-show="flags.taharat")
       img.image(src="./taharat-bg.jpg")
@@ -166,6 +194,7 @@ export default {
   data() {
     return {
       flags: {
+        shart: false,
         taharat: false,
         tutoring: false,
         namaz: false,

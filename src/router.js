@@ -20,6 +20,7 @@ export default new Router({
     component: () => import(/* webpackChunkName: "first-namaz" */ './views/tour/Tour.vue'),
   }, {
     path: '/shart/:type',
+    alias: '/misc/:type',
     component: () => import(/* webpackChunkName: "shart" */ './views/shart/Shart.vue'),
   }, {
     path: '/tahharah/:type(wudu)',

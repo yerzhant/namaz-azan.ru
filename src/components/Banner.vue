@@ -439,5 +439,8 @@ export default {
   &.niet .image {
     background-image: url(../views/shart/niet.png);
   }
+  &.azan-iqamat {
+    background-image: url(../views/shart/azan-iqamat-bg.png);
+  }
 }
 </style>

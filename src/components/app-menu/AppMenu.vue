@@ -104,6 +104,9 @@
         a.item(href="/search?query=намаз")
           .title ОБЩАЯ ИНФОРМАЦИЯ
           .desc К прочтению
+        router-link.item(to="/misc/azan-iqamat")
+          .title АЗАН, ИКАМАТ
+          .desc Призыв на молитву
         .item.right(
           :class="{open: flags.fard}"
           @click.stop="flags.fard = !flags.fard, closeAll('namaz', 'fard')"

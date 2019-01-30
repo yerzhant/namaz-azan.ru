@@ -42,7 +42,7 @@
         .desc Все виды намаза
 
     menu.submenu(v-show="flags.shart")
-      img.image(src="./taharat-bg.jpg")
+      img.image(src="./namaz-bg.jpg")
       nav.items
         router-link.item(to="/shart/makan")
           .title ЧИСТОТА МЕСТА

@@ -373,7 +373,7 @@ export default {
   border-bottom: 1px solid #cbd3db;
   height: 440px;
   @media (max-width: $mobile) {
-    height: 500px;
+    height: 600px;
   }
   .top {
     width: 100%;
@@ -401,6 +401,7 @@ export default {
     @media (max-width: $mobile) {
       background-position: bottom;
       background-size: cover;
+      height: 300px;
     }
   }
   &.makan .image {
@@ -415,7 +416,7 @@ export default {
   &.qiblah {
     .desc {
       padding-top: 100px;
-      height: 100%;
+      height: 440px;
       background: url(../views/shart/qiblah-bg.png) no-repeat right bottom;
       @media (max-width: $mobile) {
         padding-top: 30px;

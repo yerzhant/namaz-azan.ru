@@ -423,5 +423,8 @@ export default {
       background-position: bottom;
     }
   }
+  &.zaman {
+    background: url(../views/shart/zaman-bg.png) bottom;
+  }
 }
 </style>

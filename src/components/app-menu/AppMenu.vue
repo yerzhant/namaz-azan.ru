@@ -47,21 +47,21 @@
         router-link.item(to="/shart/makan")
           .title ЧИСТОТА МЕСТА
           .desc 1 условие намаза
-        router-link.item(to="/shart/istibra")
-          .title ИСТИБРА
-          .desc Сухое
-        router-link.item(to="/shart/istibra")
-          .title ИСТИБРА
-          .desc Сухое
-        router-link.item(to="/shart/istibra")
-          .title ИСТИБРА
-          .desc Сухое
-        router-link.item(to="/shart/istibra")
-          .title ИСТИБРА
-          .desc Сухое
-        router-link.item(to="/shart/istibra")
-          .title ИСТИБРА
-          .desc Сухое
+        router-link.item(to="/shart/tahharah")
+          .title ОМОВЕНИЕ
+          .desc 2 условие намаза
+        router-link.item(to="/shart/awrah")
+          .title АУРАТ
+          .desc 3 условие намаза
+        router-link.item(to="/shart/qiblah")
+          .title КИБЛА
+          .desc 4 условие намаза
+        router-link.item(to="/shart/zaman")
+          .title ВРЕМЯ
+          .desc 5 условие намаза
+        router-link.item(to="/shart/niet")
+          .title НАМЕРЕНИЕ
+          .desc 6 условие намаза
 
     menu.submenu(v-show="flags.taharat")
       img.image(src="./taharat-bg.jpg")

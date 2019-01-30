@@ -397,12 +397,17 @@ export default {
     }
   }
   .image {
-    background-image: url(../views/shart/makan.png);
     background-position: left;
     @media (max-width: $mobile) {
       background-position: bottom;
       background-size: cover;
     }
+  }
+  &.makan .image {
+    background-image: url(../views/shart/makan.png);
+  }
+  &.tahharah .image {
+    background-image: url(../views/shart/tahharah.png);
   }
 }
 </style>

@@ -48,6 +48,7 @@
             .title НАМАЗ
             .sub-title Все виды намаза
         .subitems(v-show="namaz")
+          .subitem-l2(@click="goTo('/misc/azan-iqamat')") Азан, Икамат
           .subitem
             .title-block(:class="{open: fard}" @click.stop="fard = !fard")
               .title ФАРД НАМАЗЫ

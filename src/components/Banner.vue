@@ -323,9 +323,9 @@ export default {
       background-image: url(../views/shart/awrah-b.png);
     }
   }
-  &.qibla {
+  &.qiblah {
     .image {
-      background-image: url(../views/shart/qibla-b.png);
+      background-image: url(../views/shart/qiblah-b.png);
     }
   }
   &.zaman {
@@ -411,6 +411,17 @@ export default {
   }
   &.awrah .image {
     background-image: url(../views/shart/awrah.png);
+  }
+  &.qiblah {
+    .desc {
+      padding-top: 100px;
+      height: 100%;
+      background: url(../views/shart/qiblah-bg.png) no-repeat right bottom;
+    }
+    .image {
+      background-image: url(../views/shart/qiblah.png);
+      background-position: bottom;
+    }
   }
 }
 </style>

@@ -56,8 +56,8 @@
           template(slot="buttons")
             AppButton(link="/shart/awrah" blue :height="36") ЧИТАТЬ ДАЛЕЕ
         Banner(
-          type="fard qibla"
-          :shadow="$store.state.namaz === 'qibla'"
+          type="fard qiblah"
+          :shadow="$store.state.namaz === 'qiblah'"
           descStyleBlackBlue
           descWithMargin2
           title="КИБЛА"
@@ -65,7 +65,7 @@
           desc="Кибла - это направление на Каабу, которая находится в Заповедной мечети в Мекке."
         )
           template(slot="buttons")
-            AppButton(link="/shart/qibla" blue :height="36") ЧИТАТЬ ДАЛЕЕ
+            AppButton(link="/shart/qiblah" blue :height="36") ЧИТАТЬ ДАЛЕЕ
         Banner(
           type="fard zaman"
           :shadow="$store.state.namaz === 'zaman'"

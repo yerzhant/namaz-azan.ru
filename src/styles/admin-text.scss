@@ -10,7 +10,8 @@
     padding: 0 20px;
   }
 
-  .section {
+  .section,
+  .admin-section {
     margin-bottom: 50px;
     padding-bottom: 50px;
     border-bottom: 1px dashed #aab9c3;
@@ -21,7 +22,8 @@
     }
   }
 
-  .header {
+  .header,
+  .admin-header {
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;

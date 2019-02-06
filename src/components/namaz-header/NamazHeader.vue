@@ -310,8 +310,8 @@ export default {
     font-family: $pt-sans;
     font-size: 16px;
     line-height: 24px;
-    column-count: 2;
-    column-gap: 65px;
+    // column-count: 2;
+    // column-gap: 65px;
     padding-top: 25px;
     width: 2 * 470px + 90px;
     margin-right: auto;

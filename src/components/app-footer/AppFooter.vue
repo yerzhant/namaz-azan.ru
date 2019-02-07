@@ -18,9 +18,9 @@
     .bottom
       span Copyright © 2019 Azan.ru
       span.bar |
-      a(href="/agreement") Соглашение об использовании
+      a(href="/site/agreement") Соглашение об использовании
       span.bar |
-      a(href="/write-to-admin") Написать администратору
+      a(href="/site/write-to-admin") Написать администратору
 </template>
 
 <script>

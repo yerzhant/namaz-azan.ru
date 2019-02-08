@@ -1,6 +1,6 @@
 <template lang="pug">
   .app-player
-    .button(@click="play" :class="{paused: position !== '0' && !playing}")
+    .button(@click="play" :class="{playing}")
     .info
       .time {{ time }}
       .progress(@click.stop="setPosition" ref="progress")
@@ -109,7 +109,7 @@ export default {
   border-right: 1px solid #d5dde3;
   background: url(./play.png) no-repeat center;
   cursor: pointer;
-  &.paused {
+  &.playing {
     background-image: url(./pause.png);
   }
 }

@@ -163,7 +163,7 @@ export default {
   },
   created() {
     this.getData();
-    this.$store.commit('setMobileHeaderStatus', 'Назаз');
+    this.$store.commit('setMobileHeaderStatus', 'Намаз');
   },
   components: {
     NamazHeader,

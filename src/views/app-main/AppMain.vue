@@ -102,8 +102,11 @@
           namaz1Link="/witr/wadjib"
         )
       .buttons
-      //-   AppButton(link="/" blue) ВСЕ ВИДЫ НАМАЗА
-      //-   AppButton.color-2d(link="/") УСЛОВИЯ НАМАЗА
+        AppButton(link="/al-ahkaamul-aammah/ma-hiya" blue) ЧТО ТАКОЕ НАМАЗ
+        AppButton.color-2d(link="/shart/makan") УСЛОВИЯ НАМАЗА
+
+    AppSection(title="ОБЩИЕ ПОЛОЖЕНИЯ НАМАЗА" fullContentWidth noBottomPadding)
+      GeneralProvisions.general-provisions
 
     AppSection.tahharah(title="ВИДЫ ОЧИЩЕНИЯ")
       Banner(
@@ -182,6 +185,7 @@ import AppButton from '@/components/AppButton.vue';
 import AppSection from '@/components/app-section/AppSection.vue';
 import Slogan from '@/components/slogan/Slogan.vue';
 import NamazInfo from '@/components/namaz-info/NamazInfo.vue';
+import GeneralProvisions from '../../components/general-provisions/GeneralProvisions.vue';
 
 export default {
   created() {
@@ -196,6 +200,7 @@ export default {
     AppSection,
     Slogan,
     NamazInfo,
+    GeneralProvisions,
   },
 };
 </script>
@@ -242,6 +247,11 @@ export default {
     > * {
       margin-bottom: 20px;
     }
+  }
+}
+.general-provisions {
+  @media (max-width: $mobile) {
+    display: none;
   }
 }
 </style>

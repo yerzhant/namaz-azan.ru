@@ -1,10 +1,13 @@
 <template lang="pug">
-  section.app-section(:class="{rakaat: rakaat, 'not-first': notFirst, 'bg-1': bg1}")
+  section.app-section(
+    :class=`{rakaat: rakaat, 'not-first': notFirst,
+             'bg-1': bg1, 'no-bottom-padding': noBottomPadding}`
+  )
     .header(:class="$store.state.namaz")
       h2.title(:class="{regular: regular}") {{ title }}
       img.moon(src="./moon.png")
       img.moon-m(src="./moon-m.png")
-    .content
+    .content(:class="{'full-width': fullContentWidth}")
       slot
 </template>
 
@@ -16,6 +19,8 @@ export default {
     bg1: Boolean,
     rakaat: Boolean,
     notFirst: Boolean,
+    fullContentWidth: Boolean,
+    noBottomPadding: Boolean,
   },
 };
 </script>
@@ -25,6 +30,9 @@ export default {
   padding-bottom: 100px;
   &.bg-1 {
     background-color: #f7fcff;
+  }
+  &.no-bottom-padding {
+    padding-bottom: 0;
   }
   @media (max-width: $mobile) {
     padding-bottom: 40px;
@@ -71,9 +79,12 @@ export default {
   }
 }
 .content {
-  width: 1077px;
+  width: 1078px;
   margin-right: auto;
   margin-left: auto;
+  &.full-width {
+    width: 100%;
+  }
   @media (max-width: $mobile) {
     width: 100%;
     padding: 0 20px;

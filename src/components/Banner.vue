@@ -116,8 +116,7 @@ export default {
 }
 .namaz-detailed {
   background-image: url(../views/app-main/namaz-detailed-bg.jpg);
-  // height: 1031px;
-  height: 920px;
+  height: 1031px;
   @media (max-width: $mobile) {
     background-size: cover;
     height: 1150px;

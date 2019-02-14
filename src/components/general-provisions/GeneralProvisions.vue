@@ -93,8 +93,8 @@ export default {
     },
     link() {
       switch (this.image) {
-        case 'shuruut':
-          return '/shart/makan';
+        // case 'shuruut':
+        //   return '/shart/makan';
 
         default:
           return `/al-ahkaamul-aammah/${this.image}`;

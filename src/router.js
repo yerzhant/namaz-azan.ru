@@ -20,7 +20,7 @@ export default new Router({
     component: () => import(/* webpackChunkName: "solaatil-uulaa" */ './views/tour/Tour.vue'),
   }, {
     path: '/shart/:type',
-    alias: '/misc/:type',
+    alias: '/al-ahkaamul-aammah/:type',
     component: () => import(/* webpackChunkName: "shart" */ './views/shart/Shart.vue'),
   }, {
     path: '/tahharah/:type(wudu)',

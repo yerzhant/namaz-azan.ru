@@ -104,7 +104,7 @@
         a.item(href="/search?query=намаз")
           .title ОБЩАЯ ИНФОРМАЦИЯ
           .desc К прочтению
-        router-link.item(to="/misc/azan-iqamat")
+        router-link.item(to="/al-ahkaamul-aammah/azan-iqamat")
           .title АЗАН, ИКАМАТ
           .desc Призыв на молитву
         .item.right(

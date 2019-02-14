@@ -8,7 +8,7 @@
         | Cпецпроект Azan.ru
       .socials
         Socials
-        router-link.tutoring(to="/first-namaz") Обучение намазу
+        router-link.tutoring(to="/solaatil-uulaa") Обучение намазу
       .links
         router-link(to="/main") Главная
         router-link(to="/tahharah/wudu") Тахарат

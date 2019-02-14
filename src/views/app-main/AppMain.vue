@@ -10,7 +10,7 @@
       descTopBorder
     )
       template(slot="buttons")
-        AppButton(link="/first-namaz" red) ДА, НАЧАТЬ!
+        AppButton(link="/solaatil-uulaa" red) ДА, НАЧАТЬ!
         AppButton.color-2d(link="/tutorial/fard") ПОДРОБНЫЕ УРОКИ
       Slogan
 

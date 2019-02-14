@@ -88,7 +88,7 @@
     menu.submenu(v-show="flags.tutoring")
       img.image(src="./tutoring-bg.jpg")
       nav.items
-        router-link.item(to="/first-namaz")
+        router-link.item(to="/solaatil-uulaa")
           .title МОЙ ПЕРВЫЙ НАМАЗ
           .desc Обзор для новичков
         router-link.item(to="/tutorial/fard")

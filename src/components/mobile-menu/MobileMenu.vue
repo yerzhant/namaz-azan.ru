@@ -80,7 +80,7 @@
             .title ОБУЧЕНИЕ
             .sub-title Видео-фото уроки
         .subitems(v-show="tutoring")
-          .subitem-l2(@click="goTo('/first-namaz')") Мой первый намаз
+          .subitem-l2(@click="goTo('/solaatil-uulaa')") Мой первый намаз
           .subitem-l2(@click="goTo('/tutorial/fard')") Намаз: подробно
           a.subitem-l2(href="https://www.youtube.com/watch?v=5b6t9fBLl9s") Видео уроки
 

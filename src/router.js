@@ -16,8 +16,8 @@ export default new Router({
     path: '/main',
     component: AppMain,
   }, {
-    path: '/first-namaz',
-    component: () => import(/* webpackChunkName: "first-namaz" */ './views/tour/Tour.vue'),
+    path: '/solaatil-uulaa',
+    component: () => import(/* webpackChunkName: "solaatil-uulaa" */ './views/tour/Tour.vue'),
   }, {
     path: '/shart/:type',
     alias: '/misc/:type',

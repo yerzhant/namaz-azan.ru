@@ -16,6 +16,19 @@
             .title ГЛАВНАЯ
             .sub-title {{ $route.path === '/roiisiyyah' ? 'Вы на главной' : 'Перейти на главную' }}
 
+      .item(:class="{open: general}" @click.stop="general = !general")
+        .info
+          .titles.submenu
+            .title ВВЕДЕНИЕ
+            .sub-title Общие положения
+        .subitems(v-show="general")
+          .subitem-l2(@click="goTo('/al-ahkaamul-aammah/ma-hiya')") Что такое намаз
+          .subitem-l2(@click="goTo('/al-ahkaamul-aammah/aqsaam')") Виды намазов
+          .subitem-l2(@click="goTo('/al-ahkaamul-aammah/shuruut')") Условия намаза
+          .subitem-l2(@click="goTo('/al-ahkaamul-aammah/azan-iqamat')") Азан и икамат
+          .subitem-l2(@click="goTo('/al-ahkaamul-aammah/aadaab')") Этикет (адабы) намаза
+          .subitem-l2(@click="goTo('/al-ahkaamul-aammah/fasaad')") Что нарушает намаз
+
       .item(:class="{open: shart}" @click.stop="shart = !shart")
         .info
           .titles.submenu
@@ -94,6 +107,7 @@ import Socials from '@/components/socials/Socials.vue';
 export default {
   data() {
     return {
+      general: false,
       shart: false,
       tahharah: false,
       namaz: false,
@@ -197,11 +211,11 @@ export default {
       .title {
         font-weight: 500;
         color: #d8e3f0;
-        margin-bottom: 6px;
       }
       .sub-title {
         font-weight: 300;
         color: #aebbd2;
+        margin-top: 6px;
       }
     }
   }

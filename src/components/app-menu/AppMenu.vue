@@ -17,6 +17,11 @@
         .title ГЛАВНАЯ
         .desc {{ $route.path === '/roiisiyyah' ? 'Вы на главной' : 'Перейти на главную' }}
       .item.right(
+        :class="{open: flags.general}"
+        @click.stop="flags.general = !flags.general, closeAll('general')"
+      )
+        .title ОБЩИЕ ПОЛОЖЕНИЯ
+      .item.right(
         :class="{open: flags.shart}"
         @click.stop="flags.shart = !flags.shart, closeAll('shart')"
       )
@@ -40,6 +45,27 @@
       )
         .title НАМАЗ
         .desc Все виды намаза
+
+    menu.submenu(v-show="flags.general")
+      img.image(src="./namaz-bg.jpg")
+      nav.items
+        router-link.item(to="/al-ahkaamul-aammah/ma-hiya")
+          .title ЧТО ТАКОЕ НАМАЗ
+      nav.items
+        router-link.item(to="/al-ahkaamul-aammah/aqsaam")
+          .title ВИДЫ НАМАЗОВ
+      nav.items
+        router-link.item(to="/al-ahkaamul-aammah/shuruut")
+          .title УСЛОВИЯ НАМАЗА
+      nav.items
+        router-link.item(to="/al-ahkaamul-aammah/azan-iqamat")
+          .title АЗАН И ИКАМАТ
+      nav.items
+        router-link.item(to="/al-ahkaamul-aammah/aadaab")
+          .title ЭТИКЕТ (АДАБЫ) НАМАЗА
+      nav.items
+        router-link.item(to="/al-ahkaamul-aammah/fasaad")
+          .title ЧТО НАРУШАЕТ НАМАЗ
 
     menu.submenu(v-show="flags.shart")
       img.image(src="./namaz-bg.jpg")
@@ -200,6 +226,7 @@ export default {
   data() {
     return {
       flags: {
+        general: false,
         shart: false,
         taharat: false,
         tutoring: false,
@@ -392,11 +419,11 @@ export default {
   .title {
     font-weight: 500;
     color: #d8e3f0;
-    margin-bottom: 4px;
   }
   .desc {
     font-weight: 300;
     color: #aebbd2;
+    margin-top: 4px;
   }
   &:hover,
   &.router-link-exact-active {

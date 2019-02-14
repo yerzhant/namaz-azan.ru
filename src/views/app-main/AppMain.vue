@@ -231,6 +231,9 @@ export default {
     }
     a {
       margin-right: 10px;
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 }

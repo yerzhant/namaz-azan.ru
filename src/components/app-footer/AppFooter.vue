@@ -10,7 +10,7 @@
         Socials
         router-link.tutoring(to="/solaatil-uulaa") Обучение намазу
       .links
-        router-link(to="/main") Главная
+        router-link(to="/roiisiyyah") Главная
         router-link(to="/tahharah/wudu") Тахарат
         router-link(to="/fadjr/fard") Намаз
         router-link(to="/tutorial/fard") Обучение

@@ -13,7 +13,7 @@ export default new Router({
     alias: '/index.html',
     component: AppSelect,
   }, {
-    path: '/main',
+    path: '/roiisiyyah',
     component: AppMain,
   }, {
     path: '/solaatil-uulaa',

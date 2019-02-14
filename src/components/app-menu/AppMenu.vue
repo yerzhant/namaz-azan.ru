@@ -13,9 +13,9 @@
     .level-2-image(:class="$store.state.namaz")
 
     nav.items.items-l1
-      router-link.item(to="/main")
+      router-link.item(to="/roiisiyyah")
         .title ГЛАВНАЯ
-        .desc {{ $route.path === '/main' ? 'Вы на главной' : 'Перейти на главную' }}
+        .desc {{ $route.path === '/roiisiyyah' ? 'Вы на главной' : 'Перейти на главную' }}
       .item.right(
         :class="{open: flags.shart}"
         @click.stop="flags.shart = !flags.shart, closeAll('shart')"

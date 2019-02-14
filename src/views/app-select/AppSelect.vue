@@ -42,7 +42,7 @@ export default {
   methods: {
     selectGender(gender) {
       this.$store.commit('setGender', gender);
-      this.$router.push('/main');
+      this.$router.push('/roiisiyyah');
     },
   },
   created() {

@@ -10,11 +10,11 @@
         a.link(href="https://azan.ru")  Azan.ru
     .static-bar Главное меню
     .items
-      .item(@click="goTo('/main')")
+      .item(@click="goTo('/roiisiyyah')")
         .info
           .titles
             .title ГЛАВНАЯ
-            .sub-title {{ $route.path === '/main' ? 'Вы на главной' : 'Перейти на главную' }}
+            .sub-title {{ $route.path === '/roiisiyyah' ? 'Вы на главной' : 'Перейти на главную' }}
 
       .item(:class="{open: shart}" @click.stop="shart = !shart")
         .info

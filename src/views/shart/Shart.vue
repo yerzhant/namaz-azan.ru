@@ -189,7 +189,12 @@ export default {
   },
   methods: {
     getData() {
+      let headerStatus = 'Условия намаза';
+      if (this.$route.path.includes('al-ahkaamul-aammah')) {
+        headerStatus = 'Общие положения';
+      }
       const { type } = this.$route.params;
+      this.$store.commit('setMobileHeaderStatus', headerStatus);
       this.$store.commit('setNamaz', type);
       this.$store.commit('setMenu', null);
       axios.get(`/api/namaz/shart/${type}`).then(r => {
@@ -207,7 +212,6 @@ export default {
   },
   created() {
     this.getData();
-    this.$store.commit('setMobileHeaderStatus', 'Условия намаза');
   },
   components: {
     AppSection,

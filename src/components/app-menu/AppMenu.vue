@@ -391,7 +391,7 @@ export default {
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.75);
     border-top: 1px solid #2f4a75;
     padding-top: 10px;
-    margin-top: 13px;
+    margin-top: 15px;
   }
   .desc {
     color: #aebbd2;
@@ -400,7 +400,7 @@ export default {
     line-height: 12px;
     padding-top: 10px;
     padding-left: 48px;
-    background: url(./logo.png) no-repeat left bottom;
+    background: url(./logo.png) no-repeat left top;
   }
 }
 .items {

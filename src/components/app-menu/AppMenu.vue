@@ -1,11 +1,8 @@
 <template lang="pug">
   menu.menu(:class="$store.state.menu")
     .header
+      a.desc(href="https://azan.ru") Спецпроект образовательного портала Azan.ru
       .title ЭНЦИКЛОПЕДИЯ НАМАЗА
-      .desc Самоучитель и справочник
-        br
-        | Cпецпроект
-        a.desc(href="https://azan.ru")  Azan.ru
 
     .back-to-main(@click="$store.commit('setMenu')")
       span Назад в меню
@@ -392,15 +389,18 @@ export default {
     font-family: $open-sans;
     font-weight: bold;
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.75);
-    border-bottom: 1px solid #2f4a75;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+    border-top: 1px solid #2f4a75;
+    padding-top: 10px;
+    margin-top: 13px;
   }
   .desc {
     color: #aebbd2;
     font-weight: 300;
     font-size: 11px;
-    line-height: 17px;
+    line-height: 12px;
+    padding-top: 10px;
+    padding-left: 52px;
+    background: url(./logo.png) no-repeat left bottom;
   }
 }
 .items {

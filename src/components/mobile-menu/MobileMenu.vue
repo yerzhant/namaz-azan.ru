@@ -29,18 +29,18 @@
           .subitem-l2(@click="goTo('/al-ahkaamul-aammah/aadaab')") Этикет (адабы) намаза
           .subitem-l2(@click="goTo('/al-ahkaamul-aammah/fasaad')") Что нарушает намаз
 
-      .item(:class="{open: shart}" @click.stop="shart = !shart")
-        .info
-          .titles.submenu
-            .title УСЛОВИЯ
-            .sub-title Условия намаза
-        .subitems(v-show="shart")
-          .subitem-l2(@click="goTo('/shart/makan')") Чистота места
-          .subitem-l2(@click="goTo('/shart/tahharah')") Омовение
-          .subitem-l2(@click="goTo('/shart/awrah')") Аурат
-          .subitem-l2(@click="goTo('/shart/qiblah')") Кибла
-          .subitem-l2(@click="goTo('/shart/zaman')") Время
-          .subitem-l2(@click="goTo('/shart/niet')") Намерение
+      //- .item(:class="{open: shart}" @click.stop="shart = !shart")
+      //-   .info
+      //-     .titles.submenu
+      //-       .title УСЛОВИЯ
+      //-       .sub-title Условия намаза
+      //-   .subitems(v-show="shart")
+      //-     .subitem-l2(@click="goTo('/shart/makan')") Чистота места
+      //-     .subitem-l2(@click="goTo('/shart/tahharah')") Омовение
+      //-     .subitem-l2(@click="goTo('/shart/awrah')") Аурат
+      //-     .subitem-l2(@click="goTo('/shart/qiblah')") Кибла
+      //-     .subitem-l2(@click="goTo('/shart/zaman')") Время
+      //-     .subitem-l2(@click="goTo('/shart/niet')") Намерение
 
       .item(:class="{open: tahharah}" @click.stop="tahharah = !tahharah")
         .info

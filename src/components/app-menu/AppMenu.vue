@@ -18,12 +18,12 @@
         @click.stop="flags.general = !flags.general, closeAll('general')"
       )
         .title ОБЩИЕ ПОЛОЖЕНИЯ
-      .item.right(
+      //- .item.right(
         :class="{open: flags.shart}"
         @click.stop="flags.shart = !flags.shart, closeAll('shart')"
-      )
-        .title УСЛОВИЯ
-        .desc Условия намаза
+      //- )
+      //-   .title УСЛОВИЯ
+      //-   .desc Условия намаза
       .item.right(
         :class="{open: flags.taharat}"
         @click.stop="flags.taharat = !flags.taharat, closeAll('taharat')"

@@ -438,11 +438,26 @@ export default {
   &.niet .image {
     background-image: url(../views/shart/niet.png);
   }
-  &.azan-iqamat {
+  &.shuruut {
     background-image: url(../views/shart/azan-iqamat-bg.png);
     @media (max-width: $mobile) {
       height: 440px;
     }
+  }
+  &.ma-hiya .image {
+    background-image: url(../views/shart/ma-hiya.jpg);
+  }
+  &.aqsaam .image {
+    background-image: url(../views/shart/aqsaam.jpg);
+  }
+  &.azan-iqamat .image {
+    background-image: url(../views/shart/azan-iqamat.jpg);
+  }
+  &.aadaab .image {
+    background-image: url(../views/shart/aadaab.jpg);
+  }
+  &.fasaad .image {
+    background-image: url(../views/shart/fasaad.jpg);
   }
 }
 </style>

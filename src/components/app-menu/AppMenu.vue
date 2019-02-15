@@ -399,7 +399,7 @@ export default {
     font-size: 11px;
     line-height: 12px;
     padding-top: 10px;
-    padding-left: 52px;
+    padding-left: 48px;
     background: url(./logo.png) no-repeat left bottom;
   }
 }

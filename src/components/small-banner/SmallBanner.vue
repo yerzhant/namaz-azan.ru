@@ -1,5 +1,5 @@
 <template lang="pug">
-  router-link(:to="link").small-banner(:class="[type, { bg2 }]")
+  router-link.small-banner(:to="link" :class="[type, { bg2 }]")
     .image(:class="type")
     .ornament
     .info

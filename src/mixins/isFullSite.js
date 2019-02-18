@@ -1,7 +1,7 @@
 export default {
   computed: {
     isFullSite() {
-      const full = ['/', '/first-namaz', '/index.html'];
+      const full = ['/', '/solaatil-uulaa', '/index.html'];
       return full.some(p => this.$route.path === p);
     },
   },

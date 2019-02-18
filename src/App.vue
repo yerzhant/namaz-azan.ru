@@ -110,6 +110,7 @@ export default {
   border-radius: 5px;
   cursor: pointer;
   z-index: 1000;
+  opacity: 0.6;
   &:hover {
     background-color: #525252;
   }

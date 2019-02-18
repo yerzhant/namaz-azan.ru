@@ -105,7 +105,7 @@ export default {
   bottom: 25px;
   width: 51px;
   height: 51px;
-  background: url(../public/images/scroll-up.png) no-repeat center;
+  background: url(./images/scroll-up.png) no-repeat center;
   background-color: #828282;
   border-radius: 5px;
   cursor: pointer;

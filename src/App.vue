@@ -109,6 +109,7 @@ export default {
   background-color: #828282;
   border-radius: 5px;
   cursor: pointer;
+  z-index: 1000;
   &:hover {
     background-color: #525252;
   }

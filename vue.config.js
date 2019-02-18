@@ -1,7 +1,7 @@
 const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
-  publicPath: '/namaz/',
+  publicPath: '/namaz',
   productionSourceMap: false,
   configureWebpack: {
     performance: {

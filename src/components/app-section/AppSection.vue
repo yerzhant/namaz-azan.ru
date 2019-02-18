@@ -122,6 +122,7 @@ export default {
       background: url(./bg-fadjr.jpg) no-repeat center;
     }
     .tutorial,
+    .jumuah,
     .dhuhr {
       background: url(./bg-dhuhr.jpg) no-repeat center;
     }

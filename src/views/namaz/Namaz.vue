@@ -160,6 +160,10 @@ export default {
     $route() {
       this.getData();
     },
+    // eslint-disable-next-line
+    '$store.state.gender'() {
+      this.getData();
+    },
   },
   created() {
     this.getData();

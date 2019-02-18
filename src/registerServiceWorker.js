@@ -2,7 +2,7 @@
 
 import { register } from 'register-service-worker';
 
-// let refreshing = false;
+let refreshing = false;
 
 if (process.env.NODE_ENV === 'production') {
   register(`${process.env.BASE_URL}service-worker.js`, {
@@ -22,8 +22,8 @@ if (process.env.NODE_ENV === 'production') {
       console.log('New content is downloading.');
     },
     updated() {
-      // if (refreshing) return;
-      // refreshing = true;
+      if (refreshing) return;
+      refreshing = true;
       console.log('New content is available; please refresh.');
       // window.location.href = '/namaz';
       window.location.reload();

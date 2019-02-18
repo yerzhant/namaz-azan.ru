@@ -9,6 +9,8 @@
       AppFooter(v-if="!isFullSite")
     SelectCity(v-if="!isFullSite")
     MobileMenu
+    transition(name="scroll-up-fade")
+      .scroll-up(v-show="showScrollUp" @click="$scrollTo('body')")
 </template>
 
 <script>
@@ -22,6 +24,16 @@ import isFullSite from '@/mixins/isFullSite';
 import axios from 'axios';
 
 export default {
+  data() {
+    return {
+      showScrollUp: false,
+    };
+  },
+  methods: {
+    scrolling() {
+      this.showScrollUp = window.scrollY > 200;
+    },
+  },
   created() {
     axios.get('/api/site/socials').then(r => {
       this.$store.commit('setSocials', r.data);
@@ -39,6 +51,11 @@ export default {
       this.$store.commit('setCity', city);
       this.$store.commit('setNamazTimes', r.data);
     });
+
+    document.addEventListener('scroll', this.scrolling);
+  },
+  destroyed() {
+    document.removeEventListener('scroll', this.scrolling);
   },
   components: {
     AppHeader,
@@ -80,6 +97,33 @@ export default {
   }
   @media (max-width: $mobile) {
     margin-top: 0;
+  }
+}
+.scroll-up {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 51px;
+  height: 51px;
+  background: url(../public/images/scroll-up.png) no-repeat center;
+  background-color: #828282;
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: #525252;
+  }
+  &.active {
+    display: block;
+  }
+  &-fade {
+    &-enter-active,
+    &-leave-active {
+      transition: opacity 0.5s;
+    }
+    &-enter,
+    &-leave-to {
+      opacity: 0;
+    }
   }
 }
 </style>

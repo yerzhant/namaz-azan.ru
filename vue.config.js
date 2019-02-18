@@ -1,11 +1,11 @@
 const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
-  baseUrl: '/namaz/',
+  publicPath: '/namaz/',
   productionSourceMap: false,
   configureWebpack: {
     performance: {
-      maxEntrypointSize: 350 * 1024,
+      maxEntrypointSize: 400 * 1024,
       maxAssetSize: 700 * 1024,
       // assetFilter: file => !(/\.(map|mp3|mp3\.gz)$/.test(file)),
     },

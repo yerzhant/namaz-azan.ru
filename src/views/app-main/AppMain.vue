@@ -245,9 +245,12 @@ export default {
   flex-wrap: wrap;
 }
 @media (max-width: $mobile) {
-  .tahharah >>> .content {
+  .tahharah /deep/ .content {
     > * {
       margin-bottom: 20px;
+    }
+    .taharat {
+      border-top: 1px solid #d4dee8;
     }
   }
 }

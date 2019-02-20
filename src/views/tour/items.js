@@ -197,8 +197,8 @@ export default [{
   data: {
     type: 'salam-right',
     title: 'САЛЯМ',
-    arabic: `<div dir="rtl"><span style="font-size:24px;">السلام عليكم ورحمة 
-            <span style="color:#FF0000;">الله</span><br></span></div>`,
+    arabic: `<div dir="rtl"><span style="font-size:24px;">السَّلامُ عَلَيْكُم ورَحْمَةُ 
+            <span style="color:#FF0000;">اللهِ</span><br></span></div>`,
     description: `После чтения салавата и дуа молящийся поворачивает голову направо
                   и произносит салям. При этом молящийся смотрит на край своего плеча.`,
     transcription: 'Ассаляму алейкум уа рахматуллах!',
@@ -210,8 +210,8 @@ export default [{
   data: {
     type: 'salam-left',
     title: 'САЛЯМ',
-    arabic: `<div dir="rtl"><span style="font-size:24px;">السلام عليكم ورحمة 
-            <span style="color:#FF0000;">الله</span><br></span></div>`,
+    arabic: `<div dir="rtl"><span style="font-size:24px;">السَّلامُ عَلَيْكُم ورَحْمَةُ 
+            <span style="color:#FF0000;">اللهِ</span><br></span></div>`,
     description: `Затем, поворачивая голову налево, он второй раз произносит салям.
                   При этом молящийся смотрит на край своего плеча.`,
     transcription: 'Ассаляму алейкум уа рахматуллах!',

@@ -50,7 +50,7 @@
   margin-left: 40px;
   @media (max-width: $mobile) {
     display: inline-block;
-    margin-right: 13px;
+    margin-right: 12px;
     margin-left: 0;
     float: left;
     margin-top: 14px;

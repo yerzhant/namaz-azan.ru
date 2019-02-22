@@ -111,6 +111,11 @@ export default {
       }
     },
   },
+  created() {
+    if (this.initialIndex) {
+      this.index = this.initialIndex;
+    }
+  },
   components: {
     AppButton,
   },

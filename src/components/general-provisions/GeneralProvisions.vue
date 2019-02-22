@@ -116,7 +116,7 @@ export default {
     height: 440px;
     background: url(./bg.png) no-repeat center;
     .image {
-      width: 540px;
+      width: 50%;
       height: 440px;
       background-repeat: no-repeat;
       background-size: cover;
@@ -141,9 +141,11 @@ export default {
     }
   }
   .info {
+    flex-basis: 50%;
+    justify-self: flex-end;
     width: 540px;
-    padding-left: 20px;
-    padding-right: 130px;
+    padding-left: calc(50% - 540px);
+    padding-right: 135px;
     .title {
       font-weight: 500;
       font-size: 20px;

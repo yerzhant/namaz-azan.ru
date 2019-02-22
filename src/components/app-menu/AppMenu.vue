@@ -7,7 +7,7 @@
     .back-to-main(@click="$store.commit('setMenu')")
       span Назад в меню
       img(src="./menu.png")
-    .level-2-image(:class="$store.state.namaz")
+    .level-2-image(:class="[$store.state.namaz, $store.state.gender]")
 
     nav.items.items-l1
       router-link.item(to="/roiisiyyah")
@@ -326,22 +326,40 @@ export default {
       background-size: cover;
       &.fadjr {
         background-image: url(./fadjr.jpg);
+        &.woman {
+          background-image: url(./fadjr-w.jpg);
+        }
       }
       &.tutorial,
       &.dhuhr {
         background-image: url(./dhuhr.jpg);
+        &.woman {
+          background-image: url(./dhuhr-w.jpg);
+        }
       }
       &.asr {
         background-image: url(./asr.jpg);
+        &.woman {
+          background-image: url(./asr-w.jpg);
+        }
       }
       &.maghrib {
         background-image: url(./maghrib.jpg);
+        &.woman {
+          background-image: url(./maghrib-w.jpg);
+        }
       }
       &.isha {
         background-image: url(./isha.jpg);
+        &.woman {
+          background-image: url(./isha-w.jpg);
+        }
       }
       &.witr {
         background-image: url(./witr.jpg);
+        &.woman {
+          background-image: url(./witr-w.jpg);
+        }
       }
       &.jumuah {
         background-image: url(./jumuah.png);

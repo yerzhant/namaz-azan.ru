@@ -17,7 +17,7 @@
           div(v-html="section.text")
 
     .line
-    AppSection(title="УСЛОВИЯ НАМАЗА" regular bg1)
+    AppSection(title="УСЛОВИЯ НАМАЗА" regular bg1 v-if="isShuruut || isShart")
       .fards
         Banner(
           type="fard makan"
@@ -90,6 +90,9 @@
         )
           template(slot="buttons")
             AppButton(link="/shart/niet" blue :height="36") ЧИТАТЬ ДАЛЕЕ
+
+    AppSection(title="ОБЩИЕ ПОЛОЖЕНИЯ НАМАЗА" regular bg1 fullContentWidth noBottomPadding)
+      GeneralProvisions(:initialIndex="nextGeneralProvisionIndex").general-provisions
 
     Banner(
       type="namaz-detailed short"
@@ -176,6 +179,7 @@
 import AppSection from '@/components/app-section/AppSection.vue';
 import AppButton from '@/components/AppButton.vue';
 import Banner from '@/components/Banner.vue';
+import GeneralProvisions from '@/components/general-provisions/GeneralProvisions.vue';
 import axios from 'axios';
 
 export default {
@@ -190,7 +194,7 @@ export default {
   methods: {
     getData() {
       let headerStatus = 'Условия намаза';
-      if (this.$route.path.includes('al-ahkaamul-aammah')) {
+      if (!this.isShart) {
         headerStatus = 'Общие положения';
       }
       const { type } = this.$route.params;
@@ -205,6 +209,36 @@ export default {
       });
     },
   },
+  computed: {
+    isShart() {
+      return this.$route.params.section === 'shart';
+    },
+    isShuruut() {
+      return this.$route.params.type === 'shuruut';
+    },
+    nextGeneralProvisionIndex() {
+      switch (this.$route.params.type) {
+        case 'ma-hiya':
+          return 1;
+
+        case 'aqsaam':
+          return 2;
+
+        case 'shuruut':
+          return 3;
+
+        case 'azan-iqamat':
+          return 4;
+
+        case 'aadaab':
+        case 'fasaad':
+          return 5;
+
+        default:
+          return 0;
+      }
+    },
+  },
   watch: {
     $route() {
       this.getData();
@@ -217,6 +251,7 @@ export default {
     AppSection,
     AppButton,
     Banner,
+    GeneralProvisions,
   },
 };
 </script>
@@ -238,6 +273,11 @@ export default {
 .admin-text {
   @media (max-width: $mobile) {
     padding: 0;
+  }
+}
+.general-provisions {
+  @media (max-width: $mobile) {
+    display: none;
   }
 }
 </style>

@@ -76,6 +76,9 @@ const info = [
 ];
 
 export default {
+  props: {
+    initialIndex: Number,
+  },
   data() {
     return {
       index: 0,
@@ -98,6 +101,13 @@ export default {
 
         default:
           return `/al-ahkaamul-aammah/${this.image}`;
+      }
+    },
+  },
+  watch: {
+    initialIndex() {
+      if (this.initialIndex) {
+        this.index = this.initialIndex;
       }
     },
   },

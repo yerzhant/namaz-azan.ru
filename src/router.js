@@ -19,8 +19,7 @@ export default new Router({
     path: '/solaatil-uulaa',
     component: () => import(/* webpackChunkName: "solaatil-uulaa" */ './views/tour/Tour.vue'),
   }, {
-    path: '/shart/:type',
-    alias: '/al-ahkaamul-aammah/:type',
+    path: '/:section(shart|al-ahkaamul-aammah)/:type',
     component: () => import(/* webpackChunkName: "shart" */ './views/shart/Shart.vue'),
   }, {
     path: '/tahharah/:type(wudu)',

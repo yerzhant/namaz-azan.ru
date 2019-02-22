@@ -123,7 +123,7 @@
         type="taharat"
         descStyleBlackBlue
         descWithMargin
-        title="ТАХАРАТ"
+        title="ВУДУ"
         shortDesc="Малое омовение"
         desc="Малое омовение является доступным и простым способом очищения \
           и состоит всего из 4 фардов."

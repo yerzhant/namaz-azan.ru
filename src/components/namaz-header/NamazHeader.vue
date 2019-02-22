@@ -1,5 +1,5 @@
 <template lang="pug">
-  header.header(:class="type")
+  header.header(:class="[type, $store.state.gender]")
     .info-wrapper
       section.info
         h1.title {{ title }}
@@ -345,6 +345,9 @@ export default {
 }
 .fadjr {
   background-image: url(./fadjr-bg.png);
+  &.woman {
+    background-image: url(./fadjr-bg-w.png);
+  }
   @media (max-width: $mobile) {
     background-image: none;
   }
@@ -368,6 +371,9 @@ export default {
 .tutorial,
 .dhuhr {
   background-image: url(./dhuhr-bg.png);
+  &.woman {
+    background-image: url(./dhuhr-bg-w.png);
+  }
   @media (max-width: $mobile) {
     background-image: none;
   }
@@ -390,6 +396,9 @@ export default {
 }
 .asr {
   background-image: url(./asr-bg.png);
+  &.woman {
+    background-image: url(./asr-bg-w.png);
+  }
   background-color: #fdfcfa;
   .button {
     background-color: #fdfcfa;
@@ -419,6 +428,9 @@ export default {
 }
 .maghrib {
   background-image: url(./maghrib-bg.png);
+  &.woman {
+    background-image: url(./maghrib-bg-w.png);
+  }
   background-color: #f7f9ff;
   .button {
     background-color: #f7f9ff;
@@ -448,6 +460,9 @@ export default {
 }
 .isha {
   background-image: url(./isha-bg.png);
+  &.woman {
+    background-image: url(./isha-bg-w.png);
+  }
   background-color: #f7f8ff;
   .button {
     background-color: #f7f8ff;
@@ -477,6 +492,9 @@ export default {
 }
 .witr {
   background-image: url(./witr-bg.png);
+  &.woman {
+    background-image: url(./witr-bg-w.png);
+  }
   background-color: #faf7ff;
   .button {
     background-color: #faf7ff;

@@ -13,6 +13,11 @@
           :class="{full: transcription && translation && arabic && description}"
         )
           .tab(
+            v-if="description"
+            :class="{active: tabDescription}"
+            @click="tabTranscription = tabTranslation = tabArabic = false; tabDescription = true"
+          ) Описание
+          .tab(
             v-if="transcription"
             :class="{active: tabTranscription}"
             @click="tabTranslation = tabArabic = tabDescription = false; tabTranscription = true"
@@ -27,11 +32,6 @@
             :class="{active: tabArabic}"
             @click="tabTranscription = tabTranslation = tabDescription = false; tabArabic = true"
           ) Арабский
-          .tab(
-            v-if="description"
-            :class="{active: tabDescription}"
-            @click="tabTranscription = tabTranslation = tabArabic = false; tabDescription = true"
-          ) Описание
         .tab-contents
           .header(v-if="tour")
             .header-text
@@ -163,14 +163,14 @@ export default {
         this.$data[k] = false;
       });
       this.image1 = true;
-      if (this.transcription) {
+      if (this.description) {
+          this.tabDescription = true;
+      } else if (this.transcription) {
         this.tabTranscription = true;
       } else if (this.translation) {
         this.tabTranslation = true;
       } else if (this.arabic) {
         this.tabArabic = true;
-      } else if (this.description) {
-        this.tabDescription = true;
       }
     },
   },

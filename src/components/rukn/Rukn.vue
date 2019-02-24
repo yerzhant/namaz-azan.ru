@@ -164,7 +164,7 @@ export default {
       });
       this.image1 = true;
       if (this.description) {
-          this.tabDescription = true;
+        this.tabDescription = true;
       } else if (this.transcription) {
         this.tabTranscription = true;
       } else if (this.translation) {

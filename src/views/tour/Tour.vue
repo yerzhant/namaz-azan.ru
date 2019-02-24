@@ -12,7 +12,7 @@
         Rukn(
           ref="rukn"
           tour
-          :rakaat="index < 16 ? '1' : '2'"
+          :rakaat="index < 17 ? '1' : '2'"
           rakaats="2"
           :type="data.type"
           :title="data.title"
@@ -84,11 +84,11 @@ export default {
     },
     normalizeProgressPosition() {
       const max = this.getProgressMaxPosition();
-      if (this.index < 5) this.progressPosition = 0;
-      else if (this.index < 9) this.progressPosition = max / 5;
-      else if (this.index < 14) this.progressPosition = (max / 5) * 2;
-      else if (this.index < 19) this.progressPosition = (max / 5) * 3;
-      else if (this.index < 23) this.progressPosition = (max / 5) * 4;
+      if (this.index < 6) this.progressPosition = 0;
+      else if (this.index < 10) this.progressPosition = max / 5;
+      else if (this.index < 15) this.progressPosition = (max / 5) * 2;
+      else if (this.index < 20) this.progressPosition = (max / 5) * 3;
+      else if (this.index < 24) this.progressPosition = (max / 5) * 4;
       else this.progressPosition = max;
     },
     slideProgressLeft() {
@@ -103,14 +103,14 @@ export default {
     getProgressMaxPosition() {
       const itemWidth = document.querySelector('.tour .items-viewport .item').offsetWidth;
 
-      return itemWidth * -28 + document.querySelector('.items-viewport').offsetWidth;
+      return itemWidth * -29 + document.querySelector('.items-viewport').offsetWidth;
     },
     getData() {
       const { gender } = this.$store.state;
 
       axios.get(`/api/namaz/tour/${gender}`).then(r => {
         r.data.wudu.forEach((w, i) => {
-          const { data } = this.items[i + 2];
+          const { data } = this.items[i + 3];
           data.title = w.kindLabel.toUpperCase();
           data.description = w.text;
         });
@@ -118,7 +118,7 @@ export default {
 
       axios.get(`/api/namaz/namaz/${gender}/fadjr/fard`).then(resp => {
         resp.data.rakaats.forEach((rakaat, ra) => {
-          let offset = ra === 0 ? 7 : 17;
+          let offset = ra === 0 ? 8 : 18;
           rakaat.rukns.forEach((r, i) => {
             if (ra === 1 && i === 8) {
               offset++;
@@ -372,10 +372,10 @@ export default {
 .items {
   position: relative;
   display: flex;
-  width: 134px + 65px * 30;
+  width: 134px + 65px * 31;
   height: 100%;
   @media (max-width: $mobile) {
-    width: 44px * 31;
+    width: 44px * 32;
   }
 }
 .section-slide {

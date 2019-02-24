@@ -84,11 +84,11 @@ export default {
     },
     normalizeProgressPosition() {
       const max = this.getProgressMaxPosition();
-      if (this.index < 6) this.progressPosition = 0;
-      else if (this.index < 10) this.progressPosition = max / 5;
-      else if (this.index < 15) this.progressPosition = (max / 5) * 2;
-      else if (this.index < 20) this.progressPosition = (max / 5) * 3;
-      else if (this.index < 24) this.progressPosition = (max / 5) * 4;
+      if (this.index < 5) this.progressPosition = 0;
+      else if (this.index < 9) this.progressPosition = max / 5;
+      else if (this.index < 14) this.progressPosition = (max / 5) * 2;
+      else if (this.index < 19) this.progressPosition = (max / 5) * 3;
+      else if (this.index < 23) this.progressPosition = (max / 5) * 4;
       else this.progressPosition = max;
     },
     slideProgressLeft() {

@@ -91,9 +91,12 @@
           template(slot="buttons")
             AppButton(link="/shart/niet" blue :height="36") ЧИТАТЬ ДАЛЕЕ
 
-    AppSection(title="ОБЩИЕ ПОЛОЖЕНИЯ НАМАЗА" regular bg1 fullContentWidth noBottomPadding)
-      GeneralProvisions.general-provisions(:initialIndex="nextGeneralProvisionIndex")
-      MobileGeneralProvisions.mobile-general-provisions
+    AppSection.general-provisions(
+      title="ОБЩИЕ ПОЛОЖЕНИЯ НАМАЗА" regular bg1 fullContentWidth noBottomPadding
+    )
+      GeneralProvisions(:initialIndex="nextGeneralProvisionIndex")
+    AppSection.mobile-general-provisions(title="ОБЩИЕ ПОЛОЖЕНИЯ НАМАЗА" regular)
+      MobileGeneralProvisions
 
     Banner(
       type="namaz-detailed short"

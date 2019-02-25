@@ -165,7 +165,7 @@
         SmallBanner(
           link="/tahharah/wudu"
           type="wudu"
-          title="ТАХАРАТ"
+          title="ВУДУ"
           subTitle="Малое омовение"
           text="Малое омовение является доступным и простым способом очищения."
         )

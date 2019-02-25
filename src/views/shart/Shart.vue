@@ -92,7 +92,8 @@
             AppButton(link="/shart/niet" blue :height="36") ЧИТАТЬ ДАЛЕЕ
 
     AppSection(title="ОБЩИЕ ПОЛОЖЕНИЯ НАМАЗА" regular bg1 fullContentWidth noBottomPadding)
-      GeneralProvisions(:initialIndex="nextGeneralProvisionIndex").general-provisions
+      GeneralProvisions.general-provisions(:initialIndex="nextGeneralProvisionIndex")
+      MobileGeneralProvisions.mobile-general-provisions
 
     Banner(
       type="namaz-detailed short"
@@ -180,6 +181,7 @@ import AppSection from '@/components/app-section/AppSection.vue';
 import AppButton from '@/components/AppButton.vue';
 import Banner from '@/components/Banner.vue';
 import GeneralProvisions from '@/components/general-provisions/GeneralProvisions.vue';
+import MobileGeneralProvisions from '@/components/mobile-general-provisions/MobileGeneralProvisions.vue';
 import axios from 'axios';
 
 export default {
@@ -252,6 +254,7 @@ export default {
     AppButton,
     Banner,
     GeneralProvisions,
+    MobileGeneralProvisions,
   },
 };
 </script>
@@ -278,6 +281,12 @@ export default {
 .general-provisions {
   @media (max-width: $mobile) {
     display: none;
+  }
+}
+.mobile-general-provisions {
+  display: none;
+  @media (max-width: $mobile) {
+    display: block;
   }
 }
 </style>

@@ -271,6 +271,9 @@ export default {
     &.ghusl {
       background-image: url(./ghusl.jpg);
     }
+    &.wudu {
+      background-image: url(./wudu.jpg);
+    }
     &.wudu-face {
       background-image: url(./wudu-face.jpg);
     }

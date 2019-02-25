@@ -27,7 +27,7 @@ export default [{
               и углубления тела.`,
   },
 }, {
-  type: 'rukn wudu-face',
+  type: 'rukn wudu',
   title: '2',
   data: {
     type: 'wudu niet',

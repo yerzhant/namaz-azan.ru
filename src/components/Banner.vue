@@ -460,4 +460,39 @@ export default {
     background-image: url(../views/shart/fasaad.jpg);
   }
 }
+.mobile-general-provisions {
+  width: 100%;
+  height: initial;
+  border: 1px solid #d4dee8;
+  .desc {
+    padding-top: 15px;
+    padding-bottom: 31px;
+  }
+  .top {
+    flex-direction: column-reverse;
+    background-color: #f7fcff;
+  }
+  .image {
+    background: no-repeat top / contain;
+    flex-basis: 180px;
+  }
+  &.ma-hiya .image {
+    background-image: url(./mobile-general-provisions/ma-hiya.jpg);
+  }
+  &.aqsaam .image {
+    background-image: url(./mobile-general-provisions/aqsaam.jpg);
+  }
+  &.shuruut .image {
+    background-image: url(./mobile-general-provisions/shuruut.jpg);
+  }
+  &.azan-iqamat .image {
+    background-image: url(./mobile-general-provisions/azan-iqamat.jpg);
+  }
+  &.aadaab .image {
+    background-image: url(./mobile-general-provisions/aadaab.jpg);
+  }
+  &.fasaad .image {
+    background-image: url(./mobile-general-provisions/fasaad.jpg);
+  }
+}
 </style>

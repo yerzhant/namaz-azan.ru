@@ -107,6 +107,7 @@
 
     AppSection(title="ОБЩИЕ ПОЛОЖЕНИЯ НАМАЗА" fullContentWidth noBottomPadding)
       GeneralProvisions.general-provisions
+      MobileGeneralProvisions.mobile-general-provisions
 
     AppSection.tahharah(title="ВИДЫ ОЧИЩЕНИЯ")
       Banner(
@@ -185,7 +186,8 @@ import AppButton from '@/components/AppButton.vue';
 import AppSection from '@/components/app-section/AppSection.vue';
 import Slogan from '@/components/slogan/Slogan.vue';
 import NamazInfo from '@/components/namaz-info/NamazInfo.vue';
-import GeneralProvisions from '../../components/general-provisions/GeneralProvisions.vue';
+import GeneralProvisions from '@/components/general-provisions/GeneralProvisions.vue';
+import MobileGeneralProvisions from '@/components/mobile-general-provisions/MobileGeneralProvisions.vue';
 
 export default {
   created() {
@@ -201,6 +203,7 @@ export default {
     Slogan,
     NamazInfo,
     GeneralProvisions,
+    MobileGeneralProvisions,
   },
 };
 </script>
@@ -257,6 +260,12 @@ export default {
 .general-provisions {
   @media (max-width: $mobile) {
     display: none;
+  }
+}
+.mobile-general-provisions {
+  display: none;
+  @media (max-width: $mobile) {
+    display: block;
   }
 }
 </style>

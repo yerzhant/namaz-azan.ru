@@ -2,6 +2,7 @@
   section.namaz
     NamazHeader(
       :type="$store.state.namaz"
+      :subType="$route.params.subType"
       :typeText="data.typeText"
       :title="data.title"
       :subTitle="data.namaz.title"

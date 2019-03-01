@@ -10,13 +10,13 @@
           .type {{ typeText }}
           .clocks {{ time }}
             span.footnote *
-          .rakaats
+          .rakaats(:class="subType")
             .rakaats-count {{ rakaats1 }}
             .rakaats-title {{ rakaats1Title }}
-          .rakaats(v-if="rakaats2")
+          .rakaats(v-if="rakaats2" :class="subType")
             .rakaats-count {{ rakaats2 }}
             .rakaats-title {{ rakaats2Title }}
-          .rakaats(v-if="rakaats3")
+          .rakaats(v-if="rakaats3" :class="subType")
             .rakaats-count {{ rakaats3 }}
             .rakaats-title {{ rakaats3Title }}
         .buttons
@@ -64,6 +64,7 @@ import AppButton from '@/components/AppButton.vue';
 export default {
   props: {
     type: String,
+    subType: String,
     typeText: String,
     title: String,
     subTitle: String,
@@ -357,10 +358,22 @@ export default {
         background: url(./dhuhr-bg-m.png) no-repeat bottom / cover;
       }
     }
+    .rakaats.sunnah:nth-last-child(2) {
+      color: #175682;
+      .rakaats-count {
+        color: #146eb4;
+      }
+    }
     .rakaats:last-child {
       color: #175682;
       .rakaats-count {
         color: #146eb4;
+      }
+      &.sunnah {
+        color: #464646;
+        .rakaats-count {
+          color: #989898;
+        }
       }
     }
     .type {
@@ -383,10 +396,29 @@ export default {
         background: url(./dhuhr-bg-m.png) no-repeat bottom / cover;
       }
     }
+    .rakaats.sunnah-before:nth-last-child(3) {
+      color: #175682;
+      .rakaats-count {
+        color: #146eb4;
+      }
+    }
+    .rakaats.sunnah-after:last-child {
+      color: #175682;
+      .rakaats-count {
+        color: #146eb4;
+      }
+    }
     .rakaats:nth-last-child(2) {
       color: #175682;
       .rakaats-count {
         color: #146eb4;
+      }
+      &.sunnah-before,
+      &.sunnah-after {
+        color: #464646;
+        .rakaats-count {
+          color: #989898;
+        }
       }
     }
     .type {
@@ -447,10 +479,22 @@ export default {
         background: url(./dhuhr-bg-m.png) no-repeat bottom / cover;
       }
     }
+    .rakaats.sunnah:last-child {
+      color: #175682;
+      .rakaats-count {
+        color: #146eb4;
+      }
+    }
     .rakaats:nth-last-child(2) {
       color: #175682;
       .rakaats-count {
         color: #146eb4;
+      }
+      &.sunnah {
+        color: #464646;
+        .rakaats-count {
+          color: #989898;
+        }
       }
     }
     .type {
@@ -479,10 +523,22 @@ export default {
         background: url(./dhuhr-bg-m.png) no-repeat bottom / cover;
       }
     }
+    .rakaats.sunnah:nth-last-child(2) {
+      color: #175682;
+      .rakaats-count {
+        color: #146eb4;
+      }
+    }
     .rakaats:nth-last-child(3) {
       color: #175682;
       .rakaats-count {
         color: #146eb4;
+      }
+      &.sunnah {
+        color: #464646;
+        .rakaats-count {
+          color: #989898;
+        }
       }
     }
     .type {
@@ -533,10 +589,29 @@ export default {
         background: url(./dhuhr-bg-m.png) no-repeat bottom / cover;
       }
     }
+    .rakaats.sunnah-before:nth-last-child(3) {
+      color: #175682;
+      .rakaats-count {
+        color: #146eb4;
+      }
+    }
+    .rakaats.sunnah-after:last-child {
+      color: #175682;
+      .rakaats-count {
+        color: #146eb4;
+      }
+    }
     .rakaats:nth-last-child(2) {
       color: #175682;
       .rakaats-count {
         color: #146eb4;
+      }
+      &.sunnah-before,
+      &.sunnah-after {
+        color: #464646;
+        .rakaats-count {
+          color: #989898;
+        }
       }
     }
     .type {

@@ -777,7 +777,7 @@ export default {
   .tab-content {
     font-size: 15px;
     line-height: 22px;
-    max-height: 500px;
+    max-height: 300px;
     overflow-y: auto;
     &::-webkit-scrollbar {
       width: 5px;

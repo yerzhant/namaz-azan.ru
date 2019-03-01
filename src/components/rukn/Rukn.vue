@@ -45,7 +45,7 @@
           AppPlayer.player(:type="audio")
           .buttons
             AppButton(:height="36" blue @click="goNext" v-if="!last") ДАЛЕЕ
-            AppButton.print(:height="36" @click="print") РАСПЕЧАТАТЬ
+            //- AppButton.print(:height="36" @click="print") РАСПЕЧАТАТЬ
       .media
         .image-1(:class="[$store.state.gender, {active: image1}]")
         .image-2(:class="[$store.state.gender, {active: image2}]")

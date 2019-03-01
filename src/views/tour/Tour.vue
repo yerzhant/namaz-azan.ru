@@ -5,6 +5,7 @@
         .prev(@click="previous")
         .section-slide-wrapper
           .title {{ data.title }}
+          .sub-title(v-show="data.subTitle") {{ data.subTitle }}
           .short-desc {{ data.shortDesc }}
           img.moon(src="./moon.png")
           img.moon-m(src="./moon-m.png")
@@ -55,7 +56,7 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      index: 0,
+      index: 7,
       items,
       progressPosition: 0,
     };
@@ -408,6 +409,12 @@ export default {
     font-size: 36px;
     color: #002f56;
     margin-bottom: 5px;
+  }
+  .sub-title {
+    font-size: 24px;
+    color: #002f56;
+    margin-top: 5px;
+    margin-bottom: 10px;
   }
   .short-desc {
     font-size: 15px;

@@ -56,7 +56,7 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      index: 7,
+      index: 0,
       items,
       progressPosition: 0,
     };

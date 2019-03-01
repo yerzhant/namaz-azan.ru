@@ -2,7 +2,7 @@
   .info(:class="[type, {current: isCurrent}]")
     .number
     .details
-      .title {{ title }}
+      router-link.title(:to="titleLink") {{ title }}
       .desc {{ desc }}
       .time {{ time }}
     router-link.namaz.n1(v-if="namaz1Count" :to="namaz1Link")
@@ -21,6 +21,7 @@ export default {
   props: {
     type: String,
     title: String,
+    titleLink: String,
     desc: String,
     startTime: String,
     endTime: String,

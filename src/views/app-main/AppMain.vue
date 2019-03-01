@@ -29,6 +29,7 @@
         NamazInfo(
           type="fadjr"
           title="ФАДЖР"
+          titleLink="/fadjr/fard"
           desc="Утренний намаз"
           :startTime="$store.state.namazTimes.today[0]"
           :endTime="$store.state.namazTimes.today[1]"
@@ -42,6 +43,7 @@
         NamazInfo(
           type="dhuhr"
           title="ЗУХР"
+          titleLink="/dhuhr/fard"
           desc="Обеденный намаз"
           :startTime="$store.state.namazTimes.today[2]"
           :endTime="$store.state.namazTimes.today[3]"
@@ -58,6 +60,7 @@
         NamazInfo(
           type="asr"
           title="АСР"
+          titleLink="/asr/fard"
           desc="Предвечерний намаз"
           :startTime="$store.state.namazTimes.today[3]"
           :endTime="$store.state.namazTimes.today[4]"
@@ -68,6 +71,7 @@
         NamazInfo(
           type="maghrib"
           title="МАГРИБ"
+          titleLink="/maghrib/fard"
           desc="Вечерний намаз"
           :startTime="$store.state.namazTimes.today[4]"
           :endTime="$store.state.namazTimes.today[5]"
@@ -81,6 +85,7 @@
         NamazInfo(
           type="isha"
           title="ИША"
+          titleLink="/isha/fard"
           desc="Ночной намаз"
           :startTime="$store.state.namazTimes.today[5]"
           :endTime="$store.state.namazTimes.today[0]"
@@ -94,6 +99,7 @@
         NamazInfo(
           type="witr"
           title="ВИТР"
+          titleLink="/witr/wadjib"
           desc="Заключительный намаз"
           startTime="После намаза Иша"
           :endTime="$store.state.namazTimes.tomorrow[0]"

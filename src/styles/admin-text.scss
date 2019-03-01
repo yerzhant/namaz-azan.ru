@@ -1,3 +1,12 @@
+%azan--appendix {
+  font-weight: bold;
+  border: 1px solid #ea7555;
+  border-left-width: 7px;
+  padding: 25px 13px;
+  background-color: #fff;
+  margin-top: 10px;
+}
+
 .admin-text {
   font-family: $pt-sans;
   font-size: 16px;
@@ -53,11 +62,12 @@
   }
 
   .azan--appendix {
-    font-weight: bold;
-    border: 1px solid #ea7555;
-    border-left-width: 7px;
-    padding: 25px 13px;
-    background-color: #fff;
-    margin-top: 10px;
+    @extend %azan--appendix;
+  }
+}
+
+.rukn .tab-content {
+  .azan--appendix {
+    @extend %azan--appendix;
   }
 }

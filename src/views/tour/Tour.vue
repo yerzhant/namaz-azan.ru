@@ -2,11 +2,14 @@
   section.tour(:class="type")
     .content
       .section-slide(v-show="type === 'section'")
-        .title {{ data.title }}
-        .short-desc {{ data.shortDesc }}
-        img.moon(src="./moon.png")
-        img.moon-m(src="./moon-m.png")
-        AppButton(@click="next") ДАЛЕЕ
+        .prev(@click="previous")
+        .section-slide-wrapper
+          .title {{ data.title }}
+          .short-desc {{ data.shortDesc }}
+          img.moon(src="./moon.png")
+          img.moon-m(src="./moon-m.png")
+          AppButton(@click="next") ДАЛЕЕ
+        .next(@click="next")
       .rukn-slide(v-show="type === 'rukn'")
         .prev(@click="previous")
         Rukn(
@@ -384,12 +387,23 @@ export default {
 .section-slide {
   flex-grow: 1;
   display: flex;
+  align-items: center;
+  background: url(./section-bg.png) no-repeat top;
+  background-color: #ecf7fd;
+  @media (max-width: $mobile) {
+    .prev,
+    .next {
+      display: none;
+    }
+  }
+}
+.section-slide-wrapper {
+  flex-grow: 1;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: url(./section-bg.png) no-repeat top;
-  background-color: #ecf7fd;
   .title {
     font-size: 36px;
     color: #002f56;

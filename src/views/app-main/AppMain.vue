@@ -139,6 +139,14 @@
           AppButton(link="/tahharah/wudu" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
       .small-banners
         SmallBanner(
+          link="/tahharah/ghusl"
+          type="ghusl"
+          title="ГУСЛЬ"
+          subTitle="Полное омовение"
+          text="Полное ритуальное омовение водой всего тела целиком."
+          bg2
+        )
+        SmallBanner(
           link="/tahharah/istibra"
           type="istibra"
           title="ИСТИБАРА"
@@ -151,21 +159,6 @@
           title="ИСТИНДЖА"
           subTitle="Подмывание"
           text="Устранение остатков наджасы после малой или большой нужды."
-          bg2
-        )
-        SmallBanner(
-          link="/tahharah/tayammum"
-          type="tayammum"
-          title="ТАЯММУМ"
-          subTitle="Когда нет воды"
-          text="Протирание частей тела чистой землей либо песком. Служит заменой омовения."
-        )
-        SmallBanner(
-          link="/tahharah/ghusl"
-          type="ghusl"
-          title="ГУСЛЬ"
-          subTitle="Полное омовение"
-          text="Полное ритуальное омовение водой всего тела целиком."
           bg2
         )
         SmallBanner(
@@ -182,6 +175,13 @@
           subTitle="Протирание носков"
           text="Условия протирания водонепроницаемых носков."
           bg2
+        )
+        SmallBanner(
+          link="/tahharah/tayammum"
+          type="tayammum"
+          title="ТАЯММУМ"
+          subTitle="Когда нет воды"
+          text="Протирание частей тела чистой землей либо песком. Служит заменой омовения."
         )
 </template>
 

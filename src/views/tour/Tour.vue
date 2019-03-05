@@ -252,6 +252,9 @@ export default {
       .title {
         font-weight: bold;
         font-size: 24px;
+        @media (max-width: $mobile) {
+          font-size: 20px;
+        }
       }
     }
   }

@@ -1,6 +1,6 @@
 <template lang="pug">
   a.app-button(
-    :class="{red: red, blue: blue, small: small}"
+    :class="{red, blue, small, 'blue-stylish': blueStylish}"
     :style="{width: `${width}px`, height: `${height}px`}"
     @click="go"
   )
@@ -13,6 +13,7 @@ export default {
     link: String,
     red: Boolean,
     blue: Boolean,
+    blueStylish: Boolean,
     small: Boolean,
     width: {
       type: Number,
@@ -59,6 +60,12 @@ export default {
   &.small {
     color: #717171;
     font-size: 11px;
+  }
+  &.blue-stylish {
+    color: #fff;
+    font-size: 13px;
+    background: url(./app-header/tutoring.png) no-repeat;
+    border: 1px solid #2b9ace;
   }
 }
 </style>

@@ -1,15 +1,22 @@
 <template lang="pug">
   section.tour(:class="type")
     .content
-      .section-slide(v-show="type === 'section'")
+      .section-slide(v-show="type === 'section'" :class="subType")
         .prev(@click="previous")
         .section-slide-wrapper
           .title {{ data.title }}
           .sub-title(v-show="data.subTitle") {{ data.subTitle }}
-          .short-desc {{ data.shortDesc }}
+          .short-desc(v-html="data.shortDesc")
           img.moon(src="./moon.png")
           img.moon-m(src="./moon-m.png")
-          AppButton(@click="next") ДАЛЕЕ
+          AppButton(@click="next" v-show="subType !== 'congratulations'") ДАЛЕЕ
+          AppButton(
+            link="/tutorial/fard"
+            v-show="subType === 'congratulations'"
+            :width="162"
+            :height="49"
+            blueStylish
+          ) Начать обучение
         .next(@click="next")
       .rukn-slide(v-show="type === 'rukn'")
         .prev(@click="previous")
@@ -39,7 +46,7 @@
           .item(
             v-for="(item, i) in items"
             :key="i"
-            :class="[item.type, $store.state.gender, {active: i === index}]"
+            :class="[item.type, item.subType, $store.state.gender, {active: i === index}]"
             @click="index = i"
           )
             .title(v-if="item.title") {{ item.title }}
@@ -64,6 +71,9 @@ export default {
   computed: {
     type() {
       return this.items[this.index].type.split(' ')[0];
+    },
+    subType() {
+      return this.items[this.index].subType;
     },
     data() {
       return this.items[this.index].data;
@@ -107,7 +117,7 @@ export default {
     getProgressMaxPosition() {
       const itemWidth = document.querySelector('.tour .items-viewport .item').offsetWidth;
 
-      return itemWidth * -29 + document.querySelector('.items-viewport').offsetWidth;
+      return itemWidth * -30 + document.querySelector('.items-viewport').offsetWidth;
     },
     getData() {
       const { gender } = this.$store.state;
@@ -236,6 +246,12 @@ export default {
       @media (max-width: $mobile) {
         font-size: 12px;
         font-weight: 500;
+      }
+    }
+    &.congratulations {
+      .title {
+        font-weight: bold;
+        font-size: 24px;
       }
     }
   }
@@ -391,6 +407,13 @@ export default {
   align-items: center;
   background: url(./section-bg.png) no-repeat top;
   background-color: #ecf7fd;
+  &.congratulations {
+    background: url(./congratulations-bg.png) no-repeat center -50px;
+    background-color: #feffff;
+    .short-desc {
+      font-size: 18px;
+    }
+  }
   @media (max-width: $mobile) {
     .prev,
     .next {

@@ -293,6 +293,7 @@ export default {
     display: block;
   }
   /deep/ .open-transcription {
+    display: inline-block;
     font-weight: bold;
     color: #2b87ce;
     border-radius: 3px;

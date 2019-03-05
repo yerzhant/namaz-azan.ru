@@ -120,7 +120,7 @@ export default {
         });
       });
 
-      axios.get(`/api/namaz/namaz/${gender}/fadjr/fard`).then(resp => {
+      axios.get(`/api/namaz/namaz/${gender}/tour/fard`).then(resp => {
         resp.data.rakaats.forEach((rakaat, ra) => {
           let offset = ra === 0 ? 8 : 18;
           rakaat.rukns.forEach((r, i) => {

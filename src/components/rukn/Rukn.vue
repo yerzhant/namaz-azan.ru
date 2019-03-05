@@ -41,7 +41,7 @@
           .tab-content(:class="{active: tabTranscription}" v-html="transcription")
           .tab-content(:class="{active: tabTranslation}" v-html="translation")
           .tab-content(:class="{active: tabArabic}" v-html="arabic").arabic
-          .tab-content(:class="{active: tabDescription}" v-html="description")
+          .tab-content(:class="{active: tabDescription}" v-html="description" @click="openTab")
           AppPlayer.player(:type="audio")
           .buttons
             AppButton(:height="36" blue @click="goNext" v-if="!last") ДАЛЕЕ
@@ -142,6 +142,12 @@ export default {
     },
   },
   methods: {
+    openTab(event) {
+      if (event.target.className === 'open-transcription') {
+        this.tabDescription = false;
+        this.tabTranscription = true;
+      }
+    },
     goNext() {
       if (this.tour) {
         this.$emit('next');
@@ -285,6 +291,15 @@ export default {
   margin-bottom: 38px;
   &.active {
     display: block;
+  }
+  /deep/ .open-transcription {
+    font-weight: bold;
+    color: #2b87ce;
+    border-radius: 3px;
+    border: 1px solid #2b87ce;
+    padding: 0 5px;
+    margin: 0 3px;
+    cursor: pointer;
   }
 }
 .player {

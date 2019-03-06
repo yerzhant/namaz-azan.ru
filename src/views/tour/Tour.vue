@@ -85,6 +85,10 @@ export default {
         this.$refs.rukn.reset();
       });
     },
+    // eslint-disable-next-line
+    '$store.state.gender'() {
+      this.getData();
+    },
   },
   methods: {
     previous() {

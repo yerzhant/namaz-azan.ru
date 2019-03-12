@@ -7,6 +7,11 @@
   margin-top: 10px;
 }
 
+%blockquote-blue {
+  border-left: 3px solid #049ae4;
+  padding: 10px 0 10px 20px;
+}
+
 .admin-text {
   font-family: $pt-sans;
   font-size: 16px;
@@ -64,10 +69,22 @@
   .azan--appendix {
     @extend %azan--appendix;
   }
+
+  blockquote {
+    &.blue {
+      @extend %blockquote-blue;
+    }
+  }
 }
 
 .rukn .tab-content {
   .azan--appendix {
     @extend %azan--appendix;
+  }
+
+  blockquote {
+    &.blue {
+      @extend %blockquote-blue;
+    }
   }
 }

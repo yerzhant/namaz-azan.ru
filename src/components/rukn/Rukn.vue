@@ -796,12 +796,16 @@ export default {
     max-height: 300px;
     overflow-y: auto;
     &::-webkit-scrollbar {
-      width: 5px;
+      width: 14px;
       &-track {
+        border-left: 8px solid transparent;
         background-color: #eff4f7;
+        background-clip: padding-box;
       }
       &-thumb {
+        border-left: 8px solid transparent;
         background-color: #cbd3db;
+        background-clip: padding-box;
       }
     }
     &.arabic {

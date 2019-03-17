@@ -12,60 +12,60 @@ self.__precacheManifest = [
     "url": "/namaz/js/chunk-vendors.d0c9a27e.js"
   },
   {
-    "revision": "485841739b355637e17a891f38956c62",
+    "revision": "34cfe8b4841619461387895ca86c3062",
     "url": "/namaz/index.html"
   },
   {
-    "revision": "0b560a06ffc94ba8da28",
-    "url": "/namaz/js/namaz.af528889.js"
+    "revision": "c74064b0958ad7e0360e",
+    "url": "/namaz/js/namaz.12ff9cd6.js"
   },
   {
     "revision": "c41d8b67939780b981c1bba8b058f658",
     "url": "/namaz/img/taharat-bg.c41d8b67.jpg"
   },
   {
-    "revision": "fa0478234f5b80b777c8",
-    "url": "/namaz/js/namaz~solaatil-uulaa~wudu.9b16eb5b.js"
+    "revision": "935930ad6832db3585f6",
+    "url": "/namaz/js/namaz~solaatil-uulaa~wudu.0fb542dd.js"
   },
   {
     "revision": "98edd71d4bacc0c066f0a0e9b38156af",
     "url": "/namaz/img/bottom-bg-m.98edd71d.png"
   },
   {
-    "revision": "3a77d3daad5dbd0685c0",
-    "url": "/namaz/js/namaz~tahharah~wudu.609a9332.js"
+    "revision": "3773bfc982113dca3b88",
+    "url": "/namaz/js/namaz~tahharah~wudu.28b92c7d.js"
   },
   {
     "revision": "c04359e1548b6800f0be80a4a7c79c82",
     "url": "/namaz/img/bottom-bg.c04359e1.png"
   },
   {
-    "revision": "c616e3bb7ceaf0d0dce7",
-    "url": "/namaz/js/shart.36e8128e.js"
+    "revision": "84b8d1bf67c48c32c4bb",
+    "url": "/namaz/js/shart.7964f834.js"
   },
   {
     "revision": "1b7949e90cbeb468879f1b486ce122c7",
     "url": "/namaz/img/top-bg-m.1b7949e9.png"
   },
   {
-    "revision": "28c8a371141184b9c5be",
-    "url": "/namaz/js/solaatil-uulaa.3d5620d4.js"
+    "revision": "37eecc76643d18fe1f9d",
+    "url": "/namaz/js/solaatil-uulaa.ea715133.js"
   },
   {
     "revision": "9515c12420e274408436f206f10c8158",
     "url": "/namaz/img/top-bg.9515c124.png"
   },
   {
-    "revision": "20601a827b9b31b5b9c9",
-    "url": "/namaz/js/tahharah.9f24b9ab.js"
+    "revision": "f6e4f55b6a3aec7a6bda",
+    "url": "/namaz/js/tahharah.d35ba1cb.js"
   },
   {
     "revision": "b69e23d573b3c22f16eb7a4051d3d27f",
     "url": "/namaz/img/masah.b69e23d5.png"
   },
   {
-    "revision": "0b48c31318a1d439e3b5",
-    "url": "/namaz/js/wudu.a55f1ece.js"
+    "revision": "cb92cbc63783209c22f1",
+    "url": "/namaz/js/wudu.bc8ae96b.js"
   },
   {
     "revision": "9f25ae163eae35a152c67f4b33ea88a7",
@@ -440,8 +440,8 @@ self.__precacheManifest = [
     "url": "/namaz/img/dhuhr-bg.44e80c93.jpg"
   },
   {
-    "revision": "aef41d75877b4d9b985e",
-    "url": "/namaz/js/app.cbb3af7f.js"
+    "revision": "cfb929b83bc1d3940506",
+    "url": "/namaz/js/app.93d6c4a6.js"
   },
   {
     "revision": "9d30f63b8e07a1c9611d9718da926641",
@@ -616,6 +616,10 @@ self.__precacheManifest = [
     "url": "/namaz/img/istibra.c81f0ea2.png"
   },
   {
+    "revision": "d0028c90db6f912edc5dee8f358c59b3",
+    "url": "/namaz/img/istinja.d0028c90.png"
+  },
+  {
     "revision": "7590d43a0e91371db365bb3b6cc95208",
     "url": "/namaz/img/tayammum.7590d43a.png"
   },
@@ -630,10 +634,6 @@ self.__precacheManifest = [
   {
     "revision": "ccc5239303e815d33c3547f26861041a",
     "url": "/namaz/img/masah.ccc52393.png"
-  },
-  {
-    "revision": "d0028c90db6f912edc5dee8f358c59b3",
-    "url": "/namaz/img/istinja.d0028c90.png"
   },
   {
     "revision": "10f5222ae488f897ea11abee8069f750",
@@ -712,20 +712,20 @@ self.__precacheManifest = [
     "url": "/namaz/img/buttons-bg.5de49986.jpg"
   },
   {
-    "revision": "a7e3a7cc6d5096dbb61f894ca1b36494",
-    "url": "/namaz/img/select-bg.a7e3a7cc.jpg"
-  },
-  {
     "revision": "700539a8d8ec66f6d98f3b92a92768af",
     "url": "/namaz/img/select-bg.700539a8.png"
   },
   {
-    "revision": "27415876c269ba21d16a82b6e7d6aa3b",
-    "url": "/namaz/img/woman.27415876.png"
+    "revision": "a7e3a7cc6d5096dbb61f894ca1b36494",
+    "url": "/namaz/img/select-bg.a7e3a7cc.jpg"
   },
   {
     "revision": "afc593f0d4c2436f2a221fade46468ce",
     "url": "/namaz/img/man.afc593f0.png"
+  },
+  {
+    "revision": "27415876c269ba21d16a82b6e7d6aa3b",
+    "url": "/namaz/img/woman.27415876.png"
   },
   {
     "revision": "075f0e40a5bbdd509e78f6e20223c3f7",
@@ -824,7 +824,7 @@ self.__precacheManifest = [
     "url": "/namaz/icons/icon-120x120.png"
   },
   {
-    "revision": "0b48c31318a1d439e3b5",
+    "revision": "cb92cbc63783209c22f1",
     "url": "/namaz/css/wudu.51994c80.css"
   },
   {
@@ -852,31 +852,31 @@ self.__precacheManifest = [
     "url": "/namaz/icons/icon-144x144.png"
   },
   {
-    "revision": "20601a827b9b31b5b9c9",
+    "revision": "f6e4f55b6a3aec7a6bda",
     "url": "/namaz/css/tahharah.3f4fac8a.css"
   },
   {
-    "revision": "28c8a371141184b9c5be",
+    "revision": "37eecc76643d18fe1f9d",
     "url": "/namaz/css/solaatil-uulaa.e5bebc64.css"
   },
   {
-    "revision": "c616e3bb7ceaf0d0dce7",
+    "revision": "84b8d1bf67c48c32c4bb",
     "url": "/namaz/css/shart.cb6b8080.css"
   },
   {
-    "revision": "3a77d3daad5dbd0685c0",
+    "revision": "3773bfc982113dca3b88",
     "url": "/namaz/css/namaz~tahharah~wudu.d20428dc.css"
   },
   {
-    "revision": "fa0478234f5b80b777c8",
+    "revision": "935930ad6832db3585f6",
     "url": "/namaz/css/namaz~solaatil-uulaa~wudu.6bd9e681.css"
   },
   {
-    "revision": "0b560a06ffc94ba8da28",
+    "revision": "c74064b0958ad7e0360e",
     "url": "/namaz/css/namaz.6db50604.css"
   },
   {
-    "revision": "aef41d75877b4d9b985e",
-    "url": "/namaz/css/app.4e4166c6.css"
+    "revision": "cfb929b83bc1d3940506",
+    "url": "/namaz/css/app.6fd9cb26.css"
   }
 ];

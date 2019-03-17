@@ -77,14 +77,18 @@
   }
 }
 
-.rukn .tab-content {
-  .azan--appendix {
-    @extend %azan--appendix;
-  }
+.rukn {
 
-  blockquote {
-    &.blue {
-      @extend %blockquote-blue;
+  .short-desc,
+  .tab-content {
+    .azan--appendix {
+      @extend %azan--appendix;
+    }
+
+    blockquote {
+      &.blue {
+        @extend %blockquote-blue;
+      }
     }
   }
 }

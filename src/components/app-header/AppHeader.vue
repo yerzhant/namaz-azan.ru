@@ -28,10 +28,13 @@
         span.selected-item Русский
           img.flag(src="./ru.png")
 
-      router-link.tutoring(to="/solaatil-uulaa") Обучение намазу
+      router-link.tutoring(
+        :to="`/hanafi/${routeGender}/tour-salah`"
+      ) Обучение намазу
 </template>
 
 <script>
+import RouteGender from '@/utils/routeGender';
 import isFullSite from '@/mixins/isFullSite';
 
 export default {
@@ -54,10 +57,18 @@ export default {
           return '???';
       }
     },
+    routeGender() {
+      return RouteGender.to(this.$store.state.gender);
+    },
   },
   methods: {
     setGender(gender) {
-      this.$store.commit('setGender', gender);
+      const routeName = this.$route.name;
+      if (routeName === 'select') {
+        this.$store.commit('setGender', gender);
+      } else {
+        this.$router.push({ name: routeName, params: { gender: RouteGender.to(gender) } });
+      }
     },
     toggleGender() {
       this.genderOpen = !this.genderOpen;

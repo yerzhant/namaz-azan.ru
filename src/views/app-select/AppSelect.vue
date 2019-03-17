@@ -36,13 +36,14 @@
 </template>
 
 <script>
+import RouteGender from '@/utils/routeGender';
 import AppButton from '@/components/AppButton.vue';
 
 export default {
   methods: {
     selectGender(gender) {
-      this.$store.commit('setGender', gender);
-      this.$router.push('/roiisiyyah');
+      const routeGender = RouteGender.to(gender);
+      this.$router.push(`/hanafi/${routeGender}/roiisiyyah`);
     },
   },
   created() {

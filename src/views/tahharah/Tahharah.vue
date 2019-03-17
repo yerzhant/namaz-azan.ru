@@ -26,7 +26,7 @@
                 полное омовение носит название “Гусль”."
         )
           template(slot="buttons")
-            AppButton(link="/tahharah/ghusl" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(:link="`${routePrefix}/tahharah/ghusl`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
         Banner(
           type="fard wudu blue"
           descStyleBlackBlue
@@ -37,7 +37,7 @@
                 однако, в ряде случаев, для достижения ритуальной чистоты нужен гусль."
         )
           template(slot="buttons")
-            AppButton(link="/tahharah/wudu" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(:link="`${routePrefix}/tahharah/wudu`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
         Banner(
           type="fard istibra blue"
           :shadow="$store.state.namaz === 'istibra'"
@@ -49,7 +49,7 @@
                 случаях мужчине обязательно следует совершить истибару."
         )
           template(slot="buttons")
-            AppButton(link="/tahharah/istibra" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(:link="`${routePrefix}/tahharah/istibra`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
         Banner(
           type="fard istinja blue"
           :shadow="$store.state.namaz === 'istinja'"
@@ -60,7 +60,7 @@
           desc="Устранение остатков наджасы после совершения малой или большой нужды."
         )
           template(slot="buttons")
-            AppButton(link="/tahharah/istinja" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(:link="`${routePrefix}/tahharah/istinja`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
         Banner(
           type="fard tayammum blue"
           :shadow="$store.state.namaz === 'tayammum'"
@@ -71,7 +71,7 @@
           desc="Протирание частей тела чистой землей либо песком. Служит заменой омовения."
         )
           template(slot="buttons")
-            AppButton(link="/tahharah/tayammum" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(:link="`${routePrefix}/tahharah/tayammum`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
         Banner(
           type="fard masah blue"
           :shadow="$store.state.namaz === 'masah'"
@@ -82,7 +82,7 @@
           desc="Условия и порядок протирания водонепроницаемых носков."
         )
           template(slot="buttons")
-            AppButton(link="/tahharah/masah" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(:link="`${routePrefix}/tahharah/masah`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
     Banner(
       type="namaz-detailed short"
@@ -94,7 +94,7 @@
       descTopBorder
     )
       template(slot="buttons")
-        AppButton(link="/tutorial/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+        AppButton(:link="`${routePrefix}/tutorial/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
     .line
     AppSection(title="ОБЯЗАТЕЛЬНЫЕ НАМАЗЫ" bg1)
@@ -110,7 +110,7 @@
                 фарда. Фаджр является первым из пяти обязательных намазов."
         )
           template(slot="buttons")
-            AppButton(link="/fadjr/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(:link="`${routePrefix}/fadjr/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
         Banner(
           type="fard dhuhr"
@@ -123,7 +123,7 @@
                 фарда. Зухр является вторым из пяти обязательных намазов."
         )
           template(slot="buttons")
-            AppButton(link="/dhuhr/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(:link="`${routePrefix}/dhuhr/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
         Banner(
           type="fard asr"
@@ -136,7 +136,7 @@
                 ракаатов фарда. Аср является третьим из пяти обязательных намазов."
         )
           template(slot="buttons")
-            AppButton(link="/asr/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(:link="`${routePrefix}/asr/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
         Banner(
           type="fard maghrib"
@@ -149,7 +149,7 @@
                 фарда. Магриб является четвёртым из пяти обязательных намазов."
         )
           template(slot="buttons")
-            AppButton(link="/maghrib/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(:link="`${routePrefix}/maghrib/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
         Banner(
           type="fard isha"
@@ -162,7 +162,7 @@
                 фарда. Иша является последним из пяти обязательных намазов."
         )
           template(slot="buttons")
-            AppButton(link="/isha/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(:link="`${routePrefix}/isha/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 </template>
 
 <script>
@@ -170,6 +170,7 @@ import NamazHeader from '@/components/namaz-header/NamazHeader.vue';
 import AppSection from '@/components/app-section/AppSection.vue';
 import AppButton from '@/components/AppButton.vue';
 import Banner from '@/components/Banner.vue';
+import routePrefix from '@/mixins/routePrefix';
 import axios from 'axios';
 
 export default {
@@ -210,6 +211,7 @@ export default {
     AppButton,
     Banner,
   },
+  mixins: [routePrefix],
 };
 </script>
 

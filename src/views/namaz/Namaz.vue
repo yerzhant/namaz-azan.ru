@@ -14,13 +14,13 @@
       :rakaats3="data.rakaats3"
       :rakaats3Title="data.rakaats3Title"
       :button1="data.button1"
-      :button1Link="data.button1Link"
+      :button1Link="routePrefix + data.button1Link"
       :button1Blue="data.button1Blue"
       :button2="data.button2"
-      :button2Link="data.button2Link"
+      :button2Link="routePrefix + data.button2Link"
       :button2Blue="data.button2Blue"
       :button3="data.button3"
-      :button3Link="data.button3Link"
+      :button3Link="routePrefix + data.button3Link"
       :button3Blue="data.button3Blue"
       :desc="data.namaz.description"
     )
@@ -64,7 +64,7 @@
                 фарда. Фаджр является первым из пяти обязательных намазов."
         )
           template(slot="buttons")
-            AppButton(link="/fadjr/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(:link="`${routePrefix}/fadjr/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
         Banner(
           type="fard dhuhr"
@@ -77,7 +77,7 @@
                 фарда. Зухр является вторым из пяти обязательных намазов."
         )
           template(slot="buttons")
-            AppButton(link="/dhuhr/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(:link="`${routePrefix}/dhuhr/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
         Banner(
           type="fard asr"
@@ -90,7 +90,7 @@
                 ракаатов фарда. Аср является третьим из пяти обязательных намазов."
         )
           template(slot="buttons")
-            AppButton(link="/asr/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(:link="`${routePrefix}/asr/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
         Banner(
           type="fard maghrib"
@@ -103,7 +103,7 @@
                 фарда. Магриб является четвёртым из пяти обязательных намазов."
         )
           template(slot="buttons")
-            AppButton(link="/maghrib/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(:link="`${routePrefix}/maghrib/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
         Banner(
           type="fard isha"
@@ -116,7 +116,7 @@
                 фарда. Иша является последним из пяти обязательных намазов."
         )
           template(slot="buttons")
-            AppButton(link="/isha/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(:link="`${routePrefix}/isha/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 </template>
 
 <script>
@@ -125,6 +125,7 @@ import AppSection from '@/components/app-section/AppSection.vue';
 import AppButton from '@/components/AppButton.vue';
 import Rukn from '@/components/rukn/Rukn.vue';
 import Banner from '@/components/Banner.vue';
+import routePrefix from '@/mixins/routePrefix';
 import axios from 'axios';
 
 export default {
@@ -177,6 +178,7 @@ export default {
     Rukn,
     Banner,
   },
+  mixins: [routePrefix],
 };
 </script>
 

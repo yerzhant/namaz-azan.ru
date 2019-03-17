@@ -14,7 +14,7 @@
         .info
           .titles
             .title ГЛАВНАЯ
-            .sub-title {{ $route.path === '/roiisiyyah' ? 'Вы на главной' : 'Перейти на главную' }}
+            .sub-title {{ toMainSubTitle }}
 
       .item(:class="{open: general}" @click.stop="general = !general")
         .info
@@ -61,7 +61,6 @@
             .title НАМАЗ
             .sub-title Все виды намаза
         .subitems(v-show="namaz")
-          .subitem-l2(@click="goTo('/al-ahkaamul-aammah/azan-iqamat')") Азан, Икамат
           .subitem
             .title-block(:class="{open: fard}" @click.stop="fard = !fard")
               .title ФАРД НАМАЗЫ
@@ -93,7 +92,7 @@
             .title ОБУЧЕНИЕ
             .sub-title Видео-фото уроки
         .subitems(v-show="tutoring")
-          .subitem-l2(@click="goTo('/solaatil-uulaa')") Мой первый намаз
+          .subitem-l2(@click="goTo('/tour-salah')") Мой первый намаз
           .subitem-l2(@click="goTo('/tutorial/fard')") Намаз: подробно
           a.subitem-l2(href="https://www.youtube.com/watch?v=5b6t9fBLl9s") Видео уроки
 
@@ -102,6 +101,7 @@
 </template>
 
 <script>
+import routePrefix from '@/mixins/routePrefix';
 import Socials from '@/components/socials/Socials.vue';
 
 export default {
@@ -117,15 +117,23 @@ export default {
       tutoring: false,
     };
   },
+  computed: {
+    toMainSubTitle() {
+      return this.$route.path === `${this.routePrefix}/roiisiyyah`
+        ? 'Вы на главной'
+        : 'Перейти на главную';
+    },
+  },
   methods: {
     goTo(path) {
       this.$store.commit('showMenu', false);
-      this.$router.push(path);
+      this.$router.push(this.routePrefix + path);
     },
   },
   components: {
     Socials,
   },
+  mixins: [routePrefix],
 };
 </script>
 

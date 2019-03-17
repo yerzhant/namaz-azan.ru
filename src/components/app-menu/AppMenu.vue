@@ -10,9 +10,9 @@
     .level-2-image(:class="[$store.state.namaz, $store.state.gender]")
 
     nav.items.items-l1
-      router-link.item(to="/roiisiyyah")
+      router-link.item(:to="`${routePrefix}/roiisiyyah`")
         .title ГЛАВНАЯ
-        .desc {{ $route.path === '/roiisiyyah' ? 'Вы на главной' : 'Перейти на главную' }}
+        .desc {{ toMainDesc }}
       .item.right(
         :class="{open: flags.general}"
         @click.stop="flags.general = !flags.general, closeAll('general')"
@@ -46,75 +46,75 @@
     menu.submenu(v-show="flags.general")
       img.image(src="./namaz-bg.jpg")
       nav.items
-        router-link.item(to="/al-ahkaamul-aammah/ma-hiya")
+        router-link.item(:to="`${routePrefix}/al-ahkaamul-aammah/ma-hiya`")
           .title ЧТО ТАКОЕ НАМАЗ
       nav.items
-        router-link.item(to="/al-ahkaamul-aammah/aqsaam")
+        router-link.item(:to="`${routePrefix}/al-ahkaamul-aammah/aqsaam`")
           .title ВИДЫ НАМАЗОВ
       nav.items
-        router-link.item(to="/al-ahkaamul-aammah/shuruut")
+        router-link.item(:to="`${routePrefix}/al-ahkaamul-aammah/shuruut`")
           .title УСЛОВИЯ НАМАЗА
       nav.items
-        router-link.item(to="/al-ahkaamul-aammah/azan-iqamat")
+        router-link.item(:to="`${routePrefix}/al-ahkaamul-aammah/azan-iqamat`")
           .title АЗАН И ИКАМАТ
       nav.items
-        router-link.item(to="/al-ahkaamul-aammah/aadaab")
+        router-link.item(:to="`${routePrefix}/al-ahkaamul-aammah/aadaab`")
           .title ЭТИКЕТ (АДАБЫ) НАМАЗА
       nav.items
-        router-link.item(to="/al-ahkaamul-aammah/fasaad")
+        router-link.item(:to="`${routePrefix}/al-ahkaamul-aammah/fasaad`")
           .title ЧТО НАРУШАЕТ НАМАЗ
 
     menu.submenu(v-show="flags.shart")
       img.image(src="./namaz-bg.jpg")
       nav.items
-        router-link.item(to="/shart/makan")
+        router-link.item(:to="`${routePrefix}/shart/makan`")
           .title ЧИСТОТА МЕСТА
           .desc 1 условие намаза
-        router-link.item(to="/shart/tahharah")
+        router-link.item(:to="`${routePrefix}/shart/tahharah`")
           .title ОМОВЕНИЕ
           .desc 2 условие намаза
-        router-link.item(to="/shart/awrah")
+        router-link.item(:to="`${routePrefix}/shart/awrah`")
           .title АУРАТ
           .desc 3 условие намаза
-        router-link.item(to="/shart/qiblah")
+        router-link.item(:to="`${routePrefix}/shart/qiblah`")
           .title КИБЛА
           .desc 4 условие намаза
-        router-link.item(to="/shart/zaman")
+        router-link.item(:to="`${routePrefix}/shart/zaman`")
           .title ВРЕМЯ
           .desc 5 условие намаза
-        router-link.item(to="/shart/niet")
+        router-link.item(:to="`${routePrefix}/shart/niet`")
           .title НАМЕРЕНИЕ
           .desc 6 условие намаза
 
     menu.submenu(v-show="flags.taharat")
       img.image(src="./taharat-bg.jpg")
       nav.items
-        router-link.item(to="/tahharah/istibra")
+        router-link.item(:to="`${routePrefix}/tahharah/istibra`")
           .title ИСТИБРА
           .desc Сухое очищение
-        router-link.item(to="/tahharah/istinja")
+        router-link.item(:to="`${routePrefix}/tahharah/istinja`")
           .title ИСТИНДЖА
           .desc Подмывание
-        router-link.item(to="/tahharah/ghusl")
+        router-link.item(:to="`${routePrefix}/tahharah/ghusl`")
           .title ГУСЛЬ
           .desc Малое омовение
-        router-link.item(to="/tahharah/wudu")
+        router-link.item(:to="`${routePrefix}/tahharah/wudu`")
           .title ВУДУ
           .desc Малое омовение
-        router-link.item(to="/tahharah/tayammum")
+        router-link.item(:to="`${routePrefix}/tahharah/tayammum`")
           .title ТАЯММУМ
           .desc Когда нет воды
-        router-link.item(to="/tahharah/masah")
+        router-link.item(:to="`${routePrefix}/tahharah/masah`")
           .title МАСХ
           .desc Протирание хуффов
 
     menu.submenu(v-show="flags.tutoring")
       img.image(src="./tutoring-bg.jpg")
       nav.items
-        router-link.item(to="/solaatil-uulaa")
+        router-link.item(:to="`${routePrefix}/tour-salah`")
           .title МОЙ ПЕРВЫЙ НАМАЗ
           .desc Обзор для новичков
-        router-link.item(to="/tutorial/fard")
+        router-link.item(:to="`${routePrefix}/tutorial/fard`")
           .title НАМАЗ: ПОДРОБНО
           .desc Детализированый обзор
         a.item(href="https://www.youtube.com/watch?v=5b6t9fBLl9s")
@@ -149,48 +149,48 @@
       menu.submenu(v-show="flags.fard")
         .filler
         nav.items
-          router-link.item(to="/fadjr/fard")
+          router-link.item(:to="`${routePrefix}/fadjr/fard`")
             .title ФАДЖР
             .desc Утренний
-          router-link.item(to="/dhuhr/fard")
+          router-link.item(:to="`${routePrefix}/dhuhr/fard`")
             .title ЗУХР
             .desc Полуденный
-          router-link.item(to="/asr/fard")
+          router-link.item(:to="`${routePrefix}/asr/fard`")
             .title АСР
             .desc Послеполуденный
-          router-link.item(to="/maghrib/fard")
+          router-link.item(:to="`${routePrefix}/maghrib/fard`")
             .title МАГРИБ
             .desc Вечерний
-          router-link.item(to="/isha/fard")
+          router-link.item(:to="`${routePrefix}/isha/fard`")
             .title ИША
             .desc Ночной
-          router-link.item(to="/jumuah/fard")
+          router-link.item(:to="`${routePrefix}/jumuah/fard`")
             .title ДЖУМА
             .desc Коллективный
 
       menu.submenu(v-show="flags.wadjib")
         .filler
         nav.items
-          router-link.item(to="/witr/wadjib")
+          router-link.item(:to="`${routePrefix}/witr/wadjib`")
             .title ВИТР
             .desc Нечетный
 
       menu.submenu(v-show="flags.sunnah")
         .filler
         nav.items
-          router-link.item(to="/fadjr/sunnah")
+          router-link.item(:to="`${routePrefix}/fadjr/sunnah`")
             .title ФАДЖР
             .desc До фарда
-          router-link.item(to="/dhuhr/sunnah-before")
+          router-link.item(:to="`${routePrefix}/dhuhr/sunnah-before`")
             .title ЗУХР
             .desc До фарда
-          router-link.item(to="/dhuhr/sunnah-after")
+          router-link.item(:to="`${routePrefix}/dhuhr/sunnah-after`")
             .title ЗУХР
             .desc После фарда
-          router-link.item(to="/maghrib/sunnah")
+          router-link.item(:to="`${routePrefix}/maghrib/sunnah`")
             .title МАГРИБ
             .desc После фарда
-          router-link.item(to="/isha/sunnah")
+          router-link.item(:to="`${routePrefix}/isha/sunnah`")
             .title ИША
             .desc После фарда
 
@@ -214,6 +214,7 @@
 </template>
 
 <script>
+import routePrefix from '@/mixins/routePrefix';
 import Socials from '@/components/socials/Socials.vue';
 
 export default {
@@ -230,6 +231,13 @@ export default {
         sunnah: false,
       },
     };
+  },
+  computed: {
+    toMainDesc() {
+      return this.$route.path === `${this.routePrefix}/roiisiyyah`
+        ? 'Вы на главной'
+        : 'Перейти на главную';
+    },
   },
   methods: {
     closeAll(exceptL1, exceptL2) {
@@ -252,7 +260,7 @@ export default {
       if (link.substr(0, 1) === '#') {
         this.$scrollTo(link, { offset: -50 });
       } else {
-        this.$router.push(link);
+        this.$router.push(this.routePrefix + link);
         item.open = false;
       }
     },
@@ -286,6 +294,7 @@ export default {
   components: {
     Socials,
   },
+  mixins: [routePrefix],
 };
 </script>
 

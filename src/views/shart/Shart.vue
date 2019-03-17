@@ -30,7 +30,7 @@
                 на теле и одежде молящегося и на месте совершения намаза. "
         )
           template(slot="buttons")
-            AppButton(link="/shart/makan" blue :height="36") ЧИТАТЬ ДАЛЕЕ
+            AppButton(:link="`${routePrefix}/shart/makan`" blue :height="36") ЧИТАТЬ ДАЛЕЕ
         Banner(
           type="fard tahharah"
           :shadow="$store.state.namaz === 'tahharah'"
@@ -42,7 +42,7 @@
                 чистоты - иметь малое омовение (вуду) и полное омовение (гусль)."
         )
           template(slot="buttons")
-            AppButton(link="/shart/tahharah" blue :height="36") ЧИТАТЬ ДАЛЕЕ
+            AppButton(:link="`${routePrefix}/shart/tahharah`" blue :height="36") ЧИТАТЬ ДАЛЕЕ
         Banner(
           type="fard awrah"
           :shadow="$store.state.namaz === 'awrah'"
@@ -54,7 +54,7 @@
                 перед посторонними. Намаз с открытым ауратом недействителен."
         )
           template(slot="buttons")
-            AppButton(link="/shart/awrah" blue :height="36") ЧИТАТЬ ДАЛЕЕ
+            AppButton(:link="`${routePrefix}/shart/awrah`" blue :height="36") ЧИТАТЬ ДАЛЕЕ
         Banner(
           type="fard qiblah"
           :shadow="$store.state.namaz === 'qiblah'"
@@ -65,7 +65,7 @@
           desc="Кибла - это направление на Каабу, которая находится в Заповедной мечети в Мекке."
         )
           template(slot="buttons")
-            AppButton(link="/shart/qiblah" blue :height="36") ЧИТАТЬ ДАЛЕЕ
+            AppButton(:link="`${routePrefix}/shart/qiblah`" blue :height="36") ЧИТАТЬ ДАЛЕЕ
         Banner(
           type="fard zaman"
           :shadow="$store.state.namaz === 'zaman'"
@@ -77,7 +77,7 @@
                 Намаз совершенный до наступления его времени недействителен."
         )
           template(slot="buttons")
-            AppButton(link="/shart/zaman" blue :height="36") ЧИТАТЬ ДАЛЕЕ
+            AppButton(:link="`${routePrefix}/shart/zaman`" blue :height="36") ЧИТАТЬ ДАЛЕЕ
         Banner(
           type="fard niet"
           :shadow="$store.state.namaz === 'niet'"
@@ -89,7 +89,7 @@
                 является намерением. Намаз без намерения недействителен."
         )
           template(slot="buttons")
-            AppButton(link="/shart/niet" blue :height="36") ЧИТАТЬ ДАЛЕЕ
+            AppButton(:link="`${routePrefix}/shart/niet`" blue :height="36") ЧИТАТЬ ДАЛЕЕ
 
     AppSection.general-provisions(
       title="ОБЩИЕ ПОЛОЖЕНИЯ НАМАЗА" regular bg1 fullContentWidth noBottomPadding
@@ -108,7 +108,7 @@
       descTopBorder
     )
       template(slot="buttons")
-        AppButton(link="/tutorial/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+        AppButton(:link="`${routePrefix}/tutorial/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
     .line
     AppSection(title="ОБЯЗАТЕЛЬНЫЕ НАМАЗЫ" regular bg1)
@@ -124,7 +124,7 @@
                 фарда. Фаджр является первым из пяти обязательных намазов."
         )
           template(slot="buttons")
-            AppButton(link="/fadjr/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(:link="`${routePrefix}/fadjr/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
         Banner(
           type="fard dhuhr"
@@ -137,7 +137,7 @@
                 фарда. Зухр является вторым из пяти обязательных намазов."
         )
           template(slot="buttons")
-            AppButton(link="/dhuhr/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(:link="`${routePrefix}/dhuhr/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
         Banner(
           type="fard asr"
@@ -150,7 +150,7 @@
                 ракаатов фарда. Аср является третьим из пяти обязательных намазов."
         )
           template(slot="buttons")
-            AppButton(link="/asr/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(:link="`${routePrefix}/asr/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
         Banner(
           type="fard maghrib"
@@ -163,7 +163,7 @@
                 фарда. Магриб является четвёртым из пяти обязательных намазов."
         )
           template(slot="buttons")
-            AppButton(link="/maghrib/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(:link="`${routePrefix}/maghrib/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
         Banner(
           type="fard isha"
@@ -176,7 +176,7 @@
                 фарда. Иша является последним из пяти обязательных намазов."
         )
           template(slot="buttons")
-            AppButton(link="/isha/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(:link="`${routePrefix}/isha/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 </template>
 
 <script>
@@ -185,6 +185,7 @@ import AppButton from '@/components/AppButton.vue';
 import Banner from '@/components/Banner.vue';
 import GeneralProvisions from '@/components/general-provisions/GeneralProvisions.vue';
 import MobileGeneralProvisions from '@/components/mobile-general-provisions/MobileGeneralProvisions.vue';
+import routePrefix from '@/mixins/routePrefix';
 import axios from 'axios';
 
 export default {
@@ -259,6 +260,7 @@ export default {
     GeneralProvisions,
     MobileGeneralProvisions,
   },
+  mixins: [routePrefix],
 };
 </script>
 

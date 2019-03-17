@@ -10,8 +10,8 @@
       descTopBorder
     )
       template(slot="buttons")
-        AppButton(link="/solaatil-uulaa" red) ДА, НАЧАТЬ!
-        AppButton.color-2d(link="/tutorial/fard") ПОДРОБНЫЕ УРОКИ
+        AppButton(:link="`${routePrefix}/tour-salah`" red) ДА, НАЧАТЬ!
+        AppButton.color-2d(:link="`${routePrefix}/tutorial/fard`") ПОДРОБНЫЕ УРОКИ
       Slogan
 
     Banner.namaz-detailed(
@@ -24,92 +24,92 @@
       descTopBorder
     )
       template(slot="buttons")
-        AppButton(link="/tutorial/fard" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+        AppButton(:link="`${routePrefix}/tutorial/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
       .table
         NamazInfo(
           type="fadjr"
           title="ФАДЖР"
-          titleLink="/fadjr/fard"
+          :titleLink="`${routePrefix}/fadjr/fard`"
           desc="Утренний намаз"
           :startTime="$store.state.namazTimes.today[0]"
           :endTime="$store.state.namazTimes.today[1]"
           :namaz1Count=2
           namaz1Type="сунны"
-          namaz1Link="/fadjr/sunnah"
+          :namaz1Link="`${routePrefix}/fadjr/sunnah`"
           :namaz2Count=2
           namaz2Type="фарда"
-          namaz2Link="/fadjr/fard"
+          :namaz2Link="`${routePrefix}/fadjr/fard`"
         )
         NamazInfo(
           type="dhuhr"
           title="ЗУХР"
-          titleLink="/dhuhr/fard"
+          :titleLink="`${routePrefix}/dhuhr/fard`"
           desc="Обеденный намаз"
           :startTime="$store.state.namazTimes.today[2]"
           :endTime="$store.state.namazTimes.today[3]"
           :namaz1Count=4
           namaz1Type="сунны"
-          namaz1Link="/dhuhr/sunnah-before"
+          :namaz1Link="`${routePrefix}/dhuhr/sunnah-before`"
           :namaz2Count=4
           namaz2Type="фарда"
-          namaz2Link="/dhuhr/fard"
+          :namaz2Link="`${routePrefix}/dhuhr/fard`"
           :namaz3Count=2
           namaz3Type="сунны"
-          namaz3Link="/dhuhr/sunnah-after"
+          :namaz3Link="`${routePrefix}/dhuhr/sunnah-after`"
         )
         NamazInfo(
           type="asr"
           title="АСР"
-          titleLink="/asr/fard"
+          :titleLink="`${routePrefix}/asr/fard`"
           desc="Предвечерний намаз"
           :startTime="$store.state.namazTimes.today[3]"
           :endTime="$store.state.namazTimes.today[4]"
           :namaz1Count=4
           namaz1Type="фарда"
-          namaz1Link="/asr/fard"
+          :namaz1Link="`${routePrefix}/asr/fard`"
         )
         NamazInfo(
           type="maghrib"
           title="МАГРИБ"
-          titleLink="/maghrib/fard"
+          :titleLink="`${routePrefix}/maghrib/fard`"
           desc="Вечерний намаз"
           :startTime="$store.state.namazTimes.today[4]"
           :endTime="$store.state.namazTimes.today[5]"
           :namaz1Count=3
           namaz1Type="фарда"
-          namaz1Link="/maghrib/fard"
+          :namaz1Link="`${routePrefix}/maghrib/fard`"
           :namaz2Count=2
           namaz2Type="сунны"
-          namaz2Link="/maghrib/sunnah"
+          :namaz2Link="`${routePrefix}/maghrib/sunnah`"
         )
         NamazInfo(
           type="isha"
           title="ИША"
-          titleLink="/isha/fard"
+          :titleLink="`${routePrefix}/isha/fard`"
           desc="Ночной намаз"
           :startTime="$store.state.namazTimes.today[5]"
           :endTime="$store.state.namazTimes.today[0]"
           :namaz1Count=4
           namaz1Type="фарда"
-          namaz1Link="/isha/fard"
+          :namaz1Link="`${routePrefix}/isha/fard`"
           :namaz2Count=2
           namaz2Type="сунны"
-          namaz2Link="/isha/sunnah"
+          :namaz2Link="`${routePrefix}/isha/sunnah`"
         )
         NamazInfo(
           type="witr"
           title="ВИТР"
-          titleLink="/witr/wadjib"
+          :titleLink="`${routePrefix}/witr/wadjib`"
           desc="Заключительный намаз"
           startTime="После намаза Иша"
           :endTime="$store.state.namazTimes.tomorrow[0]"
           :namaz1Count=3
           namaz1Type="ваджиба"
-          namaz1Link="/witr/wadjib"
+          :namaz1Link="`${routePrefix}/witr/wadjib`"
         )
       .buttons
-        AppButton(link="/al-ahkaamul-aammah/ma-hiya" blue) ЧТО ТАКОЕ НАМАЗ
-        AppButton.color-2d(link="/shart/makan") УСЛОВИЯ НАМАЗА
+        AppButton(:link="`${routePrefix}/al-ahkaamul-aammah/ma-hiya`" blue) ЧТО ТАКОЕ НАМАЗ
+        AppButton.color-2d(:link="`${routePrefix}/shart/makan`") УСЛОВИЯ НАМАЗА
 
     AppSection(title="ОБЩИЕ ПОЛОЖЕНИЯ НАМАЗА" fullContentWidth noBottomPadding)
       GeneralProvisions.general-provisions
@@ -125,7 +125,7 @@
           случаев тахарат недостаточен для достижения ритуальной чистоты"
       )
         template(slot="buttons")
-          AppButton(link="/tahharah/ghusl" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+          AppButton(:link="`${routePrefix}/tahharah/ghusl`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
       Banner(
         type="taharat"
         descStyleBlackBlue
@@ -136,10 +136,10 @@
           и состоит всего из 4 фардов."
       )
         template(slot="buttons")
-          AppButton(link="/tahharah/wudu" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+          AppButton(:link="`${routePrefix}/tahharah/wudu`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
       .small-banners
         SmallBanner(
-          link="/tahharah/ghusl"
+          :link="`${routePrefix}/tahharah/ghusl`"
           type="ghusl"
           title="ГУСЛЬ"
           subTitle="Полное омовение"
@@ -147,14 +147,14 @@
           bg2
         )
         SmallBanner(
-          link="/tahharah/istibra"
+          :link="`${routePrefix}/tahharah/istibra`"
           type="istibra"
           title="ИСТИБАРА"
           subTitle="Сухое очищение"
           text="Только для мужчин. Выполняется до принятия омовения."
         )
         SmallBanner(
-          link="/tahharah/istinja"
+          :link="`${routePrefix}/tahharah/istinja`"
           type="istinja"
           title="ИСТИНДЖА"
           subTitle="Подмывание"
@@ -162,14 +162,14 @@
           bg2
         )
         SmallBanner(
-          link="/tahharah/wudu"
+          :link="`${routePrefix}/tahharah/wudu`"
           type="wudu"
           title="ВУДУ"
           subTitle="Малое омовение"
           text="Малое омовение является доступным и простым способом очищения."
         )
         SmallBanner(
-          link="/tahharah/masah"
+          :link="`${routePrefix}/tahharah/masah`"
           type="masah"
           title="МАСХ"
           subTitle="Протирание носков"
@@ -177,7 +177,7 @@
           bg2
         )
         SmallBanner(
-          link="/tahharah/tayammum"
+          :link="`${routePrefix}/tahharah/tayammum`"
           type="tayammum"
           title="ТАЯММУМ"
           subTitle="Когда нет воды"
@@ -186,6 +186,7 @@
 </template>
 
 <script>
+import routePrefix from '@/mixins/routePrefix';
 import Banner from '@/components/Banner.vue';
 import SmallBanner from '@/components/small-banner/SmallBanner.vue';
 import AppButton from '@/components/AppButton.vue';
@@ -211,6 +212,7 @@ export default {
     GeneralProvisions,
     MobileGeneralProvisions,
   },
+  mixins: [routePrefix],
 };
 </script>
 

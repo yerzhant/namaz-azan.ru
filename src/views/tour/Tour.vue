@@ -11,7 +11,7 @@
           img.moon-m(src="./moon-m.png")
           AppButton(@click="next" v-show="subType !== 'congratulations'") ДАЛЕЕ
           AppButton(
-            link="/tutorial/fard"
+            :link="`${routePrefix}/tutorial/fard`"
             v-show="subType === 'congratulations'"
             :width="162"
             :height="49"
@@ -58,6 +58,7 @@
 import Rukn from '@/components/rukn/Rukn.vue';
 import AppButton from '@/components/AppButton.vue';
 import items from './items';
+import routePrefix from '@/mixins/routePrefix';
 import axios from 'axios';
 
 export default {
@@ -165,6 +166,7 @@ export default {
     Rukn,
     AppButton,
   },
+  mixins: [routePrefix],
 };
 </script>
 

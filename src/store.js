@@ -5,6 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    madhhab: 'hanafi',
     gender: 'man',
     namaz: null,
     mobileHeaderStatus: null,
@@ -25,6 +26,9 @@ export default new Vuex.Store({
     menuItems: null,
   },
   mutations: {
+    setMadhhab(state, madhhab) {
+      state.madhhab = madhhab;
+    },
     setGender(state, gender) {
       state.gender = gender;
     },

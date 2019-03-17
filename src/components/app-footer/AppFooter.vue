@@ -8,12 +8,12 @@
         | Cпецпроект Azan.ru
       .socials
         Socials
-        router-link.tutoring(to="/solaatil-uulaa") Обучение намазу
+        router-link.tutoring(:to="`${routePrefix}/tour-salah`") Обучение намазу
       .links
-        router-link(to="/roiisiyyah") Главная
-        router-link(to="/tahharah/wudu") Тахарат
-        router-link(to="/fadjr/fard") Намаз
-        router-link(to="/tutorial/fard") Обучение
+        router-link(:to="`${routePrefix}/roiisiyyah`") Главная
+        router-link(:to="`${routePrefix}/tahharah/wudu`") Тахарат
+        router-link(:to="`${routePrefix}/fadjr/fard`") Намаз
+        router-link(:to="`${routePrefix}/tutorial/fard`") Обучение
       .up(@click="$scrollTo('body')")
     .bottom
       span Copyright © 2019 Azan.ru
@@ -24,12 +24,14 @@
 </template>
 
 <script>
+import routePrefix from '@/mixins/routePrefix';
 import Socials from '@/components/socials/Socials.vue';
 
 export default {
   components: {
     Socials,
   },
+  mixins: [routePrefix],
 };
 </script>
 

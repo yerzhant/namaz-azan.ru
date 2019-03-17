@@ -28,6 +28,7 @@
 </template>
 
 <script>
+import routePrefix from '@/mixins/routePrefix';
 import AppButton from '@/components/AppButton.vue';
 
 const info = [
@@ -100,7 +101,7 @@ export default {
         //   return '/shart/makan';
 
         default:
-          return `/al-ahkaamul-aammah/${this.image}`;
+          return `${this.routePrefix}/al-ahkaamul-aammah/${this.image}`;
       }
     },
   },
@@ -119,6 +120,7 @@ export default {
   components: {
     AppButton,
   },
+  mixins: [routePrefix],
 };
 </script>
 

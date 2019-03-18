@@ -17,7 +17,7 @@
           div(v-html="section.text")
 
     .line
-    AppSection(title="УСЛОВИЯ НАМАЗА" regular bg1 v-if="isShuruut || isShart")
+    AppSection(title="УСЛОВИЯ НАМАЗА" regular bg1 v-if="false && (isShuruut || isShart)")
       .fards
         Banner(
           type="fard makan"

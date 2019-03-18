@@ -39,6 +39,17 @@
     AppSection(title="ДРУГИЕ ВИДЫ ОЧИЩЕНИЯ" bg1)
       .fards
         Banner(
+          type="fard ghusl"
+          descStyleBlackBlue
+          descWithMargin2
+          title="ГУСЛЬ"
+          shortDesc="Полное омовение"
+          desc="Полное ритуальное омовение водой всего тела целиком. По-арабски \
+                полное омовение носит название “Гусль”."
+        )
+          template(slot="buttons")
+            AppButton(:link="`${routePrefix}/tahharah/ghusl`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+        Banner(
           type="fard wudu"
           :shadow="$store.state.namaz === 'wudu'"
           descStyleBlackBlue
@@ -50,17 +61,6 @@
         )
           template(slot="buttons")
             AppButton(:link="`${routePrefix}/tahharah/wudu`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
-        Banner(
-          type="fard ghusl"
-          descStyleBlackBlue
-          descWithMargin2
-          title="ГУСЛЬ"
-          shortDesc="Полное омовение"
-          desc="Полное ритуальное омовение водой всего тела целиком. По-арабски \
-                полное омовение носит название “Гусль”."
-        )
-          template(slot="buttons")
-            AppButton(:link="`${routePrefix}/tahharah/ghusl`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
         Banner(
           type="fard istibra blue"
           :shadow="$store.state.namaz === 'istibra'"

@@ -1,25 +1,29 @@
-%azan--appendix {
-  font-weight: bold;
-  border: 1px solid #ea7555;
-  border-left-width: 7px;
-  padding: 25px 13px;
-  background-color: #fff;
-  margin-top: 10px;
-}
+%admin-styles {
+  .azan--appendix {
+    font-weight: bold;
+    border: 1px solid #ea7555;
+    border-left-width: 7px;
+    padding: 25px 13px;
+    background-color: #fff;
+    margin-top: 10px;
+  }
 
-%blockquote-blue {
-  border-left: 3px solid #2b9ace;
-  padding: 10px 0 10px 20px;
-}
+  .specdiv {
+    background: #eee;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+  }
 
-%a {
-  color: #2b87ce;
-}
+  blockquote {
+    &.blue {
+      border-left: 3px solid #2b9ace;
+      padding: 10px 0 10px 20px;
+    }
+  }
 
-%specdiv {
-  background: #eee;
-  border: 1px solid #ccc;
-  padding: 5px 10px;
+  a {
+    color: #2b87ce;
+  }
 }
 
 .admin-text {
@@ -76,53 +80,19 @@
     }
   }
 
-  .azan--appendix {
-    @extend %azan--appendix;
-  }
-
-  .specdiv {
-    @extend %specdiv;
-  }
-
-  blockquote {
-    &.blue {
-      @extend %blockquote-blue;
-    }
-  }
-
-  a {
-    @extend %a;
-  }
+  @extend %admin-styles;
 }
 
 .rukn {
 
   .short-desc,
   .tab-content {
-    .azan--appendix {
-      @extend %azan--appendix;
-    }
-
-    .specdiv {
-      @extend %specdiv;
-    }
-
-    blockquote {
-      &.blue {
-        @extend %blockquote-blue;
-      }
-    }
-
-    a {
-      @extend %a;
-    }
+    @extend %admin-styles;
   }
 }
 
 header.header {
   section.desc .desc-text {
-    a {
-      @extend %a;
-    }
+    @extend %admin-styles;
   }
 }

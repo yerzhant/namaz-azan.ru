@@ -162,7 +162,7 @@ export default {
   }
   width: 480px;
   height: 445px;
-  padding: 60px 0;
+  padding: 30px 0;
   @media (max-width: $mobile) {
     width: 100%;
     height: initial;

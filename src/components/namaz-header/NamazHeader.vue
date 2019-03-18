@@ -92,7 +92,7 @@ export default {
   },
   data() {
     return {
-      descOpen: false,
+      descOpen: true,
     };
   },
   computed: {

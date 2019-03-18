@@ -178,21 +178,21 @@
       menu.submenu(v-show="flags.sunnah")
         .filler
         nav.items
-          router-link.item(:to="`${routePrefix}/fadjr/sunnah`")
-            .title ФАДЖР
-            .desc До фарда
-          router-link.item(:to="`${routePrefix}/dhuhr/sunnah-before`")
-            .title ЗУХР
-            .desc До фарда
-          router-link.item(:to="`${routePrefix}/dhuhr/sunnah-after`")
-            .title ЗУХР
-            .desc После фарда
-          router-link.item(:to="`${routePrefix}/maghrib/sunnah`")
-            .title МАГРИБ
-            .desc После фарда
-          router-link.item(:to="`${routePrefix}/isha/sunnah`")
-            .title ИША
-            .desc После фарда
+          //- router-link.item(:to="`${routePrefix}/fadjr/sunnah`")
+          //-   .title ФАДЖР
+          //-   .desc До фарда
+          //- router-link.item(:to="`${routePrefix}/dhuhr/sunnah-before`")
+          //-   .title ЗУХР
+          //-   .desc До фарда
+          //- router-link.item(:to="`${routePrefix}/dhuhr/sunnah-after`")
+          //-   .title ЗУХР
+          //-   .desc После фарда
+          //- router-link.item(:to="`${routePrefix}/maghrib/sunnah`")
+          //-   .title МАГРИБ
+          //-   .desc После фарда
+          //- router-link.item(:to="`${routePrefix}/isha/sunnah`")
+          //-   .title ИША
+          //-   .desc После фарда
           router-link.item(:to="`${routePrefix}/jumuah/fard`")
             .title ДЖУМА
             .desc Коллективный

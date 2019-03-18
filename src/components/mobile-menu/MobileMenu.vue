@@ -80,11 +80,11 @@
             .title-block(:class="{open: sunnah}" @click.stop="sunnah = !sunnah")
               .title ДРУГИЕ НАМАЗЫ
             .subitems(v-show="sunnah")
-              .subitem-l2(@click="goTo('/fadjr/sunnah')") Фаджр
-              .subitem-l2(@click="goTo('/dhuhr/sunnah-before')") Зухр до фарда
-              .subitem-l2(@click="goTo('/dhuhr/sunnah-after')") Зухр после фарда
-              .subitem-l2(@click="goTo('/maghrib/sunnah')") Магриб
-              .subitem-l2(@click="goTo('/isha/sunnah')") Иша
+              //- .subitem-l2(@click="goTo('/fadjr/sunnah')") Фаджр
+              //- .subitem-l2(@click="goTo('/dhuhr/sunnah-before')") Зухр до фарда
+              //- .subitem-l2(@click="goTo('/dhuhr/sunnah-after')") Зухр после фарда
+              //- .subitem-l2(@click="goTo('/maghrib/sunnah')") Магриб
+              //- .subitem-l2(@click="goTo('/isha/sunnah')") Иша
               .subitem-l2(@click="goTo('/jumuah/fard')") Джума
 
       .item(:class="{open: tutoring}" @click.stop="tutoring = !tutoring")

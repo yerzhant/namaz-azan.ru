@@ -107,9 +107,9 @@
           namaz1Type="ваджиба"
           :namaz1Link="`${routePrefix}/witr/wadjib`"
         )
-      .buttons
-        AppButton(:link="`${routePrefix}/al-ahkaamul-aammah/ma-hiya`" blue) ЧТО ТАКОЕ НАМАЗ
-        AppButton.color-2d(:link="`${routePrefix}/shart/makan`") УСЛОВИЯ НАМАЗА
+      //- .buttons
+      //-   AppButton(:link="`${routePrefix}/al-ahkaamul-aammah/ma-hiya`" blue) ЧТО ТАКОЕ НАМАЗ
+      //-   AppButton.color-2d(:link="`${routePrefix}/shart/makan`") УСЛОВИЯ НАМАЗА
 
     AppSection(title="ОБЩИЕ ПОЛОЖЕНИЯ НАМАЗА" fullContentWidth noBottomPadding)
       GeneralProvisions.general-provisions

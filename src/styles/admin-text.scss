@@ -16,6 +16,12 @@
   color: #2b87ce;
 }
 
+%specdiv {
+  background: #eee;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+}
+
 .admin-text {
   font-family: $pt-sans;
   font-size: 16px;
@@ -74,6 +80,10 @@
     @extend %azan--appendix;
   }
 
+  .specdiv {
+    @extend %specdiv;
+  }
+
   blockquote {
     &.blue {
       @extend %blockquote-blue;
@@ -91,6 +101,10 @@
   .tab-content {
     .azan--appendix {
       @extend %azan--appendix;
+    }
+
+    .specdiv {
+      @extend %specdiv;
     }
 
     blockquote {

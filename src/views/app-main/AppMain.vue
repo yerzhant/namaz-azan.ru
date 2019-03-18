@@ -250,7 +250,8 @@ export default {
   }
   .buttons {
     text-align: center;
-    padding: 75px 0;
+    // padding: 75px 0;
+    padding: 30px 0;
     @media (max-width: $mobile) {
       padding: 20px 0;
     }

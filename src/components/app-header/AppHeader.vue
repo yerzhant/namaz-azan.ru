@@ -18,14 +18,14 @@
           ) Для женщин
 
       .madhhab.drop-down Мазхаб:
-        span.selected-item Ханафи
+        span.selected-item.inactive Ханафи
 
       .basmalah
         router-link(to="/")
           img.img(src="./basmalah.png")
 
       .language.drop-down Язык:
-        span.selected-item Русский
+        span.selected-item.inactive Русский
           img.flag(src="./ru.png")
 
       router-link.tutoring(
@@ -211,6 +211,9 @@ export default {
     margin-left: 3px;
     padding-right: 15px;
     background: url(./drop-down.png) no-repeat right;
+    &.inactive {
+      background: none;
+    }
     .flag {
       margin-left: 10px;
     }

@@ -115,6 +115,20 @@
       GeneralProvisions.general-provisions
       MobileGeneralProvisions.mobile-general-provisions
 
+
+    AppSection.tahharah(title="ДРУГИЕ ВИДЫ НАМАЗА")
+      Banner(
+        type="jumuah"
+        descStyleBlackBlue
+        descWithMargin
+        title="ДЖУМА НАМАЗ"
+        shortDesc="Пятничный намаз в мечети"
+        desc="Коллективная молитва совершение которой предписано Кораном. \
+              Является фардом, т.е. обязательной для мужчин."
+      )
+        template(slot="buttons")
+          AppButton(:link="`${routePrefix}/jumuah/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+
     AppSection.tahharah(title="ВИДЫ ОЧИЩЕНИЯ")
       Banner(
         type="ghusl"

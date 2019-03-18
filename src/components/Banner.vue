@@ -205,6 +205,33 @@ export default {
     }
   }
 }
+.jumuah {
+  background-image: url(../views/app-main/taharat-bg.jpg);
+  width: 1077px;
+  height: 265px;
+  border: 1px solid #d4dee8;
+  @media (max-width: $mobile) {
+    width: 100%;
+    height: initial;
+    background: none;
+    .desc {
+      padding-top: 15px;
+      padding-bottom: 31px;
+    }
+    .top {
+      flex-direction: column-reverse;
+      background-color: #f7fcff;
+    }
+  }
+  .image {
+    background-image: url(../views/app-main/jumuah.png);
+    background-position: right bottom;
+    @media (max-width: $mobile) {
+      background: url(../views/app-main/jumuah-m.jpg) no-repeat top / contain;
+      flex-basis: 180px;
+    }
+  }
+}
 .fard {
   background-color: #fff;
   width: 1076px;

@@ -8,8 +8,12 @@
 }
 
 %blockquote-blue {
-  border-left: 3px solid #049ae4;
+  border-left: 3px solid #2b9ace;
   padding: 10px 0 10px 20px;
+}
+
+%a {
+  color: #2b87ce;
 }
 
 .admin-text {
@@ -75,6 +79,10 @@
       @extend %blockquote-blue;
     }
   }
+
+  a {
+    @extend %a;
+  }
 }
 
 .rukn {
@@ -89,6 +97,10 @@
       &.blue {
         @extend %blockquote-blue;
       }
+    }
+
+    a {
+      @extend %a;
     }
   }
 }

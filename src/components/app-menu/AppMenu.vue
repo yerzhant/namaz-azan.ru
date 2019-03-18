@@ -35,7 +35,7 @@
         @click.stop="flags.tutoring = !flags.tutoring, closeAll('tutoring')"
       )
         .title ОБУЧЕНИЕ
-        .desc Видео-фото уроки
+        .desc Фото уроки
       .item.right(
         :class="{open: flags.namaz}"
         @click.stop="flags.namaz = !flags.namaz, closeAll('namaz')"

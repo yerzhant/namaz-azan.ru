@@ -27,7 +27,7 @@ export default {
 
 <style lang="scss" scoped>
 .app-section {
-  padding-bottom: 100px;
+  padding-bottom: 40px;
   &.bg-1 {
     background-color: #f7fcff;
   }
@@ -64,7 +64,7 @@ export default {
 }
 .moon {
   margin-top: 20px;
-  margin-bottom: 86px;
+  margin-bottom: 40px;
   @media (max-width: $mobile) {
     display: none;
   }

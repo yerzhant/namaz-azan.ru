@@ -78,13 +78,14 @@
               .subitem-l2(@click="goTo('/witr/wadjib')") Витр
           .subitem
             .title-block(:class="{open: sunnah}" @click.stop="sunnah = !sunnah")
-              .title СУННАТ НАМАЗЫ
+              .title ДРУГИЕ НАМАЗЫ
             .subitems(v-show="sunnah")
               .subitem-l2(@click="goTo('/fadjr/sunnah')") Фаджр
               .subitem-l2(@click="goTo('/dhuhr/sunnah-before')") Зухр до фарда
               .subitem-l2(@click="goTo('/dhuhr/sunnah-after')") Зухр после фарда
               .subitem-l2(@click="goTo('/maghrib/sunnah')") Магриб
               .subitem-l2(@click="goTo('/isha/sunnah')") Иша
+              .subitem-l2(@click="goTo('/jumuah/fard')") Джума
 
       .item(:class="{open: tutoring}" @click.stop="tutoring = !tutoring")
         .info
@@ -94,7 +95,7 @@
         .subitems(v-show="tutoring")
           .subitem-l2(@click="goTo('/tour-salah')") Мой первый намаз
           .subitem-l2(@click="goTo('/tutorial/fard')") Намаз: подробно
-          a.subitem-l2(href="https://www.youtube.com/watch?v=5b6t9fBLl9s") Видео уроки
+          //- a.subitem-l2(href="https://www.youtube.com/watch?v=XXX") Видео уроки
 
       .socials-block
         Socials(mobile)

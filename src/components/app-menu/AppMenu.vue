@@ -117,16 +117,16 @@
         router-link.item(:to="`${routePrefix}/tutorial/fard`")
           .title НАМАЗ: ПОДРОБНО
           .desc Детализированый обзор
-        a.item(href="https://www.youtube.com/watch?v=5b6t9fBLl9s")
-          .title ВИДЕО УРОКИ
-          .desc Омовение, намаз
+        //- a.item(href="https://www.youtube.com/watch?v=XXX")
+        //-   .title ВИДЕО УРОКИ
+        //-   .desc Омовение, намаз
 
     menu.submenu(v-show="flags.namaz")
       img.image(src="./namaz-bg.jpg")
       nav.items
-        a.item(href="/search?query=намаз")
-          .title ОБЩАЯ ИНФОРМАЦИЯ
-          .desc К прочтению
+        //- a.item(href="/search?query=намаз")
+        //-   .title ОБЩАЯ ИНФОРМАЦИЯ
+        //-   .desc К прочтению
         .item.right(
           :class="{open: flags.fard}"
           @click.stop="flags.fard = !flags.fard, closeAll('namaz', 'fard')"
@@ -143,8 +143,8 @@
           :class="{open: flags.sunnah}"
           @click.stop="flags.sunnah = !flags.sunnah, closeAll('namaz', 'sunnah')"
         )
-          .title СУННАТ НАМАЗЫ
-          .desc Желательные
+          .title ДРУГИЕ НАМАЗЫ
+          .desc Фарды, уаджибы и нафили
 
       menu.submenu(v-show="flags.fard")
         .filler
@@ -193,6 +193,9 @@
           router-link.item(:to="`${routePrefix}/isha/sunnah`")
             .title ИША
             .desc После фарда
+          router-link.item(:to="`${routePrefix}/jumuah/fard`")
+            .title ДЖУМА
+            .desc Коллективный
 
     nav.items.items-l2
       .item-l2(

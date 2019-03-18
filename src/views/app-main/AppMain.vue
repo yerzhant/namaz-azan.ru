@@ -149,7 +149,7 @@
         SmallBanner(
           :link="`${routePrefix}/tahharah/istibra`"
           type="istibra"
-          title="ИСТИБАРА"
+          title="ИСТИБРА"
           subTitle="Сухое очищение"
           text="Только для мужчин. Выполняется до принятия омовения."
         )

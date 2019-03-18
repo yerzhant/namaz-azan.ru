@@ -16,7 +16,7 @@ const router = new Router({
     component: AppSelect,
     name: 'select',
   }, {
-    path: '/:maddhab/:gender/roiisiyyah',
+    path: '/:maddhab/:gender',
     component: AppMain,
     name: 'main',
   }, {

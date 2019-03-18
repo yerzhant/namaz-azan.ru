@@ -10,7 +10,7 @@
     .level-2-image(:class="[$store.state.namaz, $store.state.gender]")
 
     nav.items.items-l1
-      router-link.item(:to="`${routePrefix}/roiisiyyah`")
+      router-link.item(:to="`${routePrefix}`")
         .title ГЛАВНАЯ
         .desc {{ toMainDesc }}
       .item.right(
@@ -234,7 +234,7 @@ export default {
   },
   computed: {
     toMainDesc() {
-      return this.$route.path === `${this.routePrefix}/roiisiyyah`
+      return this.$route.path === `${this.routePrefix}`
         ? 'Вы на главной'
         : 'Перейти на главную';
     },

@@ -43,7 +43,7 @@ export default {
   methods: {
     selectGender(gender) {
       const routeGender = RouteGender.to(gender);
-      this.$router.push(`/hanafi/${routeGender}/roiisiyyah`);
+      this.$router.push(`/hanafi/${routeGender}`);
     },
   },
   created() {

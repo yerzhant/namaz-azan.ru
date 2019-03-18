@@ -10,7 +10,7 @@
         a.link(href="https://azan.ru")  Azan.ru
     .static-bar Главное меню
     .items
-      .item(@click="goTo('/roiisiyyah')")
+      .item(@click="goTo('')")
         .info
           .titles
             .title ГЛАВНАЯ
@@ -119,7 +119,7 @@ export default {
   },
   computed: {
     toMainSubTitle() {
-      return this.$route.path === `${this.routePrefix}/roiisiyyah`
+      return this.$route.path === `${this.routePrefix}`
         ? 'Вы на главной'
         : 'Перейти на главную';
     },

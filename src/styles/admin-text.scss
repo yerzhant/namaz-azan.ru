@@ -14,6 +14,27 @@
     padding: 5px 10px;
   }
 
+  ol {
+    // font-weight: bold;
+
+    // @media (max-width: $mobile) {
+      margin-left: 14px;
+    // }
+
+    // div {
+    //   font-weight: initial;
+    // }
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      padding-left: 14px;
+      background: url(../images/list-item.png) no-repeat left 11px;
+    }
+  }
+
   blockquote {
     &.blue {
       border-left: 3px solid #2b9ace;
@@ -57,27 +78,6 @@
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 30px;
-  }
-
-  ol {
-    // font-weight: bold;
-
-    @media (max-width: $mobile) {
-      margin-left: 25px;
-    }
-
-    // div {
-    //   font-weight: initial;
-    // }
-  }
-
-  ul {
-    list-style: none;
-
-    li {
-      padding-left: 14px;
-      background: url(../images/list-item.png) no-repeat left 11px;
-    }
   }
 
   @extend %admin-styles;

@@ -118,3 +118,11 @@
     }
   }
 }
+
+header.header {
+  section.desc .desc-text {
+    a {
+      @extend %a;
+    }
+  }
+}

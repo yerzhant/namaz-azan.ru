@@ -299,7 +299,7 @@ export default {
     border-radius: 3px;
     border: 1px solid #2b87ce;
     padding: 0 5px;
-    margin: 0 3px;
+    margin: 2px 3px;
     cursor: pointer;
   }
 }

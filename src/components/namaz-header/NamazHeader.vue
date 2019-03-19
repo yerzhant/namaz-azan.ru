@@ -621,14 +621,14 @@ export default {
 }
 .wudu {
   background-image: url(./wudu-bg.png);
-  @media (max-width: $mobile) {
+  @media (max-width: 375px) {
     background-image: url(./wudu-bg-m.png);
-    background-position-y: 283px;
+    background-position-y: 257px;
     background-size: contain;
-    height: 940px;
-    @media (max-width: 375px) {
-      background-position-y: 257px;
-      height: 910px;
+    height: 910px;
+    @media (max-width: 360px) {
+      background-position-y: 283px;
+      height: 940px;
     }
   }
   .short-desc {
@@ -721,14 +721,14 @@ export default {
 }
 .masah {
   background-image: url(../../views/tahharah/masah-bg.png);
-  @media (max-width: $mobile) {
+  @media (max-width: 375px) {
     background-image: url(../../views/tahharah/masah-bg-m.png);
-    background-position-y: 267px;
+    background-position-y: 241px;
     background-size: contain;
-    height: 584px;
-    @media (max-width: $mobile) {
-      background-position-y: 241px;
-      height: 558px;
+    height: 558px;
+    @media (max-width: 360px) {
+      background-position-y: 267px;
+      height: 584px;
     }
     .info {
       padding: 0;

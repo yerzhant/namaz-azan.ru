@@ -626,6 +626,10 @@ export default {
     background-position-y: 283px;
     background-size: contain;
     height: 940px;
+    @media (max-width: 375px) {
+      background-position-y: 257px;
+      height: 910px;
+    }
   }
   .short-desc {
     padding-bottom: 16px;
@@ -638,6 +642,9 @@ export default {
       padding: 0;
       &-wrapper {
         padding-bottom: 270px;
+        @media (max-width: 375px) {
+          padding-bottom: 290px;
+        }
       }
     }
   }
@@ -719,6 +726,10 @@ export default {
     background-position-y: 267px;
     background-size: contain;
     height: 584px;
+    @media (max-width: $mobile) {
+      background-position-y: 241px;
+      height: 558px;
+    }
     .info {
       padding: 0;
       &-wrapper {

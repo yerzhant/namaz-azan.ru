@@ -91,7 +91,7 @@
         .info
           .titles.submenu
             .title ОБУЧЕНИЕ
-            .sub-title Видео-фото уроки
+            .sub-title Фото уроки
         .subitems(v-show="tutoring")
           .subitem-l2(@click="goTo('/tour-salah')") Мой первый намаз
           .subitem-l2(@click="goTo('/tutorial/fard')") Намаз: подробно

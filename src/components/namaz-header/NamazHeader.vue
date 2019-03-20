@@ -621,7 +621,7 @@ export default {
 }
 .wudu {
   background-image: url(./wudu-bg.png);
-  @media (max-width: 375px) {
+  @media (max-width: $mobile) {
     background-image: url(./wudu-bg-m.png);
     background-position-y: 257px;
     background-size: contain;
@@ -641,9 +641,14 @@ export default {
     @media (max-width: $mobile) {
       padding: 0;
       &-wrapper {
-        padding-bottom: 270px;
+        @media (max-width: $mobile) {
+          padding-bottom: 320px;
+        }
         @media (max-width: 375px) {
           padding-bottom: 290px;
+        }
+        @media (max-width: 360px) {
+          padding-bottom: 270px;
         }
       }
     }
@@ -663,9 +668,13 @@ export default {
   background-image: url(../../views/tahharah/ghusl-bg.png);
   @media (max-width: $mobile) {
     background-image: url(../../views/tahharah/ghusl-bg-m.png);
-    background-position-y: 283px;
+    background-position-y: 257px;
     background-size: contain;
-    height: 600px;
+    height: 610px;
+    @media (max-width: 375px) {
+      background-position-y: 283px;
+      height: 600px;
+    }
     .info {
       padding: 0;
       &-wrapper {
@@ -680,7 +689,10 @@ export default {
     background-image: url(../../views/tahharah/istibra-bg-m.png);
     background-position-y: 241px;
     background-size: contain;
-    height: 558px;
+    height: 590px;
+    @media (max-width: 375px) {
+      height: 558px;
+    }
     .info {
       padding: 0;
       &-wrapper {
@@ -695,7 +707,10 @@ export default {
     background-image: url(../../views/tahharah/istinja-bg-m.png);
     background-position-y: 241px;
     background-size: contain;
-    height: 558px;
+    height: 590px;
+    @media (max-width: 375px) {
+      height: 558px;
+    }
     .info {
       padding: 0;
       &-wrapper {
@@ -708,9 +723,13 @@ export default {
   background-image: url(../../views/tahharah/tayammum-bg.png);
   @media (max-width: $mobile) {
     background-image: url(../../views/tahharah/tayammum-bg-m.png);
-    background-position-y: 267px;
+    background-position-y: 241px;
     background-size: contain;
-    height: 584px;
+    height: 595px;
+    @media (max-width: 375px) {
+      background-position-y: 267px;
+      height: 584px;
+    }
     .info {
       padding: 0;
       &-wrapper {
@@ -721,11 +740,15 @@ export default {
 }
 .masah {
   background-image: url(../../views/tahharah/masah-bg.png);
-  @media (max-width: 375px) {
+  @media (max-width: $mobile) {
     background-image: url(../../views/tahharah/masah-bg-m.png);
     background-position-y: 241px;
     background-size: contain;
-    height: 558px;
+    height: 600px;
+    @media (max-width: 375px) {
+      background-position-y: 241px;
+      height: 558px;
+    }
     @media (max-width: 360px) {
       background-position-y: 267px;
       height: 584px;

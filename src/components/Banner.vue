@@ -173,7 +173,7 @@ export default {
     background-image: url(../views/app-main/ghusl.png);
     background-position: bottom;
     @media (max-width: $mobile) {
-      background: url(../views/app-main/ghusl-m.jpg) no-repeat top / contain;
+      background: url(../views/app-main/ghusl-m.jpg) no-repeat top / cover;
       flex-basis: 180px;
     }
   }
@@ -201,7 +201,7 @@ export default {
     background-image: url(../views/app-main/taharat.png);
     background-position: bottom;
     @media (max-width: $mobile) {
-      background: url(../views/app-main/taharat-m.jpg) no-repeat top / contain;
+      background: url(../views/app-main/taharat-m.jpg) no-repeat top / cover;
       flex-basis: 180px;
     }
   }
@@ -228,7 +228,7 @@ export default {
     background-image: url(../views/app-main/jumuah.png);
     background-position: right bottom;
     @media (max-width: $mobile) {
-      background: url(../views/app-main/jumuah-m.jpg) no-repeat top / contain;
+      background: url(../views/app-main/jumuah-m.jpg) no-repeat top / cover;
       flex-basis: 180px;
     }
   }
@@ -501,7 +501,7 @@ export default {
     background-color: #f7fcff;
   }
   .image {
-    background: no-repeat top / contain;
+    background: no-repeat top / cover;
     flex-basis: 180px;
   }
   &.ma-hiya .image {

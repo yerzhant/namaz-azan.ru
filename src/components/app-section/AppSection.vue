@@ -128,6 +128,9 @@ export default {
     .jumuah {
       background: url(./bg-jumuah.jpg) no-repeat center;
     }
+    .tarawih {
+      background: url(./bg-tarawih.jpg) no-repeat center;
+    }
     .asr {
       background: url(./bg-asr.jpg) no-repeat center;
     }

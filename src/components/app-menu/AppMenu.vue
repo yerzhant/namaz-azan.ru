@@ -144,7 +144,7 @@
           @click.stop="flags.sunnah = !flags.sunnah, closeAll('namaz', 'sunnah')"
         )
           .title ДРУГИЕ НАМАЗЫ
-          .desc Фарды, уаджибы и нафили
+          .desc Фарды, уаджибы и сунны
 
       menu.submenu(v-show="flags.fard")
         .filler
@@ -196,6 +196,9 @@
           router-link.item(:to="`${routePrefix}/jumuah/fard`")
             .title ДЖУМА
             .desc Коллективный
+          router-link.item(:to="`${routePrefix}/tarawih/sunnah`")
+            .title ТАРАВИХ
+            .desc  Ночной в Рамадан
 
     nav.items.items-l2
       .item-l2(
@@ -372,6 +375,9 @@ export default {
       }
       &.jumuah {
         background-image: url(./jumuah.png);
+      }
+      &.tarawih {
+        background-image: url(./tarawih.jpg);
       }
       &.istibra {
         background-image: url(./istibra.png);

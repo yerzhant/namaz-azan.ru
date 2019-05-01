@@ -619,6 +619,15 @@ export default {
     }
   }
 }
+.taraweeh-tasbeeh {
+  .image-1 {
+    background-image: url(./sitting-1.png);
+    background-position-y: 160px;
+    &.woman {
+      background-image: url(./sitting-woman-1.png);
+    }
+  }
+}
 .qunoot {
   .b1,
   .b2 {

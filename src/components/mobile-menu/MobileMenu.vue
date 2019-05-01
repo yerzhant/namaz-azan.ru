@@ -86,6 +86,7 @@
               //- .subitem-l2(@click="goTo('/maghrib/sunnah')") Магриб
               //- .subitem-l2(@click="goTo('/isha/sunnah')") Иша
               .subitem-l2(@click="goTo('/jumuah/fard')") Джума
+              .subitem-l2(@click="goTo('/tarawih/sunnah')") Таравих
 
       .item(:class="{open: tutoring}" @click.stop="tutoring = !tutoring")
         .info

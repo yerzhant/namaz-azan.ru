@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/namaz/precache-manifest.dbab72ddfb6a34523187b3923a1d321b.js"
+  "/namaz/precache-manifest.0747a467c812ffa8c66deb00d176247f.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "namaz"});

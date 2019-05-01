@@ -116,6 +116,7 @@ export default {
           return `${today[4]} - ${today[5]}`;
 
         case 'isha':
+        case 'tarawih':
         case 'witr':
           return `${today[5]} - ${tomorrow[0]}`;
 
@@ -426,6 +427,16 @@ export default {
     }
   }
 }
+.tutorial {
+  .info {
+    .rakaats {
+      color: #175682;
+      .rakaats-count {
+        color: #146eb4;
+      }
+    }
+  }
+}
 .asr {
   background-image: url(./asr-bg.png);
   &.woman {
@@ -616,6 +627,28 @@ export default {
     }
     .type {
       background: url(./dhuhr.png) no-repeat top;
+    }
+  }
+}
+.tarawih {
+  background-image: url(./tarawih-bg.png);
+  @media (max-width: $mobile) {
+    background-image: none;
+  }
+  .info {
+    &-wrapper {
+      @media (max-width: $mobile) {
+        background: url(./dhuhr-bg-m.png) no-repeat bottom / cover;
+      }
+    }
+    .rakaats {
+      color: #175682;
+      .rakaats-count {
+        color: #146eb4;
+      }
+    }
+    .type {
+      background: url(./isha.png) no-repeat top;
     }
   }
 }

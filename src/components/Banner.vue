@@ -208,7 +208,7 @@ export default {
 }
 .jumuah {
   background-image: url(../views/app-main/taharat-bg.jpg);
-  width: 1077px;
+  width: 1078px;
   height: 265px;
   border: 1px solid #d4dee8;
   @media (max-width: $mobile) {
@@ -229,6 +229,38 @@ export default {
     background-position: right bottom;
     @media (max-width: $mobile) {
       background: url(../views/app-main/jumuah-m.jpg) no-repeat top / cover;
+      flex-basis: 180px;
+    }
+  }
+}
+.taraweeh {
+  background-image: url(../views/app-main/ghusl-bg.jpg);
+  width: 1078px;
+  height: 268px;
+  border: 1px solid #d4dee8;
+  border-top: none;
+  @media (max-width: $mobile) {
+    width: 100%;
+    height: initial;
+    background: none;
+    border-top: 1px solid #d4dee8;
+    .desc {
+      padding-top: 15px;
+      padding-bottom: 31px;
+    }
+  }
+  .top {
+    flex-direction: row-reverse;
+    @media (max-width: $mobile) {
+      flex-direction: column-reverse;
+      background-color: #f7fcff;
+    }
+  }
+  .image {
+    background-image: url(../views/app-main/taraweeh.png);
+    background-position: bottom;
+    @media (max-width: $mobile) {
+      background: url(../views/app-main/taraweeh.png) no-repeat top / cover;
       flex-basis: 180px;
     }
   }

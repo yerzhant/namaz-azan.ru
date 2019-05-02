@@ -128,6 +128,18 @@
       )
         template(slot="buttons")
           AppButton(:link="`${routePrefix}/jumuah/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+      Banner(
+        v-if="$store.state.gender == 'man'"
+        type="taraweeh"
+        descStyleBlackBlue
+        descWithMargin
+        title="ТАРАВИХ НАМАЗ"
+        shortDesc="Намаз в месяц Рамадан"
+        desc="Намаз совершаемый только в месяц Рамадан.<br/>\
+              Таравих является сунной и состоит из 20 ракаатов."
+      )
+        template(slot="buttons")
+          AppButton(:link="`${routePrefix}/tarawih/sunnah`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
     AppSection.tahharah(title="ВИДЫ ОЧИЩЕНИЯ")
       Banner(

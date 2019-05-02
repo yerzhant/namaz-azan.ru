@@ -5,7 +5,7 @@
   )
     h2.title {{ title }}
     .short-desc {{ shortDesc }}
-    .desc(:class="{'top-border': descTopBorder, 'bottom-border': descBottomBorder}") {{ desc }}
+    .desc(:class="{'top-border': descTopBorder, 'bottom-border': descBottomBorder}" v-html="desc")
     .buttons
       slot
 </template>

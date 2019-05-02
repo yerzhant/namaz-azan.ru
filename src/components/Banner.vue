@@ -260,7 +260,7 @@ export default {
     background-image: url(../views/app-main/taraweeh.png);
     background-position: bottom;
     @media (max-width: $mobile) {
-      background: url(../views/app-main/taraweeh.png) no-repeat top / cover;
+      background: url(../views/app-main/taraweeh-m.jpg) no-repeat top / cover;
       flex-basis: 180px;
     }
   }

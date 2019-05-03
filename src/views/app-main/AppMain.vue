@@ -129,7 +129,6 @@
         template(slot="buttons")
           AppButton(:link="`${routePrefix}/jumuah/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
       Banner(
-        v-if="$store.state.gender == 'man'"
         type="taraweeh"
         descStyleBlackBlue
         descWithMargin

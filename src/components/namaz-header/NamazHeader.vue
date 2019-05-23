@@ -102,6 +102,9 @@ export default {
         case 'fadjr':
           return `${today[0]} - ${today[1]}`;
 
+        case 'id':
+          return `${today[1]} - ${today[2]}`;
+
         case 'dhuhr':
         case 'tutorial':
           return `${today[2]} - ${today[3]}`;
@@ -649,6 +652,28 @@ export default {
     }
     .type {
       background: url(./isha.png) no-repeat top;
+    }
+  }
+}
+.id {
+  background-image: url(./id-bg.png);
+  @media (max-width: $mobile) {
+    background-image: none;
+  }
+  .info {
+    &-wrapper {
+      @media (max-width: $mobile) {
+        background: url(./dhuhr-bg-m.png) no-repeat bottom / cover;
+      }
+    }
+    .rakaats {
+      color: #175682;
+      .rakaats-count {
+        color: #146eb4;
+      }
+    }
+    .type {
+      background: url(./dhuhr.png) no-repeat top;
     }
   }
 }

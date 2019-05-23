@@ -131,6 +131,9 @@ export default {
     .tarawih {
       background: url(./bg-tarawih.jpg) no-repeat center;
     }
+    .id {
+      background: url(./bg-id.jpg) no-repeat center;
+    }
     .asr {
       background: url(./bg-asr.jpg) no-repeat center;
     }

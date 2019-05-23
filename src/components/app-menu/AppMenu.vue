@@ -199,6 +199,9 @@
           router-link.item(:to="`${routePrefix}/tarawih/sunnah`")
             .title ТАРАВИХ
             .desc  Ночной в Рамадан
+          router-link.item(:to="`${routePrefix}/id/wadjib`" v-if="$store.state.gender=='man'")
+            .title ИД (АЙТ/БАЙРАМ)
+            .desc  Праздничный
 
     nav.items.items-l2
       .item-l2(
@@ -378,6 +381,9 @@ export default {
       }
       &.tarawih {
         background-image: url(./tarawih.jpg);
+      }
+      &.id {
+        background-image: url(./id.jpg);
       }
       &.istibra {
         background-image: url(./istibra.png);

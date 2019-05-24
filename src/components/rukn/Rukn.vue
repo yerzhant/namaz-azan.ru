@@ -419,7 +419,8 @@ export default {
     }
   }
 }
-.takbir {
+.takbir,
+.additional-takbirs {
   .b1,
   .b2 {
     display: flex;

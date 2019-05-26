@@ -243,6 +243,7 @@ export default {
     width: 100%;
     height: initial;
     background: none;
+    border-top: 1px solid #d4dee8;
     .desc {
       padding-top: 15px;
       padding-bottom: 31px;

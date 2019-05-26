@@ -257,7 +257,7 @@ export default {
     background-image: url(../views/app-main/id.png);
     background-position: right bottom;
     @media (max-width: $mobile) {
-      background: url(../views/app-main/id.png) no-repeat top / cover;
+      background: url(../views/app-main/id-m.png) no-repeat bottom right / cover;
       flex-basis: 180px;
     }
   }

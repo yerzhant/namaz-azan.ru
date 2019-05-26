@@ -233,6 +233,34 @@ export default {
     }
   }
 }
+.id {
+  background-image: url(../views/app-main/id-bg.png);
+  width: 1078px;
+  height: 265px;
+  border: 1px solid #d4dee8;
+  border-top: none;
+  @media (max-width: $mobile) {
+    width: 100%;
+    height: initial;
+    background: none;
+    .desc {
+      padding-top: 15px;
+      padding-bottom: 31px;
+    }
+    .top {
+      flex-direction: column-reverse;
+      background-color: #f7fcff;
+    }
+  }
+  .image {
+    background-image: url(../views/app-main/id.png);
+    background-position: right bottom;
+    @media (max-width: $mobile) {
+      background: url(../views/app-main/id.png) no-repeat top / cover;
+      flex-basis: 180px;
+    }
+  }
+}
 .taraweeh {
   background-image: url(../views/app-main/ghusl-bg.jpg);
   width: 1078px;

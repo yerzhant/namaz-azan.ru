@@ -199,7 +199,7 @@
           router-link.item(:to="`${routePrefix}/tarawih/sunnah`")
             .title ТАРАВИХ
             .desc  Ночной в Рамадан
-          router-link.item(:to="`${routePrefix}/id/wadjib`" v-if="$store.state.gender=='man'")
+          router-link.item(:to="`${routePrefix}/id/wadjib`")
             .title ИД (АЙТ/БАЙРАМ)
             .desc  Праздничный
 

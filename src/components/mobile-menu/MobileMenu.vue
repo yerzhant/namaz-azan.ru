@@ -87,7 +87,7 @@
               //- .subitem-l2(@click="goTo('/isha/sunnah')") Иша
               .subitem-l2(@click="goTo('/jumuah/fard')") Джума
               .subitem-l2(@click="goTo('/tarawih/sunnah')") Таравих
-              .subitem-l2(@click="goTo('/id/wadjib')" v-if="$store.state.gender=='man'") Ид
+              .subitem-l2(@click="goTo('/id/wadjib')") Ид
 
       .item(:class="{open: tutoring}" @click.stop="tutoring = !tutoring")
         .info

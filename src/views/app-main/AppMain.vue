@@ -139,6 +139,17 @@
       )
         template(slot="buttons")
           AppButton(:link="`${routePrefix}/tarawih/sunnah`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+      Banner(
+        type="id"
+        descStyleBlackBlue
+        descWithMargin
+        title="ИД НАМАЗ"
+        shortDesc="Особенности чтения праздничных намазов"
+        desc="Два праздничных намаза в году: Ид аль-фитр (Ораза айт/байрам) \
+              и Ид аль-Адха (Курбан айт/байрам) - являются ваджибом для мусульман."
+      )
+        template(slot="buttons")
+          AppButton(:link="`${routePrefix}/id/wadjib`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
     AppSection.tahharah(title="ВИДЫ ОЧИЩЕНИЯ")
       Banner(

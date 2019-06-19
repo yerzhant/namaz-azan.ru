@@ -454,6 +454,26 @@ export default {
         background-image: url(../views/tahharah/masah.png);
       }
     }
+    &.id-2 {
+      .image {
+        background-image: url(../views/namaz-compare/id.png);
+      }
+    }
+    &.jumuah-2 {
+      .image {
+        background-image: url(../views/namaz-compare/jumuah.png);
+      }
+    }
+    &.taraweeh-2 {
+      .image {
+        background-image: url(../views/namaz-compare/taraweeh.png);
+      }
+    }
+    &.mareed {
+      .image {
+        background-image: url(../views/namaz-compare/mareed.png);
+      }
+    }
   }
 }
 .shart {

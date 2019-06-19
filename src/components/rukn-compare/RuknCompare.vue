@@ -1,5 +1,5 @@
 <template lang="pug">
-  section.rukn-compare(:id="`r${rakaat}-${type}`" :class="[type, {first: first}]")
+  section.rukn(:id="`r${rakaat}-${type}`" :class="[type, {first: first}]")
     .header
       .header-text
         h3.title {{ title }}
@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.rukn-compare {
+.rukn {
   width: 100%;
   padding: 70px 35px;
   background: url(./bg-top.png) no-repeat top;
@@ -70,5 +70,8 @@ export default {
 }
 .image {
   display: block;
+  @media (max-width: $mobile) {
+    width: 100%;
+  }
 }
 </style>

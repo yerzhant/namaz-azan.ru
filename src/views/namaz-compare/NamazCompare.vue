@@ -1,5 +1,5 @@
 <template lang="pug">
-  section.namaz-compare
+  section.namaz
     NamazHeader(
       :type="$store.state.namaz"
       :subType="$route.params.subType"
@@ -45,72 +45,60 @@
       )
 
     .line.type-2
-    AppSection(title="ДРУГИЕ ВИДЫ НАМАЗА" bg1 regular)
+    AppSection(title="ДРУГИЕ ВИДЫ НАМАЗА" regular)
       .other-namazes
         Banner(
-          type="fard fadjr"
-          :shadow="$store.state.namaz === 'fadjr'"
+          type="fard blue mareed"
+          :shadow="$store.state.namaz === 'mareed'"
           descStyleBlackBlue
           descWithMargin2
-          title="ФАДЖР"
-          shortDesc="Утренний намаз"
-          desc="Детальный обзор утреннего намаза “Фаджр”, состоящего из 2 ракаатов \
-                фарда. Фаджр является первым из пяти обязательных намазов."
+          title="БОЛЬНЫМ"
+          shortDesc="Намаз для больных"
+          desc="Обзор намаза для тех, кто по состоянию здоровья не может полноценно \
+                выполнять намаз. В качестве примера выступит утренний намаз Фаджр."
         )
           template(slot="buttons")
-            AppButton(:link="`${routePrefix}/fadjr/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(:link="`${routePrefix}/mareed/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
         Banner(
-          type="fard dhuhr"
-          :shadow="$store.state.namaz === 'dhuhr'"
+          type="fard blue jumuah-2"
+          :shadow="$store.state.namaz === 'jumuah'"
           descStyleBlackBlue
           descWithMargin2
-          title="ЗУХР"
-          shortDesc="Обеденный намаз"
-          desc="Детальный обзор обеденного намаза “Зухр”, состоящего из 4 ракаатов \
-                фарда. Зухр является вторым из пяти обязательных намазов."
+          title="ДЖУМА НАМАЗ"
+          shortDesc="Пятничный намаз в мечети"
+          desc="Коллективная молитва, совершение которой предписанно Кораном. \
+                Является фардом (т.е. обязательной) для мусульман - мужчин."
         )
           template(slot="buttons")
-            AppButton(:link="`${routePrefix}/dhuhr/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(:link="`${routePrefix}/jumuah/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
         Banner(
-          type="fard asr"
-          :shadow="$store.state.namaz === 'asr'"
+          type="fard blue id-2"
+          :shadow="$store.state.namaz === 'id'"
           descStyleBlackBlue
           descWithMargin2
-          title="АСР"
-          shortDesc="Полуденный намаз"
-          desc="Детальный обзор послеполуденного намаза “Аср”, состоящего из 4 \
-                ракаатов фарда. Аср является третьим из пяти обязательных намазов."
+          title="ПРАЗДНИЧНЫЙ НАМАЗ"
+          shortDesc="Особенности чтения праздничных намазов"
+          desc="Два праздничных намаза в году - на Ид аль-Фитр (Ураза-байрам) и \
+                Ид аль-Адха (Курбан-байрам) - являются ваджибом для мусульман."
         )
           template(slot="buttons")
-            AppButton(:link="`${routePrefix}/asr/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(:link="`${routePrefix}/id/wadjib`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
         Banner(
-          type="fard maghrib"
-          :shadow="$store.state.namaz === 'maghrib'"
+          type="fard blue taraweeh-2"
+          :shadow="$store.state.namaz === 'taraweeh'"
           descStyleBlackBlue
           descWithMargin2
-          title="МАГРИБ"
-          shortDesc="Вечерний намаз"
-          desc="Детальный обзор вечернего намаза “Магриб”, состоящего из 3 ракаатов \
-                фарда. Магриб является четвёртым из пяти обязательных намазов."
+          title="ТАРАВИХ"
+          shortDesc="Намаз в месяц Рамадан"
+          desc="Два праздничных намаза в году - на Ид аль-Фитр (Ураза-байрам) и \
+                Ид аль-Адха (Курбан-байрам) - являются ваджибом для мусульман."
         )
           template(slot="buttons")
-            AppButton(:link="`${routePrefix}/maghrib/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+            AppButton(:link="`${routePrefix}/tarawih/sunnah`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
-        Banner(
-          type="fard isha"
-          :shadow="$store.state.namaz === 'isha'"
-          descStyleBlackBlue
-          descWithMargin2
-          title="ИША"
-          shortDesc="Ночной намаз"
-          desc="Детальный обзор ночного намаза “Иша”, состоящего из 4 ракаатов \
-                фарда. Иша является последним из пяти обязательных намазов."
-        )
-          template(slot="buttons")
-            AppButton(:link="`${routePrefix}/isha/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 </template>
 
 <script>

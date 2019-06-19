@@ -88,6 +88,7 @@
               .subitem-l2(@click="goTo('/jumuah/fard')") Джума
               .subitem-l2(@click="goTo('/tarawih/sunnah')") Таравих
               .subitem-l2(@click="goTo('/id/wadjib')") Ид
+              .subitem-l2(@click="goTo('/mareed/fard')") Намаз больного
 
       .item(:class="{open: tutoring}" @click.stop="tutoring = !tutoring")
         .info

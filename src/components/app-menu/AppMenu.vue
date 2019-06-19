@@ -202,6 +202,9 @@
           router-link.item(:to="`${routePrefix}/id/wadjib`")
             .title ИД (АЙТ/БАЙРАМ)
             .desc  Праздничный
+          router-link.item(:to="`${routePrefix}/mareed/fard`")
+            .title СОЛААТУЛЬ-МАРИИД
+            .desc  Намаз больного
 
     nav.items.items-l2
       .item-l2(
@@ -384,6 +387,9 @@ export default {
       }
       &.id {
         background-image: url(./id.jpg);
+      }
+      &.mareed {
+        background-image: url(./mareed.jpg);
       }
       &.istibra {
         background-image: url(./istibra.png);

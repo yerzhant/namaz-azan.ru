@@ -677,6 +677,32 @@ export default {
     }
   }
 }
+.mareed {
+  background-image: url(./mareed-bg.png);
+  @media (max-width: $mobile) {
+    background-image: none;
+  }
+  .info {
+    &-wrapper {
+      @media (max-width: $mobile) {
+        background: url(./dhuhr-bg-m.png) no-repeat bottom / cover;
+      }
+    }
+    .rakaats {
+      color: #175682;
+      .rakaats-count {
+        color: #146eb4;
+      }
+    }
+    .type {
+      background: url(./mareed.png) no-repeat top;
+    }
+    .clocks,
+    .city-info {
+      display: none;
+    }
+  }
+}
 .wudu {
   background-image: url(./wudu-bg.png);
   @media (max-width: $mobile) {

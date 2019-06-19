@@ -36,6 +36,10 @@ const router = new Router({
     component: () => import(/* webpackChunkName: "tahharah" */ './views/tahharah/Tahharah.vue'),
     name: 'tahharah',
   }, {
+    path: '/:maddhab/:gender/:type(mareed)/:subType',
+    component: () => import(/* webpackChunkName: "namaz" */ './views/namaz-compare/NamazCompare.vue'),
+    name: 'namaz-compare',
+  }, {
     path: '/:maddhab/:gender/:type/:subType',
     component: () => import(/* webpackChunkName: "namaz" */ './views/namaz/Namaz.vue'),
     name: 'namaz',

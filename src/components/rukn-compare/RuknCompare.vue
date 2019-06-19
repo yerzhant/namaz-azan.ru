@@ -6,7 +6,7 @@
         .sub-title(v-if="subTitle") {{ subTitle }}
       .number {{ number }}
     .short-desc(v-html="shortDesc")
-    img.image(:src="`/images/namaz/mareed/${type}.png`")
+    img.image(:src="`/namaz/images/namaz/mareed/${type}.png`")
 </template>
 
 <script>

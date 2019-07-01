@@ -1,6 +1,6 @@
 <template lang="pug">
   router-link.small-banner(:to="link" :class="[type, { bg2 }]")
-    .image(:class="type")
+    .image(:class="[type, madhhab]")
     .ornament
     .info
       .title {{ title }}
@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   props: {
     link: String,
@@ -17,6 +19,9 @@ export default {
     subTitle: String,
     text: String,
     bg2: Boolean,
+  },
+  computed: {
+    ...mapGetters(['madhhab']),
   },
 };
 </script>
@@ -70,6 +75,9 @@ export default {
   }
   &.wudu {
     background-image: url(./wudu.png);
+    &.shafii {
+      background-image: url('./wudu-shafii.png');
+    }
   }
   &.masah {
     background-image: url(./masah.png);

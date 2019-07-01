@@ -14,12 +14,13 @@
           :withMargin2="descWithMargin2"
         )
           slot(name="buttons")
-      .image(:class="$store.state.gender")
+      .image(:class="[$store.state.gender, madhhab]")
     .bottom
       slot
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import ActionDesc from '@/components/ActionDesc.vue';
 
 export default {
@@ -35,6 +36,9 @@ export default {
     descWithMargin: Boolean,
     descWithMargin2: Boolean,
     shadow: Boolean,
+  },
+  computed: {
+    ...mapGetters(['madhhab']),
   },
   components: {
     ActionDesc,
@@ -98,6 +102,9 @@ export default {
   }
   .image {
     background-image: url(../views/app-main/first-namaz.png);
+    &.shafii {
+      background-image: url('../views/app-main/first-namaz-shafii.png');
+    }
     background-position: bottom right;
     @media (max-width: $mobile) {
       height: 449px;
@@ -106,6 +113,9 @@ export default {
     }
     &.woman {
       background-image: url(../views/app-main/first-namaz-woman.png);
+      &.shafii {
+        background-image: url(../views/app-main/first-namaz-woman-shafii.png);
+      }
       background-position-x: 50px;
       @media (max-width: $mobile) {
         background-position-x: center;
@@ -124,6 +134,9 @@ export default {
   }
   .image {
     background-image: url(../views/app-main/namaz-detailed.png);
+    &.shafii {
+      background-image: url('../views/app-main/namaz-detailed-shafii.png');
+    }
     @media (max-width: $mobile) {
       height: 305px;
       background-size: 80%;
@@ -131,6 +144,9 @@ export default {
     }
     &.woman {
       background-image: url(../views/app-main/namaz-detailed-woman.png);
+      &.shafii {
+        background-image: url(../views/app-main/namaz-detailed-woman-shafii.png);
+      }
       @media (max-width: $mobile) {
         height: 308px;
         background-position: center 32px;
@@ -199,6 +215,9 @@ export default {
   }
   .image {
     background-image: url(../views/app-main/taharat.png);
+    &.shafii {
+      background-image: url('../views/app-main/taharat-shafii.png');
+    }
     background-position: bottom;
     @media (max-width: $mobile) {
       background: url(../views/app-main/taharat-m.jpg) no-repeat top / cover;

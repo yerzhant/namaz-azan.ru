@@ -2,13 +2,19 @@
   section.app-select
     .buttons
       AppButton(:width="177" :height="36" small) НАМАЗ ДЛЯ ВЗРОСЛЫХ
-      AppButton(:width="177" :height="36" small) ХАНАФИТСКИЙ МАЗХАБ
+      AppButton(:width="177" :height="36" small :opacity=".5") НАМАЗ ДЛЯ ДЕТЕЙ
+      AppButton(:width="177" :height="36" small :opacity="madhhab == 'hanafi' ? 1 : .5"
+        @click="selectMadhhab('hanafi')"
+      ) ХАНАФИТСКИЙ МАЗХАБ
+      AppButton(:width="177" :height="36" small :opacity="madhhab == 'shafii' ? 1 : .5"
+        @click="selectMadhhab('shafii')"
+      ) ШАФИИТСКИЙ МАЗХАБ
     .select
-      .prev
-      .left(@click="selectGender('man')")
+      .prev(@click="next")
+      .left(:class="[madhhab]" @click="selectGender('man')")
       .middle
-      .right(@click="selectGender('woman')")
-      .next
+      .right(:class="[madhhab]" @click="selectGender('woman')")
+      .next(@click="next")
     .select-text
       .left-text(@click="selectGender('man')")
         .line-1 МУЖЧИНАМ
@@ -19,12 +25,12 @@
         .line-2 Намаз для женщин
     .select-m
       .option(@click="selectGender('man')")
-        .image
+        .image(:class="[madhhab]")
         .text
           .line-1 МУЖЧИНАМ
           .line-2 Намаз для мужчин
       .option(@click="selectGender('woman')")
-        .image.woman
+        .image.woman(:class="[madhhab]")
         .text
           .line-1 ЖЕНЩИНАМ
           .line-2 Намаз для женщин
@@ -36,6 +42,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import RouteGender from '@/utils/routeGender';
 import AppButton from '@/components/AppButton.vue';
 
@@ -43,11 +50,27 @@ export default {
   methods: {
     selectGender(gender) {
       const routeGender = RouteGender.to(gender);
-      this.$router.push(`/hanafi/${routeGender}`);
+      this.$router.push(`/${this.madhhab}/${routeGender}`);
+    },
+    selectMadhhab(madhhab) {
+      this.$store.commit('setMadhhab', madhhab);
+    },
+    next() {
+      switch (this.madhhab) {
+        case 'hanafi':
+          this.$store.commit('setMadhhab', 'shafii');
+          break;
+
+        default:
+          this.$store.commit('setMadhhab', 'hanafi');
+      }
     },
   },
+  computed: {
+    ...mapGetters(['madhhab']),
+  },
   created() {
-    this.$store.commit('setMobileHeaderStatus', 'Выбор пола'); // , возраста и мазхаба',
+    this.$store.commit('setMobileHeaderStatus', 'Выбор пола, возраста и мазхаба');
   },
   components: {
     AppButton,
@@ -66,7 +89,9 @@ export default {
     height: 112px;
   }
   @media (max-width: $mobile) {
-    height: 100px;
+    height: 130px;
+    padding: 15px 0;
+    flex-wrap: wrap;
   }
   > * {
     margin-right: 10px;
@@ -77,6 +102,9 @@ export default {
       width: 148px !important;
       font-size: 10.3px !important;
       margin-right: 21px;
+      &:nth-child(2) {
+        margin-right: 0;
+      }
     }
   }
 }
@@ -101,24 +129,32 @@ export default {
   height: 100%;
   cursor: pointer;
   background: url(./woman.png) no-repeat bottom;
+  &.shafii {
+    background-image: url('./woman-shafii.png');
+  }
 }
 .left {
   width: 538px;
   height: 100%;
   cursor: pointer;
   background: url(./man.png) no-repeat bottom;
+  &.shafii {
+    background-image: url('./man-shafii.png');
+  }
 }
 .prev {
   flex-grow: 1;
   height: 430px;
   border-right: 1px solid #dde3ee;
   background: url(./prev.png) no-repeat center;
+  cursor: pointer;
 }
 .next {
   flex-grow: 1;
   height: 430px;
   border-left: 1px solid #dde3ee;
   background: url(./next.png) no-repeat center;
+  cursor: pointer;
 }
 .select-text {
   display: flex;
@@ -212,9 +248,15 @@ export default {
   .image {
     height: 253px;
     background: url(./man-m.png) no-repeat bottom / 48%;
+    &.shafii {
+      background-image: url('./man-shafii-m.png');
+    }
     &.woman {
       background-image: url(./woman-m.png);
       background-size: 41%;
+      &.shafii {
+        background-image: url('./woman-shafii-m.png');
+      }
     }
   }
   .text {

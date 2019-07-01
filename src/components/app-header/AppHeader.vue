@@ -4,7 +4,7 @@
     .container
       .gender.drop-down(
         :class="{active: genderOpen}"
-        @click.stop="toggleGender"
+        @click.stop="genderOpen = !genderOpen"
       ) Намаз:
         span.selected-item {{ genderText }}
         .items
@@ -17,8 +17,20 @@
             @click="setGender('woman')"
           ) Для женщин
 
-      .madhhab.drop-down Мазхаб:
-        span.selected-item.inactive Ханафи
+      .madhhab.drop-down(
+        :class="{active: madhhabOpen}"
+        @click.stop="madhhabOpen = !madhhabOpen"
+      ) Мазхаб:
+        span.selected-item {{ madhhabText }}
+        .items
+          .item(
+            :class="{active: madhhab == 'hanafi'}"
+            @click="setMadhhab('hanafi')"
+          ) Ханафи
+          .item(
+            :class="{active: madhhab == 'shafii'}"
+            @click="setMadhhab('shafii')"
+          ) Шафии
 
       .basmalah
         router-link(to="/")
@@ -29,11 +41,12 @@
           img.flag(src="./ru.png")
 
       router-link.tutoring(
-        :to="`/hanafi/${routeGender}/tour-salah`"
+        :to="`/${madhhab}/${routeGender}/tour-salah`"
       ) Обучение намазу
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import RouteGender from '@/utils/routeGender';
 import isFullSite from '@/mixins/isFullSite';
 
@@ -41,25 +54,14 @@ export default {
   data() {
     return {
       genderOpen: false,
+      madhhabOpen: false,
     };
   },
   computed: {
-    gender() {
-      return this.$store.state.gender;
-    },
-    genderText() {
-      switch (this.$store.state.gender) {
-        case 'man':
-          return 'Для мужчин';
-        case 'woman':
-          return 'Для женщин';
-        default:
-          return '???';
-      }
-    },
     routeGender() {
       return RouteGender.to(this.$store.state.gender);
     },
+    ...mapGetters(['gender', 'genderText', 'madhhab', 'madhhabText']),
   },
   methods: {
     setGender(gender) {
@@ -70,11 +72,17 @@ export default {
         this.$router.push({ name: routeName, params: { gender: RouteGender.to(gender) } });
       }
     },
-    toggleGender() {
-      this.genderOpen = !this.genderOpen;
+    setMadhhab(madhhab) {
+      const routeName = this.$route.name;
+      if (routeName === 'select') {
+        this.$store.commit('setMadhhab', madhhab);
+      } else {
+        this.$router.push({ name: routeName, params: { madhhab } });
+      }
     },
     hideMenus() {
       this.genderOpen = false;
+      this.madhhabOpen = false;
     },
   },
   created() {
@@ -251,7 +259,6 @@ export default {
     }
   }
 }
-.madhhab,
 .language {
   cursor: initial;
   &:hover {

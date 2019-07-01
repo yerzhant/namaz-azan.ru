@@ -60,4 +60,28 @@ export default new Vuex.Store({
       state.menuItems = menu;
     },
   },
+  getters: {
+    gender: state => state.gender,
+    genderText: state => {
+      switch (state.gender) {
+        case 'man':
+          return 'Для мужчин';
+        case 'woman':
+          return 'Для женщин';
+        default:
+          return '???';
+      }
+    },
+    madhhab: state => state.madhhab,
+    madhhabText: state => {
+      switch (state.madhhab) {
+        case 'hanafi':
+          return 'Ханафи';
+        case 'shafii':
+          return 'Шафии';
+        default:
+          return '???';
+      }
+    },
+  },
 });

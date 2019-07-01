@@ -1,7 +1,7 @@
 <template lang="pug">
   a.app-button(
     :class="{red, blue, small, 'blue-stylish': blueStylish}"
-    :style="{width: `${width}px`, height: `${height}px`}"
+    :style="{width: `${width}px`, height: `${height}px`, opacity: `${opacity}`}"
     @click="go"
   )
     slot
@@ -22,6 +22,10 @@ export default {
     height: {
       type: Number,
       default: 41,
+    },
+    opacity: {
+      type: Number,
+      default: 1,
     },
   },
   methods: {

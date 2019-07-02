@@ -419,6 +419,9 @@ export default {
     }
     &.woman {
       background-image: url(./niet-woman.png);
+      &.shafii {
+        background-image: url('./niet-woman-shafii.png');
+      }
     }
   }
 }
@@ -444,15 +447,15 @@ export default {
     }
     &.woman {
       background-image: url(./takbir-woman.png);
+      &.shafii {
+        background-image: url('./takbir-woman-shafii.png');
+      }
     }
   }
   .image-2 {
     background-image: url(./takbir-2.png);
     &.shafii {
       background-image: url('./takbir-2-shafii.png');
-    }
-    &.woman {
-      background-image: url(./takbir-woman.png);
     }
   }
 }
@@ -472,6 +475,9 @@ export default {
     }
     &.woman {
       background-image: url(./qiyam-woman-1.png);
+      &.shafii {
+        background-image: url('./qiyam-woman-1-shaffi.png');
+      }
     }
   }
   .image-2 {
@@ -481,6 +487,9 @@ export default {
     }
     &.woman {
       background-image: url(./qiyam-woman-2.png);
+      &.shafii {
+        background-image: url('./qiyam-woman-2-shaffi.png');
+      }
     }
   }
 }
@@ -511,6 +520,9 @@ export default {
     &.woman {
       background-image: url(./ruku-woman.png);
       background-position-y: 110px;
+      &.shafii {
+        background-image: url('./ruku-woman-shafii.png');
+      }
     }
   }
   .image-2 {
@@ -518,10 +530,6 @@ export default {
     background-position-y: 200px;
     @media (max-width: $mobile) {
       background-size: initial;
-    }
-    &.woman {
-      background-image: url(./ruku-woman.png);
-      background-position-y: 110px;
     }
   }
 }
@@ -536,6 +544,9 @@ export default {
     }
     &.woman {
       background-image: url(./niet-woman.png);
+      &.shafii {
+        background-image: url('./niet-woman-shafii.png');
+      }
     }
   }
 }
@@ -550,6 +561,9 @@ export default {
     &.woman {
       background-image: url(./sadjda-woman.png);
       background-position-y: 270px;
+      &.shafii {
+        background-image: url('./sadjda-woman-shafii.png');
+      }
     }
   }
 }
@@ -566,6 +580,9 @@ export default {
     }
     &.woman {
       background-image: url(./sitting-woman-1.png);
+      &.shafii {
+        background-image: url('./sitting-woman-1-shafii.png');
+      }
     }
   }
   .image-2 {
@@ -577,6 +594,9 @@ export default {
     &.woman {
       background-image: url(./sitting-woman-2.png);
       background-position-y: 250px;
+      &.shafii {
+        background-image: url('./sitting-woman-2-shafii.png');
+      }
     }
   }
 }
@@ -594,6 +614,9 @@ export default {
     }
     &.woman {
       background-image: url(./sitting-woman-1.png);
+      &.shafii {
+        background-image: url('./sitting-woman-1-shafii.png');
+      }
     }
   }
   .image-2 {
@@ -604,6 +627,9 @@ export default {
     }
     &.woman {
       background-image: url(./sitting-woman-2.png);
+      &.shafii {
+        background-image: url('./sitting-woman-2-shafii.png');
+      }
     }
   }
   .image-3 {
@@ -629,6 +655,9 @@ export default {
     }
     &.woman {
       background-image: url(./salam-right-woman.png);
+      &.shafii {
+        background-image: url('./salam-right-woman-shafii.png');
+      }
     }
   }
   .image-2 {
@@ -640,6 +669,9 @@ export default {
     }
     &.woman {
       background-image: url(./salam-left-woman.png);
+      &.shafii {
+        background-image: url('./salam-left-woman-shafii.png');
+      }
     }
   }
 }
@@ -652,6 +684,9 @@ export default {
     }
     &.woman {
       background-image: url(./salam-right-woman.png);
+      &.shafii {
+        background-image: url('./salam-right-woman-shafii.png');
+      }
     }
   }
 }
@@ -664,6 +699,9 @@ export default {
     }
     &.woman {
       background-image: url(./salam-left-woman.png);
+      &.shafii {
+        background-image: url('./salam-left-woman-shafii.png');
+      }
     }
   }
 }
@@ -676,6 +714,9 @@ export default {
     }
     &.woman {
       background-image: url(./dua-woman.png);
+      &.shafii {
+        background-image: url('./dua-woman-shafii.png');
+      }
     }
   }
 }

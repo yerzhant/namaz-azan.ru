@@ -357,6 +357,9 @@ export default {
       }
       &.woman {
         background-image: url(../views/namaz/fard-fadjr-woman.jpg);
+        &.shafii {
+          background-image: url(../views/namaz/fard-fadjr-woman-shafii.jpg);
+        }
       }
     }
   }
@@ -371,6 +374,9 @@ export default {
       }
       &.woman {
         background-image: url(../views/namaz/fard-dhuhr-woman.jpg);
+        &.shafii {
+          background-image: url(../views/namaz/fard-dhuhr-woman-shafii.jpg);
+        }
       }
     }
   }
@@ -386,6 +392,9 @@ export default {
       }
       &.woman {
         background-image: url(../views/namaz/fard-asr-woman.jpg);
+        &.shafii {
+          background-image: url(../views/namaz/fard-asr-woman-shafii.jpg);
+        }
       }
     }
   }
@@ -401,6 +410,9 @@ export default {
       }
       &.woman {
         background-image: url(../views/namaz/fard-maghrib-woman.jpg);
+        &.shafii {
+          background-image: url(../views/namaz/fard-maghrib-woman-shafii.jpg);
+        }
       }
     }
   }
@@ -418,6 +430,9 @@ export default {
       }
       &.woman {
         background-image: url(../views/namaz/fard-isha-woman.jpg);
+        &.shafii {
+          background-image: url(../views/namaz/fard-isha-woman-shafii.jpg);
+        }
       }
     }
   }

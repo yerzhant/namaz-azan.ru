@@ -347,6 +347,10 @@ export default {
     .image {
       background-image: url(../views/namaz/fard-fadjr.jpg);
       background-position: -1px 0;
+      &.shafii {
+        background-image: url('../views/namaz/fard-fadjr-shafii.jpg');
+        background-position: 0 0;
+      }
       @media (max-width: $mobile) {
         background-image: url(../views/namaz/fard-fadjr-m.jpg);
         background-position: initial;
@@ -359,6 +363,9 @@ export default {
   &.dhuhr {
     .image {
       background-image: url(../views/namaz/fard-dhuhr.jpg);
+      &.shafii {
+        background-image: url('../views/namaz/fard-dhuhr-shafii.jpg');
+      }
       @media (max-width: $mobile) {
         background-image: url(../views/namaz/fard-dhuhr-m.jpg);
       }
@@ -371,6 +378,9 @@ export default {
     .image {
       background-image: url(../views/namaz/fard-asr.jpg);
       background-position: 0 0;
+      &.shafii {
+        background-image: url('../views/namaz/fard-asr-shafii.jpg');
+      }
       @media (max-width: $mobile) {
         background-image: url(../views/namaz/fard-asr-m.jpg);
       }
@@ -383,6 +393,9 @@ export default {
     .image {
       background-image: url(../views/namaz/fard-maghrib.jpg);
       background-position: 0 0;
+      &.shafii {
+        background-image: url('../views/namaz/fard-maghrib-shafii.jpg');
+      }
       @media (max-width: $mobile) {
         background-image: url(../views/namaz/fard-maghrib-m.jpg);
       }
@@ -395,6 +408,10 @@ export default {
     .image {
       background-image: url(../views/namaz/fard-isha.jpg);
       background-position: -1px -1px;
+      &.shafii {
+        background-image: url('../views/namaz/fard-isha-shafii.jpg');
+        background-position: 0 0;
+      }
       @media (max-width: $mobile) {
         background-image: url(../views/namaz/fard-isha-m.jpg);
         background-position: initial;

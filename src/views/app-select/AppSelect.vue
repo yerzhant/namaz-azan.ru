@@ -2,7 +2,7 @@
   section.app-select
     .buttons
       AppButton(:width="177" :height="36" small) НАМАЗ ДЛЯ ВЗРОСЛЫХ
-      AppButton(:width="177" :height="36" small :opacity=".5") НАМАЗ ДЛЯ ДЕТЕЙ
+      AppButton(:width="177" :height="36" small :opacity=".2") НАМАЗ ДЛЯ ДЕТЕЙ
       AppButton(:width="177" :height="36" small :opacity="madhhab == 'hanafi' ? 1 : .5"
         @click="selectMadhhab('hanafi')"
       ) ХАНАФИТСКИЙ МАЗХАБ

@@ -47,10 +47,10 @@
             AppButton(:height="36" blue @click="goNext" v-if="!last") ДАЛЕЕ
             //- AppButton.print(:height="36" @click="print") РАСПЕЧАТАТЬ
       .media
-        .image-1(:class="[$store.state.gender, {active: image1}]")
-        .image-2(:class="[$store.state.gender, {active: image2}]")
-        .image-3(:class="[$store.state.gender, {active: image3}]")
-        .tool-bar(:class="$store.state.gender")
+        .image-1(:class="[$store.state.gender, $store.state.madhhab, {active: image1}]")
+        .image-2(:class="[$store.state.gender, $store.state.madhhab, {active: image2}]")
+        .image-3(:class="[$store.state.gender, $store.state.madhhab, {active: image3}]")
+        .tool-bar(:class="[$store.state.gender, $store.state.madhhab]")
           .button.image.active
           .filler
           .button.b1(:class="{active: image1}" @click="image2 = image3 = false; image1 = true") 1
@@ -411,6 +411,9 @@ export default {
   }
   .image-1 {
     background-image: url(./niet.png);
+    &.shafii {
+      background-image: url('./niet-shafii.png');
+    }
     @media (max-width: $mobile) {
       background-size: initial;
     }
@@ -433,6 +436,9 @@ export default {
   }
   .image-1 {
     background-image: url(./takbir-1.png);
+    &.shafii {
+      background-image: url('./takbir-1-shafii.png');
+    }
     @media (max-width: $mobile) {
       background-size: initial;
     }
@@ -442,6 +448,9 @@ export default {
   }
   .image-2 {
     background-image: url(./takbir-2.png);
+    &.shafii {
+      background-image: url('./takbir-2-shafii.png');
+    }
     &.woman {
       background-image: url(./takbir-woman.png);
     }
@@ -455,6 +464,9 @@ export default {
   }
   .image-1 {
     background-image: url(./qiyam-1.png);
+    &.shafii {
+      background-image: url('./qiyam-1-shafii.png');
+    }
     @media (max-width: $mobile) {
       background-size: initial;
     }
@@ -464,6 +476,9 @@ export default {
   }
   .image-2 {
     background-image: url(./qiyam-2.png);
+    &.shafii {
+      background-image: url('./qiyam-2-shafii.png');
+    }
     &.woman {
       background-image: url(./qiyam-woman-2.png);
     }
@@ -474,15 +489,22 @@ export default {
   .b2 {
     display: flex;
   }
-  .tool-bar.woman {
-    .b1,
-    .b2 {
-      display: none;
+  .tool-bar {
+    &.shafii,
+    &.woman {
+      .b1,
+      .b2 {
+        display: none;
+      }
     }
   }
   .image-1 {
     background-image: url(./ruku-1.png);
     background-position-y: 215px;
+    &.shafii {
+      background-image: url('./ruku-shafii.png');
+      background-position-y: 170px;
+    }
     @media (max-width: $mobile) {
       background-size: initial;
     }
@@ -506,6 +528,9 @@ export default {
 .straight-up {
   .image-1 {
     background-image: url(./niet.png);
+    &.shafii {
+      background-image: url('./niet-shafii.png');
+    }
     @media (max-width: $mobile) {
       background-size: initial;
     }
@@ -518,6 +543,9 @@ export default {
 .sadjda-2 {
   .image-1 {
     background-image: url(./sadjda.png);
+    &.shafii {
+      background-image: url('./sadjda-shafii.png');
+    }
     background-position-y: 300px;
     &.woman {
       background-image: url(./sadjda-woman.png);
@@ -533,6 +561,9 @@ export default {
   .image-1 {
     background-image: url(./sitting-1.png);
     background-position-y: 160px;
+    &.shafii {
+      background-image: url('./sitting-1-shafii.png');
+    }
     &.woman {
       background-image: url(./sitting-woman-1.png);
     }
@@ -540,6 +571,9 @@ export default {
   .image-2 {
     background-image: url(./sitting-2.png);
     background-position-y: 170px;
+    &.shafii {
+      background-image: url('./sitting-2-shafii.png');
+    }
     &.woman {
       background-image: url(./sitting-woman-2.png);
       background-position-y: 250px;
@@ -555,6 +589,9 @@ export default {
   .image-1 {
     background-image: url(./sitting-1.png);
     background-position-y: 160px;
+    &.shafii {
+      background-image: url('./sitting-1-shafii.png');
+    }
     &.woman {
       background-image: url(./sitting-woman-1.png);
     }
@@ -562,12 +599,18 @@ export default {
   .image-2 {
     background-image: url(./sitting-2.png);
     background-position-y: 170px;
+    &.shafii {
+      background-image: url('./sitting-2-shafii.png');
+    }
     &.woman {
       background-image: url(./sitting-woman-2.png);
     }
   }
   .image-3 {
     background-image: url(./tashahhud.png);
+    &.shafii {
+      background-image: url('./tashahhood-shafii.png');
+    }
     &.woman {
       background-image: url(./tashahhud-woman.png);
     }
@@ -581,6 +624,9 @@ export default {
   .image-1 {
     background-image: url(./salam-right.png);
     background-position-y: 160px;
+    &.shafii {
+      background-image: url('./salam-right-shafii.png');
+    }
     &.woman {
       background-image: url(./salam-right-woman.png);
     }
@@ -588,6 +634,10 @@ export default {
   .image-2 {
     background-image: url(./salam-left.png);
     background-position-y: 160px;
+    &.shafii {
+      background-image: url('./salam-left-shafii.png');
+      background-position-y: 154px;
+    }
     &.woman {
       background-image: url(./salam-left-woman.png);
     }
@@ -597,6 +647,9 @@ export default {
   .image-1 {
     background-image: url(./salam-right.png);
     background-position-y: 160px;
+    &.shafii {
+      background-image: url('./salam-right-shafii.png');
+    }
     &.woman {
       background-image: url(./salam-right-woman.png);
     }
@@ -606,6 +659,9 @@ export default {
   .image-1 {
     background-image: url(./salam-left.png);
     background-position-y: 160px;
+    &.shafii {
+      background-image: url('./salam-left-shafii.png');
+    }
     &.woman {
       background-image: url(./salam-left-woman.png);
     }
@@ -615,6 +671,9 @@ export default {
   .image-1 {
     background-image: url(./dua.png);
     background-position-y: 160px;
+    &.shafii {
+      background-image: url('./dua-shafii.png');
+    }
     &.woman {
       background-image: url(./dua-woman.png);
     }

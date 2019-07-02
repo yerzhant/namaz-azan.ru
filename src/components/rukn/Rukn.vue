@@ -770,6 +770,9 @@ export default {
     .image-1 {
       background-image: url(./wudu/niet.png);
       background-position-y: 100px;
+      &.shafii {
+        background-image: url('./wudu/niet-shafii.png');
+      }
     }
   }
   &.hands {
@@ -788,6 +791,9 @@ export default {
     .image-1 {
       background-image: url(./wudu/nose.png);
       background-position-y: 140px;
+      &.shafii {
+        background-image: url('./wudu/nose-shafii.png');
+      }
     }
   }
   &.mouth-nose {
@@ -798,33 +804,52 @@ export default {
     .image-1 {
       background-image: url(./wudu/mouth.png);
       background-position-y: 140px;
+      &.shafii {
+        background-image: url('./wudu/mouth-shafii.png');
+      }
     }
     .image-2 {
       background-image: url(./wudu/nose.png);
       background-position-y: 140px;
+      &.shafii {
+        background-image: url('./wudu/nose-shafii.png');
+      }
     }
   }
   &.face {
     .image-1 {
       background-image: url(./wudu/face.png);
       background-position-y: 140px;
+      &.shafii {
+        background-image: url('./wudu/face-shafii.png');
+      }
     }
   }
   &.full-hands {
     .image-1 {
       background-image: url(./wudu/full-hands.png);
       background-position-y: 110px;
+      &.shafii {
+        background-image: url('./wudu/full-hands-shafii.png');
+      }
     }
   }
   &.head {
     .image-1 {
       background-image: url(./wudu/head.png);
       background-position-y: 140px;
+      &.shafii {
+        background-image: url('./wudu/head-shafii.png');
+        background-position-y: 100px;
+      }
     }
   }
   &.ears-and-neck {
     .image-1 {
       background-image: url(./wudu/ears-and-neck.png);
+      &.shafii {
+        background-image: url('./wudu/ears-shafii.png');
+      }
       @media (max-width: $mobile) {
         background-size: initial;
       }
@@ -834,6 +859,9 @@ export default {
     .image-1 {
       background-image: url(./wudu/leg-right.png);
       background-position-y: 110px;
+      &.shafii {
+        background-image: url('./wudu/legs-shafii.png');
+      }
     }
   }
   &.leg-left {
@@ -847,9 +875,20 @@ export default {
     .b2 {
       display: flex;
     }
+    .tool-bar {
+      &.shafii {
+        .b1,
+        .b2 {
+          display: none;
+        }
+      }
+    }
     .image-1 {
       background-image: url(./wudu/leg-right.png);
       background-position-y: 110px;
+      &.shafii {
+        background-image: url('./wudu/legs-shafii.png');
+      }
     }
     .image-2 {
       background-image: url(./wudu/leg-left.png);
@@ -863,6 +902,10 @@ export default {
     .image-1 {
       background-image: url(./wudu/dua.png);
       background-position-y: 100px;
+      &.shafii {
+        background-image: url('./wudu/dua-shafii.png');
+        background-position-y: 30px;
+      }
     }
   }
 }

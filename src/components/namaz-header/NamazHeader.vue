@@ -1,5 +1,5 @@
 <template lang="pug">
-  header.header(:class="[type, $store.state.gender]")
+  header.header(:class="[type, $store.state.gender, $store.state.madhhab]")
     .info-wrapper
       section.info
         h1.title {{ title }}
@@ -705,6 +705,9 @@ export default {
 }
 .wudu {
   background-image: url(./wudu-bg.png);
+  &.shafii {
+    background-image: url(./wudu-bg-shafii.png);
+  }
   @media (max-width: $mobile) {
     background-image: url(./wudu-bg-m.png);
     background-position-y: 257px;

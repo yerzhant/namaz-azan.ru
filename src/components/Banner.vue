@@ -439,6 +439,9 @@ export default {
   &.wudu {
     .image {
       background-image: url(../views/wudu/wudu.jpg);
+      &.shafii {
+        background-image: url(../views/wudu/wudu-shafii.jpg);
+      }
     }
   }
   &.ghusl {

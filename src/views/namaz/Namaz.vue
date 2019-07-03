@@ -138,10 +138,10 @@ export default {
   },
   methods: {
     getData() {
-      const { type, subType } = this.$route.params;
+      const { madhhab, type, subType } = this.$route.params;
       this.$store.commit('setNamaz', type);
       this.$store.commit('setMenu', 'level-2');
-      axios.get(`/api/namaz/namaz/${this.$store.state.gender}/${type}/${subType}`).then(r => {
+      axios.get(`/api/namaz/namaz/${madhhab}/${this.$store.state.gender}/${type}/${subType}`).then(r => {
         this.data = r.data;
         this.$store.commit('setMenuItems', this.data.menu);
       });
@@ -160,10 +160,6 @@ export default {
   },
   watch: {
     $route() {
-      this.getData();
-    },
-    // eslint-disable-next-line
-    '$store.state.gender'() {
       this.getData();
     },
   },

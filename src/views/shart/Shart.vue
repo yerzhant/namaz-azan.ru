@@ -203,11 +203,11 @@ export default {
       if (!this.isShart) {
         headerStatus = 'Общие положения';
       }
-      const { type } = this.$route.params;
+      const { type, madhhab } = this.$route.params;
       this.$store.commit('setMobileHeaderStatus', headerStatus);
       this.$store.commit('setNamaz', type);
       this.$store.commit('setMenu', null);
-      axios.get(`/api/namaz/shart/${type}`).then(r => {
+      axios.get(`/api/namaz/shart/${madhhab}/${type}`).then(r => {
         this.title = r.data.title;
         this.shortDesc = r.data.shortDesc;
         this.desc = r.data.desc;

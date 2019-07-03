@@ -125,7 +125,7 @@ export default {
       return itemWidth * -30 + document.querySelector('.items-viewport').offsetWidth;
     },
     getData() {
-      const { gender } = this.$store.state;
+      const { gender, madhhab } = this.$store.state;
 
       axios.get(`/api/namaz/tour/${gender}`).then(r => {
         r.data.wudu.forEach((w, i) => {
@@ -135,7 +135,7 @@ export default {
         });
       });
 
-      axios.get(`/api/namaz/namaz/${gender}/tour/fard`).then(resp => {
+      axios.get(`/api/namaz/namaz/${madhhab}/${gender}/tour/fard`).then(resp => {
         resp.data.rakaats.forEach((rakaat, ra) => {
           let offset = ra === 0 ? 8 : 18;
           rakaat.rukns.forEach((r, i) => {

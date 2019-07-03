@@ -18,7 +18,7 @@
   @media (max-width: $mobile) {
     display: block;
     height: initial;
-    padding: 0 25px;
+    padding: 0 10px;
     background-color: #f4f8fb;
   }
   &::before,
@@ -50,7 +50,7 @@
   margin-left: 40px;
   @media (max-width: $mobile) {
     display: inline-block;
-    margin-right: 10px;
+    margin-right: 5px;
     margin-left: 0;
     float: left;
     margin-top: 14px;

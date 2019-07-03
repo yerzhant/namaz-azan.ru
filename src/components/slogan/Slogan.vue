@@ -18,7 +18,7 @@
   @media (max-width: $mobile) {
     display: block;
     height: initial;
-    padding: 0 33px;
+    padding: 0 25px;
     background-color: #f4f8fb;
   }
   &::before,

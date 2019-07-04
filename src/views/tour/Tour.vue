@@ -46,7 +46,10 @@
           .item(
             v-for="(item, i) in items"
             :key="i"
-            :class="[item.type, item.subType, $store.state.gender, {active: i === index}]"
+            :class="[item.type, item.subType, \
+                     $store.state.gender, $store.state.madhhab, \
+                     {active: i === index} \
+            ]"
             @click="index = i"
           )
             .title(v-if="item.title") {{ item.title }}
@@ -86,8 +89,7 @@ export default {
         this.$refs.rukn.reset();
       });
     },
-    // eslint-disable-next-line
-    '$store.state.gender'() {
+    $route() {
       this.getData();
     },
   },
@@ -305,70 +307,136 @@ export default {
     }
     &.wudu-face {
       background-image: url(./wudu-face.jpg);
+      &.shafii {
+        background-image: url(./wudu-face-shafii.jpg);
+      }
     }
     &.wudu-hands {
       background-image: url(./wudu-hands.jpg);
+      &.shafii {
+        background-image: url(./wudu-hands-shafii.jpg);
+      }
     }
     &.wudu-head {
       background-image: url(./wudu-head.jpg);
+      &.shafii {
+        background-image: url(./wudu-head-shafii.jpg);
+      }
     }
     &.wudu-legs {
       background-image: url(./wudu-legs.jpg);
+      &.shafii {
+        background-image: url(./wudu-legs-shafii.jpg);
+      }
     }
     &.niet {
       background-image: url(./niet.jpg);
+      &.shafii {
+        background-image: url(./niet-shafii.jpg);
+      }
     }
     &.takbir {
       background-image: url(./takbir.jpg);
+      &.shafii {
+        background-image: url(./takbir-shafii.jpg);
+      }
     }
     &.qiyam {
       background-image: url(./qiyam.jpg);
+      &.shafii {
+        background-image: url(./qiyam-shafii.jpg);
+      }
     }
     &.ruku {
       background-image: url(./ruku.jpg);
+      &.shafii {
+        background-image: url(./ruku-shafii.jpg);
+      }
     }
     &.sadjda {
       background-image: url(./sadjda.jpg);
+      &.shafii {
+        background-image: url(./sadjda-shafii.jpg);
+      }
     }
     &.sitting {
       background-image: url(./sitting.jpg);
+      &.shafii {
+        background-image: url(./sitting-shafii.jpg);
+      }
     }
     &.salam-right {
       background-image: url(./salam-right.jpg);
+      &.shafii {
+        background-image: url(./salam-right-shafii.jpg);
+      }
     }
     &.salam-left {
       background-image: url(./salam-left.jpg);
+      &.shafii {
+        background-image: url(./salam-left-shafii.jpg);
+      }
     }
     &.dua {
       background-image: url(./dua.jpg);
+      &.shafii {
+        background-image: url(./dua-shafii.jpg);
+      }
     }
     &.woman {
       &.niet {
         background-image: url(./niet-woman.jpg);
+        &.shafii {
+          background-image: url(./niet-woman-shafii.jpg);
+        }
       }
       &.takbir {
         background-image: url(./takbir-woman.jpg);
+        &.shafii {
+          background-image: url(./takbir-woman-shafii.jpg);
+        }
       }
       &.qiyam {
         background-image: url(./qiyam-woman.jpg);
+        &.shafii {
+          background-image: url(./qiyam-woman-shafii.jpg);
+        }
       }
       &.ruku {
         background-image: url(./ruku-woman.jpg);
+        &.shafii {
+          background-image: url(./ruku-woman-shafii.jpg);
+        }
       }
       &.sadjda {
         background-image: url(./sadjda-woman.jpg);
+        &.shafii {
+          background-image: url(./sadjda-woman-shafii.jpg);
+        }
       }
       &.sitting {
         background-image: url(./sitting-woman.jpg);
+        &.shafii {
+          background-image: url(./sitting-woman-shafii.jpg);
+        }
       }
       &.salam-right {
         background-image: url(./salam-right-woman.jpg);
+        &.shafii {
+          background-image: url(./salam-right-woman-shafii.jpg);
+        }
       }
       &.salam-left {
         background-image: url(./salam-left-woman.jpg);
+        &.shafii {
+          background-image: url(./salam-left-woman-shafii.jpg);
+        }
       }
       &.dua {
         background-image: url(./dua-woman.jpg);
+        &.shafii {
+          background-image: url(./dua-woman-shafii.jpg);
+        }
       }
     }
   }

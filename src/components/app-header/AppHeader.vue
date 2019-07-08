@@ -21,16 +21,16 @@
         :class="{active: madhhabOpen}"
         @click.stop="madhhabOpen = !madhhabOpen"
       ) Мазхаб:
-        span.selected-item {{ madhhabText }}
-        .items
-          .item(
-            :class="{active: madhhab == 'hanafi'}"
-            @click="setMadhhab('hanafi')"
-          ) Ханафи
-          .item(
-            :class="{active: madhhab == 'shafii'}"
-            @click="setMadhhab('shafii')"
-          ) Шафии
+        span.selected-item.inactive {{ madhhabText }}
+        //- .items
+        //-   .item(
+        //-     :class="{active: madhhab == 'hanafi'}"
+        //-     @click="setMadhhab('hanafi')"
+        //-   ) Ханафи
+        //-   .item(
+        //-     :class="{active: madhhab == 'shafii'}"
+        //-     @click="setMadhhab('shafii')"
+        //-   ) Шафии
 
       .basmalah
         router-link(to="/")
@@ -259,6 +259,7 @@ export default {
     }
   }
 }
+.madhhab,
 .language {
   cursor: initial;
   &:hover {

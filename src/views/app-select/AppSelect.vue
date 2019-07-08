@@ -2,13 +2,13 @@
   section.app-select
     .buttons
       AppButton(:width="177" :height="36" small) НАМАЗ ДЛЯ ВЗРОСЛЫХ
-      AppButton(:width="177" :height="36" small :opacity=".1") НАМАЗ ДЛЯ ДЕТЕЙ
+      //- AppButton(:width="177" :height="36" small :opacity=".1") НАМАЗ ДЛЯ ДЕТЕЙ
       AppButton(:width="177" :height="36" small :opacity="madhhab == 'hanafi' ? 1 : .5"
         @click="selectMadhhab('hanafi')"
       ) ХАНАФИТСКИЙ МАЗХАБ
-      AppButton(:width="177" :height="36" small :opacity="madhhab == 'shafii' ? 1 : .5"
-        @click="selectMadhhab('shafii')"
-      ) ШАФИИТСКИЙ МАЗХАБ
+      //- AppButton(:width="177" :height="36" small :opacity="madhhab == 'shafii' ? 1 : .5"
+      //-   @click="selectMadhhab('shafii')"
+      //- ) ШАФИИТСКИЙ МАЗХАБ
     .select
       .prev(@click="next")
       .left(:class="[madhhab]" @click="selectGender('man')")
@@ -56,14 +56,14 @@ export default {
       this.$store.commit('setMadhhab', madhhab);
     },
     next() {
-      switch (this.madhhab) {
-        case 'hanafi':
-          this.$store.commit('setMadhhab', 'shafii');
-          break;
+      // switch (this.madhhab) {
+      //   case 'hanafi':
+      //     this.$store.commit('setMadhhab', 'shafii');
+      //     break;
 
-        default:
-          this.$store.commit('setMadhhab', 'hanafi');
-      }
+      //   default:
+      //     this.$store.commit('setMadhhab', 'hanafi');
+      // }
     },
   },
   computed: {

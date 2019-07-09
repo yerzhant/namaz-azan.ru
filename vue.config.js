@@ -29,6 +29,10 @@ module.exports = {
       msTileImage: 'icons/icon-144x144.png',
       maskIcon: '',
     },
+    workboxOptions: {
+      skipWaiting: true,
+      clientsClaim: true,
+    },
   },
   devServer: {
     proxy: 'http://localhost',

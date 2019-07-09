@@ -14,10 +14,13 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/namaz/precache-manifest.c355de128d3eb479c70ff3aee645b355.js"
+  "/namaz/precache-manifest.2e0c8537d1201fb7f1170fcb864bf1c8.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "namaz"});
+
+workbox.skipWaiting();
+workbox.clientsClaim();
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to

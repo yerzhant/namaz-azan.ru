@@ -219,6 +219,8 @@
           subTitle="Когда нет воды"
           text="Протирание частей тела чистой землей либо песком. Служит заменой омовения."
         )
+
+    Recommended
 </template>
 
 <script>
@@ -231,6 +233,7 @@ import Slogan from '@/components/slogan/Slogan.vue';
 import NamazInfo from '@/components/namaz-info/NamazInfo.vue';
 import GeneralProvisions from '@/components/general-provisions/GeneralProvisions.vue';
 import MobileGeneralProvisions from '@/components/mobile-general-provisions/MobileGeneralProvisions.vue';
+import Recommended from '@/components/Recommended.vue';
 
 export default {
   created() {
@@ -247,6 +250,7 @@ export default {
     NamazInfo,
     GeneralProvisions,
     MobileGeneralProvisions,
+    Recommended,
   },
   mixins: [routePrefix],
 };

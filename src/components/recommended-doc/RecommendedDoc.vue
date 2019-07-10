@@ -1,6 +1,7 @@
 <template lang="pug">
   section.recommended-doc
-    img(:src="doc.thumbImage" :alt="doc.title").image
+    a(:href="url").image-link
+      img(:src="doc.thumbImage" :alt="doc.title").image
     a.title(:href="url") {{ doc.title }}
     .authors {{ authors }}
     .description {{ doc.description }}
@@ -35,7 +36,11 @@ export default {
   padding: 15px;
 }
 .image {
+  display: block;
   width: 100%;
+  &-link {
+    display: block;
+  }
 }
 .title {
   display: inline-block;

@@ -2,7 +2,7 @@
   section.recommended
     AppSection(title="МАТЕРИАЛЫ О НАМАЗЕ")
       section.grid
-        RecommendedDoc(v-for="d in data.items" :doc="d")
+        RecommendedDoc(v-for="d in data.items" :doc="d" :key="d.id")
 </template>
 
 <script>

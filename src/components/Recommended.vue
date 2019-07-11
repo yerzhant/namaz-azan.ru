@@ -46,5 +46,10 @@ export default {
   width: 1076px;
   margin-right: auto;
   margin-left: auto;
+  @media (max-width: $mobile) {
+    width: 100%;
+    grid-gap: 20px;
+    grid-template-columns: 100%;
+  }
 }
 </style>

@@ -21,7 +21,7 @@ export default {
   methods: {
     getData() {
       axios.get('/api/namaz/recommended').then(r => {
-        r.data.forEach(i => this.data.items.push(i));
+        r.data.docs.forEach(i => this.data.items.push(i));
       });
     },
   },

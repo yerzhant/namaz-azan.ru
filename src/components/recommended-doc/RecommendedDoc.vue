@@ -6,7 +6,7 @@
     .authors {{ authors }}
     .description(v-html="type.description")
     .spacer
-    .category {{ type.text }} | {{ type.category }}
+    .category(:class="type.id") {{ type.text }} | {{ type.category }}
 </template>
 
 <script>
@@ -78,7 +78,7 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 186px;
+      height: 170px;
       background-image: radial-gradient(circle at center, #f7fcff 61%, #d4e4ed 100%);
       .image {
         width: 100px;
@@ -123,9 +123,12 @@ export default {
   line-height: 26px;
   color: #a8a8a8;
   font-family: $roboto;
-  background: url('./articles.png') no-repeat left;
-  background-size: 12.7px 14.7px;
   padding-left: 20px;
   margin-top: 10px;
+  background: url('./article.png') no-repeat left;
+  background-size: 12.7px 14.7px;
+  &.book {
+    background-image: url('./book.png');
+  }
 }
 </style>

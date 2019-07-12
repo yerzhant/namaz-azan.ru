@@ -1,12 +1,12 @@
 <template lang="pug">
   section.recommended-doc
-    a(:href="url").image-link
+    a(:href="url" :class="type.id").image-link
       img(:src="doc.thumbImage" :alt="doc.title").image
     a.title(:href="url") {{ doc.title }}
     .authors {{ authors }}
-    .description {{ doc.description }}
+    .description(v-html="type.description")
     .spacer
-    .category {{ category }}
+    .category {{ type.text }} | {{ type.category }}
 </template>
 
 <script>
@@ -19,8 +19,42 @@ export default {
     url() {
       return this.doc.url.substring(4);
     },
-    category() {
-      return `Статьи | ${this.doc.category.title}`;
+    type() {
+      switch (this.doc.type) {
+        case 'frontend\\models\\Post':
+          return {
+            id: 'post',
+            text: 'Статьи',
+            category: this.doc.category.title,
+            description: this.doc.description,
+          };
+
+        case 'frontend\\models\\Books':
+          return {
+            id: 'book',
+            text: 'Книги',
+            category: this.doc.categories[0].title,
+            description: this.doc.text,
+          };
+
+        case 'frontend\\models\\Video':
+          return {
+            id: 'video',
+            text: 'Видео',
+          };
+
+        case 'frontend\\models\\Audio':
+          return {
+            id: 'audio',
+            text: 'Аудио',
+          };
+
+        default:
+          return {
+            id: 'unknown',
+            text: '???',
+          };
+      }
     },
   },
 };
@@ -40,6 +74,16 @@ export default {
   width: 100%;
   &-link {
     display: block;
+    &.book {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 186px;
+      background-image: radial-gradient(circle at center, #f7fcff 61%, #d4e4ed 100%);
+      .image {
+        width: 100px;
+      }
+    }
   }
 }
 .title {

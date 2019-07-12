@@ -3,7 +3,7 @@
     a(:href="url" :class="type.id").image-link
       img(:src="doc.thumbImage" :alt="doc.title").image
     a.title(:href="url") {{ doc.title }}
-    .authors {{ authors }}
+    .authors {{ type.authors }}
     .description(v-html="type.description")
     .spacer
     .category(:class="type.id") {{ type.text }} | {{ type.category }}
@@ -13,9 +13,6 @@
 export default {
   props: ['doc'],
   computed: {
-    authors() {
-      return this.doc.authors.map(a => a.title).join(', ');
-    },
     url() {
       return this.doc.url.substring(4);
     },
@@ -27,6 +24,7 @@ export default {
             text: 'Статьи',
             category: this.doc.category.title,
             description: this.doc.description,
+            authors: this.authors(),
           };
 
         case 'frontend\\models\\Books':
@@ -35,12 +33,16 @@ export default {
             text: 'Книги',
             category: this.doc.categories[0].title,
             description: this.doc.text,
+            authors: this.authors(),
           };
 
         case 'frontend\\models\\Video':
           return {
             id: 'video',
             text: 'Видео',
+            category: this.doc.category.title,
+            description: this.doc.description,
+            authors: this.doc.author.title,
           };
 
         case 'frontend\\models\\Audio':
@@ -55,6 +57,11 @@ export default {
             text: '???',
           };
       }
+    },
+  },
+  methods: {
+    authors() {
+      return this.doc.authors.map(a => a.title).join(', ');
     },
   },
 };
@@ -129,6 +136,9 @@ export default {
   background-size: 12.7px 14.7px;
   &.book {
     background-image: url('./book.png');
+  }
+  &.video {
+    background-image: url('./video.png');
   }
 }
 </style>

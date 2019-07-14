@@ -24,6 +24,7 @@ let currentPlayer = null;
 export default {
   props: {
     type: String,
+    file: String,
   },
   data() {
     return {
@@ -35,7 +36,11 @@ export default {
   },
   computed: {
     url() {
-      return `https://azan.ru/media/audio/namaz/${this.type}.mp3`;
+      if (this.type === 'file') {
+        return this.file;
+      } else {
+        return `https://azan.ru/media/audio/namaz/${this.type}.mp3`;
+      }
     },
   },
   methods: {

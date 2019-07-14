@@ -1,21 +1,22 @@
 <template lang="pug">
   section.recommended-doc
-    a(:href="url" :class="type.id").image-link
-      img(:src="doc.thumbImage" :alt="doc.title").image
-    a.title(:href="url") {{ doc.title }}
+    a(:href="type.url" :class="type.id").image-link
+      img(:src="type.image" :alt="doc.title").image
+    AppPlayer.player(type="file" v-if="type.id === 'audio'" :file="type.file")
+    a.title(:href="type.url") {{ doc.title }}
     .authors {{ type.authors }}
     .description(v-html="type.description")
+    a.download(v-if="type.id === 'audio'" download :href="type.file") Скачать
     .spacer
     .category(:class="type.id") {{ type.text }} | {{ type.category }}
 </template>
 
 <script>
+import AppPlayer from '@/components/app-player/AppPlayer.vue';
+
 export default {
   props: ['doc'],
   computed: {
-    url() {
-      return this.doc.url.substring(4);
-    },
     type() {
       switch (this.doc.type) {
         case 'frontend\\models\\Post':
@@ -25,6 +26,8 @@ export default {
             category: this.doc.category.title,
             description: this.doc.description,
             authors: this.authors(),
+            url: this.doc.url.substring(4),
+            image: this.doc.thumbImage,
           };
 
         case 'frontend\\models\\Books':
@@ -34,6 +37,8 @@ export default {
             category: this.doc.categories[0].title,
             description: this.doc.text,
             authors: this.authors(),
+            url: this.doc.url.substring(4),
+            image: this.doc.thumbImage,
           };
 
         case 'frontend\\models\\Video':
@@ -43,12 +48,19 @@ export default {
             category: this.doc.category.title,
             description: this.doc.description,
             authors: this.doc.author.title,
+            url: this.doc.url.substring(4),
+            image: this.doc.thumbImage,
           };
 
         case 'frontend\\models\\Audio':
           return {
             id: 'audio',
             text: 'Аудио',
+            category: this.doc.playlist.category.title,
+            authors: this.doc.playlist.author.title,
+            url: this.doc.playlist.url.substring(4),
+            image: this.doc.playlist.image,
+            file: this.doc.audioFile,
           };
 
         default:
@@ -63,6 +75,9 @@ export default {
     authors() {
       return this.doc.authors.map(a => a.title).join(', ');
     },
+  },
+  components: {
+    AppPlayer,
   },
 };
 </script>
@@ -89,6 +104,14 @@ export default {
       background-image: radial-gradient(circle at center, #f7fcff 61%, #d4e4ed 100%);
       .image {
         width: 100px;
+      }
+    }
+    &.audio {
+      display: flex;
+      justify-content: center;
+      background-color: #000;
+      .image {
+        width: 135px;
       }
     }
   }
@@ -140,5 +163,16 @@ export default {
   &.video {
     background-image: url('./video.png');
   }
+  &.audio {
+    background-image: url('./audio.png');
+  }
+}
+.download {
+  font-size: 14px;
+  color: #4a4a4a;
+  font-family: $pt-sans;
+  padding: 9px 14px;
+  border: 1px solid #dce6eb;
+  width: 77px;
 }
 </style>

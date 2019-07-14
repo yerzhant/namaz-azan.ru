@@ -38,9 +38,8 @@ export default {
     url() {
       if (this.type === 'file') {
         return this.file;
-      } else {
-        return `https://azan.ru/media/audio/namaz/${this.type}.mp3`;
       }
+      return `https://azan.ru/media/audio/namaz/${this.type}.mp3`;
     },
   },
   methods: {

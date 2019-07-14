@@ -60,7 +60,7 @@ export default {
             authors: this.doc.playlist.author.title,
             url: this.doc.playlist.url.substring(4),
             image: this.doc.playlist.image,
-            file: this.doc.audioFile,
+            file: this.doc.audioFile.substring(4),
           };
 
         default:

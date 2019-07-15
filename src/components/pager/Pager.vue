@@ -62,6 +62,9 @@ export default {
     background-color: #3fa3d2;
     border-color: #3fa3d2;
   }
+  &.active {
+    cursor: initial;
+  }
 }
 .prev {
   background: url('./prev.png') no-repeat center;

@@ -5,7 +5,7 @@ module.exports = {
   productionSourceMap: false,
   configureWebpack: {
     performance: {
-      maxEntrypointSize: 400 * 1024,
+      maxEntrypointSize: 512 * 1024,
       maxAssetSize: 2 * 1024 * 1024,
       // assetFilter: file => !(/\.(map|mp3|mp3\.gz)$/.test(file)),
     },

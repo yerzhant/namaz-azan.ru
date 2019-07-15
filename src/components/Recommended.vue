@@ -6,7 +6,7 @@
       Pager(
         :itemsPerPage="itemsPerPage"
         :items="items.length"
-        @page="console.log($event)"
+        @page="currentPage = $event"
       ).pager
 </template>
 
@@ -20,7 +20,7 @@ export default {
   data() {
     return {
       items: [],
-      itemsPerPage: 3,
+      itemsPerPage: 6,
       currentPage: 1,
       currentItems: [],
     };

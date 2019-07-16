@@ -15,7 +15,6 @@
 <script>
 import AppSection from '@/components/app-section/AppSection.vue';
 import RecommendedDoc from '@/components/recommended-doc/RecommendedDoc.vue';
-import RecommendedMainDoc from '@/components/recommended-doc/RecommendedMainDoc.vue';
 import Pager from '@/components/pager/Pager.vue';
 import axios from 'axios';
 
@@ -61,7 +60,6 @@ export default {
   components: {
     AppSection,
     RecommendedDoc,
-    RecommendedMainDoc,
     Pager,
   },
 };

@@ -32,7 +32,7 @@ export default {
   methods: {
     go() {
       if (this.url) {
-        location.href = this.url;
+        window.location.href = this.url;
       } else if (this.link) {
         this.$router.push(this.link);
       } else {

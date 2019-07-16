@@ -31,7 +31,7 @@ export default {
             description: this.doc.description,
             authors: this.authors(),
             url: this.doc.url.substring(4),
-            image: this.doc.thumbImage,
+            image: this.kind === 'main' ? this.doc.image : this.doc.thumbImage,
           };
 
         case 'frontend\\models\\Books':
@@ -53,7 +53,7 @@ export default {
             description: this.doc.description,
             authors: this.doc.author.title,
             url: this.doc.url.substring(4),
-            image: this.doc.thumbImage,
+            image: this.kind === 'main' ? this.doc.image : this.doc.thumbImage,
           };
 
         case 'frontend\\models\\Audio':

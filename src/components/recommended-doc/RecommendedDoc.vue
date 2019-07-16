@@ -1,21 +1,25 @@
 <template lang="pug">
-  section.recommended-doc
-    a(:href="type.url" :class="type.id").image-link
-      img(:src="type.image" :alt="doc.title").image
-    AppPlayer.player(type="file" v-if="type.id === 'audio'" :file="type.file")
-    a.title(:href="type.url") {{ doc.title }}
-    .authors {{ type.authors }}
-    .description(v-html="type.description")
-    a.download(v-if="type.id === 'audio'" download :href="type.file") Скачать
-    .spacer
-    .category(:class="type.id") {{ type.text }} | {{ type.category }}
+  section.recommended-doc(:class="kind")
+    .image-block
+      a(:href="type.url" :class="type.id").image-link
+        img(:src="type.image" :alt="doc.title").image
+      AppPlayer.player(type="file" v-if="type.id === 'audio'" :file="type.file")
+    .text-block
+      a.title(:href="type.url") {{ doc.title }}
+      .authors {{ type.authors }}
+      .description(v-html="type.description")
+      a.download(v-if="type.id === 'audio'" download :href="type.file") Скачать
+      AppButton(v-if="kind === 'main'" :url="type.url" blue).read-more ЧИТАТЬ ДАЛЕЕ
+      .spacer
+      .category(:class="type.id") {{ type.text }} | {{ type.category }}
 </template>
 
 <script>
 import AppPlayer from '@/components/app-player/AppPlayer.vue';
+import AppButton from '@/components/AppButton.vue';
 
 export default {
-  props: ['doc'],
+  props: ['doc', 'kind'],
   computed: {
     type() {
       switch (this.doc.type) {
@@ -78,6 +82,7 @@ export default {
   },
   components: {
     AppPlayer,
+    AppButton,
   },
 };
 </script>
@@ -86,10 +91,59 @@ export default {
 .recommended-doc {
   display: flex;
   flex-direction: column;
-  width: 100%;
   background-color: #fff;
   border: 1px solid #dce6eb;
   padding: 15px;
+  &.main {
+    flex-direction: row;
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      padding: 0;
+      padding-bottom: 15px;
+      margin-right: -20px;
+      margin-left: -20px;
+    }
+    > * {
+      flex-basis: 50%;
+      @media (max-width: $mobile) {
+        flex-basis: initial;
+      }
+    }
+    .image-block {
+      padding-right: 10px;
+      @media (max-width: $mobile) {
+        padding: 0;
+      }
+    }
+    .text-block {
+      padding: 0 50px;
+      @media (max-width: $mobile) {
+        padding: 0 20px;
+      }
+      .title {
+        font-size: 18px;
+        color: #3a3a3a;
+        font-family: $pt-sans;
+        text-transform: uppercase;
+      }
+      .description {
+        font-size: 14px;
+        line-height: 22px;
+        color: #2a2a2a;
+        @media (max-width: $mobile) {
+          max-height: 150px;
+        }
+      }
+    }
+  }
+}
+.text-block {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 .image {
   display: block;
@@ -159,12 +213,17 @@ export default {
   background-size: 12.7px 14.7px;
   &.book {
     background-image: url('./book.png');
+    background-size: 14.3px 15px;
   }
   &.video {
     background-image: url('./video.png');
+    background-size: 6.3px 12px;
+    padding-left: 15px;
   }
   &.audio {
     background-image: url('./audio.png');
+    background-size: 11.7px 11.3px;
+    padding-left: 18px;
   }
 }
 .download {
@@ -174,5 +233,11 @@ export default {
   padding: 9px 14px;
   border: 1px solid #dce6eb;
   width: 77px;
+}
+.read-more {
+  margin-top: 25px;
+  @media (max-width: $mobile) {
+    display: none;
+  }
 }
 </style>

@@ -11,6 +11,7 @@
 export default {
   props: {
     link: String,
+    url: String,
     red: Boolean,
     blue: Boolean,
     blueStylish: Boolean,
@@ -30,7 +31,9 @@ export default {
   },
   methods: {
     go() {
-      if (this.link) {
+      if (this.url) {
+        location.href = this.url;
+      } else if (this.link) {
         this.$router.push(this.link);
       } else {
         this.$emit('click');

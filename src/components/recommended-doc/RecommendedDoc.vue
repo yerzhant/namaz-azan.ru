@@ -133,6 +133,7 @@ export default {
         font-size: 14px;
         line-height: 22px;
         color: #2a2a2a;
+        max-height: 85px;
         @media (max-width: $mobile) {
           max-height: 150px;
         }

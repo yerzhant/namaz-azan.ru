@@ -125,6 +125,7 @@ export default {
       }
       .title {
         font-size: 18px;
+        line-height: 1.3;
         color: #3a3a3a;
         font-family: $pt-sans;
         text-transform: uppercase;

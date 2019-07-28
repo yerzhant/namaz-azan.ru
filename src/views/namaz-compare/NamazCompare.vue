@@ -52,10 +52,9 @@
           :shadow="$store.state.namaz === 'mareed'"
           descStyleBlackBlue
           descWithMargin2
-          title="БОЛЬНЫМ"
-          shortDesc="Намаз для больных"
-          desc="Обзор намаза для тех, кто по состоянию здоровья не может полноценно \
-                выполнять намаз. В качестве примера выступит утренний намаз Фаджр."
+          title="СОЛААТУЛЬ-МАРИИД"
+          shortDesc="Намаз больного (сидя)"
+          desc="Положения и условия совершения намаза для больных людей."
         )
           template(slot="buttons")
             AppButton(:link="`${routePrefix}/mareed/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ

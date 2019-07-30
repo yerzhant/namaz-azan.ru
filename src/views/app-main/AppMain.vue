@@ -150,6 +150,16 @@
       )
         template(slot="buttons")
           AppButton(:link="`${routePrefix}/id/wadjib`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
+      Banner(
+        type="mareed"
+        descStyleBlackBlue
+        descWithMargin
+        title="СОЛААТУЛЬ-МАРИИД"
+        shortDesc="Намаз больного (сидя)"
+        desc="Положения и условия совершения намаза для больных людей."
+      )
+        template(slot="buttons")
+          AppButton(:link="`${routePrefix}/mareed/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
     AppSection.tahharah(title="ВИДЫ ОЧИЩЕНИЯ")
       Banner(

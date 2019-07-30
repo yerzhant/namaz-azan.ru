@@ -696,6 +696,7 @@ export default {
     }
     .type {
       background: url(./mareed.png) no-repeat top;
+      text-align: center;
     }
     .clocks,
     .city-info {

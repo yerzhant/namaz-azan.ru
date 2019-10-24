@@ -97,7 +97,7 @@
           .desc Подмывание
         router-link.item(:to="`${routePrefix}/tahharah/ghusl`")
           .title ГУСЛЬ
-          .desc Малое омовение
+          .desc Полное омовение
         router-link.item(:to="`${routePrefix}/tahharah/wudu`")
           .title ВУДУ
           .desc Малое омовение

@@ -184,10 +184,10 @@ export default {
   },
   methods: {
     getData() {
-      const { type } = this.$route.params;
+      const { madhhab, type } = this.$route.params;
       this.$store.commit('setNamaz', type);
       this.$store.commit('setMenu', 'level-2');
-      axios.get(`/api/namaz/${type}`).then(r => {
+      axios.get(`/api/namaz/tahharah/${madhhab}/${type}`).then(r => {
         this.title = r.data.title;
         this.subTitle = r.data.subTitle;
         this.shortDesc = r.data.shortDesc;

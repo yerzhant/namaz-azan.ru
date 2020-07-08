@@ -12,18 +12,18 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'arrow-parens': 'off',
     'no-plusplus': 'off',
-    'no-param-reassign': 'off',//['error', {
-      // props: true,
-      // ignorePropertyModificationsFor: [
-      //   'state', // for vuex state
-        // 'acc', // for reduce accumulators
-        // 'e', // for e.returnvalue
-        // 'ctx', // for Koa routing
-        // 'req', // for Express requests
-        // 'request', // for Express requests
-        // 'res', // for Express responses
-        // 'response', // for Express responses
-        // '$scope', // for Angular 1 scopes
+    'no-param-reassign': 'off', // ['error', {
+    // props: true,
+    // ignorePropertyModificationsFor: [
+    //   'state', // for vuex state
+    // 'acc', // for reduce accumulators
+    // 'e', // for e.returnvalue
+    // 'ctx', // for Koa routing
+    // 'req', // for Express requests
+    // 'request', // for Express requests
+    // 'res', // for Express responses
+    // 'response', // for Express responses
+    // '$scope', // for Angular 1 scopes
     //   ]
     // }],
   },

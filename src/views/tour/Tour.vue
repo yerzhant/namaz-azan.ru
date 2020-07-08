@@ -60,9 +60,9 @@
 <script>
 import Rukn from '@/components/rukn/Rukn.vue';
 import AppButton from '@/components/AppButton.vue';
-import items from './items';
 import routePrefix from '@/mixins/routePrefix';
 import axios from 'axios';
+import items from './items';
 
 export default {
   data() {

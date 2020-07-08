@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import store from './store';
 import RouteGender from '@/utils/routeGender';
 import AppSelect from '@/views/app-select/AppSelect.vue';
 import AppMain from '@/views/app-main/AppMain.vue';
+import store from './store';
 
 Vue.use(Router);
 

@@ -129,7 +129,7 @@ export default {
     getData() {
       const { gender, madhhab } = this.$store.state;
 
-      axios.get(`/api/namaz/tour/${gender}`).then(r => {
+      axios.get(`/api/namaz/tour/${madhhab}/${gender}`).then(r => {
         r.data.wudu.forEach((w, i) => {
           const { data } = this.items[i + 3];
           data.title = w.kindLabel.toUpperCase();

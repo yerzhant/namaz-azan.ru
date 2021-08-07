@@ -1,18 +1,19 @@
 # FROM node:8.16.1 as builder
-# COPY package-lock.json .
-# COPY package.json .
-# RUN npm ci
-# COPY . .
-# # RUN npm audit
-# RUN npm run lint
-# RUN npm run build
-
-# FROM nginx:1.19-alpine
-# COPY nginx.conf /etc/nginx/conf.d/default.conf
-# WORKDIR /namaz
-# COPY --from=builder dist .
+FROM node:14.17.4 as builder
+COPY package-lock.json .
+COPY package.json .
+RUN npm ci
+COPY . .
+# RUN npm audit
+RUN npm run lint
+RUN npm run build
 
 FROM nginx:1.19-alpine
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 WORKDIR /namaz
-COPY dist .
+COPY --from=builder dist .
+
+# FROM nginx:1.19-alpine
+# COPY nginx.conf /etc/nginx/conf.d/default.conf
+# WORKDIR /namaz
+# COPY dist .

@@ -14,17 +14,21 @@ section.banner(:class="[type, {shadow: shadow}]")
         :withMargin2="descWithMargin2"
       )
         slot(name="buttons")
-    .image(:class="[$store.state.gender, madhhab]")
+    .image(:class="[store.gender, store.madhhab]")
   .bottom
     slot
 </template>
 
 <script>
-import { mapState } from "pinia";
 import ActionDesc from "@/components/ActionDesc.vue";
 import store from "../store";
 
 export default {
+  data() {
+    return {
+      store: store(),
+    };
+  },
   props: {
     type: String,
     title: String,
@@ -37,9 +41,6 @@ export default {
     descWithMargin: Boolean,
     descWithMargin2: Boolean,
     shadow: Boolean,
-  },
-  computed: {
-    ...mapState(store, ["madhhab"]),
   },
   components: {
     ActionDesc,

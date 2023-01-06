@@ -10,7 +10,7 @@ section.site
   SelectCity(v-if="!isFullSite")
   MobileMenu
   transition(name="scroll-up-fade")
-    .scroll-up(v-show="showScrollUp" @click="$scrollTo('body')")
+    .scroll-up(v-show="showScrollUp" @click="scrollToTop()")
 </template>
 
 <script>
@@ -34,6 +34,9 @@ export default {
   methods: {
     scrolling() {
       this.showScrollUp = window.scrollY > 200;
+    },
+    scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     },
   },
   created() {

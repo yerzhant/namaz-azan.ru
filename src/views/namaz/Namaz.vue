@@ -63,7 +63,7 @@ section.namaz
         desc="Детальный обзор утреннего намаза “Фаджр”, состоящего из 2 ракаатов \
           фарда. Фаджр является первым из пяти обязательных намазов."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/fadjr/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
       Banner(
@@ -76,7 +76,7 @@ section.namaz
         desc="Детальный обзор обеденного намаза “Зухр”, состоящего из 4 ракаатов \
           фарда. Зухр является вторым из пяти обязательных намазов."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/dhuhr/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
       Banner(
@@ -89,7 +89,7 @@ section.namaz
         desc="Детальный обзор послеполуденного намаза “Аср”, состоящего из 4 \
           ракаатов фарда. Аср является третьим из пяти обязательных намазов."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/asr/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
       Banner(
@@ -102,7 +102,7 @@ section.namaz
         desc="Детальный обзор вечернего намаза “Магриб”, состоящего из 3 ракаатов \
           фарда. Магриб является четвёртым из пяти обязательных намазов."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/maghrib/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
       Banner(
@@ -115,7 +115,7 @@ section.namaz
         desc="Детальный обзор ночного намаза “Иша”, состоящего из 4 ракаатов \
           фарда. Иша является последним из пяти обязательных намазов."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/isha/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 </template>
 

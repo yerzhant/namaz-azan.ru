@@ -2,7 +2,7 @@
 a.app-button(
   :class="{red, blue, small, 'blue-stylish': blueStylish}"
   :style="{width: `${width}px`, height: `${height}px`, opacity: `${opacity}`}"
-  @click="go"
+  @click="go()"
 )
   slot
 </template>

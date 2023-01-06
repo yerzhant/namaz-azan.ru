@@ -59,7 +59,7 @@ const router = new createRouter({
     if (savedPosition) {
       return savedPosition;
     }
-    return { x: 0, y: 0 };
+    return { top: 0 };
   },
 });
 

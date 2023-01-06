@@ -10,7 +10,7 @@ footer.footer
       Socials
       router-link.tutoring(:to="`${routePrefix}/tour-salah`") Обучение намазу
     .links
-      router-link(:to="`${routePrefix}/roiisiyyah`") Главная
+      router-link(:to="`${routePrefix}`") Главная
       router-link(:to="`${routePrefix}/tahharah/wudu`") Тахарат
       router-link(:to="`${routePrefix}/fadjr/fard`") Намаз
       router-link(:to="`${routePrefix}/tutorial/fard`") Обучение

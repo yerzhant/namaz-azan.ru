@@ -1,6 +1,6 @@
 <template lang="pug">
 router-link.small-banner(:to="link" :class="[type, { bg2 }]")
-  .image(:class="[type, madhhab]")
+  .image(:class="[type, store.madhhab]")
   .ornament
   .info
     .title {{ title }}
@@ -9,7 +9,6 @@ router-link.small-banner(:to="link" :class="[type, { bg2 }]")
 </template>
 
 <script>
-import { mapState } from "pinia";
 import store from "../../store";
 
 export default {
@@ -21,8 +20,10 @@ export default {
     text: String,
     bg2: Boolean,
   },
-  computed: {
-    ...mapState(store, ["madhhab"]),
+  data() {
+    return {
+      store: store(),
+    };
   },
 };
 </script>

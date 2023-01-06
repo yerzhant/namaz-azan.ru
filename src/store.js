@@ -1,27 +1,29 @@
 import { defineStore } from "pinia";
 
 export default defineStore("store", {
-  state: () => ({
-    madhhab: "hanafi",
-    gender: "man",
-    namaz: null,
-    mobileHeaderStatus: null,
-    city: null,
-    namazTimes: {
-      today: ["-", "-", "-", "-", "-", "-"],
-      tomorrow: ["-", "-", "-", "-", "-", "-"],
-    },
-    selectCity: false,
-    socials: {
-      fb: {},
-      yt: {},
-      vk: {},
-      tg: {},
-    },
-    showMenu: false,
-    menu: null,
-    menuItems: null,
-  }),
+  state: () => {
+    return {
+      madhhab: "hanafi",
+      gender: "man",
+      namaz: null,
+      mobileHeaderStatus: null,
+      city: null,
+      namazTimes: {
+        today: ["-", "-", "-", "-", "-", "-"],
+        tomorrow: ["-", "-", "-", "-", "-", "-"],
+      },
+      selectCity: false,
+      socials: {
+        fb: {},
+        yt: {},
+        vk: {},
+        tg: {},
+      },
+      showMenu: false,
+      menu: null,
+      menuItems: null,
+    };
+  },
   actions: {
     setMadhhab(madhhab) {
       this.madhhab = madhhab;
@@ -47,7 +49,7 @@ export default defineStore("store", {
     toggleSelectCity() {
       this.selectCity = !this.selectCity;
     },
-    showMenu(show) {
+    setShowMenu(show) {
       this.showMenu = show;
     },
     setMenu(menu) {

@@ -49,13 +49,13 @@ import store from "../../store";
 export default {
   data() {
     return {
-      store,
+      store: store(),
     };
   },
   methods: {
     selectGender(gender) {
       const routeGender = RouteGender.to(gender);
-      this.$router.push(`/${this.madhhab}/${routeGender}`);
+      this.$router.push(`/${this.store.madhhab}/${routeGender}`);
     },
     selectMadhhab(madhhab) {
       this.$store.commit("setMadhhab", madhhab);
@@ -71,7 +71,7 @@ export default {
     },
   },
   created() {
-    this.store.setMobileHeaderStatus = "Выбор пола, возраста и мазхаба";
+    this.store.setMobileHeaderStatus("Выбор пола, возраста и мазхаба");
   },
   components: {
     AppButton,

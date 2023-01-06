@@ -14,7 +14,7 @@ footer.footer
       router-link(:to="`${routePrefix}/tahharah/wudu`") Тахарат
       router-link(:to="`${routePrefix}/fadjr/fard`") Намаз
       router-link(:to="`${routePrefix}/tutorial/fard`") Обучение
-    .up(@click="$scrollTo('body')")
+    .up(@click="scrollToTop()")
   .bottom
     span Copyright © 2018 - 2023 Azan.ru
     span.bar |
@@ -33,6 +33,11 @@ export default {
     return {
       store: store(),
     };
+  },
+  methods: {
+    scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    },
   },
   components: {
     Socials,
@@ -97,7 +102,7 @@ export default {
     margin-bottom: 77px;
   }
 
-  > a {
+  >a {
     display: inline-block;
     border: 1px solid #67758b;
     padding: 6px 10px;
@@ -143,7 +148,7 @@ export default {
     background-size: 360px;
   }
 
-  > * {
+  >* {
     color: #bbc8dd;
     font-size: 13px;
   }

@@ -1,13 +1,13 @@
 <template lang="pug">
-menu.menu(:class="$store.state.menu")
+menu.menu(:class="store.menu")
   .header
     a.desc(href="https://azan.ru") Спецпроект образовательного портала Azan.ru
     .title ЭНЦИКЛОПЕДИЯ НАМАЗА
 
-  .back-to-main(@click="$store.commit('setMenu')")
+  .back-to-main(@click="store.setMenu()")
     span Назад в меню
     img(src="./menu.png")
-  .level-2-image(:class="[$store.state.namaz, $store.state.gender]")
+  .level-2-image(:class="[store.namaz, store.gender]")
 
   nav.items.items-l1
     router-link.item(:to="`${routePrefix}`")
@@ -208,7 +208,7 @@ menu.menu(:class="$store.state.menu")
 
   nav.items.items-l2
     .item-l2(
-      v-for="item in $store.state.menuItems"
+      v-for="item in store.menuItems"
       :class="{right: item.right, down: !item.right, open: item.open}"
       @click="openL2(item)"
     )
@@ -228,10 +228,12 @@ menu.menu(:class="$store.state.menu")
 <script>
 import routePrefix from "@/mixins/routePrefix";
 import Socials from "@/components/socials/Socials.vue";
+import store from "../../store";
 
 export default {
   data() {
     return {
+      store: store(),
       flags: {
         general: false,
         shart: false,

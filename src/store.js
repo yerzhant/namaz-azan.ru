@@ -22,39 +22,39 @@ export default defineStore("store", {
     menu: null,
     menuItems: null,
   }),
-  mutations: {
-    setMadhhab(state, madhhab) {
-      state.madhhab = madhhab;
+  actions: {
+    setMadhhab(madhhab) {
+      this.madhhab = madhhab;
     },
-    setGender(state, gender) {
-      state.gender = gender;
+    setGender(gender) {
+      this.gender = gender;
     },
-    setNamaz(state, namaz) {
-      state.namaz = namaz;
+    setNamaz(namaz) {
+      this.namaz = namaz;
     },
-    setMobileHeaderStatus(state, status) {
-      state.mobileHeaderStatus = status;
+    setMobileHeaderStatus(status) {
+      this.mobileHeaderStatus = status;
     },
-    setCity(state, city) {
-      state.city = city;
+    setCity(city) {
+      this.city = city;
     },
-    setNamazTimes(state, times) {
-      state.namazTimes = times;
+    setNamazTimes(times) {
+      this.namazTimes = times;
     },
-    setSocials(state, socials) {
-      state.socials = socials;
+    setSocials(socials) {
+      this.socials = socials;
     },
-    toggleSelectCity(state) {
-      state.selectCity = !state.selectCity;
+    toggleSelectCity() {
+      this.selectCity = !this.selectCity;
     },
-    showMenu(state, show) {
-      state.showMenu = show;
+    showMenu(show) {
+      this.showMenu = show;
     },
-    setMenu(state, menu) {
-      state.menu = menu;
+    setMenu(menu) {
+      this.menu = menu;
     },
-    setMenuItems(state, menu) {
-      state.menuItems = menu;
+    setMenuItems(menu) {
+      this.menuItems = menu;
     },
   },
   getters: {

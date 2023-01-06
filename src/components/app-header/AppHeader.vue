@@ -1,19 +1,19 @@
 <template lang="pug">
-header.header(:class="[$store.state.namaz, {full: isFullSite}]")
-  .menu(@click="$store.commit('showMenu', true)")
+header.header(:class="[store.namaz, {full: isFullSite}]")
+  .menu(@click="store.showMenu = true")
   .container
     .gender.drop-down(
       :class="{active: genderOpen}"
       @click.stop="genderOpen = !genderOpen"
     ) Намаз:
-      span.selected-item {{ genderText }}
+      span.selected-item {{ store.genderText }}
       .items
         .item(
-          :class="{active: gender == 'man'}"
+          :class="{active: store.gender == 'man'}"
           @click="setGender('man')"
         ) Для мужчин
         .item(
-          :class="{active: gender == 'woman'}"
+          :class="{active: store.gender == 'woman'}"
           @click="setGender('woman')"
         ) Для женщин
 
@@ -21,7 +21,7 @@ header.header(:class="[$store.state.namaz, {full: isFullSite}]")
       :class="{active: madhhabOpen}"
       @click.stop="madhhabOpen = !madhhabOpen"
     ) Мазхаб:
-      span.selected-item.inactive {{ madhhabText }}
+      span.selected-item.inactive {{ store.madhhabText }}
       //- .items
       //-   .item(
       //-     :class="{active: madhhab == 'hanafi'}"
@@ -41,12 +41,11 @@ header.header(:class="[$store.state.namaz, {full: isFullSite}]")
         img.flag(src="./ru.png")
 
     router-link.tutoring(
-      :to="`/${madhhab}/${routeGender}/tour-salah`"
+      :to="`/${store.madhhab}/${routeGender}/tour-salah`"
     ) Обучение намазу
 </template>
 
 <script>
-import { mapState } from "pinia";
 import RouteGender from "@/utils/routeGender";
 import isFullSite from "@/mixins/isFullSite";
 import store from "../../store";
@@ -54,15 +53,15 @@ import store from "../../store";
 export default {
   data() {
     return {
+      store,
       genderOpen: false,
       madhhabOpen: false,
     };
   },
   computed: {
     routeGender() {
-      return RouteGender.to(this.$store.state.gender);
+      return RouteGender.to(this.store.gender);
     },
-    ...mapState(store, ["gender", "genderText", "madhhab", "madhhabText"]),
   },
   methods: {
     setGender(gender) {
@@ -182,7 +181,7 @@ export default {
     margin-left: 58px;
   }
 
-  > * {
+  >* {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -266,6 +265,7 @@ export default {
   }
 
   &.active {
+
     &::before,
     + ::before {
       height: 49px;

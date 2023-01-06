@@ -315,7 +315,7 @@ export default {
 }
 
 @media (max-width: $mobile) {
-  .tahharah >>> .content {
+  .tahharah :deep(.content) {
     > * {
       margin-bottom: 20px;
     }

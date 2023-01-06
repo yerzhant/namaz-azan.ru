@@ -1,10 +1,10 @@
 <template lang="pug">
-  a.app-button(
-    :class="{red, blue, small, 'blue-stylish': blueStylish}"
-    :style="{width: `${width}px`, height: `${height}px`, opacity: `${opacity}`}"
-    @click="go"
-  )
-    slot
+a.app-button(
+  :class="{red, blue, small, 'blue-stylish': blueStylish}"
+  :style="{width: `${width}px`, height: `${height}px`, opacity: `${opacity}`}"
+  @click="go"
+)
+  slot
 </template>
 
 <script>
@@ -36,7 +36,7 @@ export default {
       } else if (this.link) {
         this.$router.push(this.link);
       } else {
-        this.$emit('click');
+        this.$emit("click");
       }
     },
   },
@@ -54,20 +54,24 @@ export default {
   border: 1px solid #afb2bb;
   outline: none;
   cursor: pointer;
+
   &.blue {
     color: #fff;
     background-color: #2b9ace;
     border: 1px solid #2b9ace;
   }
+
   &.red {
     color: #fff;
     background-color: #d55d81;
     border-color: #d55d81;
   }
+
   &.small {
     color: #717171;
     font-size: 11px;
   }
+
   &.blue-stylish {
     color: #fff;
     font-size: 13px;

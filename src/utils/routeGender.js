@@ -1,11 +1,11 @@
 export default {
   from(routeGender) {
     switch (routeGender) {
-      case 'rijaal':
-        return 'man';
+      case "rijaal":
+        return "man";
 
-      case 'nisa':
-        return 'woman';
+      case "nisa":
+        return "woman";
 
       default:
         return null;
@@ -13,11 +13,11 @@ export default {
   },
   to(gender) {
     switch (gender) {
-      case 'man':
-        return 'rijaal';
+      case "man":
+        return "rijaal";
 
-      case 'woman':
-        return 'nisa';
+      case "woman":
+        return "nisa";
 
       default:
         return null;

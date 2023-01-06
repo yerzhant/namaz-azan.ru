@@ -1,21 +1,21 @@
 <template lang="pug">
-  .app-player
-    .button(@click="play" :class="{playing}")
-    .info
-      .time {{ time }}
-      .progress(@click.stop="setPosition" ref="progress")
-        .current(:style="{width: position}")
-    a(:href="url" download).download
+.app-player
+  .button(@click="play" :class="{playing}")
+  .info
+    .time {{ time }}
+    .progress(@click.stop="setPosition" ref="progress")
+      .current(:style="{width: position}")
+  a(:href="url" download).download
 </template>
 
 <script>
-import 'soundmanager2';
+import "soundmanager2";
 
 const sm = window.soundManager;
 
 sm.setup({
-  url: '',
-  debugMode: process.env.NODE_ENV !== 'production',
+  url: "",
+  debugMode: process.env.NODE_ENV !== "production",
 });
 sm.beginDelayedInit();
 
@@ -30,13 +30,13 @@ export default {
     return {
       player: null,
       playing: false,
-      time: '00:00',
-      position: '0',
+      time: "00:00",
+      position: "0",
     };
   },
   computed: {
     url() {
-      if (this.type === 'file') {
+      if (this.type === "file") {
         return this.file;
       }
       return `https://azan.ru/media/audio/namaz/${this.type}.mp3`;
@@ -68,8 +68,8 @@ export default {
         onfinish: () => {
           this.playing = false;
           this.player = null;
-          this.time = '00:00';
-          this.position = '0';
+          this.time = "00:00";
+          this.position = "0";
           currentPlayer = null;
         },
       });
@@ -108,27 +108,32 @@ export default {
   background-color: #fbfeff;
   border: 1px solid #d5dde3;
 }
+
 .button {
   width: 35px;
   border-right: 1px solid #d5dde3;
   background: url(./play.png) no-repeat center;
   cursor: pointer;
+
   &.playing {
     background-image: url(./pause.png);
   }
 }
+
 .download {
   width: 35px;
   border-left: 1px solid #d5dde3;
   background: url(./download.png) no-repeat center;
   outline: none;
 }
+
 .info {
   display: flex;
   align-items: center;
   padding: 0 20px;
   flex-grow: 1;
 }
+
 .progress {
   flex-grow: 1;
   height: 3px;
@@ -136,10 +141,12 @@ export default {
   margin-left: 7px;
   cursor: pointer;
 }
+
 .current {
   height: 3px;
   background-color: #15a4e6;
 }
+
 .time {
   font-size: 11px;
   color: #717171;

@@ -1,4 +1,4 @@
-import routeGender from '@/utils/routeGender';
+import routeGender from "@/utils/routeGender";
 
 export default {
   computed: {

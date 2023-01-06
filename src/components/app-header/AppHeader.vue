@@ -1,54 +1,54 @@
 <template lang="pug">
-  header.header(:class="[$store.state.namaz, {full: isFullSite}]")
-    .menu(@click="$store.commit('showMenu', true)")
-    .container
-      .gender.drop-down(
-        :class="{active: genderOpen}"
-        @click.stop="genderOpen = !genderOpen"
-      ) Намаз:
-        span.selected-item {{ genderText }}
-        .items
-          .item(
-            :class="{active: gender == 'man'}"
-            @click="setGender('man')"
-          ) Для мужчин
-          .item(
-            :class="{active: gender == 'woman'}"
-            @click="setGender('woman')"
-          ) Для женщин
+header.header(:class="[$store.state.namaz, {full: isFullSite}]")
+  .menu(@click="$store.commit('showMenu', true)")
+  .container
+    .gender.drop-down(
+      :class="{active: genderOpen}"
+      @click.stop="genderOpen = !genderOpen"
+    ) Намаз:
+      span.selected-item {{ genderText }}
+      .items
+        .item(
+          :class="{active: gender == 'man'}"
+          @click="setGender('man')"
+        ) Для мужчин
+        .item(
+          :class="{active: gender == 'woman'}"
+          @click="setGender('woman')"
+        ) Для женщин
 
-      .madhhab.drop-down(
-        :class="{active: madhhabOpen}"
-        @click.stop="madhhabOpen = !madhhabOpen"
-      ) Мазхаб:
-        span.selected-item.inactive {{ madhhabText }}
-        //- .items
-        //-   .item(
-        //-     :class="{active: madhhab == 'hanafi'}"
-        //-     @click="setMadhhab('hanafi')"
-        //-   ) Ханафи
-        //-   .item(
-        //-     :class="{active: madhhab == 'shafii'}"
-        //-     @click="setMadhhab('shafii')"
-        //-   ) Шафии
+    .madhhab.drop-down(
+      :class="{active: madhhabOpen}"
+      @click.stop="madhhabOpen = !madhhabOpen"
+    ) Мазхаб:
+      span.selected-item.inactive {{ madhhabText }}
+      //- .items
+      //-   .item(
+      //-     :class="{active: madhhab == 'hanafi'}"
+      //-     @click="setMadhhab('hanafi')"
+      //-   ) Ханафи
+      //-   .item(
+      //-     :class="{active: madhhab == 'shafii'}"
+      //-     @click="setMadhhab('shafii')"
+      //-   ) Шафии
 
-      .basmalah
-        router-link(to="/")
-          img.img(src="./basmalah.png")
+    .basmalah
+      router-link(to="/")
+        img.img(src="./basmalah.png")
 
-      .language.drop-down Язык:
-        span.selected-item.inactive Русский
-          img.flag(src="./ru.png")
+    .language.drop-down Язык:
+      span.selected-item.inactive Русский
+        img.flag(src="./ru.png")
 
-      router-link.tutoring(
-        :to="`/${madhhab}/${routeGender}/tour-salah`"
-      ) Обучение намазу
+    router-link.tutoring(
+      :to="`/${madhhab}/${routeGender}/tour-salah`"
+    ) Обучение намазу
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-import RouteGender from '@/utils/routeGender';
-import isFullSite from '@/mixins/isFullSite';
+import { mapState } from "pinia";
+import RouteGender from "@/utils/routeGender";
+import isFullSite from "@/mixins/isFullSite";
 
 export default {
   data() {
@@ -61,21 +61,24 @@ export default {
     routeGender() {
       return RouteGender.to(this.$store.state.gender);
     },
-    ...mapGetters(['gender', 'genderText', 'madhhab', 'madhhabText']),
+    ...mapState(["gender", "genderText", "madhhab", "madhhabText"]),
   },
   methods: {
     setGender(gender) {
       const routeName = this.$route.name;
-      if (routeName === 'select') {
-        this.$store.commit('setGender', gender);
+      if (routeName === "select") {
+        this.$store.commit("setGender", gender);
       } else {
-        this.$router.push({ name: routeName, params: { gender: RouteGender.to(gender) } });
+        this.$router.push({
+          name: routeName,
+          params: { gender: RouteGender.to(gender) },
+        });
       }
     },
     setMadhhab(madhhab) {
       const routeName = this.$route.name;
-      if (routeName === 'select') {
-        this.$store.commit('setMadhhab', madhhab);
+      if (routeName === "select") {
+        this.$store.commit("setMadhhab", madhhab);
       } else {
         this.$router.push({ name: routeName, params: { madhhab } });
       }
@@ -86,10 +89,10 @@ export default {
     },
   },
   created() {
-    document.addEventListener('click', this.hideMenus);
+    document.addEventListener("click", this.hideMenus);
   },
-  destroyed() {
-    document.removeEventListener('click', this.hideMenus);
+  unmounted() {
+    document.removeEventListener("click", this.hideMenus);
   },
   mixins: [isFullSite],
 };
@@ -105,39 +108,50 @@ export default {
   height: 50px;
   background: url(./bg.png) no-repeat center;
   border-bottom: 1px solid #a9b8cf;
+
   &.fadjr {
     background-image: url(./bg-fadjr.png);
   }
+
   &.dhuhr {
     background-image: url(./bg-dhuhr.png);
   }
+
   &.asr {
     background-image: url(./bg-asr.png);
   }
+
   &.maghrib {
     background-image: url(./bg-maghrib.png);
   }
+
   &.isha {
     background-image: url(./bg-isha.png);
   }
+
   &.witr {
     background-image: url(./bg-witr.png);
   }
+
   &.full {
     width: 100%;
     max-width: 1920px;
     background-image: url(./full-bg.png);
+
     .menu {
       display: block;
     }
   }
+
   @media (max-width: 1346px) {
     width: 100%;
   }
+
   @media (max-width: $mobile) {
     display: none;
   }
 }
+
 .menu {
   position: absolute;
   top: 0;
@@ -146,10 +160,12 @@ export default {
   height: 49px;
   cursor: pointer;
   background: url(./menu.png) no-repeat center;
+
   @media (min-width: 1347px) {
     display: none;
   }
 }
+
 .container {
   display: flex;
   max-width: 1366px;
@@ -158,11 +174,13 @@ export default {
   font-family: $pt-sans;
   font-size: 13px;
   color: #465d73;
+
   @media (max-width: 1346px) {
     max-width: 100%;
     margin-right: 0;
     margin-left: 58px;
   }
+
   > * {
     display: flex;
     justify-content: center;
@@ -170,6 +188,7 @@ export default {
     height: 49px;
   }
 }
+
 .full {
   .container {
     @media (max-width: 1366px + 58px * 2 + 17px) {
@@ -179,26 +198,31 @@ export default {
     }
   }
 }
+
 .gender,
 .madhhab,
 .language,
 .basmalah {
   position: relative;
+
   &::before {
     position: absolute;
     left: 0;
-    content: '';
+    content: "";
     width: 1px;
     height: 30px;
     background-color: #bfcde1;
   }
 }
+
 .basmalah {
   flex-grow: 1;
+
   .img {
     display: block;
   }
 }
+
 .tutoring {
   width: 162px;
   font-family: $roboto;
@@ -206,26 +230,32 @@ export default {
   color: #fff;
   background: url(./tutoring.png) no-repeat center;
 }
+
 .drop-down {
   position: relative;
   width: 162px;
   cursor: pointer;
+
   &:hover,
   &.active {
     background-color: #e5eff8;
   }
+
   .selected-item {
     color: #0a6e9c;
     margin-left: 3px;
     padding-right: 15px;
     background: url(./drop-down.png) no-repeat right;
+
     &.inactive {
       background: none;
     }
+
     .flag {
       margin-left: 10px;
     }
   }
+
   .items {
     display: none;
     position: absolute;
@@ -233,15 +263,18 @@ export default {
     right: 0;
     left: 0;
   }
+
   &.active {
     &::before,
     + ::before {
       height: 49px;
     }
+
     .items {
       display: block;
     }
   }
+
   .item {
     display: flex;
     align-items: center;
@@ -253,15 +286,18 @@ export default {
     border-right: 1px solid #c1cfdd;
     border-left: 1px solid #c1cfdd;
     border-bottom: 1px solid #c1cfdd;
+
     &:hover,
     &.active {
       background-color: #f6fbff;
     }
   }
 }
+
 .madhhab,
 .language {
   cursor: initial;
+
   &:hover {
     background-color: initial;
   }

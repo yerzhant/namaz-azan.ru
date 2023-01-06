@@ -1,22 +1,22 @@
 <template lang="pug">
-  section.recommended
-    AppSection(title="МАТЕРИАЛЫ О НАМАЗЕ")
-      RecommendedDoc(:doc="mainPost" kind="main")
-      section.grid
-        RecommendedDoc(v-for="d in currentItems" :doc="d" :key="d.id")
-      RecommendedDoc(:doc="mainVideo" kind="main")
-      Pager(
-        :itemsPerPage="itemsPerPage"
-        :items="items.length"
-        @page="currentPage = $event"
-      ).pager
+section.recommended
+  AppSection(title="МАТЕРИАЛЫ О НАМАЗЕ")
+    RecommendedDoc(:doc="mainPost" kind="main")
+    section.grid
+      RecommendedDoc(v-for="d in currentItems" :doc="d" :key="d.id")
+    RecommendedDoc(:doc="mainVideo" kind="main")
+    Pager(
+      :itemsPerPage="itemsPerPage"
+      :items="items.length"
+      @page="currentPage = $event"
+    ).pager
 </template>
 
 <script>
-import AppSection from '@/components/app-section/AppSection.vue';
-import RecommendedDoc from '@/components/recommended-doc/RecommendedDoc.vue';
-import Pager from '@/components/pager/Pager.vue';
-import axios from 'axios';
+import AppSection from "@/components/app-section/AppSection.vue";
+import RecommendedDoc from "@/components/recommended-doc/RecommendedDoc.vue";
+import Pager from "@/components/pager/Pager.vue";
+import axios from "axios";
 
 export default {
   data() {
@@ -41,10 +41,10 @@ export default {
       }
     },
     getData() {
-      axios.get('/api/namaz/recommended').then(r => {
+      axios.get("/api/namaz/recommended").then((r) => {
         this.mainPost = r.data.mainPost;
         this.mainVideo = r.data.mainVideo;
-        r.data.docs.forEach(i => this.items.push(i));
+        r.data.docs.forEach((i) => this.items.push(i));
         this.syncCurrentItems();
       });
     },
@@ -69,6 +69,7 @@ export default {
 .recommended {
   background-color: #f7fcff;
 }
+
 .grid {
   display: grid;
   grid-gap: 37px;
@@ -78,6 +79,7 @@ export default {
   margin-left: auto;
   margin-top: 37px;
   margin-bottom: 37px;
+
   @media (max-width: $mobile) {
     width: 100%;
     grid-gap: 20px;
@@ -86,6 +88,7 @@ export default {
     margin-bottom: 20px;
   }
 }
+
 .pager {
   margin-top: 30px;
 }

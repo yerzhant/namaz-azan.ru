@@ -1,8 +1,8 @@
 <template lang="pug">
-  .pager
-    .prev.item(@click="prev")
-    .item(v-for="n in pages" :class="{active: n === currentPage}" @click="nth(n)") {{ n }}
-    .next.item(@click="next")
+.pager
+  .prev.item(@click="prev")
+  .item(v-for="n in pages" :class="{active: n === currentPage}" @click="nth(n)") {{ n }}
+  .next.item(@click="next")
 </template>
 
 <script>
@@ -23,7 +23,7 @@ export default {
   },
   watch: {
     currentPage() {
-      this.$emit('page', this.currentPage);
+      this.$emit("page", this.currentPage);
     },
   },
   methods: {
@@ -44,6 +44,7 @@ export default {
 .pager {
   display: flex;
 }
+
 .item {
   display: flex;
   justify-content: center;
@@ -56,26 +57,32 @@ export default {
   color: #717171;
   font-family: $roboto;
   cursor: pointer;
+
   &:hover,
   &.active {
     color: #fff;
     background-color: #3fa3d2;
     border-color: #3fa3d2;
   }
+
   &.active {
     cursor: initial;
   }
 }
+
 .prev {
-  background: url('./prev.png') no-repeat center;
+  background: url("./prev.png") no-repeat center;
+
   &:hover {
-    background-image: url('./prev-a.png');
+    background-image: url("./prev-a.png");
   }
 }
+
 .next {
-  background: url('./next.png') no-repeat center;
+  background: url("./next.png") no-repeat center;
+
   &:hover {
-    background-image: url('./next-a.png');
+    background-image: url("./next-a.png");
   }
 }
 </style>

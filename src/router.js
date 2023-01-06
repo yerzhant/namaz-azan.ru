@@ -65,10 +65,10 @@ const router = new createRouter({
 
 router.afterEach((to) => {
   if (to.params.gender) {
-    store.commit("setGender", RouteGender.from(to.params.gender));
+    store().setGender(RouteGender.from(to.params.gender));
   }
   if (to.params.madhhab) {
-    store.commit("setMadhhab", to.params.madhhab);
+    store().setMadhhab(to.params.madhhab);
   }
 });
 

@@ -27,7 +27,7 @@ import store from "./store";
 export default {
   data() {
     return {
-      store,
+      store: store(),
       showScrollUp: false,
     };
   },
@@ -38,7 +38,7 @@ export default {
   },
   created() {
     axios.get("/api/site/socials").then((r) => {
-      this.store.setSocials = r.data;
+      this.store.setSocials(r.data);
     });
 
     let cityId = localStorage.getItem("cityId");
@@ -50,8 +50,8 @@ export default {
       localStorage.setItem("city", city);
     }
     axios.get(`/api/asr/today-and-tomorrow/${cityId}`).then((r) => {
-      this.store.setCity = city;
-      this.store.setNamazTimes = r.data;
+      this.store.setCity(city);
+      this.store.setNamazTimes(r.data);
     });
 
     document.addEventListener("scroll", this.scrolling);

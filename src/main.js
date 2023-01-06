@@ -3,7 +3,6 @@ import VueScrollTo from 'vue-scrollto';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-import './registerServiceWorker';
 
 import './styles/main.scss';
 

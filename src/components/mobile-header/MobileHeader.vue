@@ -1,14 +1,26 @@
 <template lang="pug">
 header.mobile-header
   .top
-    .menu(@click="$store.commit('showMenu', true)")
+    .menu(@click="store.showMenu = true")
     .text(@click="$router.push('/')")
       .title ЭНЦИКЛОПЕДИЯ НАМАЗА
       .sub-title Самоучитель и справочник. Cпецпроект
         a.link(href="https://azan.ru")  Azan.ru
     a.search(href="https://azan.ru/search")
-  .status {{ $store.state.mobileHeaderStatus }}
+  .status {{ store.mobileHeaderStatus }}
 </template>
+
+<script>
+import store from "../../store";
+
+export default {
+  data() {
+    return {
+      store,
+    };
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 .mobile-header {

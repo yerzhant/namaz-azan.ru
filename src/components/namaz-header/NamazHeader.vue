@@ -130,7 +130,7 @@ export default {
       }
     },
     isNamaz() {
-      switch (this.$store.state.namaz) {
+      switch (this.store.namaz) {
         case "istibra":
         case "istinja":
         case "ghusl":

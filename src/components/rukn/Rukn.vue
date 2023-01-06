@@ -47,10 +47,10 @@ section.rukn(:id="`r${rakaat}-${type}`" :class="[type, kind, {first: first, 'in-
           AppButton(:height="36" blue @click="goNext" v-if="!last") ДАЛЕЕ
           //- AppButton.print(:height="36" @click="print") РАСПЕЧАТАТЬ
     .media
-      .image-1(:class="[$store.state.gender, $store.state.madhhab, {active: image1}]")
-      .image-2(:class="[$store.state.gender, $store.state.madhhab, {active: image2}]")
-      .image-3(:class="[$store.state.gender, $store.state.madhhab, {active: image3}]")
-      .tool-bar(:class="[$store.state.gender, $store.state.madhhab]")
+      .image-1(:class="[store.gender, store.madhhab, {active: image1}]")
+      .image-2(:class="[store.gender, store.madhhab, {active: image2}]")
+      .image-3(:class="[store.gender, store.madhhab, {active: image3}]")
+      .tool-bar(:class="[store.gender, store.madhhab]")
         .button.image.active
         .filler
         .button.b1(:class="{active: image1}" @click="image2 = image3 = false; image1 = true") 1
@@ -63,6 +63,7 @@ section.rukn(:id="`r${rakaat}-${type}`" :class="[type, kind, {first: first, 'in-
 <script>
 import AppButton from "@/components/AppButton.vue";
 import AppPlayer from "@/components/app-player/AppPlayer.vue";
+import store from "../../store";
 
 export default {
   props: {
@@ -97,6 +98,7 @@ export default {
   },
   data() {
     return {
+      store: store(),
       image1: true,
       image2: false,
       image3: false,

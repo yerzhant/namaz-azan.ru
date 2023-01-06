@@ -1,14 +1,21 @@
 <template lang="pug">
 section.socials(:class="{mobile}")
-  a.fb(:href="$store.state.socials.fb.value")
-  a.yt(:href="$store.state.socials.yt.value")
-  a.vk(:href="$store.state.socials.vk.value")
-  a.tg(:href="$store.state.socials.tg.value")
+  a.fb(:href="store.socials.fb.value")
+  a.yt(:href="store.socials.yt.value")
+  a.vk(:href="store.socials.vk.value")
+  a.tg(:href="store.socials.tg.value")
   a.logo(href="https://azan.ru" v-if="mobile") Azan.ru
 </template>
 
 <script>
+import store from "../../store";
+
 export default {
+  data() {
+    return {
+      store: store(),
+    };
+  },
   props: {
     mobile: Boolean,
   },

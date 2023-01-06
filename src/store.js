@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 
 export default defineStore("store", {
-  state: {
+  state: () => ({
     madhhab: "hanafi",
     gender: "man",
     namaz: null,
@@ -21,7 +21,7 @@ export default defineStore("store", {
     showMenu: false,
     menu: null,
     menuItems: null,
-  },
+  }),
   mutations: {
     setMadhhab(state, madhhab) {
       state.madhhab = madhhab;

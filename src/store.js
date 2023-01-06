@@ -58,7 +58,6 @@ export default defineStore("store", {
     },
   },
   getters: {
-    gender: (state) => state.gender,
     genderText: (state) => {
       switch (state.gender) {
         case "man":
@@ -69,7 +68,6 @@ export default defineStore("store", {
           return "???";
       }
     },
-    madhhab: (state) => state.madhhab,
     madhhabText: (state) => {
       switch (state.madhhab) {
         case "hanafi":

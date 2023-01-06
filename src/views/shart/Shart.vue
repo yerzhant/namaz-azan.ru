@@ -187,10 +187,12 @@ import GeneralProvisions from "@/components/general-provisions/GeneralProvisions
 import MobileGeneralProvisions from "@/components/mobile-general-provisions/MobileGeneralProvisions.vue";
 import routePrefix from "@/mixins/routePrefix";
 import axios from "axios";
+import store from "../../store";
 
 export default {
   data() {
     return {
+      store: store(),
       title: null,
       shortDesc: null,
       desc: null,

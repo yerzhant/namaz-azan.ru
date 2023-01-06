@@ -26,8 +26,14 @@ footer.footer
 <script>
 import routePrefix from "@/mixins/routePrefix";
 import Socials from "@/components/socials/Socials.vue";
+import store from "../../store";
 
 export default {
+  data() {
+    return {
+      store: store(),
+    };
+  },
   components: {
     Socials,
   },

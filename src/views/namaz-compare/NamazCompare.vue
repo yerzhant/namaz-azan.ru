@@ -1,7 +1,7 @@
 <template lang="pug">
 section.namaz
   NamazHeader(
-    :type="$store.state.namaz"
+    :type="store.namaz"
     :subType="$route.params.subType"
     :typeText="data.typeText"
     :title="data.title"
@@ -49,7 +49,7 @@ section.namaz
     .other-namazes
       Banner(
         type="fard blue mareed"
-        :shadow="$store.state.namaz === 'mareed'"
+        :shadow="store.namaz === 'mareed'"
         descStyleBlackBlue
         descWithMargin2
         title="СОЛААТУЛЬ-МАРИИД"
@@ -61,7 +61,7 @@ section.namaz
 
       Banner(
         type="fard blue jumuah-2"
-        :shadow="$store.state.namaz === 'jumuah'"
+        :shadow="store.namaz === 'jumuah'"
         descStyleBlackBlue
         descWithMargin2
         title="ДЖУМА НАМАЗ"
@@ -74,7 +74,7 @@ section.namaz
 
       Banner(
         type="fard blue id-2"
-        :shadow="$store.state.namaz === 'id'"
+        :shadow="store.namaz === 'id'"
         descStyleBlackBlue
         descWithMargin2
         title="ПРАЗДНИЧНЫЙ НАМАЗ"
@@ -87,7 +87,7 @@ section.namaz
 
       Banner(
         type="fard blue taraweeh-2"
-        :shadow="$store.state.namaz === 'taraweeh'"
+        :shadow="store.namaz === 'taraweeh'"
         descStyleBlackBlue
         descWithMargin2
         title="ТАРАВИХ"
@@ -108,10 +108,12 @@ import RuknCompare from "@/components/rukn-compare/RuknCompare.vue";
 import Banner from "@/components/Banner.vue";
 import routePrefix from "@/mixins/routePrefix";
 import axios from "axios";
+import store from "../../store";
 
 export default {
   data() {
     return {
+      store: store(),
       data: {
         namaz: {},
       },
@@ -120,15 +122,15 @@ export default {
   methods: {
     getData() {
       const { madhhab, type, subType } = this.$route.params;
-      this.$store.commit("setNamaz", type);
-      this.$store.commit("setMenu", "level-2");
+      this.store.setNamaz(type);
+      this.store.setMenu("level-2");
       axios
         .get(
-          `/api/namaz/namaz/${madhhab}/${this.$store.state.gender}/${type}/${subType}`
+          `/api/namaz/namaz/${madhhab}/${this.store.gender}/${type}/${subType}`
         )
         .then((r) => {
           this.data = r.data;
-          this.$store.commit("setMenuItems", this.data.menu);
+          this.store.setMenuItems(this.data.menu);
         });
     },
   },
@@ -137,13 +139,13 @@ export default {
       this.getData();
     },
     // eslint-disable-next-line
-    '$store.state.gender'() {
+    'store.gender'() {
       this.getData();
     },
   },
   created() {
     this.getData();
-    this.$store.commit("setMobileHeaderStatus", "Намаз");
+    this.store.setMobileHeaderStatus("Намаз");
   },
   components: {
     NamazHeader,

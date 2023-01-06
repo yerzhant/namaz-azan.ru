@@ -47,7 +47,7 @@ section.tour(:class="type")
           v-for="(item, i) in items"
           :key="i"
           :class="[item.type, item.subType, \
-            $store.state.gender, $store.state.madhhab, \
+            store.gender, store.madhhab, \
             {active: i === index} \
           ]"
           @click="index = i"
@@ -63,10 +63,12 @@ import AppButton from "@/components/AppButton.vue";
 import routePrefix from "@/mixins/routePrefix";
 import axios from "axios";
 import items from "./items";
+import store from "../../store";
 
 export default {
   data() {
     return {
+      store: store(),
       index: 0,
       items,
       progressPosition: 0,
@@ -131,7 +133,7 @@ export default {
       );
     },
     getData() {
-      const { gender, madhhab } = this.$store.state;
+      const { gender, madhhab } = this.store;
 
       axios.get(`/api/namaz/tour/${madhhab}/${gender}`).then((r) => {
         r.data.wudu.forEach((w, i) => {
@@ -168,7 +170,7 @@ export default {
   },
   created() {
     this.getData();
-    this.$store.commit("setMobileHeaderStatus", "Мой первый намаз");
+    this.store.setMobileHeaderStatus("Мой первый намаз");
   },
   components: {
     Rukn,

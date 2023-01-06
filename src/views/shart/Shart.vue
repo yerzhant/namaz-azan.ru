@@ -1,7 +1,7 @@
 <template lang="pug">
 section.condition
   Banner(
-    :type="`shart ${$store.state.namaz}`"
+    :type="`shart ${store.namaz}`"
     :title="title"
     :shortDesc="shortDesc"
     :desc="desc"
@@ -21,7 +21,7 @@ section.condition
     .fards
       Banner(
         type="fard makan"
-        :shadow="$store.state.namaz === 'makan'"
+        :shadow="store.namaz === 'makan'"
         descStyleBlackBlue
         descWithMargin2
         title="ЧИСТОТА МЕСТА"
@@ -33,7 +33,7 @@ section.condition
           AppButton(:link="`${routePrefix}/shart/makan`" blue :height="36") ЧИТАТЬ ДАЛЕЕ
       Banner(
         type="fard tahharah"
-        :shadow="$store.state.namaz === 'tahharah'"
+        :shadow="store.namaz === 'tahharah'"
         descStyleBlackBlue
         descWithMargin2
         title="ОМОВЕНИЕ"
@@ -45,7 +45,7 @@ section.condition
           AppButton(:link="`${routePrefix}/shart/tahharah`" blue :height="36") ЧИТАТЬ ДАЛЕЕ
       Banner(
         type="fard awrah"
-        :shadow="$store.state.namaz === 'awrah'"
+        :shadow="store.namaz === 'awrah'"
         descStyleBlackBlue
         descWithMargin2
         title="АУРАТ"
@@ -57,7 +57,7 @@ section.condition
           AppButton(:link="`${routePrefix}/shart/awrah`" blue :height="36") ЧИТАТЬ ДАЛЕЕ
       Banner(
         type="fard qiblah"
-        :shadow="$store.state.namaz === 'qiblah'"
+        :shadow="store.namaz === 'qiblah'"
         descStyleBlackBlue
         descWithMargin2
         title="КИБЛА"
@@ -68,7 +68,7 @@ section.condition
           AppButton(:link="`${routePrefix}/shart/qiblah`" blue :height="36") ЧИТАТЬ ДАЛЕЕ
       Banner(
         type="fard zaman"
-        :shadow="$store.state.namaz === 'zaman'"
+        :shadow="store.namaz === 'zaman'"
         descStyleBlackBlue
         descWithMargin2
         title="ВРЕМЯ"
@@ -80,7 +80,7 @@ section.condition
           AppButton(:link="`${routePrefix}/shart/zaman`" blue :height="36") ЧИТАТЬ ДАЛЕЕ
       Banner(
         type="fard niet"
-        :shadow="$store.state.namaz === 'niet'"
+        :shadow="store.namaz === 'niet'"
         descStyleBlackBlue
         descWithMargin2
         title="НАМЕРЕНИЕ"
@@ -115,7 +115,7 @@ section.condition
     .fards
       Banner(
         type="fard fadjr"
-        :shadow="$store.state.namaz === 'fadjr'"
+        :shadow="store.namaz === 'fadjr'"
         descStyleBlackBlue
         descWithMargin2
         title="ФАДЖР"
@@ -128,7 +128,7 @@ section.condition
 
       Banner(
         type="fard dhuhr"
-        :shadow="$store.state.namaz === 'dhuhr'"
+        :shadow="store.namaz === 'dhuhr'"
         descStyleBlackBlue
         descWithMargin2
         title="ЗУХР"
@@ -141,7 +141,7 @@ section.condition
 
       Banner(
         type="fard asr"
-        :shadow="$store.state.namaz === 'asr'"
+        :shadow="store.namaz === 'asr'"
         descStyleBlackBlue
         descWithMargin2
         title="АСР"
@@ -154,7 +154,7 @@ section.condition
 
       Banner(
         type="fard maghrib"
-        :shadow="$store.state.namaz === 'maghrib'"
+        :shadow="store.namaz === 'maghrib'"
         descStyleBlackBlue
         descWithMargin2
         title="МАГРИБ"
@@ -167,7 +167,7 @@ section.condition
 
       Banner(
         type="fard isha"
-        :shadow="$store.state.namaz === 'isha'"
+        :shadow="store.namaz === 'isha'"
         descStyleBlackBlue
         descWithMargin2
         title="ИША"
@@ -204,9 +204,9 @@ export default {
         headerStatus = "Общие положения";
       }
       const { type, madhhab } = this.$route.params;
-      this.$store.commit("setMobileHeaderStatus", headerStatus);
-      this.$store.commit("setNamaz", type);
-      this.$store.commit("setMenu", null);
+      this.store.setMobileHeaderStatus(headerStatus);
+      this.store.setNamaz(type);
+      this.store.setMenu(null);
       axios.get(`/api/namaz/shart/${madhhab}/${type}`).then((r) => {
         this.title = r.data.title;
         this.shortDesc = r.data.shortDesc;

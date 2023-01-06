@@ -52,8 +52,8 @@ export default {
       axios.get(`/api/asr/today-and-tomorrow/${id}`).then((r) => {
         localStorage.setItem("cityId", id);
         localStorage.setItem("city", city);
-        this.$store.commit("setCity", city);
-        this.$store.commit("setNamazTimes", r.data);
+        this.store.setCity(city);
+        this.store.setNamazTimes(r.data);
       });
       this.filtered = this.cities;
       this.searchFilter = "";

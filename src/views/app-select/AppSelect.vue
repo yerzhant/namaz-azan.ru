@@ -58,7 +58,7 @@ export default {
       this.$router.push(`/${this.store.madhhab}/${routeGender}`);
     },
     selectMadhhab(madhhab) {
-      this.$store.commit("setMadhhab", madhhab);
+      this.store.setMadhhab(madhhab);
     },
     next() {
       // switch (this.madhhab) {

@@ -262,7 +262,7 @@ export default {
         });
     },
     openL2(item) {
-      this.$store.state.menuItems
+      this.store.menuItems
         .filter((i) => i !== item)
         .filter((i) => i.title)
         .forEach((i) => {

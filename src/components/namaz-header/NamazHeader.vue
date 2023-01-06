@@ -45,7 +45,7 @@ header.header(:class="[type, store.gender, store.madhhab]")
         span.footnote *
         span Указано время намаза для {{ store.city }}
         span.bar |
-        span.select(@click="$store.commit('toggleSelectCity')") Другой город
+        span.select(@click="store.toggleSelectCity()") Другой город
 
   section.desc(v-if="desc" :class="{closed: !descOpen}")
     .desc-text(v-html="desc")

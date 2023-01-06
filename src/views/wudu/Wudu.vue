@@ -1,7 +1,7 @@
 <template lang="pug">
 section.wudu
   NamazHeader(
-    :type="$store.state.namaz"
+    :type="store.namaz"
     title="ВУДУ"
     subTitle="Малое омовение"
     shortDesc="Вуду - это малое ритуальное омовение тела, которое является простым и \
@@ -51,7 +51,7 @@ section.wudu
           AppButton(:link="`${routePrefix}/tahharah/ghusl`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
       Banner(
         type="fard wudu"
-        :shadow="$store.state.namaz === 'wudu'"
+        :shadow="store.namaz === 'wudu'"
         descStyleBlackBlue
         descWithMargin2
         title="ВУДУ"
@@ -63,7 +63,7 @@ section.wudu
           AppButton(:link="`${routePrefix}/tahharah/wudu`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
       Banner(
         type="fard istibra blue"
-        :shadow="$store.state.namaz === 'istibra'"
+        :shadow="store.namaz === 'istibra'"
         descStyleBlackBlue
         descWithMargin2
         title="ИСТИБРА"
@@ -75,7 +75,7 @@ section.wudu
           AppButton(:link="`${routePrefix}/tahharah/istibra`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
       Banner(
         type="fard istinja blue"
-        :shadow="$store.state.namaz === 'istinja'"
+        :shadow="store.namaz === 'istinja'"
         descStyleBlackBlue
         descWithMargin2
         title="ИСТИНДЖА"
@@ -86,7 +86,7 @@ section.wudu
           AppButton(:link="`${routePrefix}/tahharah/istinja`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
       Banner(
         type="fard tayammum blue"
-        :shadow="$store.state.namaz === 'tayammum'"
+        :shadow="store.namaz === 'tayammum'"
         descStyleBlackBlue
         descWithMargin2
         title="ТАЯММУМ"
@@ -97,7 +97,7 @@ section.wudu
           AppButton(:link="`${routePrefix}/tahharah/tayammum`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
       Banner(
         type="fard masah blue"
-        :shadow="$store.state.namaz === 'masah'"
+        :shadow="store.namaz === 'masah'"
         descStyleBlackBlue
         descWithMargin2
         title="МАСХ"
@@ -124,7 +124,7 @@ section.wudu
     .fards
       Banner(
         type="fard fadjr"
-        :shadow="$store.state.namaz === 'fadjr'"
+        :shadow="store.namaz === 'fadjr'"
         descStyleBlackBlue
         descWithMargin2
         title="ФАДЖР"
@@ -137,7 +137,7 @@ section.wudu
 
       Banner(
         type="fard dhuhr"
-        :shadow="$store.state.namaz === 'dhuhr'"
+        :shadow="store.namaz === 'dhuhr'"
         descStyleBlackBlue
         descWithMargin2
         title="ЗУХР"
@@ -150,7 +150,7 @@ section.wudu
 
       Banner(
         type="fard asr"
-        :shadow="$store.state.namaz === 'asr'"
+        :shadow="store.namaz === 'asr'"
         descStyleBlackBlue
         descWithMargin2
         title="АСР"
@@ -163,7 +163,7 @@ section.wudu
 
       Banner(
         type="fard maghrib"
-        :shadow="$store.state.namaz === 'maghrib'"
+        :shadow="store.namaz === 'maghrib'"
         descStyleBlackBlue
         descWithMargin2
         title="МАГРИБ"
@@ -176,7 +176,7 @@ section.wudu
 
       Banner(
         type="fard isha"
-        :shadow="$store.state.namaz === 'isha'"
+        :shadow="store.namaz === 'isha'"
         descStyleBlackBlue
         descWithMargin2
         title="ИША"
@@ -196,10 +196,12 @@ import Rukn from "@/components/rukn/Rukn.vue";
 import Banner from "@/components/Banner.vue";
 import routePrefix from "@/mixins/routePrefix";
 import axios from "axios";
+import store from "../../store";
 
 export default {
   data() {
     return {
+      store: store(),
       sections: null,
       rukns: null,
     };
@@ -207,12 +209,12 @@ export default {
   methods: {
     getData() {
       const { madhhab, type } = this.$route.params;
-      this.$store.commit("setNamaz", type);
-      this.$store.commit("setMenu", "level-2");
+      this.store.setNamaz(type);
+      this.store.setMenu("level-2");
       axios.get(`/api/namaz/tahharah/${madhhab}/${type}`).then((r) => {
         this.sections = r.data.sections;
         this.rukns = r.data.rukns;
-        this.$store.commit("setMenuItems", r.data.menu);
+        this.store.setMenuItems(r.data.menu);
       });
     },
     getNext(r) {
@@ -225,7 +227,7 @@ export default {
   },
   created() {
     this.getData();
-    this.$store.commit("setMobileHeaderStatus", "Тахарат");
+    this.store.setMobileHeaderStatus("Тахарат");
   },
   components: {
     NamazHeader,

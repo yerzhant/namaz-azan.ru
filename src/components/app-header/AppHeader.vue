@@ -67,7 +67,7 @@ export default {
     setGender(gender) {
       const routeName = this.$route.name;
       if (routeName === "select") {
-        this.$store.commit("setGender", gender);
+        this.store.setGender(gender);
       } else {
         this.$router.push({
           name: routeName,
@@ -78,7 +78,7 @@ export default {
     setMadhhab(madhhab) {
       const routeName = this.$route.name;
       if (routeName === "select") {
-        this.$store.commit("setMadhhab", madhhab);
+        this.store.setMadhhab(madhhab);
       } else {
         this.$router.push({ name: routeName, params: { madhhab } });
       }

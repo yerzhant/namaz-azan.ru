@@ -1,18 +1,15 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import { defineStore } from "pinia";
 
-Vue.use(Vuex);
-
-export default new Vuex.Store({
+export const store = defineStore("store", {
   state: {
-    madhhab: 'hanafi',
-    gender: 'man',
+    madhhab: "hanafi",
+    gender: "man",
     namaz: null,
     mobileHeaderStatus: null,
     city: null,
     namazTimes: {
-      today: ['-', '-', '-', '-', '-', '-'],
-      tomorrow: ['-', '-', '-', '-', '-', '-'],
+      today: ["-", "-", "-", "-", "-", "-"],
+      tomorrow: ["-", "-", "-", "-", "-", "-"],
     },
     selectCity: false,
     socials: {
@@ -61,26 +58,26 @@ export default new Vuex.Store({
     },
   },
   getters: {
-    gender: state => state.gender,
-    genderText: state => {
+    gender: (state) => state.gender,
+    genderText: (state) => {
       switch (state.gender) {
-        case 'man':
-          return 'Для мужчин';
-        case 'woman':
-          return 'Для женщин';
+        case "man":
+          return "Для мужчин";
+        case "woman":
+          return "Для женщин";
         default:
-          return '???';
+          return "???";
       }
     },
-    madhhab: state => state.madhhab,
-    madhhabText: state => {
+    madhhab: (state) => state.madhhab,
+    madhhabText: (state) => {
       switch (state.madhhab) {
-        case 'hanafi':
-          return 'Ханафи';
-        case 'shafii':
-          return 'Шафии';
+        case "hanafi":
+          return "Ханафи";
+        case "shafii":
+          return "Шафии";
         default:
-          return '???';
+          return "???";
       }
     },
   },

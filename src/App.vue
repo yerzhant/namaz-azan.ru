@@ -22,10 +22,12 @@ import MobileHeader from "@/components/mobile-header/MobileHeader.vue";
 import SelectCity from "@/components/select-city/SelectCity.vue";
 import isFullSite from "@/mixins/isFullSite";
 import axios from "axios";
+import store from "./store";
 
 export default {
   data() {
     return {
+      store,
       showScrollUp: false,
     };
   },
@@ -36,7 +38,7 @@ export default {
   },
   created() {
     axios.get("/api/site/socials").then((r) => {
-      this.$store.commit("setSocials", r.data);
+      this.store.setSocials = r.data;
     });
 
     let cityId = localStorage.getItem("cityId");
@@ -48,13 +50,13 @@ export default {
       localStorage.setItem("city", city);
     }
     axios.get(`/api/asr/today-and-tomorrow/${cityId}`).then((r) => {
-      this.$store.commit("setCity", city);
-      this.$store.commit("setNamazTimes", r.data);
+      this.store.setCity = city;
+      this.store.setNamazTimes = r.data;
     });
 
     document.addEventListener("scroll", this.scrolling);
   },
-  destroyed() {
+  unmounted() {
     document.removeEventListener("scroll", this.scrolling);
   },
   components: {

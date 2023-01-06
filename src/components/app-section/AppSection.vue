@@ -3,7 +3,7 @@ section.app-section(
   :class=`{rakaat: rakaat, 'not-first': notFirst,
     'bg-1': bg1, 'no-bottom-padding': noBottomPadding}`
 )
-  .header(:class="$store.state.namaz")
+  .header(:class="store.namaz")
     h2.title(:class="{regular: regular}") {{ title }}
     img.moon(src="./moon.png")
     img.moon-m(src="./moon-m.png")
@@ -12,7 +12,14 @@ section.app-section(
 </template>
 
 <script>
+import store from "../../store";
+
 export default {
+  data() {
+    return {
+      store: store(),
+    };
+  },
   props: {
     title: String,
     regular: Boolean,

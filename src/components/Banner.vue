@@ -22,6 +22,7 @@ section.banner(:class="[type, {shadow: shadow}]")
 <script>
 import { mapState } from "pinia";
 import ActionDesc from "@/components/ActionDesc.vue";
+import store from "../store";
 
 export default {
   props: {
@@ -38,7 +39,7 @@ export default {
     shadow: Boolean,
   },
   computed: {
-    ...mapState(["madhhab"]),
+    ...mapState(store, ["madhhab"]),
   },
   components: {
     ActionDesc,

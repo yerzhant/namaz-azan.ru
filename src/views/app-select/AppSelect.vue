@@ -45,6 +45,7 @@ section.app-select
 import { mapState } from "pinia";
 import RouteGender from "@/utils/routeGender";
 import AppButton from "@/components/AppButton.vue";
+import store from "../../store";
 
 export default {
   methods: {
@@ -66,7 +67,7 @@ export default {
     },
   },
   computed: {
-    ...mapState(["madhhab"]),
+    ...mapState(store, ["madhhab"]),
   },
   created() {
     this.$store.commit(

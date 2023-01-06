@@ -10,6 +10,7 @@ router-link.small-banner(:to="link" :class="[type, { bg2 }]")
 
 <script>
 import { mapState } from "pinia";
+import store from "../../store";
 
 export default {
   props: {
@@ -21,7 +22,7 @@ export default {
     bg2: Boolean,
   },
   computed: {
-    ...mapState(["madhhab"]),
+    ...mapState(store, ["madhhab"]),
   },
 };
 </script>

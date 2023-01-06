@@ -49,7 +49,7 @@ const router = new createRouter({
       name: "namaz",
     },
     {
-      path: "*",
+      path: "/:pathMatch(.*)*",
       beforeEnter() {
         window.location = "https://azan.ru/not-found";
       },

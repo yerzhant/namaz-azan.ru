@@ -49,6 +49,7 @@ header.header(:class="[$store.state.namaz, {full: isFullSite}]")
 import { mapState } from "pinia";
 import RouteGender from "@/utils/routeGender";
 import isFullSite from "@/mixins/isFullSite";
+import store from "../../store";
 
 export default {
   data() {
@@ -61,7 +62,7 @@ export default {
     routeGender() {
       return RouteGender.to(this.$store.state.gender);
     },
-    ...mapState(["gender", "genderText", "madhhab", "madhhabText"]),
+    ...mapState(store, ["gender", "genderText", "madhhab", "madhhabText"]),
   },
   methods: {
     setGender(gender) {

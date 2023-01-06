@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 
-export const store = defineStore("store", {
+export default defineStore("store", {
   state: {
     madhhab: "hanafi",
     gender: "man",

@@ -1,10 +1,10 @@
 <template lang="pug">
 menu.mobile-menu(
-  v-show="$store.state.showMenu"
-  @click="$store.commit('showMenu', false)"
+  v-show="store.showMenu"
+  @click="store.showMenu = false"
 )
   .header
-    .close(@click="$store.commit('showMenu', false)")
+    .close(@click="store.showMenu = false")
     .bar
     .info Энциклопедия намаза - спецпроект образовательного портала
       a.link(href="https://azan.ru")  Azan.ru
@@ -107,10 +107,12 @@ menu.mobile-menu(
 <script>
 import routePrefix from "@/mixins/routePrefix";
 import Socials from "@/components/socials/Socials.vue";
+import store from "../../store";
 
 export default {
   data() {
     return {
+      store,
       general: false,
       shart: false,
       tahharah: false,
@@ -130,7 +132,7 @@ export default {
   },
   methods: {
     goTo(path) {
-      this.$store.commit("showMenu", false);
+      this.store.showMenu = false;
       this.$router.push(this.routePrefix + path);
     },
   },

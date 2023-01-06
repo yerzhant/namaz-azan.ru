@@ -112,7 +112,7 @@ import store from "../../store";
 export default {
   data() {
     return {
-      store,
+      store: store(),
       general: false,
       shart: false,
       tahharah: false,

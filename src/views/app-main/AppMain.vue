@@ -31,8 +31,8 @@ section.main
         title="ФАДЖР"
         :titleLink="`${routePrefix}/fadjr/fard`"
         desc="Утренний намаз"
-        :startTime="$store.state.namazTimes.today[0]"
-        :endTime="$store.state.namazTimes.today[1]"
+        :startTime="store.namazTimes.today[0]"
+        :endTime="store.namazTimes.today[1]"
         :namaz1Count=2
         namaz1Type="сунны"
         :namaz1Link="`${routePrefix}/fadjr/sunnah`"
@@ -45,8 +45,8 @@ section.main
         title="ЗУХР"
         :titleLink="`${routePrefix}/dhuhr/fard`"
         desc="Обеденный намаз"
-        :startTime="$store.state.namazTimes.today[2]"
-        :endTime="$store.state.namazTimes.today[3]"
+        :startTime="store.namazTimes.today[2]"
+        :endTime="store.namazTimes.today[3]"
         :namaz1Count=4
         namaz1Type="сунны"
         :namaz1Link="`${routePrefix}/dhuhr/sunnah-before`"
@@ -62,8 +62,8 @@ section.main
         title="АСР"
         :titleLink="`${routePrefix}/asr/fard`"
         desc="Предвечерний намаз"
-        :startTime="$store.state.namazTimes.today[3]"
-        :endTime="$store.state.namazTimes.today[4]"
+        :startTime="store.namazTimes.today[3]"
+        :endTime="store.namazTimes.today[4]"
         :namaz1Count=4
         namaz1Type="фарда"
         :namaz1Link="`${routePrefix}/asr/fard`"
@@ -73,8 +73,8 @@ section.main
         title="МАГРИБ"
         :titleLink="`${routePrefix}/maghrib/fard`"
         desc="Вечерний намаз"
-        :startTime="$store.state.namazTimes.today[4]"
-        :endTime="$store.state.namazTimes.today[5]"
+        :startTime="store.namazTimes.today[4]"
+        :endTime="store.namazTimes.today[5]"
         :namaz1Count=3
         namaz1Type="фарда"
         :namaz1Link="`${routePrefix}/maghrib/fard`"
@@ -87,8 +87,8 @@ section.main
         title="ИША"
         :titleLink="`${routePrefix}/isha/fard`"
         desc="Ночной намаз"
-        :startTime="$store.state.namazTimes.today[5]"
-        :endTime="$store.state.namazTimes.today[0]"
+        :startTime="store.namazTimes.today[5]"
+        :endTime="store.namazTimes.today[0]"
         :namaz1Count=4
         namaz1Type="фарда"
         :namaz1Link="`${routePrefix}/isha/fard`"
@@ -102,7 +102,7 @@ section.main
         :titleLink="`${routePrefix}/witr/wadjib`"
         desc="Заключительный намаз"
         startTime="После намаза Иша"
-        :endTime="$store.state.namazTimes.tomorrow[0]"
+        :endTime="store.namazTimes.tomorrow[0]"
         :namaz1Count=3
         namaz1Type="ваджиба"
         :namaz1Link="`${routePrefix}/witr/wadjib`"

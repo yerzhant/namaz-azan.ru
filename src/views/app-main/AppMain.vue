@@ -244,12 +244,18 @@ import NamazInfo from "@/components/namaz-info/NamazInfo.vue";
 import GeneralProvisions from "@/components/general-provisions/GeneralProvisions.vue";
 import MobileGeneralProvisions from "@/components/mobile-general-provisions/MobileGeneralProvisions.vue";
 import Recommended from "@/components/Recommended.vue";
+import store from "../../store";
 
 export default {
+  data() {
+    return {
+      store: store(),
+    };
+  },
   created() {
-    this.$store.commit("setNamaz", null);
-    this.$store.commit("setMenu", null);
-    this.$store.commit("setMobileHeaderStatus", "Главная");
+    this.store.setNamaz(null);
+    this.store.setMenu(null);
+    this.store.setMobileHeaderStatus("Главная");
   },
   components: {
     Banner,

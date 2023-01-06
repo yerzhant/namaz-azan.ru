@@ -295,7 +295,7 @@ export default {
           document
             .querySelector(`.subitem-l2[data-link=${r.id}]`)
             .classList.add("active");
-          this.$store.state.menuItems
+          this.store.menuItems
             .filter((i) => !i.right)
             .forEach((i) => {
               i.open = i.items.some((s) => s.link.substring(1) === r.id);

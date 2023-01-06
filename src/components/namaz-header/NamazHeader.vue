@@ -1,5 +1,5 @@
 <template lang="pug">
-header.header(:class="[type, $store.state.gender, $store.state.madhhab]")
+header.header(:class="[type, store.gender, store.madhhab]")
   .info-wrapper
     section.info
       h1.title {{ title }}
@@ -43,7 +43,7 @@ header.header(:class="[type, $store.state.gender, $store.state.madhhab]")
         ) {{ button3 }}
       .city-info(v-if="isNamaz")
         span.footnote *
-        span Указано время намаза для {{ $store.state.city }}
+        span Указано время намаза для {{ store.city }}
         span.bar |
         span.select(@click="$store.commit('toggleSelectCity')") Другой город
 
@@ -60,6 +60,7 @@ header.header(:class="[type, $store.state.gender, $store.state.madhhab]")
 
 <script>
 import AppButton from "@/components/AppButton.vue";
+import store from "../../store";
 
 export default {
   props: {
@@ -92,12 +93,13 @@ export default {
   },
   data() {
     return {
+      store: store(),
       descOpen: true,
     };
   },
   computed: {
     time() {
-      const { today, tomorrow } = this.$store.state.namazTimes;
+      const { today, tomorrow } = this.store.namazTimes;
       switch (this.type) {
         case "fadjr":
           return `${today[0]} - ${today[1]}`;

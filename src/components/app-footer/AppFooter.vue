@@ -16,7 +16,7 @@ footer.footer
       router-link(:to="`${routePrefix}/tutorial/fard`") Обучение
     .up(@click="$scrollTo('body')")
   .bottom
-    span Copyright © 2019 Azan.ru
+    span Copyright © 2018 - 2023 Azan.ru
     span.bar |
     a(href="/site/agreement") Соглашение об использовании
     span.bar |

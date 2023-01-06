@@ -1,7 +1,7 @@
 <template lang="pug">
 .select-city(
-  v-show="$store.state.selectCity"
-  @click="$store.commit('toggleSelectCity')"
+  v-show="store.selectCity"
+  @click="store.toggleSelectCity()"
 )
   .dialog
     .header
@@ -16,16 +16,18 @@
       div(
         v-for="city in filtered"
         @click="setCity(city.id, city.title)"
-        :class="{city: city.id, letter: city.letter, active: city.title === $store.state.city}"
+        :class="{city: city.id, letter: city.letter, active: city.title === store.city}"
       ) {{ city.letter || city.title }}
 </template>
 
 <script>
 import axios from "axios";
+import store from "../../store";
 
 export default {
   data() {
     return {
+      store: store(),
       searchFilter: "",
       cities: null,
       filtered: null,

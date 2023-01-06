@@ -103,7 +103,7 @@ export default {
     next() {
       if (this.index < this.items.length - 1) this.index++;
       this.normalizeProgressPosition();
-      this.$scrollTo("body");
+      window.scrollTo({ top: 0, behavior: "smooth" });
     },
     normalizeProgressPosition() {
       const max = this.getProgressMaxPosition();

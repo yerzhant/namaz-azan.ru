@@ -54,7 +54,7 @@ header.header(:class="[type, store.gender, store.madhhab]")
       :width="109"
       :height="32"
       small
-      @click="descOpen = !descOpen; return false;"
+      @click="descOpen = !descOpen; false;"
     ) {{ descOpen ? 'СВЕРНУТЬ' : 'РАЗВЕРНУТЬ' }}
 </template>
 

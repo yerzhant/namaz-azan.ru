@@ -16,7 +16,7 @@ import store from "../../store";
 export default {
   data() {
     return {
-      store,
+      store: store(),
     };
   },
 };

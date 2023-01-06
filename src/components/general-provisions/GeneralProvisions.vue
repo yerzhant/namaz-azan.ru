@@ -30,6 +30,7 @@
 <script>
 import routePrefix from "@/mixins/routePrefix";
 import AppButton from "@/components/AppButton.vue";
+import store from "../../store";
 
 const info = [
   {
@@ -82,6 +83,7 @@ export default {
   },
   data() {
     return {
+      store: store(),
       index: 0,
     };
   },

@@ -2,7 +2,7 @@
 .mobile-general-provisions
   Banner(
     type="mobile-general-provisions ma-hiya"
-    :shadow="$store.state.namaz === 'ma-hiya'"
+    :shadow="store.namaz === 'ma-hiya'"
     descStyleBlackBlue
     title="ЧТО ТАКОЕ НАМАЗ?"
     desc="Намаз – это персидское слово обозначает один из самых важных видов поклонения \
@@ -15,7 +15,7 @@
       ) ЧИТАТЬ ДАЛЕЕ
   Banner(
     type="mobile-general-provisions aqsaam"
-    :shadow="$store.state.namaz === 'aqsaam'"
+    :shadow="store.namaz === 'aqsaam'"
     descStyleBlackBlue
     title="ВИДЫ НАМАЗОВ"
     desc="Намазы делятся на три вида: фард-намазы, совершение которых является обязанностью \
@@ -25,7 +25,7 @@
       AppButton(:link="`${routePrefix}/al-ahkaamul-aammah/aqsaam`" blue :height="36") ЧИТАТЬ ДАЛЕЕ
   Banner(
     type="mobile-general-provisions shuruut"
-    :shadow="$store.state.namaz === 'shuruut'"
+    :shadow="store.namaz === 'shuruut'"
     descStyleBlackBlue
     title="УСЛОВИЯ НАМАЗА"
     desc="Условия намаза – это требования, не считающиеся составной частью самого намаза, \
@@ -37,7 +37,7 @@
       ) ЧИТАТЬ ДАЛЕЕ
   Banner(
     type="mobile-general-provisions azan-iqamat"
-    :shadow="$store.state.namaz === 'azan-iqamat'"
+    :shadow="store.namaz === 'azan-iqamat'"
     descStyleBlackBlue
     title="АЗАН И ИКАМАТ"
     desc="«Азан» – это арабское слово которое означает «объявление», «извещение». В применении \
@@ -49,7 +49,7 @@
       ) ЧИТАТЬ ДАЛЕЕ
   Banner(
     type="mobile-general-provisions aadaab"
-    :shadow="$store.state.namaz === 'aadaab'"
+    :shadow="store.namaz === 'aadaab'"
     descStyleBlackBlue
     title="ЭТИКЕТ (АДАБЫ) НАМАЗА"
     desc="Намаз – это предстояние перед Всевышним Аллахом, прямое обращение к Нему и важнейший \
@@ -59,7 +59,7 @@
       AppButton(:link="`${routePrefix}/al-ahkaamul-aammah/aadaab`" blue :height="36") ЧИТАТЬ ДАЛЕЕ
   Banner(
     type="mobile-general-provisions fasaad"
-    :shadow="$store.state.namaz === 'fasaad'"
+    :shadow="store.namaz === 'fasaad'"
     descStyleBlackBlue
     title="ЧТО НАРУШАЕТ НАМАЗ"
     desc="После того, как мы научились совершать намаз, нам необходимо также знать о том, \
@@ -73,8 +73,14 @@
 import routePrefix from "@/mixins/routePrefix";
 import Banner from "@/components/Banner.vue";
 import AppButton from "@/components/AppButton.vue";
+import store from "../../store";
 
 export default {
+  data() {
+    return {
+      store: store(),
+    };
+  },
   components: {
     Banner,
     AppButton,

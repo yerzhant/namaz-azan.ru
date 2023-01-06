@@ -3,7 +3,7 @@ section.app-select
   .buttons
     AppButton(:width="177" :height="36" small) НАМАЗ ДЛЯ ВЗРОСЛЫХ
     //- AppButton(:width="177" :height="36" small :opacity=".1") НАМАЗ ДЛЯ ДЕТЕЙ
-    AppButton(:width="177" :height="36" small :opacity="madhhab == 'hanafi' ? 1 : .5"
+    AppButton(:width="177" :height="36" small :opacity="store.madhhab == 'hanafi' ? 1 : .5"
       @click="selectMadhhab('hanafi')"
     ) ХАНАФИТСКИЙ МАЗХАБ
     //- AppButton(:width="177" :height="36" small :opacity="madhhab == 'shafii' ? 1 : .5"
@@ -11,9 +11,9 @@ section.app-select
     //- ) ШАФИИТСКИЙ МАЗХАБ
   .select
     .prev(@click="next")
-    .left(:class="[madhhab]" @click="selectGender('man')")
+    .left(:class="[store.madhhab]" @click="selectGender('man')")
     .middle
-    .right(:class="[madhhab]" @click="selectGender('woman')")
+    .right(:class="[store.madhhab]" @click="selectGender('woman')")
     .next(@click="next")
   .select-text
     .left-text(@click="selectGender('man')")
@@ -25,12 +25,12 @@ section.app-select
       .line-2 Намаз для женщин
   .select-m
     .option(@click="selectGender('man')")
-      .image(:class="[madhhab]")
+      .image(:class="[store.madhhab]")
       .text
         .line-1 МУЖЧИНАМ
         .line-2 Намаз для мужчин
     .option(@click="selectGender('woman')")
-      .image.woman(:class="[madhhab]")
+      .image.woman(:class="[store.madhhab]")
       .text
         .line-1 ЖЕНЩИНАМ
         .line-2 Намаз для женщин
@@ -42,12 +42,16 @@ section.app-select
 </template>
 
 <script>
-import { mapState } from "pinia";
 import RouteGender from "@/utils/routeGender";
 import AppButton from "@/components/AppButton.vue";
 import store from "../../store";
 
 export default {
+  data() {
+    return {
+      store,
+    };
+  },
   methods: {
     selectGender(gender) {
       const routeGender = RouteGender.to(gender);
@@ -66,14 +70,8 @@ export default {
       // }
     },
   },
-  computed: {
-    ...mapState(store, ["madhhab"]),
-  },
   created() {
-    this.$store.commit(
-      "setMobileHeaderStatus",
-      "Выбор пола, возраста и мазхаба"
-    );
+    this.store.setMobileHeaderStatus = "Выбор пола, возраста и мазхаба";
   },
   components: {
     AppButton,
@@ -99,7 +97,7 @@ export default {
     flex-wrap: wrap;
   }
 
-  > * {
+  >* {
     margin-right: 10px;
 
     &:last-child {

@@ -23,6 +23,7 @@ import SelectCity from "@/components/select-city/SelectCity.vue";
 import isFullSite from "@/mixins/isFullSite";
 import axios from "axios";
 import store from "./store";
+import scrollToTop from "./mixins/scrollToTop";
 
 export default {
   data() {
@@ -34,9 +35,6 @@ export default {
   methods: {
     scrolling() {
       this.showScrollUp = window.scrollY > 200;
-    },
-    scrollToTop() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
     },
   },
   created() {
@@ -70,7 +68,7 @@ export default {
     MobileHeader,
     SelectCity,
   },
-  mixins: [isFullSite],
+  mixins: [isFullSite, scrollToTop],
 };
 </script>
 

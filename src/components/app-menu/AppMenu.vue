@@ -308,7 +308,7 @@ export default {
     document.addEventListener("click", this.closeAll);
     document.addEventListener("scroll", this.scrolling);
   },
-  destroyed() {
+  unmounted() {
     document.removeEventListener("click", this.closeAll);
     document.removeEventListener("scroll", this.scrolling);
   },

@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template lang="pug">
 section.tour(:class="type")
   .content
@@ -327,7 +328,6 @@ export default {
 
     &.active,
     &:hover {
-
       &::before,
       .title {
         display: none;
@@ -586,7 +586,6 @@ export default {
   }
 
   @media (max-width: $mobile) {
-
     .prev,
     .next {
       display: none;

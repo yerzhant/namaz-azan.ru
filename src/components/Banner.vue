@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template lang="pug">
 section.banner(:class="[type, {shadow: shadow}]")
   .top

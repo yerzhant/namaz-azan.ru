@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template lang="pug">
 section.socials(:class="{mobile}")
   a.fb(:href="store.socials.fb.value")
@@ -26,7 +27,7 @@ export default {
 .socials {
   display: inline-block;
 
-  >a {
+  > a {
     display: inline-block;
     width: 31px;
     height: 31px;
@@ -41,7 +42,7 @@ export default {
   }
 
   &.mobile {
-    >a {
+    > a {
       width: 27px;
       height: 27px;
       vertical-align: top;

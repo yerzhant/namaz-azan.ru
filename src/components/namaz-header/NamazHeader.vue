@@ -216,7 +216,7 @@ export default {
       border: none;
     }
 
-    >* {
+    > * {
       display: flex;
       justify-content: center;
       align-items: flex-end;
@@ -299,7 +299,7 @@ export default {
   }
 
   .buttons {
-    >* {
+    > * {
       margin-right: 10px;
 
       &:last-child {

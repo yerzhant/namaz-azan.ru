@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template lang="pug">
 section.slogan
   p.left Спешите к намазу! Спешите к успеху!
@@ -27,7 +28,7 @@ section.slogan
   &::after {
     position: absolute;
     display: block;
-    content: '';
+    content: "";
     right: 0;
     left: 0;
     top: -8px;
@@ -69,7 +70,6 @@ section.slogan
 }
 
 @media (max-width: $mobile) {
-
   .left,
   .right {
     display: inline-block;

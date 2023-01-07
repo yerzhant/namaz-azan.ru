@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template lang="pug">
 section.rukn(:id="`r${rakaat}-${type}`" :class="[type, kind, {first: first, 'in-tour': tour}]")
   .header(v-if="!tour")

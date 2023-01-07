@@ -48,7 +48,6 @@ export default {
   }
 
   @media (max-width: $mobile) {
-
     &.ghusl,
     &.wudu {
       display: none;

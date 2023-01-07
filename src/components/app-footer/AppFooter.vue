@@ -98,7 +98,7 @@ export default {
     margin-bottom: 77px;
   }
 
-  >a {
+  > a {
     display: inline-block;
     border: 1px solid #67758b;
     padding: 6px 10px;
@@ -144,7 +144,7 @@ export default {
     background-size: 360px;
   }
 
-  >* {
+  > * {
     color: #bbc8dd;
     font-size: 13px;
   }

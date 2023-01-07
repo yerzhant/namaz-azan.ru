@@ -181,7 +181,7 @@ export default {
     margin-left: 58px;
   }
 
-  >* {
+  > * {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -265,7 +265,6 @@ export default {
   }
 
   &.active {
-
     &::before,
     + ::before {
       height: 49px;

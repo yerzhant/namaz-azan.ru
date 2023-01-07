@@ -97,7 +97,7 @@ export default {
     flex-wrap: wrap;
   }
 
-  >* {
+  > * {
     margin-right: 10px;
 
     &:last-child {

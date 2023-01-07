@@ -155,8 +155,11 @@ export default {
     goNext() {
       if (this.tour) {
         this.$emit("next");
-      } else if (this.next.substr(0, 1) === "#") {
-        this.$scrollTo(this.next);
+      } else if (this.next.startsWith("#")) {
+        const nextElement = document.getElementById(this.next.substring(1));
+        const top = nextElement.getBoundingClientRect().top;
+        const bodyTop = document.body.getBoundingClientRect().top;
+        window.scrollTo({ top: top - bodyTop, behavior: "smooth" });
       } else {
         this.$router.push(this.next);
       }

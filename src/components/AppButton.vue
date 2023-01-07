@@ -2,7 +2,7 @@
 a.app-button(
   :class="{red, blue, small, 'blue-stylish': blueStylish}"
   :style="{width: `${width}px`, height: `${height}px`, opacity: `${opacity}`}"
-  @click="go()"
+  @click="go"
 )
   slot
 </template>
@@ -35,8 +35,6 @@ export default {
         window.location.href = this.url;
       } else if (this.link) {
         this.$router.push(this.link);
-      } else {
-        this.$emit("click");
       }
     },
   },

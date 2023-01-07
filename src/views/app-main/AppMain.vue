@@ -9,7 +9,7 @@ section.main
       прямо сейчас и через 20 минут Вы будете знать о втором столпе Ислама!"
     descTopBorder
   )
-    template(slot="buttons")
+    template(v-slot:buttons)
       AppButton(:link="`${routePrefix}/tour-salah`" red) ДА, НАЧАТЬ!
       AppButton.color-2d(:link="`${routePrefix}/tutorial/fard`") ПОДРОБНЫЕ УРОКИ
     Slogan
@@ -23,7 +23,7 @@ section.main
       читать “Зухр” - Вы сможете читать и другие намазы. Рекомендуем!"
     descTopBorder
   )
-    template(slot="buttons")
+    template(v-slot:buttons)
       AppButton(:link="`${routePrefix}/tutorial/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
     .table
       NamazInfo(
@@ -126,7 +126,7 @@ section.main
       desc="Коллективная молитва совершение которой предписано Кораном. \
         Является фардом, т.е. обязательной для мужчин."
     )
-      template(slot="buttons")
+      template(v-slot:buttons)
         AppButton(:link="`${routePrefix}/jumuah/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
     Banner(
       type="taraweeh"
@@ -137,7 +137,7 @@ section.main
       desc="Намаз совершаемый только в месяц Рамадан. \
         Таравих является сунной и состоит из 20 ракаатов."
     )
-      template(slot="buttons")
+      template(v-slot:buttons)
         AppButton(:link="`${routePrefix}/tarawih/sunnah`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
     Banner(
       type="id"
@@ -148,7 +148,7 @@ section.main
       desc="Два праздничных намаза в году: Ид аль-фитр (Ораза айт/байрам) \
         и Ид аль-Адха (Курбан айт/байрам) - являются ваджибом для мусульман."
     )
-      template(slot="buttons")
+      template(v-slot:buttons)
         AppButton(:link="`${routePrefix}/id/wadjib`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
     Banner(
       type="mareed"
@@ -158,7 +158,7 @@ section.main
       shortDesc="Намаз больного (сидя)"
       desc="Положения и условия совершения намаза для больных людей."
     )
-      template(slot="buttons")
+      template(v-slot:buttons)
         AppButton(:link="`${routePrefix}/mareed/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
   AppSection.tahharah(title="ВИДЫ ОЧИЩЕНИЯ")
@@ -170,7 +170,7 @@ section.main
       desc="Полное ритуальное омовение водой всего тела целиком. В ряде \
         случаев тахарат недостаточен для достижения ритуальной чистоты"
     )
-      template(slot="buttons")
+      template(v-slot:buttons)
         AppButton(:link="`${routePrefix}/tahharah/ghusl`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
     Banner(
       type="taharat"
@@ -181,7 +181,7 @@ section.main
       desc="Малое омовение является доступным и простым способом очищения \
         и состоит всего из 4 фардов."
     )
-      template(slot="buttons")
+      template(v-slot:buttons)
         AppButton(:link="`${routePrefix}/tahharah/wudu`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
     .small-banners
       SmallBanner(
@@ -273,40 +273,38 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.namaz-detailed {
-  .table {
-    display: flex;
-    flex-flow: column wrap;
-    width: 2 * 538px + 1px;
-    height: 3 * 134px + 1px;
-    margin-right: auto;
-    margin-left: auto;
-    border-right: 1px solid #c7d2da;
-    border-bottom: 1px solid #c7d2da;
+.table {
+  display: flex;
+  flex-flow: column wrap;
+  width: 2 * 538px + 1px;
+  height: 3 * 134px + 1px;
+  margin-right: auto;
+  margin-left: auto;
+  border-right: 1px solid #c7d2da;
+  border-bottom: 1px solid #c7d2da;
 
-    @media (max-width: $mobile) {
-      width: 100%;
-      height: initial;
-      padding: 0 20px;
-      border: none;
-    }
+  @media (max-width: $mobile) {
+    width: 100%;
+    height: initial;
+    padding: 0 20px;
+    border: none;
+  }
+}
+
+.buttons {
+  text-align: center;
+  // padding: 75px 0;
+  padding: 30px 0;
+
+  @media (max-width: $mobile) {
+    padding: 20px 0;
   }
 
-  .buttons {
-    text-align: center;
-    // padding: 75px 0;
-    padding: 30px 0;
+  a {
+    margin-right: 10px;
 
-    @media (max-width: $mobile) {
-      padding: 20px 0;
-    }
-
-    a {
-      margin-right: 10px;
-
-      &:last-child {
-        margin-right: 0;
-      }
+    &:last-child {
+      margin-right: 0;
     }
   }
 }

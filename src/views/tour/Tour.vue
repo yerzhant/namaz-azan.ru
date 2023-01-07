@@ -64,6 +64,7 @@ import routePrefix from "@/mixins/routePrefix";
 import axios from "axios";
 import items from "./items";
 import store from "../../store";
+import scrollToTop from "../../mixins/scrollToTop";
 
 export default {
   data() {
@@ -103,7 +104,7 @@ export default {
     next() {
       if (this.index < this.items.length - 1) this.index++;
       this.normalizeProgressPosition();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      this.scrollToTop();
     },
     normalizeProgressPosition() {
       const max = this.getProgressMaxPosition();
@@ -176,7 +177,7 @@ export default {
     Rukn,
     AppButton,
   },
-  mixins: [routePrefix],
+  mixins: [routePrefix, scrollToTop],
 };
 </script>
 

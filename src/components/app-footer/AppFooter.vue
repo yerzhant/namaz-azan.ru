@@ -27,6 +27,7 @@ footer.footer
 import routePrefix from "@/mixins/routePrefix";
 import Socials from "@/components/socials/Socials.vue";
 import store from "../../store";
+import scrollToTop from "../../mixins/scrollToTop";
 
 export default {
   data() {
@@ -34,15 +35,10 @@ export default {
       store: store(),
     };
   },
-  methods: {
-    scrollToTop() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    },
-  },
   components: {
     Socials,
   },
-  mixins: [routePrefix],
+  mixins: [routePrefix, scrollToTop],
 };
 </script>
 

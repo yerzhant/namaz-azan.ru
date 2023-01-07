@@ -7,7 +7,7 @@ RUN npm audit
 # RUN npm run lint
 RUN npm run build
 
-FROM nginx:1.19-alpine
+FROM nginx:1.23-alpine
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 WORKDIR /namaz
 COPY --from=builder dist .

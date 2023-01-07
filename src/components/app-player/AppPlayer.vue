@@ -15,7 +15,7 @@ const sm = window.soundManager;
 
 sm.setup({
   url: "",
-  debugMode: import.meta.env.MODE !== "production",
+  debugMode: import.meta.env.DEV,
 });
 sm.beginDelayedInit();
 

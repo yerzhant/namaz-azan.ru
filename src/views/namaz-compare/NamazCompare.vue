@@ -56,7 +56,7 @@ section.namaz
         shortDesc="Намаз больного (сидя)"
         desc="Положения и условия совершения намаза для больных людей."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/mareed/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
       Banner(
@@ -69,7 +69,7 @@ section.namaz
         desc="Коллективная молитва, совершение которой предписанно Кораном. \
           Является фардом (т.е. обязательной) для мусульман - мужчин."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/jumuah/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
       Banner(
@@ -82,7 +82,7 @@ section.namaz
         desc="Два праздничных намаза в году - на Ид аль-Фитр (Ураза-байрам) и \
           Ид аль-Адха (Курбан-байрам) - являются ваджибом для мусульман."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/id/wadjib`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
       Banner(
@@ -95,7 +95,7 @@ section.namaz
         desc="Два праздничных намаза в году - на Ид аль-Фитр (Ураза-байрам) и \
           Ид аль-Адха (Курбан-байрам) - являются ваджибом для мусульман."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/tarawih/sunnah`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
 </template>

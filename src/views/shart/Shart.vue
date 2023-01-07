@@ -29,7 +29,7 @@ section.condition
         desc="Это условие означает отсутствие канонически нечистых вещей (наджасы) \
           на теле и одежде молящегося и на месте совершения намаза. "
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/shart/makan`" blue :height="36") ЧИТАТЬ ДАЛЕЕ
       Banner(
         type="fard tahharah"
@@ -41,7 +41,7 @@ section.condition
         desc="Совершающему намаз надлежит находится в состоянии ритуальной \
           чистоты - иметь малое омовение (вуду) и полное омовение (гусль)."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/shart/tahharah`" blue :height="36") ЧИТАТЬ ДАЛЕЕ
       Banner(
         type="fard awrah"
@@ -53,7 +53,7 @@ section.condition
         desc="Аурат - это области тела, которые следует обязательно закрывать \
           перед посторонними. Намаз с открытым ауратом недействителен."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/shart/awrah`" blue :height="36") ЧИТАТЬ ДАЛЕЕ
       Banner(
         type="fard qiblah"
@@ -64,7 +64,7 @@ section.condition
         shortDesc="4 условие намаза"
         desc="Кибла - это направление на Каабу, которая находится в Заповедной мечети в Мекке."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/shart/qiblah`" blue :height="36") ЧИТАТЬ ДАЛЕЕ
       Banner(
         type="fard zaman"
@@ -76,7 +76,7 @@ section.condition
         desc="Каждый намаз необходимо совершить в установленное для него время. \
           Намаз совершенный до наступления его времени недействителен."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/shart/zaman`" blue :height="36") ЧИТАТЬ ДАЛЕЕ
       Banner(
         type="fard niet"
@@ -88,7 +88,7 @@ section.condition
         desc="Осознанное решение выполнить намаз выраженное в мысленной форме \
           является намерением. Намаз без намерения недействителен."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/shart/niet`" blue :height="36") ЧИТАТЬ ДАЛЕЕ
 
   AppSection.general-provisions(
@@ -107,7 +107,7 @@ section.condition
       читать “Зухр” - Вы сможете читать и другие намазы. Рекомендуем!"
     descTopBorder
   )
-    template(slot="buttons")
+    template(v-slot:buttons)
       AppButton(:link="`${routePrefix}/tutorial/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
   .line
@@ -123,7 +123,7 @@ section.condition
         desc="Детальный обзор утреннего намаза “Фаджр”, состоящего из 2 ракаатов \
           фарда. Фаджр является первым из пяти обязательных намазов."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/fadjr/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
       Banner(
@@ -136,7 +136,7 @@ section.condition
         desc="Детальный обзор обеденного намаза “Зухр”, состоящего из 4 ракаатов \
           фарда. Зухр является вторым из пяти обязательных намазов."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/dhuhr/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
       Banner(
@@ -149,7 +149,7 @@ section.condition
         desc="Детальный обзор послеполуденного намаза “Аср”, состоящего из 4 \
           ракаатов фарда. Аср является третьим из пяти обязательных намазов."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/asr/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
       Banner(
@@ -162,7 +162,7 @@ section.condition
         desc="Детальный обзор вечернего намаза “Магриб”, состоящего из 3 ракаатов \
           фарда. Магриб является четвёртым из пяти обязательных намазов."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/maghrib/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
       Banner(
@@ -175,7 +175,7 @@ section.condition
         desc="Детальный обзор ночного намаза “Иша”, состоящего из 4 ракаатов \
           фарда. Иша является последним из пяти обязательных намазов."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/isha/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 </template>
 

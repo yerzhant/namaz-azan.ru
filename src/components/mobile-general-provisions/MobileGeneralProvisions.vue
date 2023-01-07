@@ -9,7 +9,7 @@
       Всевышнему Аллаху: определенные слова и движения, которые вместе составляют исламский \
       молитвенный обряд."
   )
-    template(slot="buttons")
+    template(v-slot:buttons)
       AppButton(
         :link="`${routePrefix}/al-ahkaamul-aammah/ma-hiya`" blue :height="36"
       ) ЧИТАТЬ ДАЛЕЕ
@@ -21,7 +21,7 @@
     desc="Намазы делятся на три вида: фард-намазы, совершение которых является обязанностью \
       каждого мусульманина, ваджиб-намазы, которые также обязательны, как и фарз-намазы..."
   )
-    template(slot="buttons")
+    template(v-slot:buttons)
       AppButton(:link="`${routePrefix}/al-ahkaamul-aammah/aqsaam`" blue :height="36") ЧИТАТЬ ДАЛЕЕ
   Banner(
     type="mobile-general-provisions shuruut"
@@ -31,7 +31,7 @@
     desc="Условия намаза – это требования, не считающиеся составной частью самого намаза, \
       выполнять которые, тем не менее, необходимо, чтобы намаз был совершен правильно..."
   )
-    template(slot="buttons")
+    template(v-slot:buttons)
       AppButton(
         :link="`${routePrefix}/al-ahkaamul-aammah/shuruut`" blue :height="36"
       ) ЧИТАТЬ ДАЛЕЕ
@@ -43,7 +43,7 @@
     desc="«Азан» – это арабское слово которое означает «объявление», «извещение». В применении \
       к намазу азан означает громкое объявление людям том, что настало время намаза."
   )
-    template(slot="buttons")
+    template(v-slot:buttons)
       AppButton(
         :link="`${routePrefix}/al-ahkaamul-aammah/azan-iqamat`" blue :height="36"
       ) ЧИТАТЬ ДАЛЕЕ
@@ -55,7 +55,7 @@
     desc="Намаз – это предстояние перед Всевышним Аллахом, прямое обращение к Нему и важнейший \
       вид поклонения. Поэтому человеку следует все время держа это в голове..."
   )
-    template(slot="buttons")
+    template(v-slot:buttons)
       AppButton(:link="`${routePrefix}/al-ahkaamul-aammah/aadaab`" blue :height="36") ЧИТАТЬ ДАЛЕЕ
   Banner(
     type="mobile-general-provisions fasaad"
@@ -65,7 +65,7 @@
     desc="После того, как мы научились совершать намаз, нам необходимо также знать о том, \
       что нарушает его действительность, чтобы избегать этих вещей."
   )
-    template(slot="buttons")
+    template(v-slot:buttons)
       AppButton(:link="`${routePrefix}/al-ahkaamul-aammah/fasaad`" blue :height="36") ЧИТАТЬ ДАЛЕЕ
 </template>
 

@@ -25,7 +25,7 @@ section.tahharah
         desc="Полное ритуальное омовение водой всего тела целиком. По-арабски \
           полное омовение носит название “Гусль”."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/tahharah/ghusl`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
       Banner(
         type="fard wudu blue"
@@ -36,7 +36,7 @@ section.tahharah
         desc="Малое омовение является доступным и простым способом очищения \
           однако, в ряде случаев, для достижения ритуальной чистоты нужен гусль."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/tahharah/wudu`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
       Banner(
         type="fard istibra blue"
@@ -48,7 +48,7 @@ section.tahharah
         desc="Только для мужчин. Выполняется до принятия омовения. В определенных \
           случаях мужчине обязательно следует совершить истибару."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/tahharah/istibra`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
       Banner(
         type="fard istinja blue"
@@ -59,7 +59,7 @@ section.tahharah
         shortDesc="Подмывание"
         desc="Устранение остатков наджасы после совершения малой или большой нужды."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/tahharah/istinja`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
       Banner(
         type="fard tayammum blue"
@@ -70,7 +70,7 @@ section.tahharah
         shortDesc="Когда нет воды"
         desc="Протирание частей тела чистой землей либо песком. Служит заменой омовения."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/tahharah/tayammum`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
       Banner(
         type="fard masah blue"
@@ -81,7 +81,7 @@ section.tahharah
         shortDesc="Протирание носков"
         desc="Условия и порядок протирания водонепроницаемых носков."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/tahharah/masah`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
   Banner(
@@ -93,7 +93,7 @@ section.tahharah
       читать “Зухр” - Вы сможете читать и другие намазы. Рекомендуем!"
     descTopBorder
   )
-    template(slot="buttons")
+    template(v-slot:buttons)
       AppButton(:link="`${routePrefix}/tutorial/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
   .line
@@ -109,7 +109,7 @@ section.tahharah
         desc="Детальный обзор утреннего намаза “Фаджр”, состоящего из 2 ракаатов \
           фарда. Фаджр является первым из пяти обязательных намазов."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/fadjr/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
       Banner(
@@ -122,7 +122,7 @@ section.tahharah
         desc="Детальный обзор обеденного намаза “Зухр”, состоящего из 4 ракаатов \
           фарда. Зухр является вторым из пяти обязательных намазов."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/dhuhr/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
       Banner(
@@ -135,7 +135,7 @@ section.tahharah
         desc="Детальный обзор послеполуденного намаза “Аср”, состоящего из 4 \
           ракаатов фарда. Аср является третьим из пяти обязательных намазов."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/asr/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
       Banner(
@@ -148,7 +148,7 @@ section.tahharah
         desc="Детальный обзор вечернего намаза “Магриб”, состоящего из 3 ракаатов \
           фарда. Магриб является четвёртым из пяти обязательных намазов."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/maghrib/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 
       Banner(
@@ -161,7 +161,7 @@ section.tahharah
         desc="Детальный обзор ночного намаза “Иша”, состоящего из 4 ракаатов \
           фарда. Иша является последним из пяти обязательных намазов."
       )
-        template(slot="buttons")
+        template(v-slot:buttons)
           AppButton(:link="`${routePrefix}/isha/fard`" blue :height="36") НАЧАТЬ ОБУЧЕНИЕ
 </template>
 

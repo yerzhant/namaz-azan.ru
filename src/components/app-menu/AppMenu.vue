@@ -272,7 +272,8 @@ export default {
     },
     goTo(link, item) {
       if (link.substr(0, 1) === "#") {
-        this.$scrollTo(link, { offset: -50 });
+        const top = document.getElementById(link.substr(1)).offsetTop;
+        window.scrollTo({ top, behavior: "smooth" });
       } else {
         this.$router.push(this.routePrefix + link);
         item.open = false;

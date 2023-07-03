@@ -125,9 +125,7 @@ export default {
       this.store.setNamaz(type);
       this.store.setMenu("level-2");
       axios
-        .get(
-          `/api/namaz/namaz/${madhhab}/${this.store.gender}/${type}/${subType}`
-        )
+        .get(`/api/namaz/namaz/${madhhab}/man/${type}/${subType}`)
         .then((r) => {
           this.data = r.data;
           this.store.setMenuItems(this.data.menu);

@@ -27,6 +27,7 @@ section.wudu
       v-for="(rukn, r) in rukns" :key="r"
       rakaat="spec"
       kind="wudu"
+      :store="store"
       :type="rukn.type"
       :title="rukn.title"
       :number="(r + 1).toString()"

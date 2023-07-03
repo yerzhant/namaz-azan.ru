@@ -64,10 +64,10 @@ section.rukn(:id="`r${rakaat}-${type}`" :class="[type, kind, {first: first, 'in-
 <script>
 import AppButton from "@/components/AppButton.vue";
 import AppPlayer from "@/components/app-player/AppPlayer.vue";
-import store from "../../store";
 
 export default {
   props: {
+    store: Object,
     rakaat: String,
     rakaats: String,
     type: String,
@@ -99,7 +99,6 @@ export default {
   },
   data() {
     return {
-      store: store(),
       image1: true,
       image2: false,
       image3: false,

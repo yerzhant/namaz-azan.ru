@@ -35,6 +35,7 @@ section.namaz
     .line(v-if="rakaat.number === 1")
     Rukn(
       v-for="(rukn, ru) in rakaat.rukns" :key="`${ra}-${ru}`"
+      :store="store"
       :kind="$route.params.subType"
       :next="getNext(ra, ru)"
       :last="!getNext(ra, ru)"

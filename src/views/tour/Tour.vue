@@ -24,6 +24,7 @@ section.tour(:class="type")
       Rukn(
         ref="rukn"
         tour
+        :store="store"
         :rakaat="index < 17 ? '1' : '2'"
         rakaats="2"
         :type="data.type"

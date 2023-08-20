@@ -193,9 +193,9 @@ menu.menu(:class="store.menu")
         //- router-link.item(:to="`${routePrefix}/isha/sunnah`")
         //-   .title ИША
         //-   .desc После фарда
-        router-link.item(:to="`${routePrefix}/jumuah/fard`")
-          .title ДЖУМА
-          .desc Коллективный
+        //- router-link.item(:to="`${routePrefix}/jumuah/fard`")
+        //-   .title ДЖУМА
+        //-   .desc Коллективный
         router-link.item(:to="`${routePrefix}/tarawih/sunnah`")
           .title ТАРАВИХ
           .desc  Ночной в Рамадан

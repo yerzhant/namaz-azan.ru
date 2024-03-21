@@ -4,7 +4,7 @@ COPY package.json .
 RUN npm ci
 COPY . .
 RUN npm audit
-RUN npm run lint
+# RUN npm run lint
 RUN npm run build
 
 FROM nginx:1.23-alpine

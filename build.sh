@@ -1,3 +1,3 @@
-export NAMAZ_VERSION=2.1.9
+export NAMAZ_VERSION=2.1.10
 docker build -t reg.azan.ru/namaz:${NAMAZ_VERSION} .
 # docker push reg.azan.ru/namaz:${NAMAZ_VERSION}

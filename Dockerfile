@@ -1,4 +1,4 @@
-FROM node:16 as builder
+FROM node:16 AS builder
 COPY package-lock.json .
 COPY package.json .
 RUN npm ci

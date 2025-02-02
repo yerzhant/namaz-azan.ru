@@ -113,6 +113,42 @@ export default {
       if (this.kind === "wudu") {
         return "wudu-dua";
       }
+
+      if (this.store.madhhab === "shafii") {
+        switch (this.type) {
+          case "qiyam":
+            return this.rakaat === "1"
+              ? "dua-qiyamah-shafii"
+              : "basmalah-shafii";
+          case "qiraat":
+            switch (this.rakaat) {
+              case "1":
+                return "fatihah+kauthar-shafii";
+              case "2":
+                return "fatihah+ikhlas-shafii";
+              case "3":
+                return this.kind === "sunnah" || this.kind === "wadjib"
+                  ? "fatiha+falaq"
+                  : "fatiha";
+              default:
+                return this.kind === "sunnah" ? "fatiha+nas" : "fatiha";
+            }
+          case "tashahhud":
+            if (this.rakaats === "2") return "attahiyat+salawat-shafii";
+            if (this.rakaat === "2") return "attahiyat";
+            return "attahiyat+salawat+dua";
+          case "salam-right":
+          case "salam-left":
+            return "salam";
+          case "salam":
+            return "salam-2";
+          case "sadjda-2":
+            return "sadjda-shafii";
+          default:
+            return `${this.type}-shafii`;
+        }
+      }
+
       switch (this.type) {
         case "qiyam":
           return this.rakaat === "1" ? "sana+istiatha" : "basmala";

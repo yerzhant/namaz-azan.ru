@@ -389,6 +389,10 @@ export default {
 .fadjr {
   background-image: url(./fadjr-bg.png);
 
+  &.shafii {
+    background-image: url(./fadjr-bg-shafii.png);
+  }
+
   &.woman {
     background-image: url(./fadjr-bg-w.png);
   }
@@ -437,6 +441,10 @@ export default {
 .tutorial,
 .dhuhr {
   background-image: url(./dhuhr-bg.png);
+
+  &.shafii {
+    background-image: url(./dhuhr-bg-shafii.png);
+  }
 
   &.woman {
     background-image: url(./dhuhr-bg-w.png);
@@ -507,6 +515,10 @@ export default {
 .asr {
   background-image: url(./asr-bg.png);
 
+  &.shafii {
+    background-image: url(./asr-bg-shafii.png);
+  }
+
   &.woman {
     background-image: url(./asr-bg-w.png);
   }
@@ -548,6 +560,10 @@ export default {
 
 .maghrib {
   background-image: url(./maghrib-bg.png);
+
+  &.shafii {
+    background-image: url(./maghrib-bg-shafii.png);
+  }
 
   &.woman {
     background-image: url(./maghrib-bg-w.png);
@@ -606,6 +622,10 @@ export default {
 
 .isha {
   background-image: url(./isha-bg.png);
+
+  &.shafii {
+    background-image: url(./isha-bg-shafii.png);
+  }
 
   &.woman {
     background-image: url(./isha-bg-w.png);

@@ -121,7 +121,7 @@ menu.menu(:class="store.menu")
       //-   .title ВИДЕО УРОКИ
       //-   .desc Омовение, намаз
 
-  menu.submenu(v-show="flags.namaz").namazes(:class="[store.madhhab]")
+  menu.submenu(v-show="flags.namaz" :class="store.madhhab").namazes
     img.image(src="./namaz-bg.jpg")
     nav.items
       //- a.item(href="/search?query=намаз")
@@ -146,7 +146,7 @@ menu.menu(:class="store.menu")
         .title ДРУГИЕ НАМАЗЫ
         .desc Фарды, уаджибы и сунны
 
-    menu.submenu(v-show="flags.fard").fard-namazes(:class="[store.madhhab]")
+    menu.submenu(v-show="flags.fard" :class="store.madhhab").fard-namazes
       .filler
       nav.items
         router-link.item(:to="`${routePrefix}/fadjr/fard`")

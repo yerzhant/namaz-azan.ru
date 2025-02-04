@@ -70,7 +70,7 @@ menu.mobile-menu(
             .subitem-l2(@click="goTo('/asr/fard')") Аср
             .subitem-l2(@click="goTo('/maghrib/fard')") Магриб
             .subitem-l2(@click="goTo('/isha/fard')") Иша
-            .subitem-l2(@click="goTo('/jumuah/fard')").jumuah(:class="store.madhhab") Джума
+            .subitem-l2(@click="goTo('/jumuah/fard')" :class="store.madhhab").jumuah Джума
         .subitem.wadjib(:class="store.madhhab")
           .title-block(:class="{open: wadjib}" @click.stop="wadjib = !wadjib")
             .title ВАДЖИБ НАМАЗЫ

@@ -21,6 +21,7 @@ header.header(:class="[type, store.gender, store.madhhab]")
           .rakaats-title {{ rakaats3Title }}
       .buttons
         AppButton(
+          :class="getNamazKind(button1Link)"
           :link="button1Link"
           :width="buttonWidth"
           :height="36"
@@ -28,6 +29,7 @@ header.header(:class="[type, store.gender, store.madhhab]")
           v-if="button1"
         ) {{ button1 }}
         AppButton(
+          :class="getNamazKind(button2Link)"
           :link="button2Link"
           :width="buttonWidth"
           :height="36"
@@ -35,6 +37,7 @@ header.header(:class="[type, store.gender, store.madhhab]")
           v-if="button2"
         ) {{ button2 }}
         AppButton(
+          :class="getNamazKind(button3Link)"
           :link="button3Link"
           :width="buttonWidth"
           :height="36"
@@ -97,6 +100,11 @@ export default {
       descOpen: true,
     };
   },
+  methods: {
+    getNamazKind(link) {
+      return link.substr(link.lastIndexOf("/") + 1);
+    },
+  },
   computed: {
     time() {
       const { today, tomorrow } = this.store.namazTimes;
@@ -155,6 +163,17 @@ export default {
   background-position: center -50px;
   background-color: #f7fcff;
   border-bottom: 1px solid #cbd3db;
+
+  &.shafii {
+    .app-button {
+      &.sunnah,
+      &.sunnah-before,
+      &.sunnah-after,
+      &.wadjib {
+        display: none;
+      }
+    }
+  }
 }
 
 .info {

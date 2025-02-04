@@ -206,7 +206,7 @@ menu.menu(:class="store.menu")
           .title СОЛААТУЛЬ-МАРИИД
           .desc  Намаз больного
 
-  nav.items.items-l2
+  nav.items.items-l2(:class="store.madhhab")
     .item-l2(
       v-for="item in store.menuItems"
       :class="{right: item.right, down: !item.right, open: item.open}"
@@ -216,7 +216,7 @@ menu.menu(:class="store.menu")
       .submenu-l2(v-show="item.open")
         .subitem-l2(
           v-for="subitem in item.items"
-          :class="{active: subitem.active}"
+          :class="[{active: subitem.active}, getNamazType(subitem.link)]"
           :data-link="subitem.link.substring(1)"
           @click.stop="goTo(subitem.link, item)"
         ) {{ subitem.title }}
@@ -278,6 +278,9 @@ export default {
         this.$router.push(this.routePrefix + link);
         item.open = false;
       }
+    },
+    getNamazType(link) {
+      return link.substr(1, link.indexOf("/", 1) - 1);
     },
     scrolling() {
       const curPos = window.scrollY + 50;
@@ -664,6 +667,18 @@ export default {
     font-weight: normal;
     color: #ade9ff;
     background: url(./subitem-active.png) no-repeat 12px;
+  }
+}
+
+.items-l2.shafii {
+  .subitem-l2 {
+    &.witr,
+    &.jumuah,
+    &.tarawih,
+    &.id,
+    &.mareed {
+      display: none;
+    }
   }
 }
 </style>

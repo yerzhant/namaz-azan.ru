@@ -121,7 +121,7 @@ menu.menu(:class="store.menu")
       //-   .title ВИДЕО УРОКИ
       //-   .desc Омовение, намаз
 
-  menu.submenu(v-show="flags.namaz")
+  menu.submenu(v-show="flags.namaz").namazes(:class="[store.madhhab]")
     img.image(src="./namaz-bg.jpg")
     nav.items
       //- a.item(href="/search?query=намаз")
@@ -133,20 +133,20 @@ menu.menu(:class="store.menu")
       )
         .title ФАРД НАМАЗЫ
         .desc Обязательные
-      .item.right(
+      .item.right.wadjib(
         :class="{open: flags.wadjib}"
         @click.stop="flags.wadjib = !flags.wadjib, closeAll('namaz', 'wadjib')"
       )
         .title ВАДЖИБ НАМАЗЫ
         .desc Близко к обязательным
-      .item.right(
+      .item.right.misc(
         :class="{open: flags.sunnah}"
         @click.stop="flags.sunnah = !flags.sunnah, closeAll('namaz', 'sunnah')"
       )
         .title ДРУГИЕ НАМАЗЫ
         .desc Фарды, уаджибы и сунны
 
-    menu.submenu(v-show="flags.fard")
+    menu.submenu(v-show="flags.fard").fard-namazes(:class="[store.madhhab]")
       .filler
       nav.items
         router-link.item(:to="`${routePrefix}/fadjr/fard`")
@@ -164,7 +164,7 @@ menu.menu(:class="store.menu")
         router-link.item(:to="`${routePrefix}/isha/fard`")
           .title ИША
           .desc Ночной
-        router-link.item(:to="`${routePrefix}/jumuah/fard`")
+        router-link.item(:to="`${routePrefix}/jumuah/fard`").jumuah
           .title ДЖУМА
           .desc Коллективный
 
@@ -560,6 +560,19 @@ export default {
   .filler {
     height: 3px;
     background-color: #081934;
+  }
+
+  &.namazes.shafii {
+    .item.wadjib,
+    .item.misc {
+      display: none;
+    }
+  }
+
+  &.fard-namazes.shafii {
+    .item.jumuah {
+      display: none;
+    }
   }
 }
 

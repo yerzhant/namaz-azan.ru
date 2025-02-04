@@ -70,13 +70,13 @@ menu.mobile-menu(
             .subitem-l2(@click="goTo('/asr/fard')") Аср
             .subitem-l2(@click="goTo('/maghrib/fard')") Магриб
             .subitem-l2(@click="goTo('/isha/fard')") Иша
-            .subitem-l2(@click="goTo('/jumuah/fard')") Джума
-        .subitem
+            .subitem-l2(@click="goTo('/jumuah/fard')").jumuah(:class="store.madhhab") Джума
+        .subitem.wadjib(:class="store.madhhab")
           .title-block(:class="{open: wadjib}" @click.stop="wadjib = !wadjib")
             .title ВАДЖИБ НАМАЗЫ
           .subitems(v-show="wadjib")
             .subitem-l2(@click="goTo('/witr/wadjib')") Витр
-        .subitem
+        .subitem.misc-namazes(:class="store.madhhab")
           .title-block(:class="{open: sunnah}" @click.stop="sunnah = !sunnah")
             .title ДРУГИЕ НАМАЗЫ
           .subitems(v-show="sunnah")
@@ -304,6 +304,13 @@ export default {
       padding-left: 10px;
     }
   }
+
+  &.wadjib,
+  &.misc-namazes {
+    &.shafii {
+      display: none;
+    }
+  }
 }
 
 .subitem-l2 {
@@ -313,6 +320,10 @@ export default {
   color: #d8e3f0;
   line-height: 1;
   padding: 19px 30px;
+
+  &.jumuah.shafii {
+    display: none;
+  }
 }
 
 .socials-block {

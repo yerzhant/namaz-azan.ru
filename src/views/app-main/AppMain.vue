@@ -116,7 +116,7 @@ section.main
     MobileGeneralProvisions.mobile-general-provisions
 
 
-  AppSection.tahharah(title="ДРУГИЕ ВИДЫ НАМАЗА")
+  AppSection.tahharah(title="ДРУГИЕ ВИДЫ НАМАЗА" :class="[store.madhhab]")
     Banner(
       type="jumuah"
       descStyleBlackBlue
@@ -316,6 +316,10 @@ export default {
 .small-banners {
   display: flex;
   flex-wrap: wrap;
+}
+
+.tahharah.shafii {
+  display: none;
 }
 
 @media (max-width: $mobile) {

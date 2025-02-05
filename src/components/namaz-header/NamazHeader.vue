@@ -1,6 +1,6 @@
 <template lang="pug">
 header.header(:class="[type, store.gender, store.madhhab]")
-  .info-wrapper
+  .info-wrapper(:class="store.madhhab")
     section.info
       h1.title {{ title }}
         span.title-colon(v-if="subTitle") {{ ': ' }}
@@ -428,6 +428,10 @@ export default {
     &-wrapper {
       @media (max-width: $mobile) {
         background: url(./dhuhr-bg-m.png) no-repeat bottom / cover;
+
+        &.shafii {
+          background-image: url(./dhuhr-bg-m-shafii.png);
+        }
       }
     }
 
@@ -485,6 +489,10 @@ export default {
     &-wrapper {
       @media (max-width: $mobile) {
         background: url(./dhuhr-bg-m.png) no-repeat bottom / cover;
+
+        &.shafii {
+          background-image: url(./dhuhr-bg-m-shafii.png);
+        }
       }
     }
 
@@ -572,6 +580,10 @@ export default {
     &-wrapper {
       @media (max-width: $mobile) {
         background: url(./dhuhr-bg-m.png) no-repeat bottom / cover;
+
+        &.shafii {
+          background-image: url(./dhuhr-bg-m-shafii.png);
+        }
       }
     }
 
@@ -622,6 +634,10 @@ export default {
     &-wrapper {
       @media (max-width: $mobile) {
         background: url(./dhuhr-bg-m.png) no-repeat bottom / cover;
+
+        &.shafii {
+          background-image: url(./dhuhr-bg-m-shafii.png);
+        }
       }
     }
 
@@ -688,6 +704,10 @@ export default {
     &-wrapper {
       @media (max-width: $mobile) {
         background: url(./dhuhr-bg-m.png) no-repeat bottom / cover;
+
+        &.shafii {
+          background-image: url(./dhuhr-bg-m-shafii.png);
+        }
       }
     }
 

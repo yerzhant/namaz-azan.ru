@@ -43,7 +43,7 @@ section.rukn(:id="`r${rakaat}-${type}`" :class="[type, kind, {first: first, 'in-
         .tab-content(:class="{active: tabTranslation}" v-html="translation")
         .tab-content(:class="{active: tabArabic}" v-html="arabic").arabic
         .tab-content(:class="{active: tabDescription}" v-html="description" @click="openTab")
-        AppPlayer.player(:type="audio")
+        AppPlayer.player(:type="audio" ref="player")
         .buttons
           AppButton(:height="36" blue @click="goNext" v-if="!last") ДАЛЕЕ
           //- AppButton.print(:height="36" @click="print") РАСПЕЧАТАТЬ
@@ -215,6 +215,9 @@ export default {
       } else if (this.arabic) {
         this.tabArabic = true;
       }
+    },
+    stopPlayer() {
+      this.$refs.player.stop();
     },
   },
   created() {

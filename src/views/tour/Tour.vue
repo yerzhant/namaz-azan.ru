@@ -39,7 +39,7 @@ section.tour(:class="type")
         @next="next"
       )
       .next(@click="next")
-  .progress-bar
+  .progress-bar(@click="$refs.rukn?.stopPlayer()")
     .to-main(@click="$router.push('/')")
       span На главную
     .left.item(@click="slideProgressLeft")
@@ -100,10 +100,12 @@ export default {
   },
   methods: {
     previous() {
+      this.$refs.rukn.stopPlayer();
       if (this.index > 0) this.index--;
       this.normalizeProgressPosition();
     },
     next() {
+      this.$refs.rukn.stopPlayer();
       if (this.index < this.items.length - 1) this.index++;
       this.normalizeProgressPosition();
       this.scrollToTop();

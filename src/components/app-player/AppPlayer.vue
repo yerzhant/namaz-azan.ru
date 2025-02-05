@@ -84,6 +84,16 @@ export default {
       });
       this.playing = true;
     },
+    stop() {
+      if (currentPlayer) {
+        currentPlayer.player.stop();
+        currentPlayer.playing = false;
+        currentPlayer.player = null;
+        currentPlayer.time = "00:00";
+        currentPlayer.position = "0";
+        currentPlayer = null;
+      }
+    },
     getTimeAsString(msec) {
       const dur = msec / 1000;
       let min = Math.floor(dur / 60);

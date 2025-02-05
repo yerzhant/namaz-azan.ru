@@ -780,6 +780,10 @@ export default {
 
     &.shafii {
       background-image: url("./tashahhood-shafii.png");
+
+      &.woman {
+        background-image: url(./tashahhud-woman-shafii.png);
+      }
     }
 
     &.woman {

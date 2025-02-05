@@ -410,6 +410,10 @@ export default {
 
   &.shafii {
     background-image: url(./fadjr-bg-shafii.png);
+
+    &.woman {
+      background-image: url(./fadjr-bg-w-shafii.png);
+    }
   }
 
   &.woman {
@@ -463,6 +467,10 @@ export default {
 
   &.shafii {
     background-image: url(./dhuhr-bg-shafii.png);
+
+    &.woman {
+      background-image: url(./dhuhr-bg-w-shafii.png);
+    }
   }
 
   &.woman {
@@ -536,6 +544,10 @@ export default {
 
   &.shafii {
     background-image: url(./asr-bg-shafii.png);
+
+    &.woman {
+      background-image: url(./asr-bg-w-shafii.png);
+    }
   }
 
   &.woman {
@@ -582,6 +594,10 @@ export default {
 
   &.shafii {
     background-image: url(./maghrib-bg-shafii.png);
+
+    &.woman {
+      background-image: url(./maghrib-bg-w-shafii.png);
+    }
   }
 
   &.woman {
@@ -644,6 +660,10 @@ export default {
 
   &.shafii {
     background-image: url(./isha-bg-shafii.png);
+
+    &.woman {
+      background-image: url(./isha-bg-w-shafii.png);
+    }
   }
 
   &.woman {

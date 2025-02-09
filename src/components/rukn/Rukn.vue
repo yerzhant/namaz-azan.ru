@@ -119,7 +119,7 @@ export default {
           case "qiyam":
             return this.rakaat === "1"
               ? "dua-qiyamah-shafii"
-              : "basmalah-shafii";
+              : "istiaathah-shafii";
           case "qiraat":
             switch (this.rakaat) {
               case "1":

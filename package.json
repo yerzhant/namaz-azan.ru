@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",
-    "@vitejs/plugin-vue": "^4.0.0",
+    "@vitejs/plugin-vue": "^5.2.3",
     "@volar/vue-language-plugin-pug": "^1.0.22",
     "@vue/eslint-config-prettier": "^7.0.0",
     "eslint": "^8.22.0",
@@ -25,6 +25,6 @@
     "prettier": "^2.7.1",
     "pug": "^3.0.3",
     "sass": "^1.57.1",
-    "vite": "^4.5.9"
+    "vite": "^6.3.4"
   }
 }

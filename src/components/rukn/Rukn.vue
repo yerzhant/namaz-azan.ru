@@ -673,6 +673,24 @@ export default {
   }
 }
 
+.fajr-qunoot {
+  .image-1 {
+    &.shafii {
+      background-image: url("./fajr-qunoot-shafii.png");
+    }
+
+    @media (max-width: $mobile) {
+      background-size: initial;
+    }
+
+    &.woman {
+      &.shafii {
+        background-image: url("./fajr-qunoot-woman-shafii.png");
+      }
+    }
+  }
+}
+
 .sadjda,
 .sadjda-2 {
   .image-1 {

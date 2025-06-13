@@ -985,6 +985,10 @@ export default {
     .image-1 {
       background-image: url(./wudu/hands.png);
       background-position-y: 130px;
+
+      &.shafii {
+        background-image: url(./wudu/full-hands-shafii.png);
+      }
     }
   }
 

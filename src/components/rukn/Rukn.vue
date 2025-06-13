@@ -130,7 +130,9 @@ export default {
                 return "fatiha-shafii";
             }
           case "tashahhud":
-            return "attahiyat-shafii";
+            if (this.rakaats === "2") return "attahiyat+salawat+dua-shafii";
+            if (this.rakaat === "2") return "attahiyat-shafii";
+            return "attahiyat+salawat+dua-shafii";
           case "salam-right":
           case "salam-left":
             return "salam-shafii";

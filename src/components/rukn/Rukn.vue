@@ -140,6 +140,8 @@ export default {
             return "salam-2-shafii";
           case "sadjda-2":
             return "sadjda-shafii";
+          case "dua":
+            return "dua";
           default:
             return `${this.type}-shafii`;
         }

@@ -991,7 +991,7 @@ export default {
       background-position-y: 130px;
 
       &.shafii {
-        background-image: url(./wudu/full-hands-shafii.png);
+        background-image: url(./wudu/hands-shafii.png);
       }
     }
   }

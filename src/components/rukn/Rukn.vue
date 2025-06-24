@@ -656,11 +656,18 @@ export default {
 }
 
 .straight-up {
+  .tool-bar.shafii {
+    .b1,
+    .b2 {
+      display: flex;
+    }
+  }
+
   .image-1 {
     background-image: url(./niet.png);
 
     &.shafii {
-      background-image: url("./niet-shafii.png");
+      background-image: url("./takbir-1-shafii.png");
     }
 
     @media (max-width: $mobile) {
@@ -671,8 +678,16 @@ export default {
       background-image: url(./niet-woman.png);
 
       &.shafii {
-        background-image: url("./niet-woman-shafii.png");
+        background-image: url("./takbir-woman-shafii.png");
       }
+    }
+  }
+
+  .image-2.shafii {
+    background-image: url("./niet-shafii.png");
+
+    &.woman {
+      background-image: url("./niet-woman-shafii.png");
     }
   }
 }

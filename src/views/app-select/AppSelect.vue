@@ -2,13 +2,13 @@
 section.app-select
   .buttons
     AppButton(:width="177" :height="36" small) НАМАЗ ДЛЯ ВЗРОСЛЫХ
-    //- AppButton(:width="177" :height="36" small :opacity=".1") НАМАЗ ДЛЯ ДЕТЕЙ
+    AppButton(:width="177" :height="36" small :opacity=".2") НАМАЗ ДЛЯ ДЕТЕЙ
     AppButton(:width="177" :height="36" small :opacity="store.madhhab == 'hanafi' ? 1 : .5"
       @click="selectMadhhab('hanafi')"
     ) ХАНАФИТСКИЙ МАЗХАБ
-    //- AppButton(:width="177" :height="36" small :opacity="madhhab == 'shafii' ? 1 : .5"
-    //-   @click="selectMadhhab('shafii')"
-    //- ) ШАФИИТСКИЙ МАЗХАБ
+    AppButton(:width="177" :height="36" small :opacity="store.madhhab == 'shafii' ? 1 : .5"
+      @click="selectMadhhab('shafii')"
+    ) ШАФИИТСКИЙ МАЗХАБ
   .select
     .prev(@click="next")
     .left(:class="[store.madhhab]" @click="selectGender('man')")

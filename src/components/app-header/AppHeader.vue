@@ -21,16 +21,16 @@ header.header(:class="[store.namaz, {full: isFullSite}]")
       :class="{active: madhhabOpen}"
       @click.stop="madhhabOpen = !madhhabOpen"
     ) Мазхаб:
-      span.selected-item.inactive {{ store.madhhabText }}
-      //- .items
-      //-   .item(
-      //-     :class="{active: madhhab == 'hanafi'}"
-      //-     @click="setMadhhab('hanafi')"
-      //-   ) Ханафи
-      //-   .item(
-      //-     :class="{active: madhhab == 'shafii'}"
-      //-     @click="setMadhhab('shafii')"
-      //-   ) Шафии
+      span.selected-item {{ store.madhhabText }}
+      .items
+        .item(
+          :class="{active: madhhab == 'hanafi'}"
+          @click="setMadhhab('hanafi')"
+        ) Ханафи
+        .item(
+          :class="{active: madhhab == 'shafii'}"
+          @click="setMadhhab('shafii')"
+        ) Шафии
 
     .basmalah
       router-link(to="/")

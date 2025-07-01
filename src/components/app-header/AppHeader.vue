@@ -294,7 +294,6 @@ export default {
   }
 }
 
-.madhhab,
 .language {
   cursor: initial;
 

@@ -2,7 +2,7 @@
 section.app-select
   .buttons
     AppButton(:width="177" :height="36" small) НАМАЗ ДЛЯ ВЗРОСЛЫХ
-    AppButton(:width="177" :height="36" small :opacity=".2") НАМАЗ ДЛЯ ДЕТЕЙ
+    AppButton(:width="177" :height="36" small :opacity=".2").inactive НАМАЗ ДЛЯ ДЕТЕЙ
     AppButton(:width="177" :height="36" small :opacity="store.madhhab == 'hanafi' ? 1 : .5"
       @click="selectMadhhab('hanafi')"
     ) ХАНАФИТСКИЙ МАЗХАБ
@@ -313,5 +313,9 @@ export default {
     font-size: 10px;
     color: #5d6b7b;
   }
+}
+
+.inactive {
+  cursor: default;
 }
 </style>

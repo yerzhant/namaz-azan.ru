@@ -3,7 +3,7 @@ COPY package-lock.json .
 COPY package.json .
 RUN npm ci
 COPY . .
-# RUN npm audit
+RUN npm audit
 # RUN npm run lint CPU goes up to 100% and not exiting
 RUN npm run build
 

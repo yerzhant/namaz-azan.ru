@@ -7,7 +7,7 @@ menu.mobile-menu(
     .close(@click="store.showMenu = false")
     .bar
     .info Энциклопедия намаза - спецпроект образовательного портала
-      a.link(href="https://azan.ru")  Azan.ru
+      a.link(href="https://azan.info")  Azan.info
   .static-bar Главное меню
   .items
     .item(@click="goTo('')")

@@ -38,7 +38,7 @@ section.app-select
     .line-1 ЭНЦИКЛОПЕДИЯ НАМАЗА
     .line-2 Самоучитель и справочник
     .line-3 Cпецпроект
-      a.link(href="https://azan.ru")  Azan.ru
+      a.link(href="https://azan.info")  Azan.info
 </template>
 
 <script>

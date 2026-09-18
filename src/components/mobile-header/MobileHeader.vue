@@ -5,8 +5,8 @@ header.mobile-header
     .text(@click="$router.push('/')")
       .title ЭНЦИКЛОПЕДИЯ НАМАЗА
       .sub-title Самоучитель и справочник. Cпецпроект
-        a.link(href="https://azan.ru")  Azan.ru
-    a.search(href="https://azan.ru/search")
+        a.link(href="https://azan.info")  Azan.info
+    a.search(href="https://azan.info/search")
   .status {{ store.mobileHeaderStatus }}
 </template>
 

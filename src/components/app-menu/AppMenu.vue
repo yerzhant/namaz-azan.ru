@@ -1,7 +1,7 @@
 <template lang="pug">
 menu.menu(:class="store.menu")
   .header
-    a.desc(href="https://azan.ru") Спецпроект образовательного портала Azan.ru
+    a.desc(href="https://azan.info") Спецпроект образовательного портала Azan.info
     .title ЭНЦИКЛОПЕДИЯ НАМАЗА
 
   .back-to-main(@click="store.setMenu()")

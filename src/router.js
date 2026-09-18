@@ -51,7 +51,7 @@ const router = new createRouter({
     {
       path: "/:pathMatch(.*)*",
       beforeEnter() {
-        window.location = "https://azan.ru/not-found";
+        window.location = "https://azan.info/not-found";
       },
     },
   ],

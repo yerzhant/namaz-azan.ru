@@ -5,7 +5,7 @@ footer.footer
     img.moon(src="./moon.png")
     .desc Самоучитель и справочник
       br
-      | Cпецпроект Azan.ru
+      | Cпецпроект Azan.info
     .socials
       Socials
       router-link.tutoring(:to="`${routePrefix}/tour-salah`") Обучение намазу
@@ -16,7 +16,7 @@ footer.footer
       router-link(:to="`${routePrefix}/tutorial/fard`") Обучение
     .up(@click="scrollToTop()")
   .bottom
-    span Copyright © 2018 - 2023 Azan.ru
+    span Copyright © 2018 - 2026 Azan.info
     span.bar |
     a(href="/site/agreement") Соглашение об использовании
     span.bar |

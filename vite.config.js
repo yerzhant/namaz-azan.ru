@@ -22,7 +22,7 @@ export default defineConfig({
   server: {
     proxy: {
       // "/api": "http://localhost",
-      "/api": "https://azan.ru",
+      "/api": "https://azan.info",
     },
   },
 });

@@ -39,7 +39,7 @@ export default {
       if (this.type === "file") {
         return this.file;
       }
-      return `https://azan.ru/media/audio/namaz/${this.type}.mp3`;
+      return `https://azan.info/media/audio/namaz/${this.type}.mp3`;
     },
   },
   methods: {

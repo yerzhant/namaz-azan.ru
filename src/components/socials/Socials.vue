@@ -5,7 +5,7 @@ section.socials(:class="{mobile}")
   a.yt(:href="store.socials.yt.value")
   a.vk(:href="store.socials.vk.value")
   a.tg(:href="store.socials.tg.value")
-  a.logo(href="https://azan.ru" v-if="mobile") Azan.ru
+  a.logo(href="https://azan.info" v-if="mobile") Azan.info
 </template>
 
 <script>

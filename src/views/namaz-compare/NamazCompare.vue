@@ -136,7 +136,6 @@ export default {
     $route() {
       this.getData();
     },
-    // eslint-disable-next-line
     'store.gender'() {
       this.getData();
     },

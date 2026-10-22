@@ -1,3 +1,5 @@
+@use 'vars' as *;
+
 %admin-styles {
   .azan--appendix {
     font-weight: bold;
@@ -18,7 +20,7 @@
     // font-weight: bold;
 
     // @media (max-width: $mobile) {
-      margin-left: 14px;
+    margin-left: 14px;
     // }
 
     // div {

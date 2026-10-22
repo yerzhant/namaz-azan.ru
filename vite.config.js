@@ -6,6 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "/namaz/",
   plugins: [
     vue(),
     vueDevTools(),
@@ -13,6 +14,19 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use '@/styles/vars.scss' as *;`,
+      },
+    },
+  },
+  server: {
+    proxy: {
+      // "/api": "http://localhost",
+      "/api": "https://azan.info",
     },
   },
 })

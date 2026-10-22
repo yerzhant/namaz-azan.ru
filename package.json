@@ -31,6 +31,7 @@
     "oxlint": "~1.82.0",
     "prettier": "3.9.6",
     "pug": "^3.0.4",
+    "sass": "^1.106.1",
     "vite": "^8.2.2",
     "vite-plugin-vue-devtools": "^8.2.1",
     "vue-eslint-parser": "^10.4.1"

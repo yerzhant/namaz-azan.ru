@@ -1,0 +1,8 @@
+{
+    "name": "Энциклопедия намаза",
+    "short_name": "Намаз",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#1a3157",
+    "theme_color": "#1a3157"
+}
